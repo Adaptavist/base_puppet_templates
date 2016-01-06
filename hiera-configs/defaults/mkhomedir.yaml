@@ -1,0 +1,5 @@
+---
+
+mkhomedir_home_basedir: '/nethome'
+mkhomedir_home_basedir_link_target: '/home'
+

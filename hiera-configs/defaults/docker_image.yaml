@@ -1,0 +1,13 @@
+---
+
+docker_image_name:
+docker_image_ensure: 'present'
+docker_image_image_tag: "false"
+docker_image_force: "false"
+docker_image_docker_file: "false"
+docker_image_docker_dir: "false"
+docker_image_docker_tar: "false"
+docker_image_docker_url: "false"
+docker_image_docker_url_tarball_name: "false"
+docker_image_docker_repo_url: "false"
+docker_image_docker_repo_dir: "false"

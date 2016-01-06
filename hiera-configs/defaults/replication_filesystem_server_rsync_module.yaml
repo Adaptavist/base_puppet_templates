@@ -1,0 +1,19 @@
+---
+
+replication_filesystem_server_rsync_module_name: 
+    value:
+replication_filesystem_server_rsync_module_type:
+    value: 'rsync'
+replication_filesystem_server_rsync_module_source:
+    value: '/opt/'
+replication_filesystem_server_rsync_module_target:
+    value: 'localhost::opt/'
+replication_filesystem_server_rsync_module_init_sync:
+    value: true
+replication_filesystem_server_rsync_module_rsync_verbose:
+    value: true
+replication_filesystem_server_rsync_module_rsync_archive:
+    value: true
+replication_filesystem_server_rsync_module_rsync_hard_links:
+    value: true
+

@@ -1,0 +1,7 @@
+---
+
+atlassian_sdk_installdir: '/opt'
+atlassian_sdk_user: 'hosting' 
+atlassian_sdk_group: 'hosting'
+atlassian_sdk_version: '5.0.3'
+

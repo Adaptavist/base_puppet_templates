@@ -1,0 +1,17 @@
+---
+
+prefixes: 
+    - "nagios_server_contact_group_"
+
+classes:
+  - nagios::server
+
+dependencies:
+  - nagios
+
+nagios::server::contactgroups:
+    "%{::nagios_server_contact_group_name}":
+        ensure: "%{::nagios_server_contact_group_ensure}"
+        alias: "%{::nagios_server_contact_group_alias}"
+        members: "%{::nagios_server_contact_group_members}"
+

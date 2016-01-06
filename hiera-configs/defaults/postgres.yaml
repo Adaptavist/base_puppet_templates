@@ -1,0 +1,7 @@
+---
+
+postgres_listen_address: '*'
+postgres_listen_port: 5432
+postgres_install_contrib: true
+postgres_install_devel: true
+postgres_postgres_password: 'false'

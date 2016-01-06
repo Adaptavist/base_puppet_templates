@@ -1,0 +1,5 @@
+---
+
+xvfb_user: 'hosting'
+xvfb_options: ':99 -ac'
+

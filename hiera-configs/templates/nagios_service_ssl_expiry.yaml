@@ -1,0 +1,20 @@
+---
+
+prefixes: 
+    - "nagios_service_ssl_expiry_"
+
+classes:
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::services:
+    "%{::nagios_service_ssl_expiry_name}_check_ssl_expiration":
+        check_command: "check_ssl_expiration!%{::nagios_service_ssl_expiry_url}!%{::nagios_service_ssl_expiry_port}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_ssl_expiry_hostname}"
+        hostgroup_name:  "%{::nagios_service_ssl_expiry_hostgroup_name}"
+        service_description:  "SSL expiration Check: %{::nagios_service_ssl_expiry_url}"
+        ensure: "%{::nagios_service_ssl_expiry_ensure}"
+        notification_interval: "%{::nagios_service_ssl_expiry_notification_interval}"

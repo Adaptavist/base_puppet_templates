@@ -1,0 +1,16 @@
+---
+
+prefixes: 
+    - "nagios_server_command_"
+
+classes:
+  - nagios::server
+
+dependencies:
+  - nagios
+
+nagios::server::commands:
+    "%{::nagios_server_command_name}":
+        command_name: "%{::nagios_server_command_name}"
+        command_line: "%{::nagios_server_command_command}"
+

@@ -1,0 +1,23 @@
+---
+
+prefixes: 
+    - "stunnel_config_"
+
+required_facts:
+    - "stunnel_config_create_file_path"
+    - "stunnel_config_create_file_content"
+
+classes:
+  - stunnel_config
+
+dependencies:
+  - stunnel_config
+  - stunnel
+  - stdlib
+
+stunnel_config::create_files:
+  '%{::stunnel_config_create_file_path}':
+    ensure: "%{::stunnel_config_create_file_ensure}"
+    mode: '%{::stunnel_config_create_file_mode}'
+    content: "%{::stunnel_config_create_file_content}"
+

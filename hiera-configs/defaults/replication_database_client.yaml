@@ -1,0 +1,29 @@
+---
+
+replication_database_client_replicate-ignore-db:
+    value: 'test'
+replication_database_client_server-id:
+    value: 12
+replication_database_client_innodb_file_per_table:
+    value: 1
+replication_database_client_relay-log:
+    value: 'mysqld-relay-bin'
+replication_database_client_max_allowed_packet:
+    value: 128M
+replication_database_client_character-set-server:
+    value: 'utf8'
+replication_database_client_collation_server:
+    value: 'utf8_bin'
+replication_database_client_default-storage-engine:
+    value: 'innodb'
+replication_database_client_transaction-isolation:
+    value: 'READ-COMMITTED'
+replication_database_client_bind_address:
+    value: 127.0.0.1
+replication_database_client_replication_user:
+replication_database_client_replication_password:
+replication_database_client_dump_user:
+replication_database_client_dump_password:
+replication_database_client_to_server_user:
+replication_database_client_to_server_password:
+

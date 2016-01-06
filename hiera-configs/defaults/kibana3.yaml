@@ -1,0 +1,16 @@
+---
+
+kibana3_ensure: 'present'
+kibana3_config_es_port: '9200'
+kibana3_config_es_protocol: 'http'
+kibana3_config_es_server: 'localhost'
+kibana3_manage_ws: false
+kibana3_k3_install_folder: '/opt/kibana3'
+kibana3_k3_folder_owner: 
+    value: 'hosting'
+    comment: "User to own the installation folder. Make sure user exists"
+kibana3_k3_release: 'v3.0.1'
+kibana3_manage_git: true
+kibana3_manage_git_repository: true
+kibana3_k3_clone_url: 'https://github.com/elasticsearch/kibana.git'
+

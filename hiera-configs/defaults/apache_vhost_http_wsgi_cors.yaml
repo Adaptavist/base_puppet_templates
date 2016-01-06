@@ -1,0 +1,40 @@
+---
+
+apache_vhost_http_wsgi_cors_vhost_name:
+apache_vhost_http_wsgi_cors_servername:
+apache_vhost_http_wsgi_cors_port:
+apache_vhost_http_wsgi_cors_docroot: '/opt/graphite/webapp'
+apache_vhost_http_wsgi_cors_wsgi_application_group: '__PERCENTAGE_SIGN{GLOBAL}'
+apache_vhost_http_wsgi_cors_wsgi_daemon_process: 'graphite'
+apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_processes: '5'
+apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_threads: '5'
+apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_display_name: '__PERCENTAGE_SIGN{GROUP}'
+apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_inactivity_timeout: '120' 
+apache_vhost_http_wsgi_cors_wsgi_import_script: '/opt/graphite/conf/graphite.wsgi'
+apache_vhost_http_wsgi_cors_wsgi_import_script_options_process_group: 'graphite'
+apache_vhost_http_wsgi_cors_wsgi_import_script_options_application_group: '__PERCENTAGE_SIGN{GLOBAL}'
+apache_vhost_http_wsgi_cors_wsgi_process_group: 'graphite'
+apache_vhost_http_wsgi_cors_wsgi_script_aliases_key: '/'
+apache_vhost_http_wsgi_cors_wsgi_script_aliases_value: '/opt/graphite/conf/graphite.wsgi'
+apache_vhost_http_wsgi_cors_headers_allow_origin: "*"
+apache_vhost_http_wsgi_cors_headers_allow_methods: "GET, OPTIONS, POST"
+apache_vhost_http_wsgi_cors_allow_headers: "origin, authorization, accept"
+apache_vhost_http_wsgi_cors_directories_path: "/media/"
+apache_vhost_http_wsgi_cors_directories_order: 'deny,allow'
+apache_vhost_http_wsgi_cors_directories_allow: 'from all'
+apache_vhost_http_wsgi_cors_serveraliases:
+apache_vhost_http_wsgi_cors_docroot_owner:
+apache_vhost_http_wsgi_cors_docroot_group:
+apache_vhost_http_wsgi_cors_apache_log_prefix:
+apache_vhost_http_wsgi_cors_log_level: 'warn'
+apache_vhost_http_wsgi_cors_apache_log_path: '/var/log/apache2'
+apache_vhost_http_wsgi_cors_rewrite_hostname:
+apache_vhost_http_wsgi_cors_proxy_name:
+apache_setup_vhost_dir: 
+    value:
+    comment: "This is OS specific, Ubuntu: '/etc/apache2/sites-available/', Centos: /etc/httpd/conf.d/"
+apache_setup_extended_status: 'On'
+apache_setup_keepalive: 'On'
+apache_setup_timeout: 300
+apache_setup_worker_maxclients: 500
+apache_setup_worker_maxsparethreads: 100

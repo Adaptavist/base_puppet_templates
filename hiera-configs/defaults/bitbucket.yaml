@@ -1,0 +1,108 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+bitbucket_host_name:
+    value: ""
+    comment: "Provide url to bitbucket e.g https://bitbucket.example.com (if apache in front), used if avst_wizard enabled "
+bitbucket_license: 
+    value: ""
+    comment: "Must be a valid bitbucket license, used if avst_wizard enabled"
+bitbucket_early_access:
+    value: "false"
+    comment: "Version to be installed is early access version"
+bitbucket_driver_location_path: 
+    value: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
+    comment: "Mysql driver location, must be accessible for user that runs the process"
+bitbucket_instance_name:
+    value: "bitbucket"
+    comment: "Service name for instance of bitbucket on the server"
+bitbucket_product_name:
+    value: "bitbucket"
+    comment: "From version 4.0.0 stash is called bitbucket. In case version is < 4.0.0 change this to stash"
+bitbucket_version: 
+    value: '4.0.0'
+    comment: "Version of bitbucket you woud like to install, must be a valid version, no validation done"
+bitbucket_context_path: 
+    value: ""
+    comment: "Context path for tomcat's server.xml"
+bitbucket_app_shutport: 
+    value: 8012
+    comment: "The tomcat shutdown port for the application"
+bitbucket_admin_user: 
+    value: "admin"
+    comment: "Administration user created via wizard, used if avst_wizard enabled"
+bitbucket_admin_pass: 
+    value: 
+    comment: "Administration user's password setup via wizard, used if avst_wizard enabled"
+bitbucket_admin_full_name: 
+    value: "Admin Admin"
+    comment: "Administrator's full name, used if avst_wizard enabled"
+bitbucket_admin_email: 
+    value: "example@example.com"
+    comment: "Administrators email address, used if avst_wizard enabled"
+bitbucket_app_instance_name:
+    value: "Stash"
+    comment: "Application instance name, used if avst_wizard enabled"
+bitbucket_database_name: 
+    value: "stash"
+    comment: "Database to connect stash to, used if avst_wizard enabled"
+bitbucket_database_user: 
+    value: "stash"
+    comment: "Database user to use for db connection, used if avst_wizard enabled"
+bitbucket_database_pass: 
+    value: 
+    comment: "Database user's password for db connection, used if avst_wizard enabled"
+bitbucket_database_url:
+    value: "localhost"
+    comment: "Database url for db connection, used if avst_wizard enabled"
+bitbucket_jvm_minimum_memory: 
+    value: '512m'
+    comment: "JVM minimum memory setup for the service"
+bitbucket_jvm_maximum_memory: 
+    value: '1024m'
+    comment: "JVM maximum memory setup for the service"
+bitbucket_jvm_max_perm_size: 
+    value: '256m'
+    comment: "JVM max perm size setup for the service"
+bitbucket_jvm_behavioral_options: 
+    value: ""
+    comment: "JVM tuning behavioral options"
+bitbucket_jvm_performance_options: 
+    value: ""
+    comment: "JVM tuning performance options"
+bitbucket_jvm_debugging_options: 
+    value: ""
+    comment: "JVM tuning debuging options"
+bitbucket_jvm_gc1_options: 
+    value: ""
+    comment: "JVM tuning gc1 options"
+bitbucket_jvm_custom_d_options: 
+    value: ""
+    comment: "JVM tuning custom options"
+bitbucket_avst_wizard: 
+    value: true
+    comment: "Enables avst wizard gem to complete bitbucket setup wizard, sets up license, admin user, database"
+bitbucket_crowd_server_url: 
+    value: ""
+    comment: "Accessible url of crowd instance with registered bitbucket to enable crowd sso"
+bitbucket_crowd_appname: 
+    value: "bitbucket"
+    comment: "Application name registered in crowd to integrate crowd sso to bitbucket"
+bitbucket_crowd_sso_enabled: 
+    value: false
+    comment: "Enables crowd sso integration"
+bitbucket_crowd_app_password:
+    value: ""
+    comment: "Crowd sso application password"
+bitbucket_manual_upstart_script:
+    value: "false"
+bitbucket_manual_service_script:
+    value: "false"
+bitbucket_is_mirror:
+    value: "false"
+    comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"
+
+
+

@@ -1,0 +1,48 @@
+---
+
+prefixes:
+  - docker_run_
+
+classes:
+  - docker_config::run_instance
+  - docker
+
+dependencies:
+  - docker
+  - docker_config
+  - apt
+  - stdlib
+
+docker_config::run_instance::instances:
+  '%{::docker_run_name}':
+    image: '%{::docker_run_image}'
+    command: '%{::docker_run_command}'
+    memory_limit: '%{::docker_run_memory_limit}'
+    cpuset: '%{::docker_run_cpuset}'
+    ports: '%{::docker_run_ports}'
+    expose: '%{::docker_run_expose}'
+    volumes: '%{::docker_run_volumes}'
+    links: '%{::docker_run_links}'
+    use_name: '%{::docker_run_use_name}'
+    running: '%{::docker_run_running}'
+    volumes_from: '%{::docker_run_volumes_from}'
+    net: '%{::docker_run_net}'
+    username: '%{::docker_run_username}'
+    hostname: '%{::docker_run_hostname}'
+    env: '%{::docker_run_env}'
+    env_file: '%{::docker_run_env_file}'
+    dns: '%{::docker_run_dns}'
+    dns_search: '%{::docker_run_dns_search}'
+    lxc_conf: '%{::docker_run_lxc_conf}'
+    restart_service: '%{::docker_run_restart_service}'
+    disable_network: '%{::docker_run_disable_network}'
+    privileged: '%{::docker_run_privileged}'
+    detach: '%{::docker_run_detach}'
+    extra_parameters: '%{::docker_run_extra_parameters}'
+    pull_on_start: '%{::docker_run_pull_on_start}'
+    depends: '%{::docker_run_depends}'
+    tty: '%{::docker_run_tty}'
+    socket_connect: '%{::docker_run_socket_connect}'
+    hostentries: '%{::docker_run_hostentries}'
+    restart: '%{::docker_run_restart}'
+

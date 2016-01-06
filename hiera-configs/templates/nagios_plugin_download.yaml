@@ -1,0 +1,21 @@
+---
+
+prefixes: 
+    - "nagios_plugin_download_"
+    - "nagios_plugin_source_"
+
+classes:
+  - nagios_config::download_plugins
+
+dependencies:
+  - nagios_config
+
+nagios_config::download_plugins::plugins:
+    "%{::nagios_plugin_download_name}":
+        user: "%{::nagios_plugin_download_user}"
+        group: "%{::nagios_plugin_download_group}"
+        gitrepo: "%{::nagios_plugin_source_gitrepo}"
+        plugin_url: "%{::nagios_plugin_source_plugin_url}" 
+        local_path: "%{::nagios_plugin_source_local_path}"
+        file_name: "%{::nagios_plugin_download_name}"
+

@@ -1,0 +1,9 @@
+---
+
+nagios_service_http_web_page_name:
+nagios_service_http_web_page_url:
+nagios_service_http_web_page_uri: '/'
+nagios_service_http_web_page_hostname:
+nagios_service_http_web_page_hostgroup_name: ''
+nagios_service_http_web_page_ensure: 'present'
+nagios_service_http_web_page_notification_interval: '0'

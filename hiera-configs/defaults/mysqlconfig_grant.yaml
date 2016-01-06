@@ -1,0 +1,10 @@
+---
+
+named_grant_name: #'avst_dr_restore@localhost/replication':
+named_option_option:
+    value: "GRANT"
+mysqlconfig_grant_privileges:
+    value: "ALL"
+named_table_table: '*.*'
+named_user_user:
+

@@ -1,0 +1,18 @@
+---
+
+prefixes:
+    - "replication_stunnel_log_"
+
+classes:
+    - replication
+
+dependencies:
+  - replication
+  - stunnel_config
+  - stunnel
+  - stdlib
+
+replication::stunnel_tunnels:
+    "%{::replication_stunnel_log_name}":
+        log_dest: "%{::replication_stunnel_log_log_dest}" #'/var/log/stunnel.log'
+        debug_level: "%{::replication_stunnel_log_debug_level}" #'0'

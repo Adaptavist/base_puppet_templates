@@ -1,0 +1,133 @@
+---
+
+prefixes: 
+    - "collectd_client_"
+
+classes:
+  - collectd::client  
+  - collectd::plugin::apache
+  - collectd::plugin::cpu
+  - collectd::plugin::disk
+  - collectd::plugin::df
+  - collectd::plugin::interface
+  - collectd::plugin::load
+  - collectd::plugin::memory
+  - collectd::plugin::users
+  - collectd::plugin::tcpconns
+
+dependencies:
+  - collectd
+  - stdlib
+  - concat
+  - yum
+  - puppi
+
+collectd::client::server_host: "%{::collectd_client_server_host}"
+collectd::client::server_port: "%{::collectd_client_server_port}"
+
+# list of jmx connections for collectd
+collectd::plugin::jmx::connections:
+    atlassian_jira:
+      service_url: "service:jmx:rmi:///jndi/rmi://localhost:17264/jmxrmi"
+      collect: 
+        - "classes"
+        - "compilation"
+        - "garbage_collector"
+        - "memory"
+        - "memory_pool"
+        - "catalina_thread_pool"
+        - "catalina_global_request_processor"
+
+# list of available mbeans for collectd
+collectd::plugin::jmx::mbeans:
+    # object listing available at
+    # http://docs.oracle.com/javase/7/docs/api/java/lang/management/package-frame.html
+
+    classes:
+      object_name: "java.lang:type=ClassLoading"
+      value:
+        type:            "gauge"
+        instance_prefix: "loaded_classes"
+        table:           false
+        attribute:       "LoadedClassCount"
+
+    compilation:
+      object_name:     "java.lang:type=Compilation"
+      value:
+        type:            "total_time_in_ms"
+        instance_prefix: "compilation_time"
+        table:           false
+        attribute:       "TotalCompilationTime"
+
+    garbage_collector:
+      object_name:     "java.lang:type=GarbageCollector,*"
+      instance_prefix: "gc-"
+      instance_from:   "name"
+      values:
+          - type:            "invocations"
+            table:           false
+            attribute:       "CollectionCount"
+          - type:            "total_time_in_ms"
+            instance_prefix: "collection_time"
+            table:           false
+            attribute:       "CollectionTime"
+
+    memory:
+      object_name:     "java.lang:type=Memory"
+      instance_prefix: "memory"
+      values:
+          - type:            "jmx_memory"
+            instance_prefix: "heap-"
+            table:           true
+            attribute:       "HeapMemoryUsage"
+          - type:            "jmx_memory"
+            instance_prefix: "nonheap-"
+            table:           true
+            attribute:       "NonHeapMemoryUsage"
+
+    memory_pool:
+      object_name:     "java.lang:type=MemoryPool,*"
+      instance_prefix: "memory_pool-"
+      instance_from:   "name"
+      value:
+        type:            "jmx_memory"
+        table:           true
+        attribute:       "Usage"
+
+    # a method to get tomcat mbeans described here:
+    # http://tomcat.apache.org/tomcat-7.0-doc/monitoring.html
+
+    catalina_global_request_processor:
+      object_name:     "Catalina:type=GlobalRequestProcessor,*"
+      instance_prefix: "request_processor-"
+      instance_from:   "name"
+      values:
+          - type:            "io_octets"
+            instance_prefix: "global"
+            table:           false
+            attributes:
+                - "bytesReceived"
+                - "bytesSent"
+          - type:            "total_requests"
+            instance_prefix: "global"
+            table:           false
+            attribute:       "requestCount"
+          - type:            "total_time_in_ms"
+            instance_prefix: "global-processing"
+            table:           false
+            attribute:       "processingTime"
+
+    catalina_thread_pool:
+      object_name:     "Catalina:type=ThreadPool,*"
+      instance_prefix: "request_processor-"
+      instance_from:   "name"
+      values:
+          - type:            "threads"
+            instance_prefix: "total"
+            table:           false
+            attribute:       "currentThreadCount"
+          - type:            "threads"
+            instance_prefix: "running"
+            table:           false
+            attribute:       "currentThreadsBusy"
+

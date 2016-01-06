@@ -1,0 +1,19 @@
+---
+
+prefixes: 
+    - "logstash_forwarder_server_"
+
+classes:
+  - logstash_forwarder_config
+
+dependencies:
+  - logstash_forwarder_config
+  - logstashforwarder
+  - stdlib
+  - concat
+  - logrotate
+
+# monitoring client setup
+logstash_forwarder_config::servers:
+  - "%{::logstash_forwarder_server_host_port}"
+

@@ -1,0 +1,21 @@
+---
+
+prefixes:
+  - apache_vhost_alias_
+  - apache_vhost_php_cgi_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::default_vhosts:
+  '%{::apache_vhost_php_cgi_name}':
+    aliases:
+      - alias: "%{::apache_vhost_alias_alias}"
+        path: "%{::apache_vhost_alias_path}"
+

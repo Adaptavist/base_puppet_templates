@@ -1,0 +1,20 @@
+---
+
+prefixes:
+  - docker_port_
+  - docker_run_
+
+classes:
+  - docker_config::run_instance
+  - docker
+
+dependencies:
+  - docker
+  - docker_config
+  - apt
+  - stdlib
+
+docker_config::run_instance::instances:
+  '%{::docker_run_name}':
+    ports: '%{::docker_port_port}'
+

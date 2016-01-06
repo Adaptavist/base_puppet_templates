@@ -1,0 +1,103 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+jira_host_name:
+    value: ""
+    comment: "Provide url to jira e.g https://jira.example.com (if apache in front), used if avst_wizard enabled "
+jira_license: 
+    value: ""
+    comment: "Must be a valid jira license, used if avst_wizard enabled"
+jira_early_access:
+    value: "false"
+    comment: "Version to be installed is early access version"
+jira_tarball_location_url_prefix:
+    value: 'http://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-'
+jira_tarball_location_url_postfix:
+    value: '.tar.gz'
+jira_driver_location_path: 
+    value: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
+    comment: "Mysql driver location, must be accessible for user that runs the process"
+jira_instance_name:  
+    value: "jira"
+    comment: "Service name for instance of jira on the server"
+jira_version: 
+    value: '6.3.6'
+    comment: "Version of jira you woud like to install, must be a valid version, no validation done"
+jira_context_path: 
+    value: ""
+    comment: "Context path for tomcat's server.xml"
+jira_app_shutport: 
+    value: 8012
+    comment: "The tomcat shutdown port for the application"
+jira_admin_user: 
+    value: "admin"
+    comment: "Administration user created via wizard, used if avst_wizard enabled"
+jira_admin_pass: 
+    value: 
+    comment: "Administration user's password setup via wizard, used if avst_wizard enabled"
+jira_admin_full_name: 
+    value: "Admin Admin"
+    comment: "Administrator's full name, used if avst_wizard enabled"
+jira_admin_email: 
+    value: "example@example.com"
+    comment: "Administrators email address, used if avst_wizard enabled"
+jira_app_instance_name:
+    value: "Jira"
+    comment: "Application instance name, used if avst_wizard enabled"
+jira_database_name: 
+    value: "jira"
+    comment: "Database to connect jira to, used if avst_wizard enabled"
+jira_database_user: 
+    value: "jira"
+    comment: "Database user to use for db connection, used if avst_wizard enabled"
+jira_database_pass: 
+    value: 
+    comment: "Database user's password for db connection, used if avst_wizard enabled"
+jira_jvm_minimum_memory: 
+    value: '512m'
+    comment: "JVM minimum memory setup for the service"
+jira_jvm_maximum_memory: 
+    value: '1024m'
+    comment: "JVM maximum memory setup for the service"
+jira_jvm_max_perm_size: 
+    value: '256m'
+    comment: "JVM max perm size setup for the service"
+jira_jvm_behavioral_options: 
+    value: ""
+    comment: "JVM tuning behavioral options"
+jira_jvm_performance_options: 
+    value: ""
+    comment: "JVM tuning performance options"
+jira_jvm_debugging_options: 
+    value: ""
+    comment: "JVM tuning debuging options"
+jira_jvm_gc1_options: 
+    value: ""
+    comment: "JVM tuning gc1 options"
+jira_jvm_custom_d_options: 
+    value: ""
+    comment: "JVM tuning custom options"
+jira_avst_wizard: 
+    value: true
+    comment: "Enables avst wizard gem to complete jira setup wizard, sets up license, admin user, database"
+jira_crowd_server_url: 
+    value: ""
+    comment: "Accessible url of crowd instance with registered jira to enable crowd sso"
+jira_crowd_appname: 
+    value: "jira"
+    comment: "Application name registered in crowd to integrate crowd sso to jira"
+jira_crowd_sso_enabled: 
+    value: false
+    comment: "Enables crowd sso integration"
+jira_crowd_app_password:
+    value: ""
+    comment: "Crowd sso application password"
+jira_manual_service_script:
+    value: "false"
+jira_manual_upstart_script:
+    value: "false"
+jira_is_mirror:
+    value: "false"
+    comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"

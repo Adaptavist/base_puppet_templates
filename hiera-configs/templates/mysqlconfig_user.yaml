@@ -1,0 +1,24 @@
+---
+
+prefixes:
+    - "mysqlconfig_user_"
+
+classes:
+    - database
+
+database::type: 'mysql'
+
+dependencies:
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+mysqlconfig::users:
+    "%{::mysqlconfig_user_name}":
+        ensure: "%{::mysqlconfig_user_ensure}"
+        password_hash: "%{::mysqlconfig_user_password_hash}"
+

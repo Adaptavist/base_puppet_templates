@@ -1,0 +1,12 @@
+---
+
+prefixes:
+  - docker_
+
+classes:
+  - docker
+
+dependencies:
+  - docker
+  - apt
+  - stdlib

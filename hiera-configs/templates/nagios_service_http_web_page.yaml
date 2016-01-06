@@ -1,0 +1,28 @@
+---
+
+prefixes:
+    - "nagios_service_http_web_page_"
+
+classes:
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::services:
+    "%{::nagios_service_http_web_page_name}_web_check":
+        check_command: "check_http_custom!--port=80 --onredirect=follow --hostname=%{::nagios_service_http_web_page_url} -u %{::nagios_service_http_web_page_uri}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_http_web_page_hostname}"
+        hostgroup_name:  "%{::nagios_service_http_web_page_hostgroup_name}"
+        service_description:  "Web Check: - http://%{::nagios_service_http_web_page_url}%{::nagios_service_http_web_page_uri}"
+        ensure: "%{::nagios_service_http_web_page_ensure}"
+        notification_interval: "%{::nagios_service_http_web_page_notification_interval}"
+    "%{::nagios_service_http_web_page_name}_check_pages":
+        check_command: "track_error_pages!%{::nagios_service_http_web_page_url}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_http_web_page_hostname}"
+        hostgroup_name:  "%{::nagios_service_http_web_page_hostgroup_name}"
+        service_description:  "track error page check: http://%{::nagios_service_http_web_page_url}%{::nagios_service_http_web_page_uri}"
+        ensure: "%{::nagios_service_http_web_page_ensure}"
+        notification_interval: "%{::nagios_service_http_web_page_notification_interval}"

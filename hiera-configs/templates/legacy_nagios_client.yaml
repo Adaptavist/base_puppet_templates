@@ -1,0 +1,14 @@
+---
+
+prefixes: 
+    - "legacy_nagios_client_"
+
+classes:
+  - nagiosclient
+
+dependencies:
+  - nagiosclient
+  - stdlib
+
+nagiosclient::nrpe_source: "%{::legacy_nagios_client_nrpe_source}"
+nagiosclient::nrpe_config_file: "%{::legacy_nagios_client_nrpe_config_file}"

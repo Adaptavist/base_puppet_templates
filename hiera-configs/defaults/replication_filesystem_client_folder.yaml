@@ -1,0 +1,18 @@
+---
+
+replication_filesystem_client_folder_name:
+    value: #'opt':
+replication_filesystem_client_folder_path: 
+    value: #'/opt'
+replication_filesystem_client_folder_comment: 
+    value:
+    comment: 'DR sync'
+replication_filesystem_client_folder_read_only:
+    value: 'no'
+replication_filesystem_client_folder_list:
+    value: 'yes'
+replication_filesystem_client_folder_uid:
+    value: 'root'
+replication_filesystem_client_folder_gid:
+    value: 'root'
+

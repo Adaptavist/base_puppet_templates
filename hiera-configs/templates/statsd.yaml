@@ -1,0 +1,29 @@
+---
+
+prefixes: 
+    - "statsd_"
+
+classes:
+  - statsd
+
+dependencies:
+  - statsd
+  - stdlib
+
+statsd::ensure: "%{::statsd_ensure}"
+statsd::node_module_dir: "%{::statsd_node_module_dir}"
+statsd::nodejs_bin: "%{::statsd_nodejs_bin}"
+statsd::dependencies: "%{::statsd_dependencies}"
+statsd::package_name: "%{::statsd_package_name}"
+statsd::package_provider: "%{::statsd_package_provider}"
+statsd::port: "%{::statsd_port}"
+statsd::address: "%{::statsd_address}"
+statsd::configfile: "%{::statsd_configfile}"
+statsd::logfile: "%{::statsd_logfile}"
+statsd::service_ensure: "%{::statsd_service_ensure}"
+statsd::backends:
+    - "%{::statsd_backend}"
+statsd::graphiteHost: "%{::statsd_graphite_host}"
+statsd::graphitePort: "%{::statsd_graphite_port}"
+statsd::flushInterval: "%{::statsd_flush_interval}"
+

@@ -1,0 +1,20 @@
+---
+
+prefixes: 
+    - "noconfigpkgs_"
+
+classes:
+  - noconfigpkgs
+
+required_facts:
+    - "noconfigpkgs_debian_package"
+
+dependencies:
+  - noconfigpkgs
+  - stdlib
+
+#install packages
+noconfigpkgs::default_packages:
+  Debian:
+    - "%{::noconfigpkgs_debian_package}"
+

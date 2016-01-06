@@ -1,0 +1,31 @@
+---
+:backends:
+  - eyaml
+  - yaml
+  - fragment
+
+:hierarchy:
+  - "%{hostname}"
+
+:logger: debug
+
+:yaml:
+  :datadir: /etc/puppet/hiera-compiled
+
+:eyaml:
+    :datadir: /etc/puppet/hiera-compiled
+    :extension: eyaml
+
+    # If using the pkcs7 encryptor (default)
+    :pkcs7_private_key: /var/opt/puppet/secure/keys/private_key.pkcs7.pem
+    :pkcs7_public_key:  /var/opt/puppet/secure/keys/public_key.pkcs7.pem
+
+:fragment:
+  :datadir: /etc/secrets/secrets/
+  :extensions:
+    - yaml
+    - eyaml
+  :inputdirs:
+    - /etc/puppet/hiera/
+  :fragments:
+    - secrets

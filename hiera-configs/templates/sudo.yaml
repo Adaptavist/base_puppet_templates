@@ -1,0 +1,11 @@
+---
+
+
+prefixes:
+    - sudo_
+
+classes:
+    - sudo
+
+dependencies:
+  - sudo

@@ -1,0 +1,8 @@
+---
+
+dashing_instance_name:
+dashing_instance_targz: "false"
+dashing_instance_gitrepo: "false"
+dashing_instance_dashing_port: '3030'
+dashing_instance_dashing_dir: "$dashing::dashing_basepath/$name"
+dashing_instance_strip_parent_dir: 'true'

@@ -1,0 +1,33 @@
+---
+
+replication_stunnel_name: 
+    value: 
+replication_stunnel_accept_host_port:
+    value: '127.0.0.1:13306'
+replication_stunnel_connect_host_port:
+    value:
+replication_stunnel_ca_file: 
+    value: '/etc/stunnel/stunnel.pem'
+replication_stunnel_certificate:
+    value: '/etc/stunnel/stunnel.pem'
+replication_stunnel_private_key:
+    value: "false"
+replication_stunnel_verify:
+    value: '2'
+replication_stunnel_chroot:
+    value: '/var/lib/stunnel4/'
+replication_stunnel_user:
+    value: 'stunnel4'
+replication_stunnel_group:
+    value: 'stunnel4'
+replication_stunnel_pid_file:
+    value: '/stunnel4.pid'
+replication_stunnel_ssl_option:
+    value: 'NO_SSLv2'
+replication_stunnel_client:
+    value: "true"
+replication_stunnel_retry:
+    value: "true"
+replication_stunnel_foreground:
+    value: "false"
+

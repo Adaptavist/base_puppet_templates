@@ -1,0 +1,10 @@
+---
+
+graphite_gr_web_server: 
+    value: 'none'
+    comment: "by default set to none, include also apache_vhost_wsgi_cors to setup apache"
+graphite_gr_group: 'adapta'
+graphite_gr_user: 'adapta'
+graphite_django_version: '1.5'
+graphite_django_provider: 'pip'
+

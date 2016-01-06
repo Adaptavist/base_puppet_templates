@@ -1,0 +1,9 @@
+---
+
+nfs_server_service: 'nfs-kernel-server'
+nfs_server_share_clients: 
+nfs_server_share_path:
+nfs_server_bind_path:
+nfs_server_share_owner: 'hosting'
+nfs_server_share_group: 'hosting'
+nfs_server_share_mode: '0755'

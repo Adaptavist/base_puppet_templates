@@ -1,0 +1,64 @@
+---
+
+prefixes:
+  - apache_vhost_http_cors_
+  - apache_setup_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - dir
+
+apache::vhost_dir: '%{::apache_setup_vhost_dir}'
+apache::extended_status: '%{::apache_setup_extended_status}' #'On'
+apache::keepalive: '%{::apache_setup_keepalive}' #'On'
+apache::timeout: '%{::apache_setup_timeout}'
+apache::mod::worker::maxclients: '%{::apache_setup_worker_maxclients}'
+apache::mod::worker::maxsparethreads: '%{::apache_setup_worker_maxsparethreads}'
+
+webserver::default_vhosts:
+  '%{::apache_vhost_http_cors_vhost_name}':
+    servername: "%{::apache_vhost_http_cors_servername}"
+    serveraliases:
+      - '%{::apache_vhost_http_cors_serveraliases}'
+    docroot: "%{::apache_vhost_http_cors_docroot}"
+    port: "%{::apache_vhost_http_cors_port}"
+    docroot_owner: "%{::apache_vhost_http_cors_docroot_owner}"
+    docroot_group: "%{::apache_vhost_http_cors_docroot_group}"
+    directories:
+        path: "%{::apache_vhost_http_cors_path}"
+        provider: "%{::apache_vhost_http_cors_provider}"
+    proxy_pass: 
+        - "path": "%{::apache_vhost_http_cors_proxy_pass_path}"
+          "url": "%{::apache_vhost_http_cors_proxy_pass_url}"
+    log_level: '%{::apache_vhost_http_cors_log_level}' #'warn'
+    access_log_syslog: '%{::apache_vhost_http_cors_apache_log_path}/%{::apache_vhost_http_cors_apache_log_prefix}-vhost-access.log'
+    access_log_format: 'proxy'
+    error_log_syslog: '%{::apache_vhost_http_cors_apache_log_path}/%{::apache_vhost_http_cors_apache_log_prefix}-vhost-error.log'
+    rewrites:
+      - comment: "Make everything use a single hostname"
+        rewrite_cond:
+          - '___{HTTP_HOST}  !^%{::apache_vhost_http_cors_rewrite_hostname}$ [NC]' #LIVE
+          - '___{HTTP_HOST}  !^$'
+        rewrite_rule:
+        - '^/(.*)          %{::apache_vhost_http_cors_proxy_name}/$1 [L,R=302]'
+    require: "%{::apache_vhost_http_cors_require}"
+    headers:
+        - 'set Access-Control-Allow-Origin "%{::apache_vhost_http_cors_headers_allow_origin}"'
+        - 'set Access-Control-Allow-Methods "%{::apache_vhost_http_cors_headers_allow_methods}"'
+        - 'set Access-Control-Allow-Headers "%{::apache_vhost_http_cors_allow_headers}"'
+    custom_fragment:  "
+LogFormat \"%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PERCENTAGE_SIGN{User-Agent}i\\\"
+%% %v:%p (%V) %A %a \\\"__PERCENTAGE_SIGN{X-Forwarded-For}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Port}i\\\"
+\\\"__PERCENTAGE_SIGN{X-AUSERNAME}o\\\" \\\"__PERCENTAGE_SIGN{X-ASESSIONID}o\\\" %I %O %D %T\" proxy \n
+\n
+"

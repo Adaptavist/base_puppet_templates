@@ -1,0 +1,24 @@
+---
+
+prefixes: 
+    - "collectd_server_"
+
+classes:
+  - collectd::server
+
+dependencies:
+  - collectd
+  - stdlib
+  - concat
+  - yum
+  - puppi
+
+collectd::server::listen_host: "%{::collectd_server_listen_host}"
+collectd::server::listen_port: "%{::collectd_server_listen_port}"
+collectd::server::write_graphite: "%{::collectd_server_write_graphite}"
+collectd::server::graphite_host: "%{::collectd_server_graphite_host}"
+collectd::server::graphite_port: "%{::collectd_server_graphite_port}"
+collectd::server::graphite_prefix: "%{::collectd_server_graphite_prefix}"
+collectd::server::graphite_postfix: "%{::collectd_server_graphite_postfix}"
+collectd::server::graphite_protocol: "%{::collectd_server_graphite_protocol}"
+

@@ -1,0 +1,14 @@
+---
+
+prefixes:
+    - yum_
+
+classes:
+    - yum
+
+dependencies:
+  - yum
+  - puppi
+
+yum::extrarepo:
+  - "%{::yum_exrearepo}"

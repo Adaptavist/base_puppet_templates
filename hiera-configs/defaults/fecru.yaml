@@ -1,0 +1,90 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+fecru_host_name:
+    value: ""
+    comment: "Provide url to fecru e.g fecru.example.com (if apache in front), used if avst_wizard enabled "
+fecru_license: 
+    value: ""
+    comment: "Must be a valid fecru license, used if avst_wizard enabled"
+fecru__early_access:
+    value: "false"
+    comment: "Version to be installed is early access version"
+fecru_driver_location_path: 
+    value: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
+    comment: "Mysql driver location, must be accessible for user that runs the process"
+fecru_instance_name:  
+    value: "fecru"
+    comment: "Service name for instance of fecru on the server"
+fecru_version: 
+    value: '5.2.5'
+    comment: "Version of fecru you woud like to install, must be a valid version, no validation done"
+fecru_context_path: 
+    value: ""
+    comment: "Context path for tomcat's server.xml"
+fecru_app_shutport: 
+    value: 8012
+    comment: "The tomcat shutdown port for the application"
+fecru_admin_user: 
+    value: "admin"
+    comment: "Administration user created via wizard, used if avst_wizard enabled"
+fecru_admin_pass: 
+    value: 
+    comment: "Administration user's password setup via wizard, used if avst_wizard enabled"
+fecru_database_name: 
+    value: "fecru"
+    comment: "Database to connect fecru to, used if avst_wizard enabled"
+fecru_database_user: 
+    value: "fecru"
+    comment: "Database user to use for db connection, used if avst_wizard enabled"
+fecru_database_pass: 
+    value: 
+    comment: "Database user's password for db connection, used if avst_wizard enabled"
+fecru_jvm_minimum_memory: 
+    value: '512m'
+    comment: "JVM minimum memory setup for the service"
+fecru_jvm_maximum_memory: 
+    value: '1024m'
+    comment: "JVM maximum memory setup for the service"
+fecru_jvm_max_perm_size: 
+    value: '256m'
+    comment: "JVM max perm size setup for the service"
+fecru_jvm_behavioral_options: 
+    value: ""
+    comment: "JVM tuning behavioral options"
+fecru_jvm_performance_options: 
+    value: ""
+    comment: "JVM tuning performance options"
+fecru_jvm_debugging_options: 
+    value: ""
+    comment: "JVM tuning debuging options"
+fecru_jvm_gc1_options: 
+    value: ""
+    comment: "JVM tuning gc1 options"
+fecru_jvm_custom_d_options: 
+    value: ""
+    comment: "JVM tuning custom options"
+fecru_avst_wizard: 
+    value: true
+    comment: "Enables avst wizard gem to complete fecru setup wizard, sets up license, admin user, database"
+fecru_crowd_server_url: 
+    value: ""
+    comment: "Accessible url of crowd instance with registered fecru to enable crowd sso"
+fecru_crowd_appname: 
+    value: "fecru"
+    comment: "Application name registered in crowd to integrate crowd sso to fecru"
+fecru_crowd_sso_enabled: 
+    value: false
+    comment: "Enables crowd sso integration"
+fecru_crowd_app_password:
+    value: ""
+    comment: "Crowd sso application password"
+fecru_manual_service_script:
+    value: "false"
+fecru_manual_upstart_script:
+    value: "false"
+fecru_is_mirror:
+    value: "false"
+    comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"

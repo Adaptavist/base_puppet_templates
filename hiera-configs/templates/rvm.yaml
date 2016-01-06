@@ -1,0 +1,19 @@
+---
+
+prefixes: 
+    - "rvm_"
+
+classes:
+  - rvm
+
+dependencies:
+  - rvm
+  - stdlib
+
+rvm::system_rubies:
+  "%{::rvm_default_version}":
+    default_use: true
+  "%{::rvm_version}": {}
+
+rvm::system_user:
+  - "%{::rvm_system_user}"

@@ -1,0 +1,15 @@
+---
+
+prefixes: 
+    - "fpm_"
+
+classes:
+  - fpm
+
+dependencies:
+  - fpm
+  - rvm
+
+fpm::ruby_versions: 
+  - "%{::fpm_version}"
+

@@ -1,0 +1,66 @@
+---
+
+prefixes: 
+    - "confluence_"
+    - "atlassian_"
+
+required_facts:
+    - "confluence_instance_name"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::hosting_user: "%{::atlassian_hosting_user}" #'hosting'
+avstapp::hosting_group: "%{::atlassian_hosting_group}" #'hosting'
+
+avstapp::conf:
+  "%{::confluence_instance_name}":
+    is_mirror: "%{::confluence_is_mirror}" # false
+    version: "%{::confluence_version}" # '5.2.5'
+    application_type: confluence
+    context_path: "%{::confluence_context_path}"
+    shutport: "%{::confluence_app_shutport}"
+    tarball_location_url: "http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-%{::confluence_version}.tar.gz"
+    base_url: "%{::confluence_host_name}"
+    avst_wizard: "%{::confluence_avst_wizard}"
+    manual_service_script: "%{::confluence_manual_service_script}"
+    manual_upstart_script: "%{::confluence_manual_upstart_script}"
+    early_access: "%{::confluence_early_access}"
+    avst_wizard_properties:
+      license: "%{::confluence_license}"
+      admin_user: "%{::confluence_admin_user}"
+      admin_pass: "%{::confluence_admin_pass}"
+      admin_full_name: "%{::confluence_admin_full_name}"
+      admin_email: "%{::confluence_admin_email}"
+      database_url: "jdbc:mysql://localhost/%{::confluence_database_name}?sessionVariables=storage_engine%3DInnoDB"
+      database_user: "%{::confluence_database_user}"
+      database_pass: "%{::confluence_database_pass}"
+    drivers:
+      location_path:
+        - "%{::confluence_driver_location_path}"
+    custom:
+      CROWD_SERVER_URL: '%{::confluence_crowd_server_url}'
+      CROWD_APP_NAME: '%{::confluence_crowd_appname}'
+      CROWD_APP_PASSWORD: '%{::confluence_crowd_app_password}'
+      CROWD_SSO_ENABLE: '%{::confluence_crowd_sso_enabled}'
+    java_flags:
+        JVM_MINIMUM_MEMORY: "%{::confluence_jvm_minimum_memory}" #'512m'
+        JVM_MAXIMUM_MEMORY: "%{::confluence_jvm_maximum_memory}" #'1024m'
+        JVM_MAX_PERM_SIZE: "%{::confluence_jvm_max_perm_size}" #'256m'
+        JAVA_ENDORSED_DIRS: "/opt/%{::confluence_instance_name}/install/endorsed"
+        JAVA_BEHAVIORAL_OPTIONS: "%{::confluence_jvm_behavioral_options}"
+        JAVA_PERFORMANCE_OPTIONS: "%{::confluence_jvm_performance_options}"
+        JAVA_DEBUGING_OPTIONS: "%{::confluence_jvm_debugging_options}"
+        JAVA_GC1_OPTIONS: "%{::confluence_jvm_gc1_options}"
+        JAVA_CUSTOM_D_OPTIONS: "%{::confluence_jvm_custom_d_options}"
+

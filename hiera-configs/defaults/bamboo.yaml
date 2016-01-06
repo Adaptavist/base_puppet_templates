@@ -1,0 +1,100 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+bamboo_host_name:
+    value: ""
+    comment: "Provide url to bamboo e.g https://bamboo.example.com (if apache in front), used if avst_wizard enabled "
+bamboo_license:
+    value: ""
+    comment: "Must be a valid bamboo license, used if avst_wizard enabled"
+
+bamboo_early_access:
+    value: "false"
+    comment: "Version to be installed is early access version"
+bamboo_driver_location_path: 
+    value: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
+    comment: "Mysql driver location, must be accessible for user that runs the process"
+bamboo_instance_name:  
+    value: "bamboo"
+    comment: "Service name for instance of bamboo on the server"
+bamboo_version: 
+    value: '5.2.5'
+    comment: "Version of bamboo you woud like to install, must be a valid version, no validation done"
+bamboo_context_path: 
+    value: ""
+    comment: "Context path for tomcat's server.xml"
+bamboo_app_shutport: 
+    value: 8012
+    comment: "The tomcat shutdown port for the application"
+bamboo_admin_user: 
+    value: "admin"
+    comment: "Administration user created via wizard, used if avst_wizard enabled"
+bamboo_admin_pass: 
+    value: 
+    comment: "Administration user's password setup via wizard, used if avst_wizard enabled"
+bamboo_admin_full_name: 
+    value: "Admin Admin"
+    comment: "Administrator's full name, used if avst_wizard enabled"
+bamboo_admin_email: 
+    value: "example@example.com"
+    comment: "Administrators email address, used if avst_wizard enabled"
+bamboo_app_instance_name:
+    value: "Bamboo"
+    comment: "Application instance name, used if avst_wizard enabled"
+bamboo_database_name: 
+    value: "bamboo"
+    comment: "Database to connect bamboo to, used if avst_wizard enabled"
+bamboo_database_user: 
+    value: "bamboo"
+    comment: "Database user to use for db connection, used if avst_wizard enabled"
+bamboo_database_pass: 
+    value: 
+    comment: "Database user's password for db connection, used if avst_wizard enabled"
+bamboo_jvm_minimum_memory: 
+    value: '512m'
+    comment: "JVM minimum memory setup for the service"
+bamboo_jvm_maximum_memory: 
+    value: '1024m'
+    comment: "JVM maximum memory setup for the service"
+bamboo_jvm_max_perm_size: 
+    value: '256m'
+    comment: "JVM max perm size setup for the service"
+bamboo_jvm_behavioral_options: 
+    value: ""
+    comment: "JVM tuning behavioral options"
+bamboo_jvm_performance_options: 
+    value: ""
+    comment: "JVM tuning performance options"
+bamboo_jvm_debugging_options: 
+    value: ""
+    comment: "JVM tuning debuging options"
+bamboo_jvm_gc1_options: 
+    value: ""
+    comment: "JVM tuning gc1 options"
+bamboo_jvm_custom_d_options: 
+    value: ""
+    comment: "JVM tuning custom options"
+bamboo_avst_wizard: 
+    value: true
+    comment: "Enables avst wizard gem to complete bamboo setup wizard, sets up license, admin user, database"
+bamboo_crowd_server_url: 
+    value: ""
+    comment: "Accessible url of crowd instance with registered bamboo to enable crowd sso"
+bamboo_crowd_appname: 
+    value: "bamboo"
+    comment: "Application name registered in crowd to integrate crowd sso to bamboo"
+bamboo_crowd_sso_enabled: 
+    value: false
+    comment: "Enables crowd sso integration"
+bamboo_crowd_app_password:
+    value: ""
+    comment: "Crowd sso application password"
+bamboo_manual_upstart_script:
+    value: "false"
+bamboo_manual_service_script:
+    value: "false"
+bamboo_is_mirror:
+    value: "false"
+    comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"

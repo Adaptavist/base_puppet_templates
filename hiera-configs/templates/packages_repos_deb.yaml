@@ -1,0 +1,25 @@
+---
+
+prefixes:
+    - "packages_repos_"
+
+classes:
+    - packages_repos
+
+dependencies:
+  - packages_repos
+  - apt
+  - yum
+  - puppi
+  - stdlib
+
+packages_repos::repos:
+  Debian:
+    "%{::packages_repos_name}":
+      location: "%{::packages_repos_location}"
+      repos: "%{::packages_repos_repos_path}"
+      key: "%{::packages_repos_key}"
+      include_src: "%{::packages_repos_include_src}"
+      release: "%{::packages_repos_release}"
+      key_content: "%{::packages_repos_key_content}"
+

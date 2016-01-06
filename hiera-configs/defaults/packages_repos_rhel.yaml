@@ -1,0 +1,21 @@
+---
+
+packages_repos_name:
+    value: 
+    comment: "Repository name"
+packages_repos_base_url:
+    value: 
+    comment: "URL to remote repo"
+packages_repos_description: 
+    value: "Custom repo"
+    comment: "Repository description"
+packages_repos_enabled:
+    value: 1
+    comment: "Enable the repo"
+packages_repos_gpgcheck:
+    value: 0
+    comment: "Checking gpg enabled"
+packages_repos_priority: 
+    value: 1
+    comment: "Priority for lookup"
+

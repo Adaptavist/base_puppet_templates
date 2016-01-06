@@ -1,0 +1,49 @@
+---
+
+apache_setup_extended_status: 'On'
+apache_setup_keepalive: 'On'
+apache_setup_timeout: 300
+apache_setup_worker_maxclients: 500
+apache_setup_worker_maxsparethreads: 100
+
+vhost_https_atlassian_servername:
+    value: 
+    comment: "Servername for vhost"
+vhost_https_atlassian_serveraliases:
+    value: 
+    comment: "Server alias for vhost"
+vhost_https_atlassian_rewrite_hostname:
+    value: 
+    comment: "rewrite_cond url"
+vhost_https_atlassian_proxy_name:
+    value: 
+    comment: "rewrite_rule destination url"
+
+vhost_https_atlassian_vhost_name: 
+    value: 'default-https'
+    comment: "Name of the vhost"
+vhost_https_atlassian_apache_log_prefix: 
+    value: 'adaptavist'
+    comment: "Log file prexif, location: '/var/log/apache2/<prefix>vhost-error.log'"
+vhost_https_atlassian_ssl_key:
+    value:   '/etc/puppet/files/ssl/certs/wildcard2014.key'
+    comment: "Full path to SSL certificate file"
+vhost_https_atlassian_ssl_cert:
+    value:    '/etc/puppet/files/ssl/certs/wildcard2014.crt'
+    comment: "Full path to SSL key file"
+vhost_https_atlassian_ssl_chain:
+    value:  '/etc/puppet/files/ssl/certs/wildcard_int2014.pem'
+    comment: "Full path to SSL chain file"
+
+vhost_https_atlassian_proxy_connection_timeout:
+    value:  '30'
+    comment: "Proxy connection timeout for ProxyPass"
+vhost_https_atlassian_proxy_timeout: 
+    value:  '300'
+    comment: "Proxy timeout for ProxyPass"
+vhost_https_atlassian_proxy_context_path: 
+    value: '/'
+    comment: "Context path for ProxyPass"
+connector_tomcat_port: 
+    value: '8090'
+    comment: "ProxyPass setup to localhost port"

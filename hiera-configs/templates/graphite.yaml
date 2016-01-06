@@ -1,0 +1,19 @@
+---
+
+prefixes: 
+    - "graphite_"
+
+classes:
+  - graphite
+
+dependencies:
+  - graphite
+  - stdlib
+
+graphite::gr_web_server: "%{::graphite_gr_web_server}" #by default set to none, include also apache_vhost_wsgi_cors to setup apache
+graphite::gr_group: "%{::graphite_gr_group}"
+graphite::gr_user: "%{::graphite_gr_user}"
+graphite::django_version: "%{::graphite_django_version}"
+graphite::django_provider: "%{::graphite_django_provider}"
+
+

@@ -1,0 +1,6 @@
+---
+
+nagios_server_contact_group_name:
+nagios_server_contact_group_ensure: 'present'
+nagios_server_contact_group_alias:
+nagios_server_contact_group_members:

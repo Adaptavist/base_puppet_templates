@@ -1,0 +1,34 @@
+---
+
+kibana4_package_ensure: '4.0.0-linux-x64'
+kibana4_package_name: 'kibana'
+kibana4_package_provider: 'archive'
+kibana4_package_download_url:
+    value: "false"
+    comment: 'In case package_provider is set to package, provide url'
+kibana4_es_download_site_url: 'https://download.elasticsearch.org'
+kibana4_service_ensure: true
+kibana4_service_enable: true
+kibana4_service_name: 'kibana4'
+kibana4_manage_user: true
+kibana4_kibana4_group: 'kibana4'
+kibana4_kibana4_gid: "1031"
+kibana4_kibana4_user: 'kibana4'
+kibana4_kibana4_uid: '1031'
+kibana4_install_dir: '/opt'
+kibana4_symlink: true
+kibana4_symlink_name: "/opt/kibana4"
+kibana4_port: '5601'
+kibana4_host: '0.0.0.0'
+kibana4_elasticsearch_url: 'http://localhost:9200'
+kibana4_elasticsearch_preserve_host: true
+kibana4_kibana_index: '.kibana'
+kibana4_default_app_id: 'discover'
+kibana4_request_timeout: '300000'
+kibana4_shard_timeout: '0'
+kibana4_verify_ssl: false
+kibana4_ca: '/path/to/your/CA.pem'
+kibana4_ssl_key_file: '/path/to/your/server.key'
+kibana4_ssl_cert_file: '/path/to/your/server.crt'
+kibana4_pid_file: '/var/run/kibana.pid'
+

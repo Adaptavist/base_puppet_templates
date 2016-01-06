@@ -1,0 +1,10 @@
+---
+
+nagios_server_service_name:
+nagios_server_service_check_command:
+nagios_server_service_use: ''
+nagios_server_service_host_name: ''
+nagios_server_service_hostgroup_name: ''
+nagios_server_service_service_description:
+nagios_server_service_ensure: 'present'
+nagios_server_service_notification_interval: '0'

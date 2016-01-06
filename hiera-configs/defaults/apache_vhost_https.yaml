@@ -1,0 +1,8 @@
+---
+
+apache_vhost_http_vhost_name:
+apache_vhost_https_ssl_cert:
+apache_vhost_https_ssl_key:
+apache_vhost_https_ssl_chain:
+
+

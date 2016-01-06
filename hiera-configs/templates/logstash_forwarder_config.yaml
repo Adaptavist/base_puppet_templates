@@ -1,0 +1,32 @@
+---
+
+prefixes: 
+    - "logstash_forwarder_config_"
+
+classes:
+  - logstash_forwarder_config
+
+dependencies:
+  - logstash_forwarder_config
+  - logstashforwarder
+  - stdlib
+  - concat
+  - logrotate
+
+logstash_forwarder_config::servers:
+  - "%{::logstash_forwarder_config_host_port}"
+
+logstash_forwarder_config::files:
+   "%{::logstash_forwarder_config_file_name}":
+    paths: 
+      - "%{::logstash_forwarder_config_file_path}"
+    fields:
+      'type': "%{::logstash_forwarder_config_file_field}"
+
+# monitoring client setup
+logstash_forwarder_config::ssl_key: "%{::logstash_forwarder_config_ssl_key}"
+logstash_forwarder_config::ssl_ca_path: "%{::logstash_forwarder_config_ssl_ca_path}"
+logstash_forwarder_config::ssl_certificate: "%{::logstash_forwarder_config_ssl_certificate}"
+logstash_forwarder_config::package_url: "%{::logstash_forwarder_config_package_url}"
+logstash_forwarder_config::use_ssl: "%{::logstash_forwarder_config_use_ssl}"
+

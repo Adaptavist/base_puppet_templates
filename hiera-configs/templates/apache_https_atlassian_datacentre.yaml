@@ -1,0 +1,121 @@
+---
+
+prefixes:
+  - vhost_https_atlassian_datacentre_
+  - connector_
+  - apache_setup_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - auth_basic
+  - authn_file
+  - authz_groupfile
+  - authz_user
+  - autoindex
+  - cache
+  - cgid
+  - dav
+  - dav_svn
+  - deflate
+  - dir
+  - cache_disk
+  - env
+  - headers
+  - negotiation
+  - proxy
+  - proxy_http
+  - proxy_balancer
+  - slotmem_shm
+  - lbmethod_byrequests
+  - reqtimeout
+  - rewrite
+  - setenvif
+
+## possible additions to log file - \"%{NODEID}C\"        \"%{Set-Cookie}o\"      \"%{BALANCER_SESSION_STICKY}e\"           \"%{BALANCER_SESSION_ROUTE}e\"       \"%{BALANCER_WORKER_ROUTE}e\"         \"%{BALANCER_ROUTE_CHANGED}e\"
+
+ #set the apache global settings
+apache::extended_status: '%{::apache_setup_extended_status}' #'On'
+apache::keepalive: '%{::apache_setup_keepalive}' #'On'
+apache::timeout: '%{::apache_setup_timeout}'
+apache::mod::worker::maxclients: '%{::apache_setup_worker_maxclients}'
+apache::mod::worker::maxsparethreads: '%{::apache_setup_worker_maxsparethreads}'
+
+webserver::default_vhosts:
+  '%{::vhost_https_atlassian_datacentre_vhost_name}':
+    servername: '%{::vhost_https_atlassian_datacentre_servername}'
+    serveraliases:
+      - '%{::vhost_https_atlassian_datacentre_serveraliases}'
+    port: 443
+    docroot: '/nonexistant'
+    log_level: 'warn'
+    access_log_syslog: '/var/log/apache2/%{::vhost_https_atlassian_datacentre_apache_log_prefix}-vhost-access.log'
+    access_log_format: 'proxy'
+    error_log_syslog: '/var/log/apache2/%{::vhost_https_atlassian_datacentre_apache_log_prefix}-vhost-error.log'
+    ssl: true
+    ssl_protocol: 'All -SSLv2 -SSLv3'
+    # SSLCompression
+    ssl_cert: '%{::vhost_https_atlassian_datacentre_ssl_cert}'
+    ssl_key: '%{::vhost_https_atlassian_datacentre_ssl_key}'
+    ssl_chain: '%{::vhost_https_atlassian_datacentre_ssl_chain}'
+    rewrites:
+      - comment: "Make everything use a single hostname"
+        rewrite_cond:
+          - '___{HTTP_HOST}  !^%{::vhost_https_atlassian_datacentre_rewrite_hostname}$ [NC]' #LIVE
+          - '___{HTTP_HOST}  !^$'
+        rewrite_rule:
+        - '^/(.*)          https://%{::vhost_https_atlassian_datacentre_proxy_name}/$1 [L,R=302]'
+    custom_fragment:  "AddType text/css .css \n
+AddType text/javascript .js \n
+AddOutputFilterByType DEFLATE text/plain \n
+AddOutputFilterByType DEFLATE text/html \n
+AddOutputFilterByType DEFLATE text/xml \n
+AddOutputFilterByType DEFLATE text/css \n
+AddOutputFilterByType DEFLATE application/json \n
+AddOutputFilterByType DEFLATE application/xml \n
+AddOutputFilterByType DEFLATE application/xhtml+xml \n
+AddOutputFilterByType DEFLATE application/rss+xml \n
+AddOutputFilterByType DEFLATE application/javascript \n
+AddOutputFilterByType DEFLATE application/x-javascript \n
+Header append Vary User-Agent env=!dont-vary \n
+BrowserMatch ^Mozilla/4 gzip-only-text/html \n
+BrowserMatch ^Mozilla/4\\.0[678] no-gzip \n
+BrowserMatch \\bMSIE !no-gzip !gzip-only-text/html \n
+LogFormat \"%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PERCENTAGE_SIGN{User-Agent}i\\\"
+%% %v:%p (%V) %A %a \\\"__PERCENTAGE_SIGN{X-Forwarded-For}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Port}i\\\"
+\\\"__PERCENTAGE_SIGN{X-AUSERNAME}o\\\" \\\"__PERCENTAGE_SIGN{X-ASESSIONID}o\\\" %I %O %D %T\" proxy \n
+\n
+ProxyErrorOverride Off \n
+ProxyPreserveHost   On \n
+
+## Atlassian \n
+Header add Set-Cookie \"ROUTEID=.__PERCENTAGE_SIGN{BALANCER_WORKER_ROUTE}e; path=/\" env=BALANCER_ROUTE_CHANGED \n
+\n
+## Configure Proxy balancer 'data-center' \n
+<Proxy balancer://data-center> \n
+  BalancerMember %{::vhost_https_atlassian_datacentre_node2} route=node2 timeout=%{::vhost_https_atlassian_datacentre_proxy_timeout} \n
+  BalancerMember %{::vhost_https_atlassian_datacentre_node1} route=node1 timeout=%{::vhost_https_atlassian_datacentre_proxy_timeout} \n
+  ProxySet stickysession=ROUTEID \n
+</Proxy> \n
+ProxyPass          %{::vhost_https_atlassian_datacentre_proxy_context_path}   balancer://data-center/ \n
+ProxyPassReverse    %{::vhost_https_atlassian_datacentre_proxy_context_path}  balancer://data-center/ \n 
+\n
+## Cache static assets \n
+# Needs htcacheclean running to keep disk usage from always growing \n
+# Memory cache is not to be preferred: https://bugzilla.redhat.com/show_bug.cgi?id=493458 \n
+# \"/s\" and \"/static\" is where Confluence, JIRA etc. serves \"static\" stuff. Instruct Apache to cache it: \n
+CacheRoot   /var/cache/apache2/mod_cache_disk/ \n
+CacheEnable disk /s \n
+CacheEnable disk /static \n
+CacheIgnoreHeaders Set-Cookie \n
+SSLCompression    On\n
+"

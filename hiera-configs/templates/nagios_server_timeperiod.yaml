@@ -1,0 +1,23 @@
+---
+
+prefixes: 
+    - "nagios_server_timeperiod_"
+
+classes:
+  - nagios::server
+
+dependencies:
+  - nagios
+
+nagios::server::timeperiods:
+    "%{::nagios_server_timeperiod_name}":
+        alias: "%{::nagios_server_timeperiod_alias}"
+        sunday: "%{::nagios_server_timeperiod_sunday}"
+        monday: "%{::nagios_server_timeperiod_monday}"
+        tuesday: "%{::nagios_server_timeperiod_tuesday}"
+        wednesday: "%{::nagios_server_timeperiod_wednesday}"
+        thursday: "%{::nagios_server_timeperiod_thursday}"
+        friday: "%{::nagios_server_timeperiod_friday}"
+        saturday: "%{::nagios_server_timeperiod_saturday}"
+        ensure: "%{::nagios_server_timeperiod_ensure}"
+

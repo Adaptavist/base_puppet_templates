@@ -1,0 +1,16 @@
+---
+
+prefixes: 
+    - "kmod_"
+
+classes:
+  - kmod_config
+
+dependencies:
+  - kmod_config
+  - kmod
+
+kmod_config::blacklist:
+   "%{::kmod_blacklist}":
+       ensure: 'present'
+

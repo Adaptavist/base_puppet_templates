@@ -1,0 +1,15 @@
+---
+
+prefixes: 
+    - "legacy_nagios_client_custom_plugin_"
+
+classes:
+  - nagiosclient
+
+dependencies:
+  - nagiosclient
+  - stdlib
+
+
+nagiosclient::custom_plugins:
+  - '%{::legacy_nagios_client_custom_plugin_name}'

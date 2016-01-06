@@ -1,0 +1,9 @@
+---
+
+mysqlconfig_user_name: 
+    value:
+mysqlconfig_user_ensure:
+    value: 'present'
+mysqlconfig_user_password_hash:
+    value:
+

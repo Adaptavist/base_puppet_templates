@@ -1,0 +1,8 @@
+---
+
+nagios_plugin_download_name:
+nagios_plugin_download_user: 'root'
+nagios_plugin_download_group: 'root'
+nagios_plugin_source_gitrepo: 'false'
+nagios_plugin_source_plugin_url: 'false'
+nagios_plugin_source_local_path:

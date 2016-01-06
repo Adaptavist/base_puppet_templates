@@ -1,0 +1,14 @@
+---
+
+prefixes: 
+    - "postfix_"
+
+classes:
+  - postfix
+
+dependencies:
+  - postfix
+
+postfix::template: "%{::postfix_template}"
+postfix::source_dir: "%{::postfix_source_dir}"
+

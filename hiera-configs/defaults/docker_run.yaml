@@ -1,0 +1,33 @@
+---
+
+docker_run_name:
+docker_run_image:
+docker_run_command: "false"
+docker_run_memory_limit: '0b'
+docker_run_cpuset: ""
+docker_run_ports: ""
+docker_run_expose: ""
+docker_run_volumes: ""
+docker_run_links: ""
+docker_run_use_name: "false"
+docker_run_running: "true"
+docker_run_volumes_from: ""
+docker_run_net: 'bridge'
+docker_run_username: "false"
+docker_run_hostname: "false"
+docker_run_env: ""
+docker_run_env_file: ""
+docker_run_dns: ""
+docker_run_dns_search: ""
+docker_run_lxc_conf: ""
+docker_run_restart_service: "true"
+docker_run_disable_network: "false"
+docker_run_privileged: "false"
+docker_run_detach: "default"
+docker_run_extra_parameters: "false"
+docker_run_pull_on_start: "false"
+docker_run_depends: ""
+docker_run_tty: "false"
+docker_run_socket_connect: ""
+docker_run_hostentries: ""
+docker_run_restart: "false"

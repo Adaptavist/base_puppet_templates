@@ -1,0 +1,30 @@
+---
+
+prefixes:
+  - docker_image_
+
+classes:
+  - docker_config::images
+  - docker
+
+dependencies:
+  - docker
+  - docker_config
+  - apt
+  - stdlib
+  - git
+
+docker_config::images::images:
+  '%{::docker_image_name}':
+    ensure: '%{::docker_image_ensure}'
+    image: '%{::docker_image_name}'
+    image_tag: '%{::docker_image_image_tag}'
+    force: '%{::docker_image_force}'
+    docker_file: '%{::docker_image_docker_file}'
+    docker_dir: '%{::docker_image_docker_dir}'
+    docker_tar: '%{::docker_image_docker_tar}'
+    docker_url: '%{::docker_image_docker_url}'
+    docker_url_tarball_name: '%{::docker_image_docker_url_tarball_name}'
+    docker_repo_url: '%{::docker_image_docker_repo_url}'
+    docker_repo_dir: '%{::docker_image_docker_repo_dir}'
+

@@ -1,0 +1,50 @@
+---
+
+prefixes:
+    - "nagios_server_web_host_"
+
+classes:
+  - nagios::server
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::hosts:
+    "%{::nagios_server_web_host_name}":
+        alias: "%{::nagios_server_web_host_alias}"
+        address: "%{::nagios_server_web_host_address}" #            192.168.1.254
+        check_command: "%{::nagios_server_web_host_check_command}" #          check-host-alive
+        contact_groups: "%{::nagios_server_web_host_contact_groups}" #         router-admins
+        check_interval: "%{::nagios_server_web_host_check_interval}" #         5
+        retry_interval: "%{::nagios_server_web_host_retry_interval}" #         1
+        max_check_attempts: "%{::nagios_server_web_host_max_check_attempts}" #     5
+        check_period: "%{::nagios_server_web_host_check_period}" #           24x7
+        process_perf_data: "%{::nagios_server_web_host_process_perf_data}" #      0
+        retain_nonstatus_information: "%{::nagios_server_web_host_retain_nonstatus_information}" #   0
+        notification_interval: "%{::nagios_server_web_host_notification_interval}" #      30
+        notification_period: "%{::nagios_server_web_host_notification_period}" #    24x7
+        notification_options: "%{::nagios_server_web_host_notification_options}" #       d,u,r
+        hostgroups: "%{::nagios_server_web_host_hostgroups}"
+        custom_variables: "%{::nagios_server_web_host_custom_variables}"
+        ensure: "%{::nagios_server_web_host_ensure}"
+
+nagios::server::services:
+    "%{::nagios_server_web_host_name}_web_check":
+        check_command: "check_http_custom!--port=443 --ssl --onredirect=follow --hostname=%{::nagios_server_web_host_url} -u /"
+        use:  'generic-service'
+        host_name:  "%{::nagios_server_web_host_name}"
+        service_description:  "Web Check: - %{::nagios_server_web_host_url}"
+        ensure: "%{::nagios_server_web_host_ensure}"
+    "%{::nagios_server_web_host_name}_check_pages":
+        check_command: "track_error_pages!%{::nagios_server_web_host_url}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_server_web_host_name}"
+        service_description:  "track error page check: %{::nagios_server_web_host_url}"
+        ensure: "%{::nagios_server_web_host_ensure}"
+    "%{::nagios_server_web_host_name}_check_ssl_expiration":
+        check_command: "check_ssl_expiration!%{::nagios_server_web_host_url}!443"
+        use:  'generic-service'
+        host_name:  "%{::nagios_server_web_host_name}"
+        service_description:  "SSL expiration Check: %{::nagios_server_web_host_url}"
+        ensure: "%{::nagios_server_web_host_ensure}"

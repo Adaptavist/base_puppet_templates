@@ -1,0 +1,75 @@
+---
+
+prefixes:
+  - apache_vhost_http_php_cgi_
+  - apache_setup_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - dir
+  - authn_core
+  - authn_file
+  - authz_user
+  - auth_basic
+  - cgi
+  - php5
+
+apache::mpm_module: 'prefork'
+
+apache::vhost_dir: '%{::apache_setup_vhost_dir}'
+apache::extended_status: '%{::apache_setup_extended_status}' #'On'
+apache::keepalive: '%{::apache_setup_keepalive}' #'On'
+apache::timeout: '%{::apache_setup_timeout}'
+apache::mod::worker::maxclients: '%{::apache_setup_worker_maxclients}'
+apache::mod::worker::maxsparethreads: '%{::apache_setup_worker_maxsparethreads}'
+
+webserver::default_vhosts:
+  '%{::apache_vhost_http_php_cgi_vhost_name}':
+    servername: "%{::apache_vhost_http_php_cgi_servername}"
+    docroot: "%{::apache_vhost_http_php_cgi_docroot}"
+    port: "%{::apache_vhost_http_php_cgi_port}"
+    serveraliases:
+      - '%{::apache_vhost_http_php_cgi_serveraliases}'
+    docroot_owner: "%{::apache_vhost_http_php_cgi_docroot_owner}"
+    docroot_group: "%{::apache_vhost_http_php_cgi_docroot_group}"
+    log_level: '%{::apache_vhost_http_php_cgi_log_level}' #'warn'
+    access_log_syslog: '%{::apache_vhost_http_php_cgi_apache_log_path}/%{::apache_vhost_http_php_cgi_apache_log_prefix}-vhost-access.log'
+    access_log_format: 'proxy'
+    error_log_syslog: '%{::apache_vhost_http_php_cgi_apache_log_path}/%{::apache_vhost_http_php_cgi_apache_log_prefix}-vhost-error.log'
+    rewrites:
+      - comment: "Make everything use a single hostname"
+        rewrite_cond:
+          - '___{HTTP_HOST}  !^%{::apache_vhost_http_php_cgi_rewrite_hostname}$ [NC]' #LIVE
+          - '___{HTTP_HOST}  !^$'
+        rewrite_rule:
+        - '^/(.*)          %{::apache_vhost_http_php_cgi_proxy_name}/$1 [L,R=302]'
+    aliases:
+      - alias: "%{::apache_vhost_http_php_cgi_alias_base_stylesheets}"
+        path: "%{::apache_vhost_http_php_cgi_alias_path_base_stylesheets}"
+      - alias: "%{::apache_vhost_http_php_cgi_alias_stylesheets}"
+        path: "%{::apache_vhost_http_php_cgi_alias_path_stylesheets}"
+      - alias: "%{::apache_vhost_http_php_cgi_alias_service}"
+        path: "%{::apache_vhost_http_php_cgi_alias_service_path}"
+    scriptaliases:
+      - alias: "%{::apache_vhost_http_php_cgi_script_alias_service}"
+        path: "%{::apache_vhost_http_php_cgi_script_path_service}"
+      - alias: "%{::apache_vhost_http_php_cgi_script_alias_cgi}"
+        path: "%{::apache_vhost_http_php_cgi_script_path_cgi}"
+    directories:
+      path: "%{::apache_vhost_http_php_cgi_directories_path}"
+      options: "%{::apache_vhost_http_php_cgi_directories_options}"
+    custom_fragment: |
+      DirectoryIndex index.php index.html
+      <FilesMatch \.php$>
+          SetHandler application/x-httpd-php
+      </FilesMatch>
+      LogFormat "%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PERCENTAGE_SIGN{User-Agent}i\\\" %% %v:%p (%V) %A %a \\\"__PERCENTAGE_SIGN{X-Forwarded-For}i\\\" \\\"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\\\" \\\"__PERCENTAGE_SIGN{X-Forwarded-Port}i\\\" \\\"__PERCENTAGE_SIGN{X-AUSERNAME}o\\\" \\\"__PERCENTAGE_SIGN{X-ASESSIONID}o\\\" %I %O %D %T" proxy
+

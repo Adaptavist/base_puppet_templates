@@ -1,0 +1,11 @@
+---
+
+definer_file_name:
+definer_file_path:
+definer_file_ensure: 'present'
+definer_file_content: ''
+definer_file_mode: '0600'
+definer_file_group: 'hosting'
+definer_file_owner: 'hosting'
+definer_file_require: ''
+

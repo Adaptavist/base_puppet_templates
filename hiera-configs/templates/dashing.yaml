@@ -1,0 +1,21 @@
+---
+
+prefixes: 
+    - "dashing_"
+
+classes:
+  - dashing
+
+dependencies:
+  - dashing
+
+dashing::dashing_package_name: "%{::dashing_dashing_package_name}"
+dashing::package_status: "%{::dashing_package_status}"
+dashing::dashing_conf: "%{::dashing_dashing_conf}"
+dashing::dashing_default: "%{::dashing_dashing_default}"
+dashing::dashing_binary: "%{::dashing_dashing_binary}"
+dashing::dashing_basepath: "%{::dashing_dashing_basepath}"
+dashing::run_user: "%{::dashing_run_user}"
+dashing::run_group: "%{::dashing_run_group}"
+dashing::service_name: "%{::dashing_service_name}"
+

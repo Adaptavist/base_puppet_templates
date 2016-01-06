@@ -1,0 +1,22 @@
+---
+
+prefixes: 
+    - "definer_file_sourced_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  file:
+    "%{::definer_file_sourced_name}":
+      path: "%{::definer_file_sourced_path}"
+      ensure: "%{::definer_file_sourced_ensure}"
+      mode: "%{::definer_file_sourced_mode}"
+      group: "%{::definer_file_sourced_group}"
+      owner: "%{::definer_file_sourced_owner}"
+      require: "%{::definer_file_sourced_require}"
+      source: "%{::definer_file_sourced_source}"
+

@@ -1,0 +1,80 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+sonarqube_version_number:
+    value: '5.1'
+    comment: "The version of the application to install"
+sonarqube_database_user:
+    value: "sonarqube"
+    comment: "The username to access the database"
+sonarqube_database_pass:
+    value: 
+    comment: "The password to access the database"
+sonarqube_database_name:
+    value: "sonarqube"
+    comment: "The name of the database"
+sonarqube_database_type:
+    value: "mysql"
+    comment: "The type of database to be used, i.e 'postgres' or 'mysql', this is used to construct the JDBC url"
+sonarqube_database_additional_jdbc_options:
+    value: "?useUnicode=true&characterEncoding=utf8"
+    comment: "Additional options to pass to the JDBC URL"
+sonarqube_instance_name: 
+    value: "sonarqube"
+    comment: "The name of the instance"
+sonarqube_database_port: 
+    value: '3306'
+    comment: "The TCP port of the database"
+sonarqube_database_host: 
+    value: 'localhost'
+    comment: "The hostname or IP address of the database"
+sonarqube_database_max_pool: 
+    value: 20
+    comment: "The maximum size of the database connection pool"
+sonarqube_shutdown_port: 
+    value: 8012
+    comment: "The tomcat shutdown port for this applicaiton"
+sonarqube_jvm_behavioral_options:
+    value: ""
+    comment: ""
+sonarqube_jvm_custom_d_options:
+    value: ""
+    comment: ""
+sonarqube_jvm_debugging_options:
+    value: ""
+    comment: ""
+sonarqube_jvm_gc1_options:
+    value: ""
+    comment: ""
+sonarqube_jvm_performance_options:
+    value: ""
+    comment: ""
+sonarqube_db_driver:
+    value: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
+    comment: "Daatbase JDBC driver location, must be accessible for user that runs the process"
+sonarqube_is_mirror: 
+    value: false
+    comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"
+sonarqube_avst_wizard: 
+    value: false
+    comment: "Enables avst wizard gem to complete sonarqube setup wizard, sets up license, admin user, database"
+sonarqube_manual_service_script: 
+    value: false
+    comment: "If this is true then the service will be disabled"
+sonarqube_manual_upstart_script: 
+    value: false
+    comment: "If this is true then the service will be disabled"
+sonarqube_max_mem: 
+    value: "1024m"
+    comment: "JVM maximum memory setup for the service"
+sonarqube_min_mem: 
+    value: "512m"
+    comment: "JVM minimum memory setup for the service"
+sonarqube_pergen_mem: 
+    value: "256m"
+    comment: "JVM max perm size setup for the service"
+sonarqube_context_path: 
+    value: ""
+    comment: "Context path for this applicaiton"

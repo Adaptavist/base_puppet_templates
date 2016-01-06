@@ -1,0 +1,12 @@
+---
+
+fail2ban_jails: 'false'
+fail2ban_bantime: '600'
+fail2ban_findtime: '600'
+fail2ban_maxretry: '6'
+fail2ban_ignoreip: '127.0.0.1/8'
+fail2ban_mta: 'sendmail'
+fail2ban_backend: 'auto'
+fail2ban_protocol: 'tcp'
+fail2ban_chain: 'INPUT'
+fail2ban_mailto: ''

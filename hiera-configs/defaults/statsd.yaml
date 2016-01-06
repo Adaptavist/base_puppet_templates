@@ -1,0 +1,18 @@
+---
+
+statsd_ensure: 'present'
+statsd_node_module_dir: '/usr/lib/node_modules'
+statsd_nodejs_bin: '/usr/bin/node'
+statsd_dependencies: 'Class[nodejs]'
+statsd_package_name: 'statsd'
+statsd_package_provider: 'npm'
+statsd_port: '8125'
+statsd_address: '0.0.0.0'
+statsd_configfile: '/etc/statsd/localConfig.js'
+statsd_logfile: '/var/log/statsd/statsd.log'
+statsd_service_ensure: 'running'
+statsd_backend: './backends/graphite'
+statsd_graphite_host: 'localhost'
+statsd_graphite_port: 2003
+statsd_flush_interval: 1000
+

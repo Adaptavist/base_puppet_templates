@@ -1,0 +1,12 @@
+---
+
+replication_filesystem_server_lsync_file_file_name: 
+    value: # '/etc/lsyncd/rsync.exclusions':
+replication_filesystem_server_lsync_file_ensure: 
+    value: "directory"
+replication_filesystem_server_lsync_file_owner:
+    value: 'root'
+replication_filesystem_server_lsync_file_group:
+    value: 'root'
+replication_filesystem_server_lsync_file_content:
+    value: ""

@@ -1,0 +1,25 @@
+---
+
+prefixes:
+  - docker_exec_
+
+classes:
+  - docker_config::execs
+
+dependencies:
+  - docker
+  - docker_config
+  - apt
+  - stdlib
+  - git
+
+docker_config::execs::execs:
+  '%{::docker_exec_name}':
+    detach: '%{::docker_exec_detach}'
+    interactive: '%{::docker_exec_interactive}'
+    tty: '%{::docker_exec_tty}'
+    container: '%{::docker_exec_container}'
+    command: '%{::docker_exec_command}'
+    sanitise_name: '%{::docker_exec_sanitise_name}'
+
+

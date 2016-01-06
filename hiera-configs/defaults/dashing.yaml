@@ -1,0 +1,12 @@
+---
+
+dashing_dashing_package_name: 'dashing'
+dashing_package_status: installed
+dashing_dashing_conf: '/etc/dashing.conf'
+dashing_dashing_default: '/etc/default/dashing'
+dashing_dashing_binary: '/usr/local/bin/dashing'
+dashing_dashing_basepath: '/usr/share/dashing'
+dashing_run_user: 'root'
+dashing_run_group: 'root'
+dashing_service_name: 'dashing'
+

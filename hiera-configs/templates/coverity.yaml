@@ -1,0 +1,61 @@
+---
+
+prefixes: 
+    - "coverity_"
+    - "connector_"
+    - "atlassian_"
+
+classes:
+  - coverity
+
+dependencies:
+  - apt
+  - coverity
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+
+coverity::instance_name: "%{::coverity_instance_name}"
+coverity::hosting_user: "%{::atlassian_hosting_user}"
+coverity::hosting_group: "%{::atlassian_hosting_group}"
+coverity::conf:
+    install_file_location: "%{::coverity_file_location}"
+    license_file_location: "%{::coverity_licence_file}"
+    admin_password: "%{::coverity_admin_password}"
+    connectors:
+      - scheme:      "http"
+        http_port:   "%{::connector_tomcat_port}"
+        redirectPort: "%{::coverity_tomcat_redirect_port}"	
+        protocol: "HTTP/1.1"
+        connectionTimeout: "%{::coverity_tomcat_connection_timeout}"
+      - scheme:      "http"
+        http_port:   "%{::coverity_tomcat_ajp_port}"
+        protocol: "AJP/1.3" 
+        redirectPort: "%{::coverity_tomcat_redirect_port}"
+    db:
+      DB_HOST:   "%{::coverity_database_host}"
+      DB_PORT:   "%{::coverity_database_port}"
+      DB_DATABASE: "%{::coverity_database_name}"
+      DB_LOGIN:   "%{::coverity_database_user}"
+      DB_PASSWORD:   "%{::coverity_database_pass}"
+      DB_INSTANCE: "%{::coverity_db_instance_size}"
+    drivers:
+      location_path:
+        - "%{::coverity_db_driver}"
+    java_flags:
+      JVM_MINIMUM_MEMORY: "%{::coverity_min_mem}" 
+      JVM_MAXIMUM_MEMORY: "%{::coverity_max_mem}" 
+      JVM_MAX_PERM_SIZE: "%{::coverity_pergen_mem}" 
+    custom:
+        PROVIDER_FILESYSTEM_DIR: "%{::coverity_data_path}"
+        VERSION: "%{::coverity_version_number}"
+        CONTEXT_PATH: "%{::coverity_context_path}"
+        PRODUCT: coverity
+        SHUTDOWN_PORT: "%{::coverity_shutdown_port}"
+    license: "%{::coverity_licence}"
+
+

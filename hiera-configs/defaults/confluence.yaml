@@ -1,0 +1,96 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+confluence_host_name:
+    value: ""
+    comment: "Provide url to confluence e.g https://confluence.example.com (if apache in front), used if avst_wizard enabled "
+confluence_license: 
+    value: ""
+    comment: "Must be a valid confluence license, used if avst_wizard enabled"
+confluence_early_access:
+    value: "false"
+    comment: "Version to be installed is early access version"
+confluence_driver_location_path: 
+    value: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
+    comment: "Mysql driver location, must be accessible for user that runs the process"
+confluence_instance_name:  
+    value: "confluence"
+    comment: "Service name for instance of confluence on the server"
+confluence_version: 
+    value: '5.2.5'
+    comment: "Version of confluence you woud like to install, must be a valid version, no validation done"
+confluence_context_path: 
+    value: ""
+    comment: "Context path for tomcat's server.xml"
+confluence_app_shutport: 
+    value: 8012
+    comment: "The tomcat shutdown port for the application"
+confluence_admin_user: 
+    value: "admin"
+    comment: "Administration user created via wizard, used if avst_wizard enabled"
+confluence_admin_pass: 
+    value:
+    comment: "Administration user's password setup via wizard, used if avst_wizard enabled"
+confluence_admin_full_name: 
+    value: "Admin Admin"
+    comment: "Administrator's full name, used if avst_wizard enabled"
+confluence_admin_email: 
+    value: "example@example.com"
+    comment: "Administrators email address, used if avst_wizard enabled"
+confluence_database_name: 
+    value: "confluence"
+    comment: "Database to connect confluence to, used if avst_wizard enabled"
+confluence_database_user: 
+    value: "confluence"
+    comment: "Database user to use for db connection, used if avst_wizard enabled"
+confluence_database_pass: 
+    value: 
+    comment: "Database user's password for db connection, used if avst_wizard enabled"
+confluence_jvm_minimum_memory: 
+    value: '512m'
+    comment: "JVM minimum memory setup for the service"
+confluence_jvm_maximum_memory: 
+    value: '1024m'
+    comment: "JVM maximum memory setup for the service"
+confluence_jvm_max_perm_size: 
+    value: '256m'
+    comment: "JVM max perm size setup for the service"
+confluence_jvm_behavioral_options: 
+    value: ""
+    comment: "JVM tuning behavioral options"
+confluence_jvm_performance_options: 
+    value: ""
+    comment: "JVM tuning performance options"
+confluence_jvm_debugging_options: 
+    value: ""
+    comment: "JVM tuning debuging options"
+confluence_jvm_gc1_options: 
+    value: ""
+    comment: "JVM tuning gc1 options"
+confluence_jvm_custom_d_options: 
+    value: ""
+    comment: "JVM tuning custom options"
+confluence_avst_wizard: 
+    value: true
+    comment: "Enables avst wizard gem to complete confluence setup wizard, sets up license, admin user, database"
+confluence_crowd_server_url: 
+    value: ""
+    comment: "Accessible url of crowd instance with registered confluence to enable crowd sso"
+confluence_crowd_appname: 
+    value: "confluence"
+    comment: "Application name registered in crowd to integrate crowd sso to confluence"
+confluence_crowd_sso_enabled: 
+    value: false
+    comment: "Enables crowd sso integration"
+confluence_crowd_app_password:
+    value: ""
+    comment: "Crowd sso application password"
+confluence_manual_upstart_script:
+    value: "false"
+confluence_manual_service_script:
+    value: "false"
+confluence_is_mirror:
+    value: "false"
+    comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"

@@ -1,0 +1,14 @@
+---
+
+prefixes: 
+    - "xvfb_"
+
+classes:
+  - xvfb
+
+dependencies:
+  - xvfb
+
+xvfb::user: "%{::xvfb_user}"
+xvfb::options: "%{::xvfb_options}"
+

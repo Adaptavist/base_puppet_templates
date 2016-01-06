@@ -1,0 +1,5 @@
+---
+
+postfix_template: "/etc/puppet/files/postfix/etc/postfix/relay-loopbackonly-sasl.erb"
+postfix_source_dir: "puppet:///files/postfix/sasl"
+

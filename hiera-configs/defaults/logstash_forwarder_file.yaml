@@ -1,0 +1,6 @@
+---
+
+logstash_forwarder_file_name:
+logstash_forwarder_file_path:
+logstash_forwarder_file_field:
+

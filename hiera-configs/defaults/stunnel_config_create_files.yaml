@@ -1,0 +1,7 @@
+---
+
+stunnel_config_create_file_path:
+stunnel_config_create_file_ensure: "present"
+stunnel_config_create_file_mode: '0600'
+stunnel_config_create_file_content:
+

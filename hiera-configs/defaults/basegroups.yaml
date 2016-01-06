@@ -1,0 +1,8 @@
+---
+
+basegroups_group_name:
+    value:
+    comment: "Name of the group"
+basegroups_group_id:
+    value:
+    comment: "Group ID"

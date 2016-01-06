@@ -1,0 +1,16 @@
+---
+
+prefixes: 
+    - "definer_file_before_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  file:
+    "%{::definer_file_before_name}":
+      before: "%{::definer_file_before_before}"
+

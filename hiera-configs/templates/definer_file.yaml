@@ -1,0 +1,22 @@
+---
+
+prefixes: 
+    - "definer_file_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  file:
+    "%{::definer_file_name}":
+      path: "%{::definer_file_path}"
+      ensure: "%{::definer_file_ensure}"
+      content: "%{::definer_file_content}"
+      mode: "%{::definer_file_mode}"
+      group: "%{::definer_file_group}"
+      owner: "%{::definer_file_owner}"
+      require: "%{::definer_file_require}"
+

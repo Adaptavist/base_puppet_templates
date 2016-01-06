@@ -1,0 +1,21 @@
+---
+
+baseusers_user_name:
+    value:
+    comment: "Username to be created"
+baseusers_user_home:
+    value:
+    comment: "Users home directory"
+baseusers_user_id:
+    value:
+    comment: "ID of the user"
+basegroups_group_id:
+    value:
+    comment: "ID of the group user belongs to"
+baseusers_user_comment:
+    value:
+    comment: "Comment for created user"
+baseusers_user_password:
+    value:
+    comment: "User's password"
+

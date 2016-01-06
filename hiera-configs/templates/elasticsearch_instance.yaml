@@ -1,0 +1,21 @@
+---
+
+prefixes: 
+    - "elasticsearch_instance_"
+
+classes:
+  - elasticsearch_config
+
+dependencies:
+  - elasticsearch_config
+  - elasticsearch
+  - stdlib
+  - oracle_java
+  - apt
+
+elasticsearch_config::instances:
+  "%{::elasticsearch_instance_instance_name}":
+      'config':
+        'node.name': "%{::elasticsearch_instance_node_name}"
+        'cluster.name': "%{::elasticsearch_instance_cluster_name}"
+

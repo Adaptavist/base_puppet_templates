@@ -1,0 +1,4 @@
+---
+
+ntp_config_template: '/etc/puppet/files/avst/default/etc/ntp.conf'
+

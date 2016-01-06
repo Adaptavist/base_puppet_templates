@@ -1,0 +1,13 @@
+---
+
+prefixes: 
+    - "nagios_client_"
+
+classes:
+  - nagios::client
+
+dependencies:
+  - nagios
+
+nagios::client::nrpe_allowed_hosts: "%{::nagios_server_nrpe_allowed_hosts}"
+

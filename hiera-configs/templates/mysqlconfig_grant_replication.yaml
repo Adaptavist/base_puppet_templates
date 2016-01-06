@@ -1,0 +1,26 @@
+---
+
+prefixes:
+    - "mysqlconfig_grant_"
+
+classes:
+    - database
+
+database::type: 'mysql'
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+mysqlconfig::grants:
+    "%{::mysqlconfig_grant_name}":
+        options: ['GRANT']
+        privileges: ['REPLICATION CLIENT', 'REPLICATION SLAVE']
+        table: '*.*'
+        user: "%{::mysqlconfig_grant_user}"

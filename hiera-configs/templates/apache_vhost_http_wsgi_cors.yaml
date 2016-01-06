@@ -1,0 +1,76 @@
+---
+
+prefixes:
+  - apache_vhost_http_wsgi_cors_
+  - apache_setup_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - dir
+  - wsgi
+
+apache::vhost_dir: '%{::apache_setup_vhost_dir}'
+apache::extended_status: '%{::apache_setup_extended_status}' #'On'
+apache::keepalive: '%{::apache_setup_keepalive}' #'On'
+apache::timeout: '%{::apache_setup_timeout}'
+apache::mod::worker::maxclients: '%{::apache_setup_worker_maxclients}'
+apache::mod::worker::maxsparethreads: '%{::apache_setup_worker_maxsparethreads}'
+
+webserver::default_vhosts:
+  '%{::apache_vhost_http_wsgi_cors_vhost_name}':
+    servername: "%{::apache_vhost_http_wsgi_cors_servername}"
+    port: "%{::apache_vhost_http_wsgi_cors_port}"
+    docroot: "%{::apache_vhost_http_wsgi_cors_docroot}"
+    serveraliases:
+      - '%{::apache_vhost_http_wsgi_cors_serveraliases}'
+    docroot_owner: "%{::apache_vhost_http_wsgi_cors_docroot_owner}"
+    docroot_group: "%{::apache_vhost_http_wsgi_cors_docroot_group}"
+    log_level: "%{::apache_vhost_http_wsgi_cors_log_level}"
+    access_log_syslog: '%{::apache_vhost_http_wsgi_cors_apache_log_path}/%{::apache_vhost_http_wsgi_cors_apache_log_prefix}-vhost-access.log'
+    access_log_format: 'proxy'
+    error_log_syslog: '%{::apache_vhost_http_wsgi_cors_apache_log_path}/%{::apache_vhost_http_wsgi_cors_apache_log_prefix}-vhost-error.log'
+    rewrites:
+      - comment: "Make everything use a single hostname"
+        rewrite_cond:
+          - '___{HTTP_HOST}  !^%{::apache_vhost_http_wsgi_cors_rewrite_hostname}$ [NC]' #LIVE
+          - '___{HTTP_HOST}  !^$'
+        rewrite_rule:
+        - '^/(.*)          %{::apache_vhost_http_wsgi_cors_proxy_name}/$1 [L,R=302]'
+    wsgi_application_group: "%{::apache_vhost_http_wsgi_cors_wsgi_application_group}"
+    wsgi_daemon_process: "%{::apache_vhost_http_wsgi_cors_wsgi_daemon_process}"
+    wsgi_daemon_process_options:
+        processes: "%{::apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_processes}"
+        threads: "%{::apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_threads}"
+        'display-name': "%{::apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_display_name}"
+        'inactivity-timeout': "%{::apache_vhost_http_wsgi_cors_wsgi_daemon_process_options_inactivity_timeout}"
+    wsgi_import_script: "%{::apache_vhost_http_wsgi_cors_wsgi_import_script}"
+    wsgi_import_script_options:
+        "process-group": "%{::apache_vhost_http_wsgi_cors_wsgi_import_script_options_process_group}"
+        "application-group": "%{::apache_vhost_http_wsgi_cors_wsgi_import_script_options_application_group}"
+    wsgi_process_group: "%{::apache_vhost_http_wsgi_cors_wsgi_process_group}"
+    wsgi_script_aliases: 
+        "%{::apache_vhost_http_wsgi_cors_wsgi_script_aliases_key}": "%{::apache_vhost_http_wsgi_cors_wsgi_script_aliases_value}"
+    headers:
+        - 'set Access-Control-Allow-Origin "%{::apache_vhost_http_wsgi_cors_headers_allow_origin}"'
+        - 'set Access-Control-Allow-Methods "%{::apache_vhost_http_wsgi_cors_headers_allow_methods}"'
+        - 'set Access-Control-Allow-Headers "%{::apache_vhost_http_wsgi_cors_allow_headers}"'
+    directories:
+        path: "%{::apache_vhost_http_wsgi_cors_directories_path}"
+        order: "%{::apache_vhost_http_wsgi_cors_directories_order}"
+        allow: "%{::apache_vhost_http_wsgi_cors_directories_allow}"
+    custom_fragment:  "
+LogFormat \"%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PERCENTAGE_SIGN{User-Agent}i\\\"
+%% %v:%p (%V) %A %a \\\"__PERCENTAGE_SIGN{X-Forwarded-For}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Port}i\\\"
+\\\"__PERCENTAGE_SIGN{X-AUSERNAME}o\\\" \\\"__PERCENTAGE_SIGN{X-ASESSIONID}o\\\" %I %O %D %T\" proxy \n
+\n
+"

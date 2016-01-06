@@ -1,0 +1,41 @@
+---
+
+prefixes: 
+    - "kibana4_"
+
+classes:
+  - kibana4
+
+dependencies:
+  - kibana4
+
+kibana4::package_ensure: "%{::kibana4_package_ensure}"
+kibana4::package_name: "%{::kibana4_package_name}"
+kibana4::package_provider: "%{::kibana4_package_provider}"
+kibana4::package_download_url: "%{::kibana4_package_download_url}"
+kibana4::es_download_site_url: "%{::kibana4_es_download_site_url}"
+kibana4::service_ensure: "%{::kibana4_service_ensure}"
+kibana4::service_enable: "%{::kibana4_service_enable}"
+kibana4::service_name: "%{::kibana4_service_name}"
+kibana4::manage_user: "%{::kibana4_manage_user}"
+kibana4::kibana4_group: "%{::kibana4_kibana4_group}"
+kibana4::kibana4_gid: "%{::kibana4_kibana4_gid}"
+kibana4::kibana4_user: "%{::kibana4_kibana4_user}"
+kibana4::kibana4_uid: "%{::kibana4_kibana4_uid}"
+kibana4::install_dir: "%{::kibana4_install_dir}"
+kibana4::symlink: "%{::kibana4_symlink}"
+kibana4::symlink_name: "%{::kibana4_symlink_name}"
+kibana4::port: "%{::kibana4_port}"
+kibana4::host: "%{::kibana4_host}"
+kibana4::elasticsearch_url: "%{::kibana4_elasticsearch_url}"
+kibana4::elasticsearch_preserve_host: "%{::kibana4_elasticsearch_preserve_host}"
+kibana4::kibana_index: "%{::kibana4_kibana_index}"
+kibana4::default_app_id: "%{::kibana4_default_app_id}"
+kibana4::request_timeout: "%{::kibana4_request_timeout}"
+kibana4::shard_timeout: "%{::kibana4_shard_timeout}"
+kibana4::verify_ssl: "%{::kibana4_verify_ssl}"
+kibana4::ca: "%{::kibana4_ca}"
+kibana4::ssl_key_file: "%{::kibana4_ssl_key_file}"
+kibana4::ssl_cert_file: "%{::kibana4_ssl_cert_file}"
+kibana4::pid_file: "%{::kibana4_pid_file}"
+

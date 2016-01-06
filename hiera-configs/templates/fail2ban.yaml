@@ -1,0 +1,27 @@
+---
+
+prefixes:
+    - "fail2ban_"
+
+classes:
+  - fail2ban_config
+
+dependencies:
+  - fail2ban_config
+  - fail2ban
+  - stdlib
+  - concat
+  - puppi
+  - iptables
+  - monitor
+
+fail2ban_config::jails: '%{::fail2ban_jails}'
+fail2ban_config::bantime: '%{::fail2ban_bantime}'
+fail2ban_config::findtime: '%{::fail2ban_findtime}'
+fail2ban_config::maxretry: '%{::fail2ban_maxretry}'
+fail2ban_config::ignoreip: '%{::fail2ban_ignoreip}'
+fail2ban_config::mta: '%{::fail2ban_mta}'
+fail2ban_config::backend: '%{::fail2ban_backend}'
+fail2ban_config::protocol: '%{::fail2ban_protocol}'
+fail2ban_config::chain: '%{::fail2ban_chain}'
+fail2ban_config::mailto: '%{::fail2ban_mailto}'

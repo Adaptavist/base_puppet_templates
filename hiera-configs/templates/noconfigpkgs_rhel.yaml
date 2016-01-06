@@ -1,0 +1,17 @@
+---
+
+prefixes: 
+    - "noconfigpkgs_"
+
+classes:
+  - noconfigpkgs
+
+dependencies:
+  - noconfigpkgs
+  - stdlib
+
+#install packages
+noconfigpkgs::default_packages:
+  RedHat :
+    - "%{::noconfigpkgs_redhat_package}"
+

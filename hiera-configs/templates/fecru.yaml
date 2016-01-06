@@ -1,0 +1,71 @@
+---
+
+prefixes: 
+    - "fecru_"
+    - "atlassian_"
+
+required_facts:
+    - "fecru_instance_name"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::hosting_user: "%{::atlassian_hosting_user}" #'hosting'
+avstapp::hosting_group: "%{::atlassian_hosting_group}" #'hosting'
+
+avstapp::conf:
+  "%{::fecru_instance_name}":
+    is_mirror: "%{::fecru_is_mirror}" # false
+    version: "%{::fecru_version}" # '5.2.5'
+    application_type: fisheye
+    context_path: "%{::fecru_context_path}"
+    shutport: "%{::fecru_app_shutport}"
+    tarball_location_url: "http://www.atlassian.com/software/crucible/downloads/binary/crucible-%{::fecru_version}.zip"
+    base_url: "%{::fecru_host_name}"
+    avst_wizard: "%{::fecru_avst_wizard}"
+    manual_service_script: "%{::fecru_manual_service_script}"
+    manual_upstart_script: "%{::fecru_manual_upstart_script}"
+    early_access: "%{::fecru_early_access}"
+    avst_wizard_properties:
+      license: "%{::fecru_license}"
+      admin_pass: "%{::fecru_admin_pass}"
+    db:
+      DB_PORT:     '3306'
+      DB_NAME:     '%{::fecru_database_name}'
+      DB_TYPE:     'mysql'
+      DB_DRIVER:   'com.mysql.jdbc.Driver'
+      DB_JDBC_URL: 'jdbc:mysql://localhost/%{::fecru_database_name}?autoReconnect=true&amp;characterEncoding=utf8&amp;useUnicode=true'
+      DB_MAX_POOL_SIZE: '15'
+      DB_USERNAME: '%{::fecru_database_user}'
+      DB_PASSWORD: '%{::fecru_database_pass}'
+      DB_VALIDATION_QUERY: 'select 1'
+      DB_DIALECT: 'org.hibernate.dialect.MySQL5InnoDBDialect'
+    drivers:
+      location_path:
+        - "%{::fecru_driver_location_path}"
+    custom:
+      CROWD_SERVER_URL: '%{::fecru_crowd_server_url}'
+      CROWD_APP_NAME: '%{::fecru_crowd_appname}'
+      CROWD_APP_PASSWORD: '%{::fecru_crowd_app_password}'
+      CROWD_SSO_ENABLE: '%{::fecru_crowd_sso_enabled}'
+    java_flags:
+        JVM_MINIMUM_MEMORY: "%{::fecru_jvm_minimum_memory}" #'512m'
+        JVM_MAXIMUM_MEMORY: "%{::fecru_jvm_maximum_memory}" #'1024m'
+        JVM_MAX_PERM_SIZE: "%{::fecru_jvm_max_perm_size}" #'256m'
+        JAVA_ENDORSED_DIRS: "/opt/%{::fecru_instance_name}/install/endorsed"
+        JAVA_BEHAVIORAL_OPTIONS: "%{::fecru_jvm_behavioral_options}"
+        JAVA_PERFORMANCE_OPTIONS: "%{::fecru_jvm_performance_options}"
+        JAVA_DEBUGING_OPTIONS: "%{::fecru_jvm_debugging_options}"
+        JAVA_GC1_OPTIONS: "%{::fecru_jvm_gc1_options}"
+        JAVA_CUSTOM_D_OPTIONS: "%{::fecru_jvm_custom_d_options}"
+

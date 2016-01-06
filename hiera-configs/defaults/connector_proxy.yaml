@@ -1,0 +1,17 @@
+---
+application_instance_name: 
+    value:
+    comment: "Instance name of an application to be installed on the server, reused in connector setup"
+connector_proxy_name: 
+    value:
+    comment: "Proxy name setup in apache"
+connector_tomcat_port: 
+    value:
+    comment: "Tomcat port for the application"
+
+connector_schema: 
+    value: 'https'
+    comment: "Connector scheme"
+connector_proxy_port: 
+    value: '443'
+    comment: "Proxy listen port"

@@ -1,0 +1,10 @@
+---
+
+docker_exec_name:
+docker_exec_detach: "false"
+docker_exec_interactive: "false"
+docker_exec_tty: "false"
+docker_exec_container: "false"
+docker_exec_command: "false"
+docker_exec_sanitise_name: "true"
+

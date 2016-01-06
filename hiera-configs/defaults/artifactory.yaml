@@ -1,0 +1,26 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+artifactory_context_path: ""
+artifactory_database_dialect:  ""
+artifactory_database_driver_name: "org.mysql.Driver"
+artifactory_database_host: "localhost"
+artifactory_database_max_pool: 20
+artifactory_database_port: "3306"
+artifactory_database_type: "mysql"
+artifactory_database_validation_query: "select 1"
+artifactory_data_path: "/opt/artifactory/install/data"
+artifactory_db_driver: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
+artifactory_database_user: "artifactory"
+artifactory_database_pass:
+artifactory_database_name: "artifactory"
+artifactory_file_location: "/etc/puppet/files/bins/artifactory-powerpack-3.3.0.zip"
+artifactory_instance_name: "artifactory"
+artifactory_licence: 
+artifactory_max_mem: "1024m"
+artifactory_min_mem: "512m"
+artifactory_pergen_mem: "256m"
+artifactory_shutdown_port: 8012
+artifactory_version_number: "3.3.0"

@@ -1,0 +1,10 @@
+---
+
+nfs_client_present: 'present'
+nfs_client_mount:
+nfs_client_device:
+nfs_client_options: 'auto'
+nfs_client_fstype: 'nfs4'
+nfs_client_share_owner: 'hosting'
+nfs_client_share_group: 'hosting'
+nfs_client_share_mode: '0755'                                     

@@ -1,0 +1,30 @@
+---
+
+apache_vhost_http_cors_vhost_name:
+apache_vhost_http_cors_servername:
+apache_vhost_http_cors_docroot:
+apache_vhost_http_cors_port:
+apache_vhost_http_cors_docroot_owner:
+apache_vhost_http_cors_docroot_group:
+apache_vhost_http_cors_path: "/"
+apache_vhost_http_cors_provider: "location"
+apache_vhost_http_cors_proxy_pass_path: 
+apache_vhost_http_cors_proxy_pass_url: 
+apache_vhost_http_cors_require:
+apache_vhost_http_cors_headers_allow_origin: '*'
+apache_vhost_http_cors_headers_allow_methods: 'GET, OPTIONS, POST, PUT'
+apache_vhost_http_cors_allow_headers: 'origin, authorization, accept, X-Requested-With, Content-Type'
+apache_vhost_http_cors_serveraliases:
+apache_vhost_http_cors_log_level: 'warn'
+apache_vhost_http_cors_apache_log_path: '/var/log/apache2'
+apache_vhost_http_cors_apache_log_prefix:
+apache_vhost_http_cors_rewrite_hostname:
+apache_vhost_http_cors_proxy_name:
+apache_setup_vhost_dir: 
+    value:
+    comment: "This is OS specific, Ubuntu: '/etc/apache2/sites-available/', Centos: /etc/httpd/conf.d/"
+apache_setup_extended_status: 'On'
+apache_setup_keepalive: 'On'
+apache_setup_timeout: 300
+apache_setup_worker_maxclients: 500
+apache_setup_worker_maxsparethreads: 100

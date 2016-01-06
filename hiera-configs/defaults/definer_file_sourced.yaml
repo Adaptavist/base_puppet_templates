@@ -1,0 +1,11 @@
+---
+
+definer_file_sourced_name:
+definer_file_sourced_path:
+definer_file_sourced_source:
+definer_file_sourced_ensure: 'present'
+definer_file_sourced_mode: '0600'
+definer_file_sourced_group: 'hosting'
+definer_file_sourced_owner: 'hosting'
+definer_file_sourced_require: ''
+

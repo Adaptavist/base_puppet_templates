@@ -1,0 +1,5 @@
+---
+
+collectd_client_server_host:
+collectd_client_server_port: '25826'
+

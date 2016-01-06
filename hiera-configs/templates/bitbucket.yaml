@@ -1,0 +1,69 @@
+---
+
+prefixes: 
+    - "bitbucket_"
+    - "atlassian_"
+
+classes:
+  - avstapp
+
+required_facts:
+    - "bitbucket_instance_name"
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::hosting_user: "%{::atlassian_hosting_user}" #'hosting'
+avstapp::hosting_group: "%{::atlassian_hosting_group}" #'hosting'
+
+avstapp::conf:
+  "%{::bitbucket_instance_name}":
+    is_mirror: "%{::bitbucket_is_mirror}" # false
+    version: "%{::bitbucket_version}" 
+    application_type: bitbucket
+    context_path: "%{::bitbucket_context_path}"
+    shutport: "%{::bitbucket_app_shutport}"
+    tarball_location_url: "http://www.atlassian.com/software/stash/downloads/binary/atlassian-%{::bitbucket_product_name}-%{::bitbucket_version}.tar.gz"
+    base_url: "%{::bitbucket_host_name}"
+    avst_wizard: "%{::bitbucket_avst_wizard}"
+    manual_service_script: "%{::bitbucket_manual_service_script}"
+    manual_upstart_script: "%{::bitbucket_manual_upstart_script}"
+    early_access: "%{::bitbucket_early_access}"
+    avst_wizard_properties:
+      license: "%{::bitbucket_license}"
+      admin_user: "%{::bitbucket_admin_user}"
+      admin_pass: "%{::bitbucket_admin_pass}"
+      admin_full_name: "%{::bitbucket_admin_full_name}"
+      admin_email: "%{::bitbucket_admin_email}"
+      database_name: "%{::bitbucket_database_name}"
+      database_url: "%{::bitbucket_database_url}"
+      database_user: "%{::bitbucket_database_user}"
+      database_pass: "%{::bitbucket_database_pass}"
+      instance_name: "%{::bitbucket_app_instance_name}"
+    drivers:
+      location_path:
+        - "%{::bitbucket_driver_location_path}"
+    custom:
+      CROWD_SERVER_URL: '%{::bitbucket_crowd_server_url}'
+      CROWD_APP_NAME: '%{::bitbucket_crowd_appname}'
+      CROWD_APP_PASSWORD: '%{::bitbucket_crowd_app_password}'
+      CROWD_SSO_ENABLE: '%{::bitbucket_crowd_sso_enabled}'
+    java_flags:
+        JVM_MINIMUM_MEMORY: "%{::bitbucket_jvm_minimum_memory}" #'512m'
+        JVM_MAXIMUM_MEMORY: "%{::bitbucket_jvm_maximum_memory}" #'1024m'
+        JVM_MAX_PERM_SIZE: "%{::bitbucket_jvm_max_perm_size}" #'256m'
+        JAVA_ENDORSED_DIRS: "/opt/%{::bitbucket_instance_name}/install/endorsed"
+        JAVA_BEHAVIORAL_OPTIONS: "%{::bitbucket_jvm_behavioral_options}"
+        JAVA_PERFORMANCE_OPTIONS: "%{::bitbucket_jvm_performance_options}"
+        JAVA_DEBUGING_OPTIONS: "%{::bitbucket_jvm_debugging_options}"
+        JAVA_GC1_OPTIONS: "%{::bitbucket_jvm_gc1_options}"
+        JAVA_CUSTOM_D_OPTIONS: "%{::bitbucket_jvm_custom_d_options}"
+
+

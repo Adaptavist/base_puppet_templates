@@ -1,0 +1,25 @@
+---
+
+prefixes: 
+    - "replication_filesystem_server_lsync_file_"
+
+classes:
+  - replication::filesystem::server
+
+dependencies:
+  - stdlib
+  - stunnel_config
+  - lsyncd
+  - xinetd
+  - rsync_config
+  - rsync
+  - stunnel
+  - replication
+
+replication::filesystem::server::lsync_create_files:
+ "%{::replication_filesystem_server_lsync_file_file_name}": # '/etc/lsyncd/rsync.exclusions':
+   ensure: "%{::replication_filesystem_server_lsync_file_ensure}" #present
+   owner: "%{::replication_filesystem_server_lsync_file_owner}" #'root'
+   group: "%{::replication_filesystem_server_lsync_file_group}" #'root'
+   content: "%{::replication_filesystem_server_lsync_file_content}"
+

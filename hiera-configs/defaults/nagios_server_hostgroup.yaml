@@ -1,0 +1,6 @@
+---
+
+nagios_server_hostgroup_name:
+nagios_server_hostgroup_alias:
+nagios_server_hostgroup_notes: 'Hostgroup created by puppet'
+

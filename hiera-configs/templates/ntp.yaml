@@ -1,0 +1,14 @@
+---
+
+prefixes: 
+    - "ntp_"
+
+classes:
+  - ntp
+
+dependencies:
+  - ntp
+  - stdlib
+
+ntp::config_template: "%{ntp_config_template}"
+

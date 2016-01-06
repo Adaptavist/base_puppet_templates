@@ -1,0 +1,4 @@
+---
+
+kmod_blacklist: 'rpcsec_gss_krb5'
+

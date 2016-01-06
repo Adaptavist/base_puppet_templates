@@ -1,0 +1,18 @@
+---
+
+prefixes: 
+    - "file_resource_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+    'file':
+        "%{::file_resource_name}":
+            source: "%{::file_resource_source}"
+            recurse: "%{::file_resource_recurse}"
+            require: "%{::file_resource_require}"
+

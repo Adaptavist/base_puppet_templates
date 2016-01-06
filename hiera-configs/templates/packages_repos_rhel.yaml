@@ -1,0 +1,24 @@
+---
+
+prefixes:
+    - "packages_repos_"
+
+classes:
+    - packages_repos
+
+dependencies:
+  - packages_repos
+  - apt
+  - yum
+  - puppi
+  - stdlib
+
+packages_repos::repos:
+    RedHat:
+        "%{::packages_repos_name}":
+          baseurl: "%{::packages_repos_base_url}"
+          descr: "%{::packages_repos_description}"
+          enabled: "%{::packages_repos_enabled}"
+          gpgcheck: "%{::packages_repos_gpgcheck}"
+          priority: "%{::packages_repos_priority}"
+

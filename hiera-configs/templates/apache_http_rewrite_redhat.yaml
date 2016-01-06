@@ -1,0 +1,37 @@
+---
+
+prefixes:
+  - vhost_http_
+  - vhost_https_
+  - apache_setup_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - status
+
+
+apache::extended_status: '%{::apache_setup_extended_status}' #'On'
+apache::keepalive: '%{::apache_setup_keepalive}' #'On'
+apache::timeout: '%{::apache_setup_timeout}'
+apache::mod::worker::maxclients: '%{::apache_setup_worker_maxclients}'
+apache::mod::worker::maxsparethreads: '%{::apache_setup_worker_maxsparethreads}'
+
+webserver::default_vhosts:
+  '%{::vhost_http_vhost_name}':
+    servername: '%{::vhost_http_servername}'
+    serveraliases:
+      - '%{::vhost_http_serveraliases}'
+    port: 80
+    docroot: '/nonexistant'
+    rewrites:
+      - comment: "Make everything use https"
+        rewrite_rule:
+          - '^/(.*)          https://%{::vhost_https_proxy_name}/$1 [L,R=302]'

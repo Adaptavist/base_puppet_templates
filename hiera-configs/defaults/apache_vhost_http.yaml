@@ -1,0 +1,29 @@
+---
+
+apache_setup_vhost_dir: 
+    value:
+    comment: "This is OS specific, Ubuntu: '/etc/apache2/sites-available/', Centos: /etc/httpd/conf.d/"
+apache_setup_extended_status: 'On'
+apache_setup_keepalive: 'On'
+apache_setup_timeout: 300
+apache_setup_worker_maxclients: 500
+apache_setup_worker_maxsparethreads: 100
+
+apache_vhost_http_vhost_name:
+apache_vhost_http_servername:
+apache_vhost_http_docroot:
+apache_vhost_http_port:
+apache_vhost_http_docroot_owner:
+apache_vhost_http_docroot_group:
+apache_vhost_http_path: '/'
+apache_vhost_http_provider: 'location'
+apache_vhost_http_allow: 'from All'
+apache_vhost_http_order: 'Allow,Deny'
+apache_vhost_http_serveraliases:
+apache_vhost_http_log_level: 'warn'
+apache_vhost_http_apache_log_path: '/var/log/apache2'
+apache_vhost_http_apache_log_prefix:
+apache_vhost_http_rewrite_hostname:
+apache_vhost_http_proxy_name:
+    comment: 'must be fully qualified'
+    value:

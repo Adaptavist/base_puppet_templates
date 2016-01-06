@@ -1,0 +1,11 @@
+---
+
+collectd_server_listen_host: '0.0.0.0'
+collectd_server_listen_port: '25826'
+collectd_server_write_graphite: 'true'
+collectd_server_graphite_host: '127.0.0.1'
+collectd_server_graphite_port: '2003'
+collectd_server_graphite_protocol: 'tcp'
+collectd_server_graphite_prefix: 'collectd.'
+collectd_server_graphite_postfix: ''
+

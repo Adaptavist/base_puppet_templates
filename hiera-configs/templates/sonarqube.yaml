@@ -1,0 +1,57 @@
+---
+
+prefixes: 
+    - "sonarqube_"
+    - "atlassian_"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::hosting_user: "%{::atlassian_hosting_user}"
+avstapp::hosting_group: "%{::atlassian_hosting_group}"
+
+avstapp::conf:
+  "%{::sonarqube_instance_name}":
+    version: "%{::sonarqube_version_number}"
+    avst_wizard: "%{::sonarqube_avst_wizard}"
+    manual_service_script: "%{::sonarqube_manual_service_script}"
+    manual_upstart_script: "%{::sonarqube_manual_upstart_script}"
+    is_mirror: "%{::sonarqube_is_mirror}"
+    application_type: sonarqube
+    context_path: "%{::sonarqube_context_path}"
+    shutport: "%{::sonarqube_shutdown_port}"
+    tarball_location_url: "http://dist.sonar.codehaus.org/sonarqube-%{::sonarqube_version_number}.zip"
+    drivers:
+      location_path:
+        - '%{::sonarqube_db_driver}'
+    db:
+      DB_PORT:     "%{::sonarqube_database_port}"
+      DB_NAME:     "%{::sonarqube_database_name}"
+      DB_TYPE:     "%{::sonarqube_database_type}"
+      DB_JDBC_URL: "jdbc:%{::sonarqube_database_type}://%{::sonarqube_database_host}:%{::sonarqube_database_port}/%{::sonarqube_database_name}%{::sonarqube_database_additional_jdbc_options}"
+      DB_MAX_POOL_SIZE: "%{::sonarqube_database_max_pool}"
+      DB_USERNAME: "%{::sonarqube_database_user}"
+      DB_PASSWORD: "%{::sonarqube_database_pass}"
+    java_flags:
+      JVM_MINIMUM_MEMORY: "%{::sonarqube_min_mem}"
+      JVM_MAXIMUM_MEMORY: "%{::sonarqube_max_mem}"
+      JVM_MAX_PERM_SIZE: "%{::sonarqube_pergen_mem}"
+      JAVA_ENDORSED_DIRS: "/opt/%{::sonarqube_instance_name}/install/endorsed"
+      GC_LOG_FILE: "/opt/%{::sonarqube_instance_name}/home/logs/gc-'$( date '+%Y%m%d-%H%M%S' )'.log"
+      JAVA_BEHAVIORAL_OPTIONS: "%{::sonarqube_jvm_behavioral_options}"
+      JAVA_PERFORMANCE_OPTIONS: "%{::sonarqube_jvm_performance_options}"
+      JAVA_DEBUGING_OPTIONS: "%{::sonarqube_jvm_debugging_options}"
+      JAVA_GC1_OPTIONS: "%{::sonarqube_jvm_gc1_options}"
+      JAVA_CUSTOM_D_OPTIONS: "%{::sonarqube_jvm_custom_d_options}"
+
+

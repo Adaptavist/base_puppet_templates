@@ -1,0 +1,33 @@
+---
+
+prefixes:
+    - "mysqlconfig_grant_"
+    - "named_grant_"
+    - "named_table_"
+    - "named_user_"
+    - "named_option_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+database::type: 'mysql'
+
+mysqlconfig::grants:
+    "%{::named_grant_name}":
+        options: 
+            - "%{::named_option_option}"
+        privileges: 
+            - "%{::mysqlconfig_grant_privileges}"
+        table: "%{::named_table_table}"
+        user: "%{::named_user_user}"
+

@@ -1,0 +1,13 @@
+---
+
+apache_vhost_http_vhost_name:
+apache_vhost_http_log_level: warn
+apache_vhost_ldap_auth_auth_type: Basic
+apache_vhost_ldap_auth_auth_name: "ldap auth name"
+apache_vhost_ldap_auth_auth_basic_provider: ldap
+apache_vhost_ldap_auth_auth_ldap_bind_dn: uid=example,dc=company,dc=com
+apache_vhost_ldap_auth_auth_ldap_bind_password:
+apache_vhost_ldap_auth_auth_ldap_connection_type: STARTTLS
+apache_vhost_ldap_auth_auth_ldap_url: ldaps://ldap0.example.com,dc=company,dc=com
+apache_vhost_ldap_auth_auth_ldap_require: valid-user
+apache_vhost_ldap_auth_ldap_verify_server_cert: "LDAPVerifyServerCert off"

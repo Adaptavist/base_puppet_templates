@@ -1,0 +1,4 @@
+---
+
+replication_stunnel_log_log_dest:
+replication_stunnel_log_debug_level: 0

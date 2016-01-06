@@ -1,0 +1,9 @@
+---
+
+elasticsearch_config_ensure: 'present'
+elasticsearch_config_status: 'running'
+elasticsearch_config_es_version: '1.4.4'
+elasticsearch_config_package_url: 'false'
+elasticsearch_config_repo_version: '1.4'
+elasticsearch_config_network_host: '127.0.0.1'
+

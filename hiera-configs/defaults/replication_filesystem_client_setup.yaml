@@ -1,0 +1,5 @@
+---
+
+replication_filesystem_client_setup_use_xinetd: true
+replication_filesystem_client_setup_rsync_opts: '--address=127.0.0.1'
+replication_filesystem_client_setup_address: '127.0.0.1'

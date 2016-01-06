@@ -1,0 +1,6 @@
+---
+
+noconfigpkgs_redhat_package:
+    value:
+    comment: "Redhat specific package to be installed"
+

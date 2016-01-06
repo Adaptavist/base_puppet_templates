@@ -1,0 +1,23 @@
+---
+
+prefixes: 
+    - "replication_filesystem_client_setup_"
+
+classes:
+  - replication::filesystem::client
+
+dependencies:
+  - stdlib
+  - stunnel_config
+  - lsyncd
+  - xinetd
+  - rsync_config
+  - rsync
+  - stunnel
+  - replication
+
+replication::filesystem::client::use_xinetd: "%{::replication_filesystem_client_setup_use_xinetd}" #true
+replication::filesystem::client::rsync_opts: "%{::replication_filesystem_client_setup_rsync_opts}" #'--address=127.0.0.1'
+replication::filesystem::client::address: "%{::replication_filesystem_client_setup_address}" #'127.0.0.1'
+
+

@@ -1,0 +1,38 @@
+---
+
+# include also apache_vhost_http, this extends apache_vhost_http and adds ssl properties
+
+prefixes:
+  - apache_vhost_ldap_auth_
+  - apache_vhost_http_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - ldap
+  - authnz_ldap
+
+apache::log_level: |
+    %{::apache_vhost_http_log_level}
+    %{::apache_vhost_ldap_auth_ldap_verify_server_cert}
+
+webserver::default_vhosts:
+  '%{::apache_vhost_http_vhost_name}':
+    log_level: |
+      %{::apache_vhost_http_log_level}
+      <Location '/'>
+        AuthType '%{::apache_vhost_ldap_auth_auth_type}'
+        AuthName '%{::apache_vhost_ldap_auth_auth_name}'
+        AuthBasicProvider '%{::apache_vhost_ldap_auth_auth_basic_provider}'
+        AuthLDAPBindDN '%{::apache_vhost_ldap_auth_auth_ldap_bind_dn}'
+        AuthLDAPBindPassword '%{::apache_vhost_ldap_auth_auth_ldap_bind_password}'
+        AuthLDAPURL '%{::apache_vhost_ldap_auth_auth_ldap_url}' '%{::apache_vhost_ldap_auth_auth_ldap_connection_type}'
+        require '%{::apache_vhost_ldap_auth_auth_ldap_require}'
+      </Location>

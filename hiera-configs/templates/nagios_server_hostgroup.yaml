@@ -1,0 +1,17 @@
+---
+
+prefixes: 
+    - "nagios_server_hostgroup_"
+
+classes:
+  - nagios::server
+
+dependencies:
+  - nagios
+
+nagios::server::hostgroups:
+    "%{::nagios_server_hostgroup_name}":
+        hostgroup_name: "%{::nagios_server_hostgroup_name}"
+        alias:  "%{::nagios_server_hostgroup_alias}"
+        notes:  "%{::nagios_server_hostgroup_notes}"
+

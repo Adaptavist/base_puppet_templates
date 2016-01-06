@@ -1,0 +1,6 @@
+---
+
+file_resource_name:
+file_resource_source:
+file_resource_recurse: "true"
+file_resource_require: "[]"

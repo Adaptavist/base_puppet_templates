@@ -1,0 +1,6 @@
+---
+
+nagios_service_mysql_status_hostname:
+nagios_service_mysql_status_db_user: 
+nagios_service_mysql_status_db_pass:
+nagios_service_mysql_status_ensure: 'present'

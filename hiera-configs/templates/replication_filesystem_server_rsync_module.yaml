@@ -1,0 +1,27 @@
+---
+
+prefixes: 
+    - "replication_filesystem_server_rsync_module_"
+
+classes:
+  - replication::filesystem::server
+
+dependencies:
+  - stdlib
+  - stunnel_config
+  - lsyncd
+  - xinetd
+  - rsync_config
+  - rsync
+  - stunnel
+  - replication
+
+replication::filesystem::server::rsync_modules:
+  "%{::replication_filesystem_server_rsync_module_name}": #'opt':
+    type: "%{::replication_filesystem_server_rsync_module_type}" # 'rsync'
+    source: "%{::replication_filesystem_server_rsync_module_source}" # '/opt/'
+    target: "%{::replication_filesystem_server_rsync_module_target}" # 'localhost::opt/'
+    init_sync: "%{::replication_filesystem_server_rsync_module_init_sync}" #true
+    rsync_verbose: "%{::replication_filesystem_server_rsync_module_rsync_verbose}" #true
+    rsync_archive: "%{::replication_filesystem_server_rsync_module_rsync_archive}" #true
+    rsync_hard_links: "%{::replication_filesystem_server_rsync_module_rsync_hard_links}" #true

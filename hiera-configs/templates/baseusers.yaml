@@ -1,0 +1,21 @@
+---
+
+prefixes: 
+    - "baseusers_"
+    - "basegroups_"
+
+classes:
+  - baseusers
+
+dependencies:
+  - baseusers
+
+baseusers::users:
+  "%{::baseusers_user_name}":
+    name : "%{::baseusers_user_name}"
+    home : "%{::baseusers_user_home}"
+    shell : '/bin/bash'
+    uid  : "%{::baseusers_user_id}"
+    gid  :  "%{::basegroups_group_id}"
+    comment : "%{::baseusers_user_comment}"
+    password : "%{::baseusers_user_password}"

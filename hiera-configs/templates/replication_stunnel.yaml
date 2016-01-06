@@ -1,0 +1,31 @@
+---
+
+prefixes:
+    - "replication_stunnel_"
+
+classes:
+    - replication
+
+dependencies:
+  - replication
+  - stunnel_config
+  - stunnel
+  - stdlib
+
+replication::stunnel_tunnels:
+    "%{::replication_stunnel_name}":
+        accept: "%{::replication_stunnel_accept_host_port}" #'127.0.0.1:13306'
+        connect: "%{::replication_stunnel_connect_host_port}" #'%{::host}:13306'
+        ca_file: "%{::replication_stunnel_ca_file}" # '/etc/stunnel/stunnel.pem'
+        certificate: "%{::replication_stunnel_certificate}" #'/etc/stunnel/stunnel.pem'
+        private_key: "%{::replication_stunnel_private_key}" #'/etc/pki/tls/private/%{::hostname}.key'
+        verify: "%{::replication_stunnel_verify}" #'2'
+        chroot: "%{::replication_stunnel_chroot}" #'/var/lib/stunnel4/'
+        user: "%{::replication_stunnel_user}" #'stunnel4'
+        group: "%{::replication_stunnel_group}" #'stunnel4'
+        pid_file: "%{::replication_stunnel_pid_file}" #'/stunnel4.pid'
+        ssl_options: "%{::replication_stunnel_ssl_option}" #'NO_SSLv2'
+        client: "%{::replication_stunnel_client}" #true
+        retry: "%{::replication_stunnel_retry}" #true
+        foreground: "%{::replication_stunnel_foreground}" #false
+

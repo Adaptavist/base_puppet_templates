@@ -1,0 +1,15 @@
+---
+
+prefixes: 
+    - "basegroups_"
+
+classes:
+  - baseusers
+
+dependencies:
+  - baseusers
+
+baseusers::groups:
+  "%{::basegroups_group_name}":
+    name : "%{::basegroups_group_name}"
+    gid  : "%{::basegroups_group_id}"

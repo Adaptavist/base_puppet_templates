@@ -1,0 +1,70 @@
+---
+
+prefixes: 
+    - "crowd_"
+    - "atlassian_"
+
+required_facts:
+    - "crowd_instance_name"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::hosting_user: "%{::atlassian_hosting_user}" #'hosting'
+avstapp::hosting_group: "%{::atlassian_hosting_group}" #'hosting'
+
+avstapp::conf:
+  "%{::crowd_instance_name}":
+    is_mirror: "%{::crowd_is_mirror}" # false
+    version: "%{::crowd_version}" # '5.2.5'
+    application_type: crowd
+    context_path: "%{::crowd_context_path}"
+    shutport: "%{::crowd_app_shutport}"
+    tarball_location_url: "http://www.atlassian.com/software/crowd/downloads/binary/atlassian-crowd-%{::crowd_version}.tar.gz"
+    base_url: "%{::crowd_host_name}"
+    avst_wizard: "%{::crowd_avst_wizard}"
+    manual_service_script: "%{::crowd_manual_service_script}"
+    manual_upstart_script: "%{::crowd_manual_upstart_script}"
+    early_access: "%{::crowd_early_access}"
+    avst_wizard_properties:
+      license: "%{::crowd_license}"
+      admin_user: "%{::crowd_admin_user}"
+      admin_pass: "%{::crowd_admin_pass}"
+      admin_full_name: "%{::crowd_admin_full_name}"
+      admin_email: "%{::crowd_admin_email}"
+      database_url: "jdbc:mysql://localhost/%{::crowd_database_name}?autoReconnect=true&characterEncoding=utf8&useUnicode=true"
+      database_user: "%{::crowd_database_user}"
+      database_pass: "%{::crowd_database_pass}"
+      admin_first_name: "admin"
+      admin_last_name: "admin"
+      notification_mail: "admin@admin.com"
+      from_mail_address: "admin@admin.com"
+      mailserver_host: "localhost"
+      instance_name: "%{::crowd_app_instance_name}"
+    drivers:
+      location_path:
+        - "%{::crowd_driver_location_path}"
+    custom:
+      CROWD_SERVER_URL: '%{::crowd_host_name}'
+      CROWD_APP_LOGIN_URL: '%{::crowd_host_name}'
+    java_flags:
+      JVM_MINIMUM_MEMORY: "%{::crowd_jvm_minimum_memory}" #'512m'
+      JVM_MAXIMUM_MEMORY: "%{::crowd_jvm_maximum_memory}" #'1024m'
+      JVM_MAX_PERM_SIZE: "%{::crowd_jvm_max_perm_size}" #'256m'
+      JAVA_ENDORSED_DIRS: "/opt/%{::crowd_instance_name}/install/endorsed"
+      JAVA_BEHAVIORAL_OPTIONS: "%{::crowd_jvm_behavioral_options}"
+      JAVA_PERFORMANCE_OPTIONS: "%{::crowd_jvm_performance_options}"
+      JAVA_DEBUGING_OPTIONS: "%{::crowd_jvm_debugging_options}"
+      JAVA_GC1_OPTIONS: "%{::crowd_jvm_gc1_options}"
+      JAVA_CUSTOM_D_OPTIONS: "%{::crowd_jvm_custom_d_options}"
+

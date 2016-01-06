@@ -1,0 +1,24 @@
+---
+
+packages_repos_name:
+    value:
+    comment: "Name of custom package repo"
+packages_repos_location:
+    value:
+    comment: "URL to remote repo"
+packages_repos_repos_path:
+    value:
+    comment: "Path to include"
+packages_repos_key:
+    value:
+    comment: "Key name"
+packages_repos_include_src:
+    value: false
+    comment: "Include source for repo"
+packages_repos_release: 
+    value: ''
+    comment: "Specific release of the repo"
+packages_repos_key_content: 
+    value:
+    comment: "PGP PUBLIC KEY to access the repo"
+

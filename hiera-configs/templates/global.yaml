@@ -1,0 +1,202 @@
+---
+
+prefixes: 
+    - "global_"
+
+classes:
+  - baseusers
+  - packages_repos
+  - noconfigpkgs
+  - noconfigpkgs::git
+
+dependencies:
+  - baseusers
+  - packages_repos
+  - noconfigpkgs
+  - apt
+  - yum
+  - puppi
+
+
+#install packages
+noconfigpkgs::default_packages:
+  RedHat :
+    - 'passwd'
+    - 'acl'
+    - 'diffutils'
+    - 'traceroute'
+    - 'sysstat'
+    - 'mailx'
+    - 'mtr'
+    - 'vim-enhanced'
+    - 'screen'
+    - 'wget'
+    - 'curl'
+    - 'unzip'
+    - 'tar'
+    - 'cyrus-sasl-plain'
+    - 'zsh'
+  Debian:
+    - 'zsh'
+    - 'sysstat'
+    - 'atop'
+    - 'at'
+    - 'vim'
+    - 'screen'
+    - 'wget'
+    - 'curl'
+    - 'unzip'
+    - 'tar'
+
+# Create users
+baseusers::users :
+  stunnel4 :
+    name : 'stunnel4'
+    home: '/var/run/stunnel4'
+    shell : '/bin/false'
+    groups : ["stunnel4"]
+    comment : 'Stunnel user'
+  adapta :
+    name : 'adapta'
+    home : '/home/adapta'
+    shell : '/bin/bash'
+    uid  : '1020'
+    gid  :  1020
+    groups : ["admin"]
+    comment : 'Adapta Local Admin'
+    password : '$6$zuOhABe.$q6pLaQwfZ5qCOcR.ygGgIFAERwoseQvx2PEfjJT9gtealogactgkDlbIgRISWKsWspTB3dI7A4brHnB/lywhq.'
+  hosting :
+    name : 'hosting'
+    home : '/home/hosting'
+    shell : '/bin/bash'
+    gid  : 1010
+    uid  : 1010
+    comment : 'Hosting User'
+    password : '*'
+  nagios :
+    name : 'nagios'
+    home : '/home/nagios'
+    shell : '/bin/bash'
+    gid  : 1030
+    uid  : 1030
+    comment : 'nagios User'
+    password : '*'
+  nrpe :
+    name : 'nrpe'
+    home : '/home/nrpe'
+    shell : '/bin/bash'
+    gid  : 1040
+    uid  : 1040
+    comment : 'nrpe User'
+    password : '*'
+  root :
+    password : '$6$zuOhABe.$q6pLaQwfZ5qCOcR.ygGgIFAERwoseQvx2PEfjJT9gtealogactgkDlbIgRISWKsWspTB3dI7A4brHnB/lywhq.'
+
+#create groups
+baseusers::groups:
+  stunnel4 :
+    name : 'stunnel4'
+  root:
+    name: 'root'
+  adapta :
+    name : 'adapta'
+    gid  : '1020'
+  admin  :
+    name : 'admin'
+    #gid  : '109'
+  hosting :
+    name : 'hosting'
+    gid  : 1010
+  nagios :
+    name : 'nagios'
+    gid  : 1030
+  nrpe :
+    name : 'nrpe'
+    gid  : 1040
+packages_repos::repos:
+  Debian:
+    adaptavist_repo:
+      location: 'http://apt.adaptavist.com/'
+      repos: '/'
+      key: 895A6588A5F538E6808F756DC8B73650E8C84716
+      include_src: false
+      release: ''
+      key_content: "-----BEGIN PGP PUBLIC KEY BLOCK-----\n
+Version: GnuPG v1.4.11 (GNU/Linux)\n
+\n
+mQGiBFGwy+gRBAC7tV7Jd1X96cDLRyarZL6NUhDrsXhs8DibD1k6Ykftmov+i2Eu\n
+1kXNrmhXcvRl2I5mgCV0YpMG2bH5ps6CIFR+qMhQ5WBaZw06oKp+a0qBJ1eLmy3/\n
+FnxCEfbi8zyCEjaA3lhBqLBMN+h3RlRENi7mNAkyjTU1JmdzLvGhUcyqbwCggEFB\n
++e6TLUM5EhYlu2BAT6VfxD8D/0wUEx309u+VDnxFQkFeL1AhFzHBLo7WK51sD3Vy\n
+VfW0TNybcvQgBEcgjs5VInZ1OBYMqDiHiZKOxzMGvLVQ1N4KJhAZ4gDuaV/fzlxF\n
+nBm6Wmeg9tPmO/FdOiStO0g2b9SblAC8d2pZlW0ewcVNk8Z1rdfWdDfOjTsXJyu7\n
+TxDlA/0eEpgf/vqaW3C/m06Qqzz+jnmnk35aTKk1Wh38Cn+MMxxJ0eZhqILI10jn\n
+XrvEfahDe4+cwfjdQfg6becvZwFpSuLWWD0mqeTS6h6Z6H1B8HOJ7UnV3/RVCzb4\n
+XiBKTibjlgMQmLWrlWpFEOsDVShfSG2IbwtRm2QUZ+Nn5FmjFLQ4YXZzdC1pbnQx\n
+LmFkYXB0YXZpc3QuY29tIDxyb290QGF2c3QtaW50MS5hZGFwdGF2aXN0LmNvbT6I\n
+YgQTEQIAIgUCUbDL6AIbIwYLCQgHAwIGFQgCCQoLBBYCAwECHgECF4AACgkQyLc2\n
+UOjIRxapxQCZAZHpvyYeei708/11eqAFp2tvt1UAn1TmtCbFtVLcfGKd4FXFzdbu\n
+QCDguQINBFGwy+gQCADPS001v0ynribaV2ozfKxRWknZuZRofz0l3rkYlcG2wq2I\n
+BhZCsSxO7+FocJsHDMhuA00fckmMyfyIeWMrFfLZphhww5LBGrKdYrX/yyQmixD3\n
+kaB741S4bPnY0K/9ASloW/ACgAHi09Za226169hiMUKd9TlBLNeevIuzJlbWSZq1\n
+99WB046m3M1D2ecbOJf6X594bsIobN0fJfLsS8ULQVpfK6fqY2elTILtEpt1xpQw\n
+REn0i0WrIxFtIXBi9QSKZDHSpPXlDqrS1H+2p3D1Ks8yUF8JaCVRA5QiZFOvr5Kh\n
+XetUeenlXMEFkEhl7KiJuDnScGJeqg18xc/KikAvAAURCAC7IFF9DU3CJjy8XSD0\n
+nGem39pcGk8Ojz6fx3Ij1YNvIwaZrr2RRRROz5tc/2vO70JGabCvb9R+YG9HI6SA\n
+Q9uI5z0bP7SLsCGkJJw4f7UiLrSKtMIsGSa7IJYpSY0P36D7y4QUTOGKJrcbne9c\n
+DF36wbfn2Bdd7NGlHXk0i2BKeuh57j55QDa6C1Ox4lxAljjAC/M4bxM0KJJ0xm98\n
+tbQvYIDDvZv2VOIDFF/5gy9bzY7MMRME5qIYzTXLvIKLB9Ge/G5nyTaw+Q2HV8ad\n
+persgcAnrnx5x3EFthmXdM1cWR/RcJgolC4a7zRab2NWEOMPfwwQO+GaNbDrfezO\n
+tpuriEkEGBECAAkFAlGwy+gCGwwACgkQyLc2UOjIRxYm6QCfeN0x8CBXRnxXD80I\n
+Br2L/ed0Qn0An2dBmZiSf/udLUAiutrDc/boK9bV\n
+=rOJx\n
+-----END PGP PUBLIC KEY BLOCK-----"
+  adaptavist_snapshot_repo:
+    location: 'http://apt-snapshots.adaptavist.com/'
+    repos: '/'
+    key: 895A6588A5F538E6808F756DC8B73650E8C84716
+    include_src: false
+    release: ''
+    key_content: "-----BEGIN PGP PUBLIC KEY BLOCK-----\n
+Version: GnuPG v1.4.11 (GNU/Linux)\n
+\n
+mQGiBFGwy+gRBAC7tV7Jd1X96cDLRyarZL6NUhDrsXhs8DibD1k6Ykftmov+i2Eu\n
+1kXNrmhXcvRl2I5mgCV0YpMG2bH5ps6CIFR+qMhQ5WBaZw06oKp+a0qBJ1eLmy3/\n
+FnxCEfbi8zyCEjaA3lhBqLBMN+h3RlRENi7mNAkyjTU1JmdzLvGhUcyqbwCggEFB\n
++e6TLUM5EhYlu2BAT6VfxD8D/0wUEx309u+VDnxFQkFeL1AhFzHBLo7WK51sD3Vy\n
+VfW0TNybcvQgBEcgjs5VInZ1OBYMqDiHiZKOxzMGvLVQ1N4KJhAZ4gDuaV/fzlxF\n
+nBm6Wmeg9tPmO/FdOiStO0g2b9SblAC8d2pZlW0ewcVNk8Z1rdfWdDfOjTsXJyu7\n
+TxDlA/0eEpgf/vqaW3C/m06Qqzz+jnmnk35aTKk1Wh38Cn+MMxxJ0eZhqILI10jn\n
+XrvEfahDe4+cwfjdQfg6becvZwFpSuLWWD0mqeTS6h6Z6H1B8HOJ7UnV3/RVCzb4\n
+XiBKTibjlgMQmLWrlWpFEOsDVShfSG2IbwtRm2QUZ+Nn5FmjFLQ4YXZzdC1pbnQx\n
+LmFkYXB0YXZpc3QuY29tIDxyb290QGF2c3QtaW50MS5hZGFwdGF2aXN0LmNvbT6I\n
+YgQTEQIAIgUCUbDL6AIbIwYLCQgHAwIGFQgCCQoLBBYCAwECHgECF4AACgkQyLc2\n
+UOjIRxapxQCZAZHpvyYeei708/11eqAFp2tvt1UAn1TmtCbFtVLcfGKd4FXFzdbu\n
+QCDguQINBFGwy+gQCADPS001v0ynribaV2ozfKxRWknZuZRofz0l3rkYlcG2wq2I\n
+BhZCsSxO7+FocJsHDMhuA00fckmMyfyIeWMrFfLZphhww5LBGrKdYrX/yyQmixD3\n
+kaB741S4bPnY0K/9ASloW/ACgAHi09Za226169hiMUKd9TlBLNeevIuzJlbWSZq1\n
+99WB046m3M1D2ecbOJf6X594bsIobN0fJfLsS8ULQVpfK6fqY2elTILtEpt1xpQw\n
+REn0i0WrIxFtIXBi9QSKZDHSpPXlDqrS1H+2p3D1Ks8yUF8JaCVRA5QiZFOvr5Kh\n
+XetUeenlXMEFkEhl7KiJuDnScGJeqg18xc/KikAvAAURCAC7IFF9DU3CJjy8XSD0\n
+nGem39pcGk8Ojz6fx3Ij1YNvIwaZrr2RRRROz5tc/2vO70JGabCvb9R+YG9HI6SA\n
+Q9uI5z0bP7SLsCGkJJw4f7UiLrSKtMIsGSa7IJYpSY0P36D7y4QUTOGKJrcbne9c\n
+DF36wbfn2Bdd7NGlHXk0i2BKeuh57j55QDa6C1Ox4lxAljjAC/M4bxM0KJJ0xm98\n
+tbQvYIDDvZv2VOIDFF/5gy9bzY7MMRME5qIYzTXLvIKLB9Ge/G5nyTaw+Q2HV8ad\n
+persgcAnrnx5x3EFthmXdM1cWR/RcJgolC4a7zRab2NWEOMPfwwQO+GaNbDrfezO\n
+tpuriEkEGBECAAkFAlGwy+gCGwwACgkQyLc2UOjIRxYm6QCfeN0x8CBXRnxXD80I\n
+Br2L/ed0Qn0An2dBmZiSf/udLUAiutrDc/boK9bV\n
+=rOJx\n
+-----END PGP PUBLIC KEY BLOCK-----"
+  RedHat:
+    adaptavist_repo:
+      baseurl: 'http://yum.adaptavist.com/'
+      descr: "adaptavist_repo repository"
+      enabled: 1
+      gpgcheck: 0
+      priority: 1
+    adaptavist_snapshot_repo:
+      baseurl: 'http://yum-snapshots.adaptavist.com'
+      descr: "adaptavist snapshot repository"
+      enabled: 1
+      gpgcheck: 0
+      priority: 1

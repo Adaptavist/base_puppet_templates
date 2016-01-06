@@ -1,0 +1,7 @@
+---
+
+logstash_config_package_url: "false"
+logstash_config_config_file: "puppet:///files/logstash/logstash.conf"
+logstash_config_ensure: 'present' 
+logstash_config_status: 'running'
+

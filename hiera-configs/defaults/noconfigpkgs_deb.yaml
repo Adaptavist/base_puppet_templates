@@ -1,0 +1,6 @@
+---
+
+noconfigpkgs_debian_package:
+    value:
+    comment: "Debian specific package to be installed"
+

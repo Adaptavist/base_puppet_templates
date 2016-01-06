@@ -1,0 +1,13 @@
+---
+
+
+logstash_forwarder_config_host_port:
+logstash_forwarder_config_file_name:
+logstash_forwarder_config_file_path:
+logstash_forwarder_config_file_field:
+logstash_forwarder_config_use_ssl: "true"
+logstash_forwarder_config_ssl_key: 
+logstash_forwarder_config_ssl_ca_path: 
+logstash_forwarder_config_ssl_certificate: 
+logstash_forwarder_config_package_url: "false"
+

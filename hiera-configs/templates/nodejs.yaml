@@ -1,0 +1,13 @@
+---
+
+prefixes: 
+    - "nodejs_"
+
+classes:
+  - nodejs
+
+dependencies:
+  - nodejs
+  - stdlib
+
+# installs default nodejs class

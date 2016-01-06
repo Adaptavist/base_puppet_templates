@@ -1,0 +1,50 @@
+---
+
+prefixes: 
+    - "artifactory_"
+    - "atlassian_"
+
+classes:
+  - artifactory
+
+dependencies:
+  - apt
+  - artifactory
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+artifactory::instance_name: "%{::artifactory_instance_name}"
+artifactory::hosting_user: "%{::atlassian_hosting_user}"
+artifactory::hosting_group: "%{::atlassian_hosting_group}"
+
+artifactory::conf:
+    tarball_location_file: "%{::artifactory_file_location}"
+    db:
+      DB_PORT:     "%{::artifactory_database_port}"
+      DB_NAME:     "%{::artifactory_database_name}"
+      DB_TYPE:     "%{::artifactory_database_type}"
+      DB_DRIVER:   "%{::artifactory_database_driver_name}"
+      DB_URL:  "jdbc:%{::artifactory_database_type}://%{::artifactory_database_host}:%{::artifactory_database_port}/%{::artifactory_instance_name}"
+      DB_MAX_POOL_SIZE: "%{::artifactory_database_max_pool}"
+      DB_USER: "%{::artifactory_database_user}"
+      DB_PASS: "%{::artifactory_database_pass}"
+      DB_VALIDATION_QUERY: "%{::artifactory_database_validation_query}"
+      DB_DIALECT: "%{::artifactory_database_dialect}"    
+    drivers:
+      location_path:
+        - "%{::artifactory_db_driver}"
+    java_flags:
+      JVM_MINIMUM_MEMORY: "%{::artifactory_min_mem}" 
+      JVM_MAXIMUM_MEMORY: "%{::artifactory_max_mem}" 
+      JVM_MAX_PERM_SIZE: "%{::artifactory_pergen_mem}" 
+    custom:
+        PROVIDER_FILESYSTEM_DIR: "%{::artifactory_data_path}"
+        VERSION: "%{::artifactory_version_number}"
+        CONTEXT_PATH: "%{::artifactory_context_path}"
+        PRODUCT: artifactory
+        SHUTDOWN_PORT: "%{::artifactory_shutdown_port}"
+    license: "%{::artifactory_licence}"

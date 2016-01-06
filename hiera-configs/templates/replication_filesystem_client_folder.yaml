@@ -1,0 +1,29 @@
+---
+
+prefixes: 
+    - "replication_filesystem_client_folder_"
+
+classes:
+  - replication::filesystem::client
+
+dependencies:
+  - stdlib
+  - stunnel_config
+  - lsyncd
+  - xinetd
+  - rsync_config
+  - rsync
+  - stunnel
+  - replication
+
+replication::filesystem::client::folders:
+  "%{::replication_filesystem_client_folder_name}": #'opt':
+    path: "%{::replication_filesystem_client_folder_path}" #'/opt'
+    comment: "%{::replication_filesystem_client_folder_comment}" #'Opt DR sync'
+    read_only: "%{::replication_filesystem_client_folder_read_only}" #'no'
+    list: "%{::replication_filesystem_client_folder_list}" #'yes'
+    uid: "%{::replication_filesystem_client_folder_uid}" #'root'
+    gid: "%{::replication_filesystem_client_folder_gid}" #'root'
+    incoming_chmod: false
+    outgoing_chmod: false
+

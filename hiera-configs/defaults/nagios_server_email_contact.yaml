@@ -1,0 +1,12 @@
+---
+
+nagios_server_email_contact_ensure: 'present'
+nagios_server_email_contact_name:
+nagios_server_email_contact_alias:
+nagios_server_email_contact_service_notification_period: '24x7'
+nagios_server_email_contact_host_notification_period: '24x7'
+nagios_server_email_contact_service_notification_options: 'w,u,c,r'
+nagios_server_email_contact_host_notification_options: 'd,r'
+nagios_server_email_contact_service_notification_commands: 'notify-service-by-email'
+nagios_server_email_contact_host_notification_commands: 'notify-host-by-email'
+nagios_server_email_contact_email_address:

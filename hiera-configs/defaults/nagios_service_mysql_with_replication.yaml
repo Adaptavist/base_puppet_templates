@@ -1,0 +1,6 @@
+---
+
+nagios_service_mysql_with_replication_hostname:
+nagios_service_mysql_with_replication_db_user: 
+nagios_service_mysql_with_replication_db_pass:
+nagios_service_mysql_with_replication_ensure: 'present'

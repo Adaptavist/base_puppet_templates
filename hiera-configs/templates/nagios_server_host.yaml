@@ -1,0 +1,30 @@
+---
+
+prefixes:
+    - "nagios_server_host_"
+
+classes:
+  - nagios_config
+  - nagios::server
+
+dependencies:
+  - nagios
+
+nagios_config::hosts:
+    "%{::nagios_server_host_name}":
+        alias: "%{::nagios_server_host_alias}"
+        address: "%{::nagios_server_host_address}" #            192.168.1.254
+        check_command: "%{::nagios_server_host_check_command}" #          check-host-alive
+        contact_groups: "%{::nagios_server_host_contact_groups}" #         router-admins
+        check_interval: "%{::nagios_server_host_check_interval}" #         5
+        retry_interval: "%{::nagios_server_host_retry_interval}" #         1
+        max_check_attempts: "%{::nagios_server_host_max_check_attempts}" #     5
+        check_period: "%{::nagios_server_host_check_period}" #           24x7
+        process_perf_data: "%{::nagios_server_host_process_perf_data}" #      0
+        retain_nonstatus_information: "%{::nagios_server_host_retain_nonstatus_information}" #   0
+        notification_interval: "%{::nagios_server_host_notification_interval}" #      30
+        notification_period: "%{::nagios_server_host_notification_period}" #    24x7
+        notification_options: "%{::nagios_server_host_notification_options}" #       d,u,r
+        hostgroups: "%{::nagios_server_host_hostgroups}"
+        custom_variables: "%{::nagios_server_host_custom_variables}"
+        ensure: "%{::nagios_server_host_ensure}"

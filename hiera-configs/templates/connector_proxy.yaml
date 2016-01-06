@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "application_"
+    - "connector_"
+
+required_facts:
+    - "application_instance_name"
+    - "connector_proxy_name"
+    - "connector_tomcat_port"
+
+avstapp::conf:
+  "%{::application_instance_name}":
+    connectors:
+      - scheme:      "%{::connector_schema}"
+        http_port:   "%{::connector_tomcat_port}"
+        proxy_name:  "%{::connector_proxy_name}"
+        proxy_port:  "%{::connector_proxy_port}"
+

@@ -1,0 +1,101 @@
+---
+
+prefixes:
+  - vhost_http_atlassian_
+  - connector_
+  - apache_setup_
+
+classes:
+  - webserver
+  - selinux
+  - apache::mod::mime
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+  - selinux
+
+webserver::amods:
+  - auth_basic
+  - authn_file
+  - authz_groupfile
+  - authz_user
+  - autoindex
+  - cache
+  - cgid
+  - dav
+  - dav_svn
+  - deflate
+  - dir
+  - disk_cache
+  - env
+  - headers
+  - negotiation
+  - proxy
+  - proxy_http
+  - reqtimeout
+  - rewrite
+  - setenvif
+  - status
+  - logio
+
+selinux::mode: 'disabled'
+
+ #set the apache global settings
+apache::extended_status: '%{::apache_setup_extended_status}' #'On'
+apache::keepalive: '%{::apache_setup_keepalive}' #'On'
+apache::timeout: '%{::apache_setup_timeout}'
+apache::mod::worker::maxclients: '%{::apache_setup_worker_maxclients}'
+apache::mod::worker::maxsparethreads: '%{::apache_setup_worker_maxsparethreads}'
+
+webserver::default_vhosts:
+  '%{::vhost_http_atlassian_vhost_name}':
+    servername: '%{::vhost_http_atlassian_servername}'
+    serveraliases:
+      - '%{::vhost_http_atlassian_serveraliases}'
+    port: 80
+    docroot: '/nonexistant'
+    log_level: 'warn'
+    require: "Class[selinux]"
+    access_log_syslog: '/var/log/httpd/%{::vhost_http_atlassian_apache_log_prefix}-vhost-access.log'
+    access_log_format: 'proxy'
+    error_log_syslog: '/var/log/httpd/%{::vhost_http_atlassian_apache_log_prefix}-vhost-error.log'
+    custom_fragment:  "AddType text/css .css \n
+AddType text/javascript .js \n
+AddOutputFilterByType DEFLATE text/plain \n
+AddOutputFilterByType DEFLATE text/html \n
+AddOutputFilterByType DEFLATE text/xml \n
+AddOutputFilterByType DEFLATE text/css \n
+AddOutputFilterByType DEFLATE application/json \n
+AddOutputFilterByType DEFLATE application/xml \n
+AddOutputFilterByType DEFLATE application/xhtml+xml \n
+AddOutputFilterByType DEFLATE application/rss+xml \n
+AddOutputFilterByType DEFLATE application/javascript \n
+AddOutputFilterByType DEFLATE application/x-javascript \n
+Header append Vary User-Agent env=!dont-vary \n
+BrowserMatch ^Mozilla/4 gzip-only-text/html \n
+BrowserMatch ^Mozilla/4\\.0[678] no-gzip \n
+BrowserMatch \\bMSIE !no-gzip !gzip-only-text/html \n
+LogFormat \"%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PERCENTAGE_SIGN{User-Agent}i\\\"
+%% %v:%p (%V) %A %a \\\"__PERCENTAGE_SIGN{X-Forwarded-For}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\\\"
+\\\"__PERCENTAGE_SIGN{X-Forwarded-Port}i\\\"
+\\\"__PERCENTAGE_SIGN{X-AUSERNAME}o\\\" \\\"__PERCENTAGE_SIGN{X-ASESSIONID}o\\\" %I %O %D %T\" proxy \n
+\n
+ProxyErrorOverride Off \n
+ProxyPreserveHost   On \n
+
+## Atlassian \n
+ProxyPass          %{::vhost_http_atlassian_proxy_context_path}   http://localhost:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} connectiontimeout=%{::vhost_http_atlassian_proxy_connection_timeout} timeout=%{::vhost_http_atlassian_proxy_timeout} \n
+ProxyPassReverse    %{::vhost_http_atlassian_proxy_context_path}   http://localhost:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} \n
+## Cache static assets \n
+# Needs htcacheclean running to keep disk usage from always growing \n
+# Memory cache is not to be preferred: https://bugzilla.redhat.com/show_bug.cgi?id=493458 \n
+# \"/s\" and \"/static\" is where Confluence, JIRA etc. serves \"static\" stuff. Instruct Apache to cache it: \n
+CacheRoot   /var/cache/httpd/mod_disk_cache/ \n
+CacheEnable disk /s \n
+CacheEnable disk /static \n
+CacheIgnoreHeaders Set-Cookie \n
+"

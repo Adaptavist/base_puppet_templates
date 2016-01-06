@@ -1,0 +1,33 @@
+---
+
+atlassian_hosting_user: 'hosting'
+atlassian_hosting_group: 'hosting'
+
+coverity_licence_file: 
+    value:
+    comment: "location of the coverity license file"
+
+coverity_admin_password: 
+    value:
+    comment: "admin password for the UI"
+coverity_context_path: ""
+coverity_database_host: "localhost"
+coverity_database_port: "5432"
+coverity_data_path: ""
+coverity_db_driver: "/etc/puppet/files/bins/postgresql-9.3-1102.jdbc4.jar"
+coverity_db_instance_size: "3"
+coverity_database_user: "coverity"
+coverity_database_pass:
+coverity_database_name: "coverity"
+coverity_file_location: "/etc/puppet/files/bins/cov-platform-linux64-7.0.3.sh"
+coverity_instance_name: "coverity"
+coverity_licence: ""
+coverity_max_mem: "2048m"
+coverity_min_mem: "1024m"
+coverity_pergen_mem: "512m"
+coverity_shutdown_port: 8012
+coverity_tomcat_ajp_port: "8443"
+coverity_tomcat_connection_timeout: 240
+connector_tomcat_port: 8080 
+coverity_tomcat_redirect_port: 8443
+coverity_version_number: "7.0.3"

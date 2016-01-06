@@ -1,0 +1,20 @@
+---
+
+prefixes: 
+    - "nagios_server_service_"
+
+classes:
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::services:
+    "%{::nagios_server_service_name}":
+        check_command: "%{::nagios_server_service_check_command}"
+        use:  "%{::nagios_server_service_use}"
+        host_name:  "%{::nagios_server_service_host_name}"
+        hostgroup_name:  "%{::nagios_server_service_hostgroup_name}"
+        service_description:  "%{::nagios_server_service_service_description}"
+        ensure: "%{::nagios_server_service_ensure}"
+        notification_interval: "%{::nagios_server_service_notification_interval}"

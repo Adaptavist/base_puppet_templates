@@ -1,0 +1,13 @@
+---
+
+nagios_server_timeperiod_name:
+nagios_server_timeperiod_alias:
+nagios_server_timeperiod_sunday: '00:00-24:00'
+nagios_server_timeperiod_monday: '00:00-24:00'
+nagios_server_timeperiod_tuesday: '00:00-24:00'
+nagios_server_timeperiod_wednesday: '00:00-24:00'
+nagios_server_timeperiod_thursday: '00:00-24:00'
+nagios_server_timeperiod_friday: '00:00-24:00'
+nagios_server_timeperiod_saturday: '00:00-24:00'
+nagios_server_timeperiod_ensure: 'present'
+

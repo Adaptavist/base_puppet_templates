@@ -1,0 +1,8 @@
+---
+
+replication_filesystem_server_setup_use_upstart: 
+    value: true
+replication_filesystem_server_setup_inotify_watches:
+    value: 40000
+
+

@@ -1,0 +1,4 @@
+---
+
+legacy_nagios_client_nrpe_source:
+legacy_nagios_client_nrpe_config_file: '/etc/nagios/nrpe_local.cfg'

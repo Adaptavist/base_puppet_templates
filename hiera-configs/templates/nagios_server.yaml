@@ -1,0 +1,41 @@
+---
+
+prefixes:
+    - "nagios_server_"
+
+classes:
+  - nagios::server
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios::server::cfg_dir:
+  - "%{::nagios_server_hostconfig_dir}"
+  - "%{::nagios_server_serviceconfig_dir}"
+nagios_config::host_config_directory: '%{::nagios_server_hostconfig_dir}'
+nagios_config::service_config_directory: '%{::nagios_server_serviceconfig_dir}'
+nagios_config::purge_configs: '%{::nagios_server_purge_configs}'
+
+nagios::server::ensure: "%{::nagios_server_ensure}"
+nagios::server::nagios_user: "%{::nagios_server_nagios_user}"
+nagios::server::nagios_group: "%{::nagios_server_nagios_group}"
+nagios::server::cfg_root_dir: "%{::nagios_server_cfg_root_dir}"
+nagios::server::log_root_dir: "%{::nagios_server_log_root_dir}"
+nagios::server::lib_root_dir: "%{::nagios_server_lib_root_dir}"
+nagios::server::cache_root_dir: "%{::nagios_server_cache_root_dir}"
+nagios::server::p1_file_path: "%{::nagios_server_p1_file_path}"
+nagios::server::pid_file_path: "%{::nagios_server_pid_file_path}"
+nagios::server::cmd_file_path: "%{::nagios_server_cmd_file_path}"
+nagios::server::admin_email: "%{::nagios_server_admin_email}"
+nagios::server::admin_pager: "%{::nagios_server_admin_pager}"
+nagios::server::cgi_authorized_for_system_information: "%{::nagios_server_cgi_authorized_for_system_information}"
+nagios::server::cgi_authorized_for_configuration_information: "%{::nagios_server_cgi_authorized_for_configuration_information}"
+nagios::server::cgi_authorized_for_system_commands: "%{::nagios_server_cgi_authorized_for_system_commands}"
+nagios::server::cgi_authorized_for_all_services: "%{::nagios_server_cgi_authorized_for_all_services}"
+nagios::server::cgi_authorized_for_all_hosts: "%{::nagios_server_cgi_authorized_for_all_hosts}"
+nagios::server::cgi_authorized_for_all_service_commands: "%{::nagios_server_cgi_authorized_for_all_service_commands}"
+nagios::server::cgi_authorized_for_all_host_commands: "%{::nagios_server_cgi_authorized_for_all_host_commands}"
+nagios::server::notify_host_by_email_command_line: "%{::nagios_server_notify_host_by_email_command_line}"
+nagios::server::notify_service_by_email_command_line: "%{::nagios_server_notify_service_by_email_command_line}"
+nagios::server::admins_members: "%{::nagios_server_admin_contact_group_members}"

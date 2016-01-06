@@ -1,0 +1,72 @@
+---
+
+prefixes: 
+    - "jira_"
+    - "atlassian_"
+
+required_facts:
+    - "jira_instance_name"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::hosting_user: "%{::atlassian_hosting_user}" #'hosting'
+avstapp::hosting_group: "%{::atlassian_hosting_group}" #'hosting'
+
+
+avstapp::conf:
+  "%{::jira_instance_name}":
+    is_mirror: "%{::jira_is_mirror}" # false
+    version: "%{::jira_version}" # '5.2.5'
+    application_type: jira
+    context_path: "%{::jira_context_path}"
+    shutport: "%{::jira_app_shutport}"
+    tarball_location_url: "%{::jira_tarball_location_url_prefix}%{::jira_version}%{::jira_tarball_location_url_postfix}"
+    base_url: "%{::jira_host_name}"
+    avst_wizard: "%{::jira_avst_wizard}"
+    manual_service_script: "%{::jira_manual_service_script}"
+    manual_upstart_script: "%{::jira_manual_upstart_script}"
+    early_access: "%{::jira_early_access}"
+    avst_wizard_properties:
+      license: "%{::jira_license}"
+      admin_user: "%{::jira_admin_user}"
+      admin_pass: "%{::jira_admin_pass}"
+      admin_full_name: "%{::jira_admin_full_name}"
+      admin_email: "%{::jira_admin_email}"
+      database_url: "localhost"
+      database_user: "%{::jira_database_user}"
+      database_pass: "%{::jira_database_pass}"
+      database_name: "%{::jira_database_name}"
+      mail_server_user: "admin"
+      mail_server_pass: "admin"
+      instance_name: "%{::jira_app_instance_name}"
+
+    drivers:
+      location_path:
+        - "%{::jira_driver_location_path}"
+    custom:
+      CROWD_SERVER_URL: '%{::jira_crowd_server_url}'
+      CROWD_APP_NAME: '%{::jira_crowd_appname}'
+      CROWD_APP_PASSWORD: '%{::jira_crowd_app_password}'
+      CROWD_SSO_ENABLE: '%{::jira_crowd_sso_enabled}'
+    java_flags:
+        JVM_MINIMUM_MEMORY: "%{::jira_jvm_minimum_memory}" #'512m'
+        JVM_MAXIMUM_MEMORY: "%{::jira_jvm_maximum_memory}" #'1024m'
+        JVM_MAX_PERM_SIZE: "%{::jira_jvm_max_perm_size}" #'256m'
+        JAVA_ENDORSED_DIRS: "/opt/%{::jira_instance_name}/install/endorsed"
+        JAVA_BEHAVIORAL_OPTIONS: "%{::jira_jvm_behavioral_options}"
+        JAVA_PERFORMANCE_OPTIONS: "%{::jira_jvm_performance_options}"
+        JAVA_DEBUGING_OPTIONS: "%{::jira_jvm_debugging_options}"
+        JAVA_GC1_OPTIONS: "%{::jira_jvm_gc1_options}"
+        JAVA_CUSTOM_D_OPTIONS: "%{::jira_jvm_custom_d_options}"
+

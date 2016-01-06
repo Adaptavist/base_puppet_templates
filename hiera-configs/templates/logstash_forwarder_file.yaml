@@ -1,0 +1,22 @@
+---
+
+prefixes: 
+    - "logstash_forwarder_file_"
+
+classes:
+  - logstash_forwarder_config
+
+dependencies:
+  - logstash_forwarder_config
+  - logstashforwarder
+  - stdlib
+  - concat
+  - logrotate
+
+logstash_forwarder_config::files:
+   "%{::logstash_forwarder_file_name}":
+    paths: 
+      - "%{::logstash_forwarder_file_path}"
+    fields:
+      'type': "%{::logstash_forwarder_file_field}"
+

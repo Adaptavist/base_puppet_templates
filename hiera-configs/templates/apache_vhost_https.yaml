@@ -1,0 +1,47 @@
+---
+
+# include also apache_vhost_http, this extends apache_vhost_http and adds ssl properties
+
+prefixes:
+  - apache_vhost_https_
+  - apache_vhost_http_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - auth_basic
+  - authn_file
+  - authz_groupfile
+  - authz_user
+  - autoindex
+  - cache
+  - cgid
+  - dav
+  - dav_svn
+  - deflate
+  - dir
+  - cache_disk
+  - env
+  - negotiation
+  - reqtimeout
+  - rewrite
+  - setenvif
+
+apache::mod::ssl::ssl_compression: true
+
+webserver::default_vhosts:
+  '%{::apache_vhost_http_vhost_name}':
+    ssl: true
+    ssl_protocol: 'All -SSLv2 -SSLv3'
+    # SSLCompression
+    ssl_cert: '%{::apache_vhost_https_ssl_cert}'
+    ssl_key: '%{::apache_vhost_https_ssl_key}'
+    ssl_chain: '%{::apache_vhost_https_ssl_chain}'
+

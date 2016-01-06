@@ -1,0 +1,20 @@
+---
+
+nagios_server_web_host_name:
+nagios_server_web_host_alias:
+nagios_server_web_host_address:
+nagios_server_web_host_check_command:
+nagios_server_web_host_contact_groups:
+nagios_server_web_host_check_interval: 5
+nagios_server_web_host_retry_interval: 1
+nagios_server_web_host_max_check_attempts: 5
+nagios_server_web_host_check_period: '24x7'
+nagios_server_web_host_process_perf_data: 0
+nagios_server_web_host_retain_nonstatus_information: 0
+nagios_server_web_host_notification_interval: 30
+nagios_server_web_host_notification_period: '24x7'
+nagios_server_web_host_notification_options: 'd,u,r'
+nagios_server_web_host_hostgroups:
+nagios_server_web_host_ensure: 'present'
+nagios_server_web_host_url:
+nagios_server_web_host_custom_variables: ''

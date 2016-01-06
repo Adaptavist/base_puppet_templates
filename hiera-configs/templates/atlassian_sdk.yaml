@@ -1,0 +1,18 @@
+---
+
+prefixes: 
+    - "atlassian_sdk_"
+
+classes:
+  - atlassian_sdk
+
+dependencies:
+  - atlassian_sdk
+  - stdlib
+
+atlassian_sdk::installdir: "%{::atlassian_sdk_installdir}"
+atlassian_sdk::user:  "%{::atlassian_sdk_user}"
+atlassian_sdk::group:  "%{::atlassian_sdk_group}"
+atlassian_sdk::versions:  
+    - "%{::atlassian_sdk_version}"
+

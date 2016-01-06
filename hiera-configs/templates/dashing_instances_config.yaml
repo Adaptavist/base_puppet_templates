@@ -1,0 +1,20 @@
+---
+
+prefixes: 
+    - "dashing_instance_"
+
+classes:
+  - dashing_instances_config
+
+dependencies:
+  - dashing
+  - dashing_instances_config
+
+dashing_instances_config::dashing_instances:
+    "%{::dashing_instance_name}":
+        targz: "%{::dashing_instance_targz}"
+        gitrepo: "%{::dashing_instance_gitrepo}"
+        dashing_port: "%{::dashing_instance_dashing_port}"
+        dashing_dir: "%{::dashing_instance_dashing_dir}"
+        strip_parent_dir: "%{::dashing_instance_strip_parent_dir}"
+

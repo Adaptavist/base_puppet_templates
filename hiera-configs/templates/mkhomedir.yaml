@@ -1,0 +1,14 @@
+---
+
+prefixes:
+    - "mkhomedir_"
+
+classes:
+    - mkhomedir
+
+dependencies:
+  - mkhomedir
+
+mkhomedir::home_basedir: "%{::mkhomedir_home_basedir}" #'/nethome'
+mkhomedir::home_basedir_link_target: "%{::mkhomedir_home_basedir_link_target}" #'/home'
+

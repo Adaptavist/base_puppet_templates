@@ -1,0 +1,27 @@
+---
+
+nagios_server_ensure: 'present'
+nagios_server_nagios_user: 'nagios'
+nagios_server_nagios_group: 'nagios'
+nagios_server_cfg_root_dir: '/etc/nagios3'
+nagios_server_log_root_dir: '/var/log/nagios3'
+nagios_server_lib_root_dir: '/var/lib/nagios3'
+nagios_server_cache_root_dir: '/var/cache/nagios3'
+nagios_server_p1_file_path: '/usr/lib/nagios3/p1.pl'
+nagios_server_pid_file_path: '/var/run/nagios3/nagios3.pid'
+nagios_server_cmd_file_path: '/var/cache/nagios3/rw/nagios.cmd'
+nagios_server_admin_email: 'root@localhost'
+nagios_server_admin_pager: 'pageroot@localhost'
+nagios_server_cgi_authorized_for_system_information: 'nagiosadmin'
+nagios_server_cgi_authorized_for_configuration_information: 'nagiosadmin'
+nagios_server_cgi_authorized_for_system_commands: 'nagiosadmin'
+nagios_server_cgi_authorized_for_all_services: 'nagiosadmin'
+nagios_server_cgi_authorized_for_all_hosts: 'nagiosadmin'
+nagios_server_cgi_authorized_for_all_service_commands: 'nagiosadmin'
+nagios_server_cgi_authorized_for_all_host_commands: 'nagiosadmin'
+nagios_server_purge_configs: 'false'
+nagios_server_hostconfig_dir:
+nagios_server_serviceconfig_dir:
+nagios_server_notify_host_by_email_command_line: '/usr/bin/printf "%b" "***** Nagios *****\n\nNotification Type: $NOTIFICATIONTYPE$\nHost: $HOSTNAME$\nState: $HOSTSTATE$\nAddress: $HOSTADDRESS$\nInfo: $HOSTOUTPUT$\n\nDate/Time: $LONGDATETIME$\n" | /usr/bin/mail -s "** $NOTIFICATIONTYPE$ Host Alert: $HOSTNAME$ is $HOSTSTATE$ **" $CONTACTEMAIL$'
+nagios_server_notify_service_by_email_command_line: '/usr/bin/printf "%b" "***** Nagios *****\n\nNotification Type: $NOTIFICATIONTYPE$\n\nService: $SERVICEDESC$\nHost: $HOSTALIAS$\nAddress: $HOSTADDRESS$\nState: $SERVICESTATE$\n\nDate/Time: $LONGDATETIME$\n\nAdditional Info:\n\n$SERVICEOUTPUT$" | /usr/bin/mail -s "** $NOTIFICATIONTYPE$ Service Alert: $HOSTALIAS$/$SERVICEDESC$ is $SERVICESTATE$ **" $CONTACTEMAIL$'
+nagios_server_admin_contact_group_members: 'nagiosadmin'

@@ -1,0 +1,25 @@
+---
+
+prefixes: 
+    - "nagios_service_mysql_with_replication_"
+
+classes:
+  - nagios::server
+
+dependencies:
+  - nagios
+
+
+nagios::server::services:
+    "%{::nagios_service_mysql_with_replication_hostname}_mysql_staus":
+        check_command: "check_nrpe!check_mysql!%{::nagios_service_mysql_with_replication_db_user} %{::nagios_service_mysql_with_replication_db_pass}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_mysql_with_replication_hostname}"
+        service_description:  "MySQL Status"
+        ensure: "%{::nagios_service_mysql_with_replication_ensure}"
+    "%{::nagios_service_mysql_with_replication_hostname}_mysql_replication":
+        check_command: "check_nrpe!check_mysql_replication!%{::nagios_service_mysql_with_replication_db_user} %{::nagios_service_mysql_with_replication_db_pass}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_mysql_with_replication_hostname}"
+        service_description:  "MySQL Replication Status"
+        ensure: "%{::nagios_service_mysql_with_replication_ensure}"

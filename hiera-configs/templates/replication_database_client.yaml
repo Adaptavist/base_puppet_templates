@@ -1,0 +1,41 @@
+---
+
+prefixes:
+    - "replication_database_client_"
+
+classes:
+    - replication::database::client
+    - database
+
+dependencies:
+  - stdlib
+  - stunnel_config
+  - lsyncd
+  - xinetd
+  - rsync_config
+  - rsync
+  - stunnel
+  - replication
+
+replication::database::client::replication_user: "%{::replication_database_client_replication_user}"
+replication::database::client::replication_password: "%{::replication_database_client_replication_password}"
+replication::database::client::dump_user: "%{::replication_database_client_dump_user}"
+replication::database::client::dump_password: "%{::replication_database_client_dump_password}"
+replication::database::client::to_server_user: "%{::replication_database_client_to_server_user}"
+replication::database::client::to_server_password: "%{::replication_database_client_to_server_password}"
+
+database::type: 'mysql'
+
+mysqlconfig::custom_mysql_options:
+  mysqld:
+    replicate-ignore-db: "%{::replication_database_client_replicate-ignore-db}" #'test'
+    server-id: "%{::replication_database_client_server-id}" #12
+    innodb_file_per_table: "%{::replication_database_client_innodb_file_per_table}" #1
+    relay-log: "%{::replication_database_client_relay-log}" #'mysqld-relay-bin'
+    max_allowed_packet: "%{::replication_database_client_max_allowed_packet}" #128M
+    character-set-server: "%{::replication_database_client_character-set-server}" #'utf8'
+    collation_server: "%{::replication_database_client_collation_server}" #'utf8_bin'
+    default-storage-engine: "%{::replication_database_client_default-storage-engine}" #'innodb'
+    transaction-isolation: "%{::replication_database_client_transaction-isolation}" #'READ-COMMITTED'
+    bind_address: "%{::replication_database_client_bind_address}" #127.0.0.1
+
