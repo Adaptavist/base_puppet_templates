@@ -1,5 +1,12 @@
 ---
 
+sudo:
+    name: 'example42/sudo'
+    repo: 'https://github.com/Adaptavist/puppet-sudo.git'
+    ref_type: "tag"
+    ref_value: '2.0.13'
+    repo_type: 'git'
+
 atlassian_sdk:
     name: 'adaptavist/atlassian_sdk'
     repo: 'https://github.com/Adaptavist/puppet-atlassian_sdk.git'
