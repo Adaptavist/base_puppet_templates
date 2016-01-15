@@ -1,0 +1,14 @@
+---
+
+prefixes: 
+    - "idmap_"
+
+classes:
+  - idmap
+
+dependencies:
+  - idmap
+
+#set nfsv4 domain
+idmap::nfsv4_domain: "%{::idmap_nfsv4_domain}"
+
