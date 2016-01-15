@@ -1,0 +1,23 @@
+---
+
+prefixes:
+    - "sssd_"
+
+classes:
+  - sssd
+
+dependencies:
+  - sssd
+  - stdlib
+
+sssd::domains:
+  - "%{::sssd_ldap_server1}"
+  - "%{::sssd_ldap_server2}"
+sssd::ldap_default_authtok: "%{::sssd_ldap_default_authtok}"
+sssd::ldap_search_base: "%{::sssd_ldap_search_base}"
+sssd::cert_name: "%{::sssd_cert_name}"
+sssd::ldap_default_bind_uid: "%{::sssd_ldap_default_bind_uid}"
+sssd::debug_level: "%{::sssd_debug_level}"
+
+sssd::authconfig::auth_command: "%{::sssd_authconfig_command}"
+
