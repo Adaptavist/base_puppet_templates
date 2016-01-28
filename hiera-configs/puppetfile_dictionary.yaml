@@ -18,7 +18,7 @@ xvfb:
     name: 'adaptavist/xvfb'
     repo: 'https://github.com/Adaptavist/puppet-xvfb.git'
     ref_type: "tag"
-    ref_value: '0.1.5'
+    ref_value: '0.1.6'
     repo_type: 'git'
 
 m2_settings:
@@ -516,7 +516,7 @@ stunnel_config:
     repo: 'https://github.com/Adaptavist/puppet-stunnel_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.10'
+    ref_value: '0.2.11'
 
 rsync_config: 
     name: 'adaptavist/rsync_config'
