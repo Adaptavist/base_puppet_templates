@@ -33,7 +33,7 @@ atlassian_sdk:
     name: 'adaptavist/atlassian_sdk'
     repo: 'https://github.com/Adaptavist/puppet-atlassian_sdk.git'
     ref_type: "tag"
-    ref_value: '0.1.8'
+    ref_value: '0.1.9'
     repo_type: 'git'
 
 xvfb:
@@ -54,14 +54,14 @@ rvm:
     name: 'maestrodev/rvm'
     repo: 'https://github.com/Adaptavist/puppet-rvm.git'
     ref_type: "tag"
-    ref_value: 'v1.6.6'
+    ref_value: 'v1.12.1'
     repo_type: 'git'
 
 fpm:
     name: 'adaptavist/fpm'
     repo: 'https://github.com/Adaptavist/puppet-fpm.git'
     ref_type: "tag"
-    ref_value: '0.1.7'
+    ref_value: '0.1.8'
     repo_type: 'git'
 
 selinux:
@@ -125,7 +125,7 @@ nodejs:
     repo: 'https://github.com/Adaptavist/puppet-nodejs.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.8.0'
+    ref_value: 'v1.3.0'
 
 graphite: 
     name: 'adaptavist/graphite'
@@ -384,7 +384,7 @@ oracle_java:
     repo: 'https://github.com/Adaptavist/puppet-oracle_java.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.5'
+    ref_value: '0.2.6'
 
 packages_repos: 
     name: 'adaptavist/packages_repos'
