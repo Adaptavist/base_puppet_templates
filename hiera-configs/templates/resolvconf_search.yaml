@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - "resolvconf_search_"
+
+classes:
+    - resolvconf
+
+dependencies:
+  - resolvconf
+
+resolvconf::search:
+    - "%{::resolvconf_search_host}"

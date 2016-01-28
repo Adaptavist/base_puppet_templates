@@ -1,5 +1,27 @@
 ---
 
+dhclient:
+    name: 'adaptavist/dhclient'
+    repo: 'https://github.com/Adaptavist/puppet-dhclient.git'
+    ref_type: "tag"
+    ref_value: '0.1.3'
+    repo_type: 'git'
+
+
+self_hostname:
+    name: 'adaptavist/self_hostname'
+    repo: 'https://github.com/Adaptavist/puppet-self_hostname.git'
+    ref_type: "tag"
+    ref_value: '0.1.1'
+    repo_type: 'git'
+
+resolvconf:
+    name: 'thias/resolvconf'
+    repo: 'https://github.com/Adaptavist/puppet-resolvconf.git'
+    ref_type: "tag"
+    ref_value: '0.0.3'
+    repo_type: 'git'
+
 sudo:
     name: 'example42/sudo'
     repo: 'https://github.com/Adaptavist/puppet-sudo.git'
@@ -250,7 +272,7 @@ firewall:
     repo: 'https://github.com/Adaptavist/puppet-firewall.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.4.2'
+    ref_value: '1.7.2'
 
 collectd: 
     name: 'adaptavist/collectd'

@@ -1,0 +1,14 @@
+---
+
+prefixes:
+  - self_hostname_
+
+classes:
+  - self_hostname
+
+dependencies:
+  - self_hostname
+  - stdlib
+
+self_hostname::ensure_canonical_hostname: "%{::self_hostname_ensure_canonical_hostname}"
+self_hostname::remove_hostname: "%{::self_hostname_remove_hostname}"

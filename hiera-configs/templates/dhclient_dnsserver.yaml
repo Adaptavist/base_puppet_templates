@@ -1,0 +1,14 @@
+---
+
+prefixes:
+  - dnsserver_
+
+classes:
+  - dhclient
+
+dependencies:
+  - dhclient
+  - stdlib
+
+dhclient::dnsservers:
+    - "%{::dnsserver_dns_server}"

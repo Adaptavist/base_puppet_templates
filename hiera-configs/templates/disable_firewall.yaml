@@ -1,0 +1,13 @@
+---
+
+prefixes:
+  - disable_firewall_
+
+classes:
+  - firewall
+
+dependencies:
+  - firewall
+
+firewall::ensure: '%{::disable_firewall_ensure}'
+

@@ -1,0 +1,4 @@
+---
+
+self_hostname_ensure_canonical_hostname: 'false'
+self_hostname_remove_hostname: 'false'

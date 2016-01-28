@@ -1,0 +1,14 @@
+---
+
+prefixes:
+  - searchdomain_
+
+classes:
+  - dhclient
+
+dependencies:
+  - dhclient
+  - stdlib
+
+dhclient::searchdomains:
+    - "%{::searchdomain_search_domain}"

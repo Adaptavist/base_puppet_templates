@@ -1,0 +1,21 @@
+---
+
+prefixes:
+  - dhclient_
+
+classes:
+  - dhclient
+
+dependencies:
+  - dhclient
+  - stdlib
+
+dhclient::ns_update_hook_path: "%{::dhclient_ns_update_hook_path}"
+dhclient::dhcp_update_key_template_path: "%{::dhclient_dhcp_update_key_template_path}"
+dhclient::update_key_path: "%{::dhclient_update_key_path}"
+dhclient::dhcp_update_key_secret: "%{::dhclient_dhcp_update_key_secret}"
+dhclient::nsupdate_ip_source: "%{::dhclient_nsupdate_ip_source}"
+dhclient::disable_network_manager: "%{::dhclient_disable_network_manager}"
+dhclient::server_domain: "%{::dhclient_server_domain}"
+dhclient::name_server: "%{::dhclient_name_server}"
+dhclient::domain: "%{::dhclient_domain}"

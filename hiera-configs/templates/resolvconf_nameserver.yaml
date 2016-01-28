@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - "resolvconf_nameserver_"
+
+classes:
+    - resolvconf
+
+dependencies:
+  - resolvconf
+
+resolvconf::nameserver:
+    - "%{::resolvconf_nameserver_ipaddress}"

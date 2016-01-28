@@ -1,0 +1,12 @@
+---
+
+dhclient_ns_update_hook_path: '/etc/dhcp/nsupdate.hook.erb'
+dhclient_dhcp_update_key_template_path: '/etc/dhcp/domain.update-key.erb'
+dhclient_update_key_path: '/etc/dhcp/domain.update-key'
+dhclient_nsupdate_ip_source: '$new_ip_address'
+dhclient_disable_network_manager: 'true'
+dhclient_dhcp_update_key_secret:
+dhclient_server_domain:
+dhclient_name_server:
+dhclient_domain:
+
