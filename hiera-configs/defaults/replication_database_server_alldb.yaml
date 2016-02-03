@@ -1,0 +1,25 @@
+---
+
+replication_database_server_log-bin:
+    value: 'mysqld-bin'
+replication_database_server_server-id:
+    value: 3
+replication_database_server_binlog_format:
+    value: 'row'
+replication_database_server_relay-log:
+    value: 'mysqld-relay-bin'
+replication_database_server_innodb_file_per_table:
+    value: 1
+replication_database_server_max_allowed_packet:
+    value: 128M
+replication_database_server_character-set-server:
+    value: 'utf8'
+replication_database_server_collation_server:
+    value: 'utf8_bin'
+replication_database_server_default-storage-engine:
+    value: 'innodb'
+replication_database_server_transaction-isolation:
+    value: 'READ-COMMITTED'
+replication_database_server_bind_address:
+    value: 127.0.0.1
+
