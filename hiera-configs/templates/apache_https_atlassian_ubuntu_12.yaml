@@ -96,8 +96,8 @@ ProxyErrorOverride Off \n
 ProxyPreserveHost   On \n
 
 ## Atlassian \n
-ProxyPass          %{::vhost_https_atlassian_proxy_context_path}   http://localhost:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} connectiontimeout=%{::vhost_https_atlassian_proxy_connection_timeout} timeout=%{::vhost_https_atlassian_proxy_timeout} \n
-ProxyPassReverse    %{::vhost_https_atlassian_proxy_context_path}   http://localhost:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} \n
+ProxyPass          %{::vhost_https_atlassian_proxy_context_path}   http://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} connectiontimeout=%{::vhost_https_atlassian_proxy_connection_timeout} timeout=%{::vhost_https_atlassian_proxy_timeout} \n
+ProxyPassReverse    %{::vhost_https_atlassian_proxy_context_path}   http://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} \n
 ## Cache static assets \n
 # Needs htcacheclean running to keep disk usage from always growing \n
 # Memory cache is not to be preferred: https://bugzilla.redhat.com/show_bug.cgi?id=493458 \n

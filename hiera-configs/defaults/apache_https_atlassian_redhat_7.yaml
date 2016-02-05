@@ -50,3 +50,6 @@ vhost_https_atlassian_proxy_context_path:
 connector_tomcat_port: 
     value: '8090'
     comment: "ProxyPass setup to localhost port"
+connector_tomcat_host:
+    value: 'localhost'
+    comment: "The host to proxy too"
