@@ -1,0 +1,21 @@
+---
+
+prefixes:
+    - "mysql_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+mysqlconfig::custom_mysql_options:
+  mysqld:
+    'datadir': "%{::mysql_data_dir}"
