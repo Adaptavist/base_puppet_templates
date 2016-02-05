@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "avst_backup_"
+
+classes:
+  - avst_backup
+
+avst_backup::backup_ldap: "%{::avst_backup_backup_ldap}"
+avst_backup::backup_svn: "%{::avst_backup_backup_svn}"
+avst_backup::backup_filesystem: "%{::avst_backup_backup_filesystem}"
+avst_backup::backup_database: "%{::avst_backup_backup_database}"
+avst_backup::backup_hiera: "%{::avst_backup_hiera}"
+avst_backup::hiera::run_as_one_job: "%{::avst_backup_hiera_run_as_one_cron}"
+avst_backup::hiera::hour: "%{::avst_backup_hiera_cron_hour}"
+avst_backup::hiera::minute: "%{::avst_backup_hiera_cron_minute}"
+avst_backup::hiera::job_failure_email:  "%{::avst_backup_hiera_job_failure_email}"
+avst_backup::hiera::job_log_file: "%{::avst_backup_hiera_job_log_file}"
+avst_backup::hiera::rotate_logs: "%{::avst_backup_hiera_rotate_logs}"
