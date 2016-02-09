@@ -1,0 +1,17 @@
+---
+
+prefixes:
+  - firewall_rule_
+
+classes:
+  - fw
+
+dependencies:
+  - fw
+  - firewall
+
+fw::rules: &fw_rules
+  "%{::firewall_rule_description}":
+      chain: "%{::firewall_rule_chain}"
+      proto: "%{::firewall_rule_proto}"
+      action: "%{::firewall_rule_action}"

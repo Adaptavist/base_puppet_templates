@@ -1,0 +1,15 @@
+---
+
+prefixes:
+  - firewall_rule_
+
+classes:
+  - fw
+
+dependencies:
+  - fw
+  - firewall
+
+fw::rules: &fw_rules
+  "%{::firewall_rule_description}":
+      iniface: "%{::firewall_rule_interface}"

@@ -1,0 +1,18 @@
+---
+
+prefixes:
+  - firewall_master_
+  - firewall_rule_
+
+
+classes:
+  - fw
+
+dependencies:
+  - fw
+  - firewall
+
+fw::rules: &fw_rules
+  "%{::firewall_master_description}":
+      state: 
+        - "%{::firewall_rule_state}"
