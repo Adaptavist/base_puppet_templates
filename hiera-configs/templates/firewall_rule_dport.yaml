@@ -2,6 +2,7 @@
 
 prefixes:
   - firewall_rule_
+  - firewall_master_
 
 classes:
   - fw
@@ -11,5 +12,6 @@ dependencies:
   - firewall
 
 fw::rules: &fw_rules
-  "%{::firewall_rule_description}":
-      dport: "%{::firewall_rule_dport}"
+  "%{::firewall_master_description}":
+      dport: 
+        - "%{::firewall_rule_dport}"

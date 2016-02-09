@@ -1,4 +1,4 @@
 ---
 
 firewall_rule_dport:
-firewall_rule_description:
+firewall_master_description:
