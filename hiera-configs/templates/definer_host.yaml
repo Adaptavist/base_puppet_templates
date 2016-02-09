@@ -1,0 +1,15 @@
+---
+
+prefixes: 
+    - "definer_host_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  host:
+    "%{::definer_host_name}":
+      ip: "%{::definer_host_ip}"
