@@ -24,6 +24,7 @@ postgresconfig::listen_address: "%{::postgres_listen_address}"
 postgresconfig::listen_port: "%{::postgres_listen_port}"
 postgresconfig::install_contrib: "%{::postgres_install_contrib}"
 postgresconfig::install_devel: "%{::postgres_install_devel}"
+postgresconfig::create_auth_file: "%{::postgres_create_auth_file}"
 
 postgresconfig::hba_rules: 
   001:
