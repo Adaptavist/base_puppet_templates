@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "mail_forward_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  file:
+    "%{::mail_forward_file}":
+      path: "%{::mail_forward_file}"
+      owner: "%{::mail_forward_user}"
+      group: "%{::mail_forward_group}"
+      mode: "%{::mail_forward_mode}"
+      content: "%{::mail_forward_destination_address}"
+      ensure: "%{::mail_forward_ensure}"

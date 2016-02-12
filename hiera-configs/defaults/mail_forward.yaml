@@ -1,0 +1,8 @@
+---
+
+mail_forward_file: '/root/.forward'
+mail_forward_user: 'root'
+mail_forward_group: 'root'
+mail_forward_mode: '0644'
+mail_forward_destination_address:
+mail_forward_ensure: 'present'
