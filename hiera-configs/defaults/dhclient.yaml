@@ -9,4 +9,4 @@ dhclient_dhcp_update_key_secret:
 dhclient_server_domain:
 dhclient_name_server:
 dhclient_domain:
-
+dhclient_create_exit_hook: 'true'
