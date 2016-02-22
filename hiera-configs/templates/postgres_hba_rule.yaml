@@ -1,0 +1,28 @@
+---
+
+prefixes:
+    - "postgres_hba_rule_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresconfig::hba_rules:
+  "%{::postgres_hba_rule_name}":
+    type:  "%{::postgres_hba_rule_type}"
+    user:  "%{::postgres_hba_rule_user}"
+    address:  "%{::postgres_hba_rule_address}"
+    auth_method:  "%{::postgres_hba_rule_method}"
+    order:  "%{::postgres_hba_rule_order}"
+    description:  "%{::postgres_hba_rule_description}"
+    auth_option: "%{::postgres_hba_rule_auth_option}"
+    database: "%{::postgres_hba_rule_database}"
