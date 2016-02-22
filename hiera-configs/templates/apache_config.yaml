@@ -1,3 +1,15 @@
 ---
 
+prefixes:
+  - apache_config_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
 apache::vhost_dir: "%{::apache_config_vhost_dir}"
