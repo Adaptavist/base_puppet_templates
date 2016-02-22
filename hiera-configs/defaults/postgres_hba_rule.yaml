@@ -1,0 +1,11 @@
+---
+
+postgres_hba_rule_name:
+postgres_hba_rule_type:
+postgres_hba_rule_method:
+postgres_hba_rule_order:
+postgres_hba_rule_description:
+postgres_hba_rule_address: 'false'
+postgres_hba_rule_auth_option: 'false'
+postgres_hba_rule_database: 'all'
+postgres_hba_rule_user: 'all'

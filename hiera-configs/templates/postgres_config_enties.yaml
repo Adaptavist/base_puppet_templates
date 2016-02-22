@@ -1,0 +1,21 @@
+---
+
+prefixes:
+    - "postgres_config_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresconfig::config_enties:
+  "%{::postgres_config_key}"
+    value: "%{::postgres_config_value}"
