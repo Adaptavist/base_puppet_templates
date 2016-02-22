@@ -3,6 +3,10 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+jira_database_type: 'mysql'
+jira_database_port: '3306'
+jira_database_url: 'localhost'
+jira_class_dependency: 'database'
 jira_host_name:
     value: ""
     comment: "Provide url to jira e.g https://jira.example.com (if apache in front), used if avst_wizard enabled "

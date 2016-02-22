@@ -3,6 +3,10 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+confluence_database_type: 'mysql'
+confluence_database_url: 'jdbc:mysql://localhost/confluence?sessionVariables=storage_engine%3DInnoDB'
+confluence_database_driver_class: 'com.mysql.jdbc.Driver'
+confluence_class_dependency: 'database'
 confluence_host_name:
     value: ""
     comment: "Provide url to confluence e.g https://confluence.example.com (if apache in front), used if avst_wizard enabled "

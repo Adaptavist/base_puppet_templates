@@ -28,6 +28,8 @@ avstapp::conf:
     is_mirror: "%{::bitbucket_is_mirror}" # false
     version: "%{::bitbucket_version}" 
     application_type: bitbucket
+    class_dependencies:
+        - "%{::bitbucket_class_dependency}"  #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::bitbucket_context_path}"
     shutport: "%{::bitbucket_app_shutport}"
     tarball_location_url: "http://www.atlassian.com/software/stash/downloads/binary/atlassian-%{::bitbucket_product_name}-%{::bitbucket_version}.tar.gz"
@@ -47,6 +49,8 @@ avstapp::conf:
       database_user: "%{::bitbucket_database_user}"
       database_pass: "%{::bitbucket_database_pass}"
       instance_name: "%{::bitbucket_app_instance_name}"
+      database_type: "%{::bitbucket_database_type}"
+      database_port: "%{::bitbucket_database_port}"
     drivers:
       location_path:
         - "%{::bitbucket_driver_location_path}"
