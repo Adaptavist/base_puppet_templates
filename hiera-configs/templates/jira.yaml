@@ -29,6 +29,8 @@ avstapp::conf:
     is_mirror: "%{::jira_is_mirror}" # false
     version: "%{::jira_version}" # '5.2.5'
     application_type: jira
+    class_dependencies:
+        - "%{::jira_class_dependency}" #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::jira_context_path}"
     shutport: "%{::jira_app_shutport}"
     tarball_location_url: "%{::jira_tarball_location_url_prefix}%{::jira_version}%{::jira_tarball_location_url_postfix}"
@@ -43,13 +45,15 @@ avstapp::conf:
       admin_pass: "%{::jira_admin_pass}"
       admin_full_name: "%{::jira_admin_full_name}"
       admin_email: "%{::jira_admin_email}"
-      database_url: "localhost"
+      database_url: "%{::jira_database_url}"
       database_user: "%{::jira_database_user}"
       database_pass: "%{::jira_database_pass}"
       database_name: "%{::jira_database_name}"
       mail_server_user: "admin"
       mail_server_pass: "admin"
       instance_name: "%{::jira_app_instance_name}"
+      database_type: "%{::jira_database_type}"
+      database_port: "%{::jira_database_port}"
 
     drivers:
       location_path:

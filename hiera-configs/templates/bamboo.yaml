@@ -28,6 +28,8 @@ avstapp::conf:
     is_mirror: "%{::bamboo_is_mirror}" # false
     version: "%{::bamboo_version}" # '5.2.5'
     application_type: bamboo
+    class_dependencies: 
+        - "%{::bamboo_class_dependency}"  #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::bamboo_context_path}"
     shutport: "%{::bamboo_app_shutport}"
     tarball_location_url: "http://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-%{::bamboo_version}.tar.gz"
@@ -42,11 +44,14 @@ avstapp::conf:
       admin_pass: "%{::bamboo_admin_pass}"
       admin_full_name: "%{::bamboo_admin_full_name}"
       admin_email: "%{::bamboo_admin_email}"
-      database_url: "jdbc:mysql://localhost/%{::bamboo_database_name}?autoReconnect=true"
       database_user: "%{::bamboo_database_user}"
       database_pass: "%{::bamboo_database_pass}"
       install_dir: "/opt/%{::bamboo_instance_name}"
       instance_name: "%{::bamboo_app_instance_name}"
+      database_type: "%{::bamboo_database_type}"
+      database_url: "%{::bamboo_database_url}"
+      database_driver_class: "%{::bamboo_database_driver_class}"
+
     drivers:
       location_path:
         - "%{::bamboo_driver_location_path}"

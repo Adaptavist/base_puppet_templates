@@ -3,6 +3,11 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+crowd_database_type: 'mysql'
+crowd_database_url: '' # jdbc:mysql://localhost/${database_name}?autoReconnect=true&characterEncoding=utf8&useUnicode=true
+crowd_database_driver_class: 'com.mysql.jdbc.Driver'
+crowd_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
+crowd_class_dependency: 'database'
 crowd_host_name:
     value: ""
     comment: "Provide url to crowd e.g crowd.example.com (if apache in front), used if avst_wizard enabled "
