@@ -5,7 +5,7 @@ atlassian_hosting_group: 'hosting'
 fecru_database_port: '3306'
 fecru_database_type: 'mysql'
 fecru_database_driver_class: 'com.mysql.jdbc.Driver'
-fecru_database_url: ''
+fecru_database_url: 'jdbc:mysql://localhost/fecru'
 fecru_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
 fecru_class_dependency: 'database'
 fecru_host_name:

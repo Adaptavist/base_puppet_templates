@@ -4,7 +4,7 @@ atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
 confluence_database_type: 'mysql'
-confluence_database_url: ''
+confluence_database_url: 'jdbc:mysql://localhost/confluence'
 confluence_database_driver_class: 'com.mysql.jdbc.Driver'
 confluence_class_dependency: 'database'
 confluence_host_name:
