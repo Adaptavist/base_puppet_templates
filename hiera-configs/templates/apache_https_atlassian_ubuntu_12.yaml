@@ -51,14 +51,15 @@ webserver::default_vhosts:
     servername: '%{::vhost_https_atlassian_servername}'
     serveraliases:
       - '%{::vhost_https_atlassian_serveraliases}'
-    port: 443
-    docroot: '/nonexistant'
-    log_level: 'warn'
+    port: '%{::vhost_https_atlassian_port}'
+    docroot: '%{::vhost_https_atlassian_docroot}'
+    log_level: '%{::vhost_https_atlassian_log_level}'
     access_log_syslog: '/var/log/apache2/%{::vhost_https_atlassian_apache_log_prefix}-vhost-access.log'
     access_log_format: 'proxy'
     error_log_syslog: '/var/log/apache2/%{::vhost_https_atlassian_apache_log_prefix}-vhost-error.log'
     ssl: true
-    ssl_protocol: 'All -SSLv2 -SSLv3'
+    ssl_protocol: '%{::vhost_https_atlassian_ssl_protocol}'
+    ssl_cipher: '%{::vhost_https_atlassian_ssl_cipher}'
     # SSLCompression
     ssl_cert: '%{::vhost_https_atlassian_ssl_cert}'
     ssl_key: '%{::vhost_https_atlassian_ssl_key}'
@@ -102,7 +103,7 @@ ProxyPassReverse    %{::vhost_https_atlassian_proxy_context_path}   http://%{::c
 # Needs htcacheclean running to keep disk usage from always growing \n
 # Memory cache is not to be preferred: https://bugzilla.redhat.com/show_bug.cgi?id=493458 \n
 # \"/s\" and \"/static\" is where Confluence, JIRA etc. serves \"static\" stuff. Instruct Apache to cache it: \n
-CacheRoot   /var/cache/apache2/mod_disk_cache/ \n
+CacheRoot   %{::vhost_https_atlassian_cache_directory} \n
 CacheEnable disk /s \n
 CacheEnable disk /static \n
 CacheIgnoreHeaders Set-Cookie \n
