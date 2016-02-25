@@ -53,9 +53,9 @@ webserver::default_vhosts:
     servername: '%{::vhost_http_atlassian_servername}'
     serveraliases:
       - '%{::vhost_http_atlassian_serveraliases}'
-    port: 80
-    docroot: '/nonexistant'
-    log_level: 'warn'
+    port: '%{::vhost_http_atlassian_port}'
+    docroot: '%{::vhost_http_atlassian_docroot}'
+    log_level: '%{::vhost_http_atlassian_log_level}'
     access_log_syslog: '/var/log/httpd/%{::vhost_http_atlassian_apache_log_prefix}-vhost-access.log'
     access_log_format: 'proxy'
     error_log_syslog: '/var/log/httpd/%{::vhost_http_atlassian_apache_log_prefix}-vhost-error.log'
@@ -85,13 +85,13 @@ ProxyErrorOverride Off \n
 ProxyPreserveHost   On \n
 
 ## Atlassian \n
-ProxyPass          %{::vhost_http_atlassian_proxy_context_path}   http://localhost:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} connectiontimeout=%{::vhost_http_atlassian_proxy_connection_timeout} timeout=%{::vhost_http_atlassian_proxy_timeout} \n
-ProxyPassReverse    %{::vhost_http_atlassian_proxy_context_path}   http://localhost:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} \n
+ProxyPass           %{::vhost_http_atlassian_proxy_context_path}   http://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} connectiontimeout=%{::vhost_http_atlassian_proxy_connection_timeout} timeout=%{::vhost_http_atlassian_proxy_timeout} \n
+ProxyPassReverse    %{::vhost_http_atlassian_proxy_context_path}   http://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} \n
 ## Cache static assets \n
 # Needs htcacheclean running to keep disk usage from always growing \n
 # Memory cache is not to be preferred: https://bugzilla.redhat.com/show_bug.cgi?id=493458 \n
 # \"/s\" and \"/static\" is where Confluence, JIRA etc. serves \"static\" stuff. Instruct Apache to cache it: \n
-CacheRoot   /var/cache/httpd/mod_disk_cache/ \n
+CacheRoot   %{::vhost_http_atlassian_cache_directory} \n
 CacheEnable disk /s \n
 CacheEnable disk /static \n
 CacheIgnoreHeaders Set-Cookie \n

@@ -18,6 +18,24 @@ vhost_https_atlassian_rewrite_hostname:
 vhost_https_atlassian_proxy_name:
     value: 
     comment: "rewrite_rule destination url"
+vhost_https_atlassian_port:
+    value: 443
+    comment: "The tcp port for the vhost to bind to"
+vhost_https_atlassian_log_level:
+    value: 'warn'
+    comment: 'The log level for this vhost'
+vhost_https_atlassian_docroot:
+    value: '/nonexistant'
+    comment: "The document root for this vhost"
+vhost_https_atlassian_cache_directory:
+    value: '/var/cache/httpd/mod_disk_cache/'
+    comment: 'The directory used by mod_disk_cache for this vhost'
+vhost_https_atlassian_ssl_protocol: 
+    value: 'All -SSLv2 -SSLv3'
+    comment: 'The SSL/TLS Protocols to use'
+vhost_https_atlassian_ssl_cipher:
+    value: 'HIGH:MEDIUM:!aNULL:!MD5'
+    comment: "The SSL/TLS Ciphers to use"
 
 vhost_https_atlassian_vhost_name: 
     value: 'default-https'
