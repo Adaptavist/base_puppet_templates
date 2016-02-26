@@ -1,0 +1,27 @@
+---
+
+prefixes:
+    - "postgresconfig_role_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresconfig::roles:
+    "%{::postgresconfig_role_name}":
+        password: "%{::postgresconfig_role_password}"
+        createdb: "%{::postgresconfig_role_reatedb}"
+        createrole: "%{::postgresconfig_role_createrole}"
+        login: "%{::postgresconfig_role_login}"
+        inherit: "%{::postgresconfig_role_inherit}"
+        superuser: "%{::postgresconfig_role_superuser}"
+        replication: "%{::postgresconfig_role_replication}"
