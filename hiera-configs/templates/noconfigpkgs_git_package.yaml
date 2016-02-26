@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - "noconfigpkgs_git_"
+
+classes:
+  - noconfigpkgs::git
+
+dependencies:
+  - noconfigpkgs::git
+  - stdlib
+
+noconfigpkgs::git::gitpackage: "%{::noconfigpkgs_git_package_name}"
