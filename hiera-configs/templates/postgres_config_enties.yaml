@@ -17,5 +17,5 @@ dependencies:
   - apt
 
 postgresconfig::config_enties:
-  "%{::postgres_config_key}"
+  "%{::postgres_config_key}":
     value: "%{::postgres_config_value}"
