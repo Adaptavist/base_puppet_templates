@@ -1,0 +1,10 @@
+---
+
+postgresconfig_role_name:
+postgresconfig_role_password:
+postgresconfig_role_reatedb: 'false'
+postgresconfig_role_createrole: 'false'
+postgresconfig_role_login: 'true'
+postgresconfig_role_inherit: 'true'
+postgresconfig_role_superuser: 'false'
+postgresconfig_role_replication: 'false' 
