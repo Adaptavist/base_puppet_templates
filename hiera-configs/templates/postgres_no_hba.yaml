@@ -1,0 +1,32 @@
+---
+
+prefixes:
+    - "database_db_"
+    - "postgres_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+database::type: 'postgres'
+
+postgresconfig::postgres_password: "%{::postgres_postgres_password}"
+postgresconfig::listen_address: "%{::postgres_listen_address}"
+postgresconfig::listen_port: "%{::postgres_listen_port}"
+postgresconfig::install_contrib: "%{::postgres_install_contrib}"
+postgresconfig::install_devel: "%{::postgres_install_devel}"
+postgresconfig::create_auth_file: "%{::postgres_create_auth_file}"
+
+database::conf:
+  "%{::database_db_database_name}":
+    user:     "%{::database_db_database_user}"
+    password: "%{::database_db_database_pass}"
