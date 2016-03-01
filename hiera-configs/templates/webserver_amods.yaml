@@ -1,0 +1,16 @@
+---
+
+prefixes:
+  - webserver_amods_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::amods:
+  - "%{::webserver_amods_module}"
