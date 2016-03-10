@@ -3,6 +3,8 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+confluence_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
+confluence_database_setup_database: ''
 confluence_database_type: 'mysql'
 confluence_database_url: 'jdbc:mysql://localhost/confluence?sessionVariables=storage_engine%3DInnoDB'
 confluence_database_driver_class: 'com.mysql.jdbc.Driver'

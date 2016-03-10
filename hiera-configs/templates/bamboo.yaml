@@ -51,7 +51,13 @@ avstapp::conf:
       database_type: "%{::bamboo_database_type}"
       database_url: "%{::bamboo_database_url}"
       database_driver_class: "%{::bamboo_database_driver_class}"
-
+    db:
+      DB_SETUP_DB: "%{::bamboo_database_setup_database}"
+      DB_JDBC_URL: "%{::bamboo_database_url}"
+      DB_DRIVER: "%{::bamboo_database_driver_class}"
+      DB_USERNAME: "%{::bamboo_database_user}"
+      DB_PASSWORD: "%{::bamboo_database_pass}"
+      DB_DIALECT: "%{::bamboo_database_hibernate_dialect}"
     drivers:
       location_path:
         - "%{::bamboo_driver_location_path}"

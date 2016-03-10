@@ -1,0 +1,23 @@
+---
+
+avst_backup_yaml: 'true'
+avst_backup_server_name:
+avst_backup_backup_timestamp: 'false'
+avst_backup_backup_access_user: 'system-robot'
+avst_backup_backup_access_uid: ''
+avst_backup_access_group: 'staff'
+avst_backup_config_template_file: '/etc/puppet/files/avst_backup/adaptavist_restore.yaml'
+avst_backup_backup_access_user_private_key_path: '/etc/puppet/files/avst_backup/keys/.ssh/id_rsa'
+avst_backup_backup_access_user_private_key: 'key_content_here'
+avst_backup_report_state: 'echo "done" > /tmp/restore_done.log'
+avst_backup_backup_ldap: 'false'
+avst_backup_backup_svn: 'false'
+avst_backup_backup_filesystem: 'false'
+avst_backup_backup_database: 'false'
+avst_backup_hiera: 'false'
+avst_backup_hiera_run_as_one_cron: 'false'
+avst_backup_hiera_cron_hour: '1'
+avst_backup_hiera_cron_minute: '0'
+avst_backup_hiera_job_failure_email:
+avst_backup_hiera_job_log_file: '/var/log/avst-backup.log'
+avst_backup_hiera_rotate_logs: 'true'

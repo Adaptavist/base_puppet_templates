@@ -1,0 +1,34 @@
+---
+
+prefixes:
+    - "avst_backup_"
+
+classes:
+  - avst_backup
+
+dependencies:
+  - avst_backup
+  - stdlib
+
+avst_backup::yaml: "%{::avst_backup_yaml}"
+avst_backup::yaml::backup_timestamp: "%{::avst_backup_backup_timestamp}"
+avst_backup::yaml::server_name: "%{::avst_backup_server_name}"
+avst_backup::yaml::backup_access_user: "%{::avst_backup_backup_access_user}"
+avst_backup::yaml::backup_access_uid: "%{::avst_backup_backup_access_uid}"
+avst_backup::yaml::backup_access_group: "%{::avst_backup_access_group}"
+avst_backup::yaml::config_template_file: "%{::avst_backup_config_template_file}"
+avst_backup::yaml::backup_access_user_private_key_path: "%{::avst_backup_backup_access_user_private_key_path}"
+avst_backup::yaml::backup_access_user_private_key: "%{::avst_backup_backup_access_user_private_key}"
+avst_backup::yaml::report_state: "%{::avst_backup_report_state}"
+avst_backup::yaml::config_template_json: "%{::avst_backup_restore_params}"
+avst_backup::backup_ldap: "%{::avst_backup_backup_ldap}"
+avst_backup::backup_svn: "%{::avst_backup_backup_svn}"
+avst_backup::backup_filesystem: "%{::avst_backup_backup_filesystem}"
+avst_backup::backup_database: "%{::avst_backup_backup_database}"
+avst_backup::backup_hiera: "%{::avst_backup_hiera}"
+avst_backup::hiera::run_as_one_job: "%{::avst_backup_hiera_run_as_one_cron}"
+avst_backup::hiera::hour: "%{::avst_backup_hiera_cron_hour}"
+avst_backup::hiera::minute: "%{::avst_backup_hiera_cron_minute}"
+avst_backup::hiera::job_failure_email:  "%{::avst_backup_hiera_job_failure_email}"
+avst_backup::hiera::job_log_file: "%{::avst_backup_hiera_job_log_file}"
+avst_backup::hiera::rotate_logs: "%{::avst_backup_hiera_rotate_logs}"

@@ -3,6 +3,8 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+jira_database_setup_database: ''
+jira_database_driver_class: 'com.mysql.jdbc.Driver'
 jira_database_type: 'mysql'
 jira_database_port: '3306'
 jira_database_url: 'localhost'

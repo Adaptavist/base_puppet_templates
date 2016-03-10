@@ -3,6 +3,8 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+bamboo_database_setup_database: ''
+bamboo_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
 bamboo_database_type: 'mysql'
 bamboo_database_url: 'jdbc:mysql://localhost/bamboo?autoReconnect=true'
 bamboo_database_driver_class: 'com.mysql.jdbc.Driver'
