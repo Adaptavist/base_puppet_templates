@@ -51,6 +51,12 @@ avstapp::conf:
       instance_name: "%{::bitbucket_app_instance_name}"
       database_type: "%{::bitbucket_database_type}"
       database_port: "%{::bitbucket_database_port}"
+    db:
+      DB_JDBC_URL: "%{::bitbucket_database_url}"
+      DB_DRIVER: "%{::bitbucket_database_driver_class}"
+      DB_USERNAME: "%{::bitbucket_database_user}"
+      DB_PASSWORD: "%{::bitbucket_database_pass}"
+      DB_SETUP_DB: "%{::bitbucket_database_setup_database}"
     drivers:
       location_path:
         - "%{::bitbucket_driver_location_path}"

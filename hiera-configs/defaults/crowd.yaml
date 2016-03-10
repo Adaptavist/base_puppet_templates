@@ -3,6 +3,10 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+# avstapp setup database on restore properties
+crowd_database_setup_database: ''
+crowd_database_port: '3306'
+
 crowd_database_type: 'mysql'
 crowd_database_url: 'jdbc:mysql://localhost/crowd?autoReconnect=true&characterEncoding=utf8&useUnicode=true'
 crowd_database_driver_class: 'com.mysql.jdbc.Driver'

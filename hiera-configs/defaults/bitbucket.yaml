@@ -3,6 +3,8 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+bitbucket_database_setup_database: ''
+bitbucket_database_driver_class: 'com.mysql.jdbc.Driver'
 bitbucket_database_type: 'mysql'
 bitbucket_database_port: '3306'
 bitbucket_class_dependency: 'database'

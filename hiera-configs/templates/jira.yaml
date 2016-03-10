@@ -54,7 +54,13 @@ avstapp::conf:
       instance_name: "%{::jira_app_instance_name}"
       database_type: "%{::jira_database_type}"
       database_port: "%{::jira_database_port}"
-
+    db:
+      DB_SETUP_DB: "%{::jira_database_setup_database}"
+      DB_TYPE: "%{::jira_database_type}"
+      DB_JDBC_URL: "%{::jira_database_url}"
+      DB_DRIVER: "%{::jira_database_driver_class}"
+      DB_USERNAME: "%{::jira_database_user}"
+      DB_PASSWORD: "%{::jira_database_pass}"
     drivers:
       location_path:
         - "%{::jira_driver_location_path}"

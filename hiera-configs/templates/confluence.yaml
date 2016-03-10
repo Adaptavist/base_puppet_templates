@@ -49,6 +49,13 @@ avstapp::conf:
       database_type: "%{::confluence_database_type}"
       database_url: "%{::confluence_database_url}"
       database_driver_class: "%{::confluence_database_driver_class}"
+    db:
+      DB_JDBC_URL: "%{::confluence_database_url}"
+      DB_DRIVER: "%{::confluence_database_driver_class}"
+      DB_USERNAME: "%{::confluence_database_user}"
+      DB_PASSWORD: "%{::confluence_database_pass}"
+      DB_DIALECT: "%{::confluence_database_hibernate_dialect}"
+      DB_SETUP_DB: "%{::confluence_database_setup_database}"
     drivers:
       location_path:
         - "%{::confluence_driver_location_path}"
