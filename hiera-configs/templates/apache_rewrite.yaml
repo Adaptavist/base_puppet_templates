@@ -1,0 +1,23 @@
+---
+
+prefixes:
+  - apache_rewrite_
+  - apache_vhost_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::default_vhosts:
+  '%{::apache_vhost_vhost_name}':
+    rewrites:
+      - comment: "%{::apache_rewrite_rewrite_comment}"
+        rewrite_cond:
+          - "%{::apache_rewrite_rewrite_condition}"
+        rewrite_rule:
+          - "%{::apache_rewrite_rewrite_rule}"
