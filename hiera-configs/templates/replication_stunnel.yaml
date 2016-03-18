@@ -28,4 +28,5 @@ replication::stunnel_tunnels:
         client: "%{::replication_stunnel_client}" #true
         retry: "%{::replication_stunnel_retry}" #true
         foreground: "%{::replication_stunnel_foreground}" #false
+        ciphers: "%{::replication_stunnel_ciphers}" #false
 

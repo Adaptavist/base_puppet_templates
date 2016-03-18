@@ -30,4 +30,6 @@ replication_stunnel_retry:
     value: "true"
 replication_stunnel_foreground:
     value: "false"
+replication_stunnel_ciphers:
+    value: "false"
 

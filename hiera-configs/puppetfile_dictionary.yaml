@@ -538,7 +538,7 @@ stunnel_config:
     repo: 'https://github.com/Adaptavist/puppet-stunnel_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.11'
+    ref_value: '0.2.12'
 
 rsync_config: 
     name: 'adaptavist/rsync_config'
@@ -601,7 +601,7 @@ stunnel:
     repo: 'https://github.com/Adaptavist/puppet-stunnel.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.1'
+    ref_value: '0.0.2'
 
 rsync: 
     name: "puppetlabs/rsync"
