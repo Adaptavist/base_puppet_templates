@@ -10,3 +10,7 @@ dhclient_server_domain:
 dhclient_name_server:
 dhclient_domain:
 dhclient_create_exit_hook: 'true'
+dhclient_dhcp_update_ttl: '300'
+dhclient_dhcp_update_user: ''
+dhclient_dhcp_update_zone_id: ''
+dhclient_dhcp_update_hook_type: 'nsupdate'
