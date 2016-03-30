@@ -13,4 +13,4 @@ dependencies:
   - concat
 
 apache::vhost_dir: "%{::apache_config_vhost_dir}"
-webserver::apache::purge_configs: "%{"::apache_config_purge_configs}"
+webserver::apache::purge_configs: "%{::apache_config_purge_configs}"
