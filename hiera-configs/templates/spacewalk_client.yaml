@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "spacewalk_client_"
+
+classes:
+  - spacewalk_client
+
+dependencies:
+  - spacewalk_client
+  - stdlib
+
+
+spacewalk_client::spacewalk_server_address: "%{::spacewalk_client_server_address}"
+spacewalk_client::spacewalk_server_uri: "%{::spacewalk_client_server_uri}"
+spacewalk_client::spacewalk_server_protocol: "%{::spacewalk_client_server_protocol}"
+spacewalk_client::spacewalk_certificate_url: "%{::spacewalk_client_certificate_url}"
+spacewalk_client::spacewalk_activation_key: "%{::spacewalk_client_activation_key}"
+spacewalk_client::force_registration: "%{::spacewalk_client_force_registration}"

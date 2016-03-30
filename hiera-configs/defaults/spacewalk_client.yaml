@@ -1,0 +1,8 @@
+---
+
+spacewalk_client_server_address:
+spacewalk_client_certificate_url:
+spacewalk_client_activation_key:
+spacewalk_client_server_uri: 'XMLRPC'
+spacewalk_client_server_protocol: 'https'
+spacewalk_client_force_registration: 'false'
