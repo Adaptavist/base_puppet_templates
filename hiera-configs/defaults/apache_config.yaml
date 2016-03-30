@@ -1,3 +1,4 @@
 ---
 
 apache_config_vhost_dir:
+apache_config_purge_configs: 'true'
