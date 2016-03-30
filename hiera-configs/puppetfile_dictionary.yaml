@@ -714,3 +714,10 @@ upstart:
     repo_type: "git"
     ref_type: "tag"
     ref_value: "0.1.5"
+
+spacewalk-client:
+    name: "puppet/spacewalk-client"
+    repo: https://github.com/Adaptavist/puppet-spacewalk-client
+    repo_type: "git"
+    ref_type: "tag"
+    ref_value: "0.0.1"
