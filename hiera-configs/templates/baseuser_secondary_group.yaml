@@ -1,0 +1,16 @@
+---
+
+prefixes: 
+    - "baseusers_"
+    - "baseuser_secondary_group_"
+
+classes:
+  - baseusers
+
+dependencies:
+  - baseusers
+
+baseusers::users:
+  "%{::baseusers_user_name}":
+    groups: 
+      - "%{::baseuser_secondary_group_name}"
