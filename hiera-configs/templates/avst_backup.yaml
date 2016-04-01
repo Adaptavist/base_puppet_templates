@@ -10,7 +10,6 @@ dependencies:
   - avst_backup
   - stdlib
 
-avst_backup::yaml: "%{::avst_backup_yaml}"
 avst_backup::yaml::backup_timestamp: "%{::avst_backup_backup_timestamp}"
 avst_backup::yaml::server_name: "%{::avst_backup_server_name}"
 avst_backup::yaml::backup_access_user: "%{::avst_backup_backup_access_user}"
@@ -26,9 +25,14 @@ avst_backup::backup_svn: "%{::avst_backup_backup_svn}"
 avst_backup::backup_filesystem: "%{::avst_backup_backup_filesystem}"
 avst_backup::backup_database: "%{::avst_backup_backup_database}"
 avst_backup::backup_hiera: "%{::avst_backup_hiera}"
+avst_backup::backup_yaml: "%{::avst_backup_backup_yaml}"
 avst_backup::hiera::run_as_one_job: "%{::avst_backup_hiera_run_as_one_cron}"
 avst_backup::hiera::hour: "%{::avst_backup_hiera_cron_hour}"
 avst_backup::hiera::minute: "%{::avst_backup_hiera_cron_minute}"
 avst_backup::hiera::job_failure_email:  "%{::avst_backup_hiera_job_failure_email}"
 avst_backup::hiera::job_log_file: "%{::avst_backup_hiera_job_log_file}"
 avst_backup::hiera::rotate_logs: "%{::avst_backup_hiera_rotate_logs}"
+avst_backup::hiera::delete_unmanaged_configs: "%{::avst_backup_hiera_delete_unmanaged_configs}"
+avst_backup::hiera::runner_script_template: "%{::avst_backup_hiera_runner_script_template}"
+avst_backup::hiera::runner_pause_template: "%{::avst_backup_hiera_runner_pause_template}"
+avst_backup::hiera::runner_resume_template: "%{::avst_backup_hiera_runner_resume_template}"
