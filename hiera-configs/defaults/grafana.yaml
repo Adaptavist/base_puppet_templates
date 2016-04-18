@@ -1,0 +1,14 @@
+---
+
+grafana_version: '1.9.1'
+grafana_install_dir: '/opt'
+grafana_graphite_scheme: 'http'
+grafana_graphite_host: 'localhost'
+grafana_graphite_port: '80'
+grafana_elasticsearch_scheme: 'http'
+grafana_elasticsearch_host: 'localhost'
+grafana_elasticsearch_port: '9200'
+grafana_elasticsearch_index: 'grafana-dash'
+grafana_default_route: '/dashboard/file/default.json'
+grafana_install_method: 'package'
+grafana_install_url: 'https://grafanarel.s3.amazonaws.com/builds/grafana-1.9.1.linux-x64.tar.gz'
