@@ -1,0 +1,21 @@
+---
+
+prefixes:
+  - apache_vhost_proxy_
+  - apache_vhost_http_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+
+webserver::default_vhosts:
+  '%{::apache_vhost_http_vhost_name}':
+    proxy_pass:
+        - "path": '%{::apache_vhost_proxy_path}'
+          "url": '%{::apache_vhost_proxy_url}'                                   

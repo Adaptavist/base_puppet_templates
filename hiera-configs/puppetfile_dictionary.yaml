@@ -328,7 +328,7 @@ apache:
     repo: 'https://github.com/Adaptavist/puppet-apache.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.11.01'
+    ref_value: '0.11.02'
 
 apt: 
     name: "puppetlabs/apt"

@@ -1,0 +1,27 @@
+---
+
+prefixes: 
+    - "grafana_"
+
+classes:
+  - grafana
+
+dependencies:
+  - grafana
+  - stdlib
+  - wget
+  - apt
+  - archive
+
+grafana::version: "%{::grafana_version}"
+grafana::install_dir: "%{::grafana_install_dir}"
+grafana::graphite_scheme: "%{::grafana_graphite_scheme}"
+grafana::graphite_host: "%{::grafana_graphite_host}"
+grafana::graphite_port: "%{::grafana_graphite_port}"
+grafana::elasticsearch_scheme: "%{::grafana_elasticsearch_scheme}"
+grafana::elasticsearch_host: "%{::grafana_elasticsearch_host}"
+grafana::elasticsearch_port: "%{::grafana_elasticsearch_port}"
+grafana::elasticsearch_index: "%{::grafana_elasticsearch_index}"
+grafana::default_route: "%{::grafana_default_route}"
+grafana::install_method: "%{::grafana_install_method}"
+grafana::archive_source: "%{::grafana_install_url}"
