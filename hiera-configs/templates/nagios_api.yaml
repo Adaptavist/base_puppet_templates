@@ -1,0 +1,12 @@
+---
+
+prefixes: 
+    - "nagios_api_"
+
+classes:
+  - nagios_api
+
+dependencies:
+  - nagios_api
+
+nagios_api::nagios_api_port: "%{::nagios_api_nagios_api_port}"

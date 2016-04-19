@@ -533,6 +533,13 @@ nagios_config:
     repo_type: 'git'
     ref_value: '0.0.7'
 
+nagios_api: 
+    name: 'adaptavist/nagios_api'
+    repo: 'https://github.com/Adaptavist/puppet-nagios_api.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '0.0.1'
+
 stunnel_config: 
     name: 'adaptavist/stunnel_config'
     repo: 'https://github.com/Adaptavist/puppet-stunnel_config.git'
