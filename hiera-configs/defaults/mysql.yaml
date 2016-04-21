@@ -9,8 +9,15 @@ database_db_database_user:
 database_db_database_pass: 
     value: 
     comment: "Database user password"
+database_db_host: 'localhost'
+database_db_collate:  'utf8_bin'
+database_db_charset:  'utf8'
 mysql_bind_address: 127.0.0.1
 mysql_root_password: 
 mysql_max_allowed_packet: '512M'
 mysql_innodb_log_file_size: '1900M'
 mysql_init_script_timeout: '180'
+mysql_collation_server: 'utf8_bin'
+mysql_character_set_server: 'utf8'
+mysql_default_storage_engine: 'innodb'
+mysql_transaction_isolation: 'READ-COMMITTED'
