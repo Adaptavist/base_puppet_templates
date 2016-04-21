@@ -22,10 +22,10 @@ database::type: 'mysql'
 mysqlconfig::custom_mysql_options:
   mysqld:
     'max_allowed_packet': "%{::mysql_max_allowed_packet}"
-    'character-set-server': 'utf8'
-    'collation_server': 'utf8_bin'
-    'default-storage-engine': 'innodb'
-    'transaction-isolation': 'READ-COMMITTED'
+    'character-set-server': "%{::mysql_character_set_server}"
+    'collation_server': "%{::mysql_collation_server}"
+    'default-storage-engine': "%{::mysql_default_storage_engine}"
+    'transaction-isolation': "%{::mysql_transaction_isolation}"
     'bind_address': "%{::mysql_bind_address}"
     'innodb_log_file_size': "%{::mysql_innodb_log_file_size}"
 mysqlconfig::max_allowed_packet: "%{::mysql_max_allowed_packet}"
@@ -35,9 +35,9 @@ mysql::server::root_password: "%{::mysql_root_password}"
 
 database::conf:
   "%{::database_db_database_name}":
-    host:     'localhost'
-    collate:  'utf8_bin'
-    charset:  'utf8'
+    host:     "%{::database_db_host}"
+    collate:  "%{::database_db_collate}"
+    charset:  "%{::database_db_charset}"
     user:     "%{::database_db_database_user}"
     password: "%{::database_db_database_pass}"
     name:     "%{::database_db_database_name}"
