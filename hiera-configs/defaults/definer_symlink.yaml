@@ -1,0 +1,7 @@
+---
+
+definer_symlink_name:
+definer_symlink_group: 'root'
+definer_symlink_owner: 'root'
+definer_symlink_require:
+definer_symlink_target:

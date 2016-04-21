@@ -1,0 +1,20 @@
+---
+
+prefixes: 
+    - "definer_symlink_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  file:
+    "%{::definer_symlink_name}":
+      ensure: "link"
+      group: "%{::definer_symlink_group}"
+      owner: "%{::definer_symlink_owner}"
+      require: "%{::definer_symlink_require}"
+      target: "%{::definer_symlink_target}"
+

@@ -7,7 +7,7 @@ classes:
   - noconfigpkgs::git
 
 dependencies:
-  - noconfigpkgs::git
+  - noconfigpkgs
   - stdlib
 
 noconfigpkgs::git::gitpackage: "%{::noconfigpkgs_git_package_name}"
