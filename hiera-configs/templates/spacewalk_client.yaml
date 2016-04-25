@@ -17,3 +17,4 @@ spacewalk_client::spacewalk_server_protocol: "%{::spacewalk_client_server_protoc
 spacewalk_client::spacewalk_certificate_url: "%{::spacewalk_client_certificate_url}"
 spacewalk_client::spacewalk_activation_key: "%{::spacewalk_client_activation_key}"
 spacewalk_client::force_registration: "%{::spacewalk_client_force_registration}"
+spacewalk_client::spacewalk_poll_interval: "%{::spacewalk_client_poll_interval}"

@@ -6,3 +6,4 @@ spacewalk_client_activation_key:
 spacewalk_client_server_uri: 'XMLRPC'
 spacewalk_client_server_protocol: 'https'
 spacewalk_client_force_registration: 'false'
+spacewalk_client_poll_interval: '60'

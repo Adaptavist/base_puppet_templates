@@ -131,7 +131,7 @@ graphite:
     name: 'adaptavist/graphite'
     repo: 'https://github.com/Adaptavist/puppet-graphite.git'
     ref_type: "tag"
-    ref_value: '5.11.3'
+    ref_value: '5.11.3a'
     repo_type: 'git'
 
 subversion: 
