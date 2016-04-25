@@ -2,4 +2,9 @@
 
 collectd_client_server_host:
 collectd_client_server_port: '25826'
-
+collectd_client_write_logstash: 'false'
+collectd_client_collectd_auth_username: 'false'
+collectd_client_collectd_auth_password: 'false'
+collectd_client_collectd_auth_security_level: 'Encrypt'
+collectd_client_logstash_server_host:
+collectd_client_logstash_server_port: '25825'
