@@ -251,7 +251,7 @@ kibana3:
     repo: 'https://github.com/Adaptavist/puppet-kibana3.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.5'
+    ref_value: '0.0.6'
 
 vcsrepo: 
     name: "puppetlabs/vcsrepo"

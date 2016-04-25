@@ -4,6 +4,7 @@ kibana3_ensure: 'present'
 kibana3_config_es_port: '9200'
 kibana3_config_es_protocol: 'http'
 kibana3_config_es_server: 'localhost'
+kibana3_config_es_uri: ''
 kibana3_manage_ws: false
 kibana3_k3_install_folder: '/opt/kibana3'
 kibana3_k3_folder_owner: 
