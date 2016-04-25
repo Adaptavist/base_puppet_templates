@@ -236,7 +236,7 @@ elasticsearch_config:
     name: "adaptavist/elasticsearch_config"
     repo: 'https://github.com/Adaptavist/puppet-elasticsearch_config.git'
     ref_type: 'tag'
-    ref_value: '0.1.4'
+    ref_value: '0.1.5'
     repo_type: 'git'
 
 kibana4:

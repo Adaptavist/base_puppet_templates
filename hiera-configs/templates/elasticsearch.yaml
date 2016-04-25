@@ -18,6 +18,7 @@ elasticsearch_config::status: "%{::elasticsearch_config_status}"
 elasticsearch_config::es_version: "%{::elasticsearch_config_es_version}"
 elasticsearch_config::package_url: "%{::elasticsearch_config_package_url}"
 elasticsearch_config::repo_version: "%{::elasticsearch_config_repo_version}"
+elasticsearch_config::datadir: "%{::elasticsearch_config_datadir}"
 elasticsearch_config::config:
   'network':
       'host': "%{::elasticsearch_config_network_host}"
