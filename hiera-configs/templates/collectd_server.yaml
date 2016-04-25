@@ -21,4 +21,6 @@ collectd::server::graphite_port: "%{::collectd_server_graphite_port}"
 collectd::server::graphite_prefix: "%{::collectd_server_graphite_prefix}"
 collectd::server::graphite_postfix: "%{::collectd_server_graphite_postfix}"
 collectd::server::graphite_protocol: "%{::collectd_server_graphite_protocol}"
+collectd::server::collectd_auth_file: "%{::collectd_server_collectd_auth_file}"
+collectd::server::collectd_auth_file_content: "%{::collectd_server_collectd_auth_file_content}"
 

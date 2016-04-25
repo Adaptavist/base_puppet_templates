@@ -24,6 +24,12 @@ dependencies:
 
 collectd::client::server_host: "%{::collectd_client_server_host}"
 collectd::client::server_port: "%{::collectd_client_server_port}"
+collectd::client::write_logstash: "%{::collectd_client_write_logstash}"
+collectd::client::collectd_auth_username: "%{::collectd_client_collectd_auth_username}"
+collectd::client::collectd_auth_password: "%{::collectd_client_collectd_auth_password}"
+collectd::client::collectd_auth_security_level: "%{::collectd_client_collectd_auth_security_level}"
+collectd::client::logstash_server_host: "%{::collectd_client_logstash_server_host}"
+collectd::client::logstash_server_port: "%{::collectd_client_logstash_server_port}"
 
 # list of jmx connections for collectd
 collectd::plugin::jmx::connections:

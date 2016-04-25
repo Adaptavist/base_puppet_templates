@@ -8,4 +8,5 @@ collectd_server_graphite_port: '2003'
 collectd_server_graphite_protocol: 'tcp'
 collectd_server_graphite_prefix: 'collectd.'
 collectd_server_graphite_postfix: ''
-
+collectd_server_collectd_auth_file: 'false'
+collectd_server_collectd_auth_file_content: ''

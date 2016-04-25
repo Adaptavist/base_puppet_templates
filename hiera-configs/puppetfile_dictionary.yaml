@@ -279,7 +279,7 @@ collectd:
     repo: 'https://github.com/Adaptavist/puppet-collectd.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.9'
+    ref_value: '0.2.10'
 
 mailserver: 
     name: 'adaptavist/mailserver'
