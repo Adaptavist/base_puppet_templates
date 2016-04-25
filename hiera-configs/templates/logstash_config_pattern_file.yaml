@@ -1,0 +1,17 @@
+---
+
+prefixes: 
+  - "logstash_config_pattern_file_"
+
+classes:
+  - logstash_config
+
+dependencies:
+  - logstash_config
+  - logstash
+  - stdlib
+  - file_concat
+
+logstash_config::pattern_files:
+    "%{::logstash_config_pattern_file_name}":
+        source: "%{::logstash_config_pattern_file_source}"
