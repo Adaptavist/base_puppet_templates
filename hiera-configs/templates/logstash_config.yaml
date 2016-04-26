@@ -13,7 +13,9 @@ dependencies:
   - file_concat
 
 logstash_config::package_url: "%{::logstash_config_package_url}"
-logstash_config::config_file:  "%{::logstash_config_config_file}" 
+logstash_config::config_files:
+    "%{::logstash_config_config_file_name}":
+        source: "%{::logstash_config_config_file}" 
 logstash_config::ensure:  "%{::logstash_config_ensure}" #'present' 
 logstash_config::status: "%{::logstash_config_status}" #'running'
 
