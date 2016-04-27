@@ -671,7 +671,7 @@ fail2ban_config:
     repo: 'https://github.com/Adaptavist/puppet-fail2ban_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.4'
+    ref_value: '0.0.5'
 
 artifactory:
     name: 'puppet/artifactory'
@@ -727,4 +727,4 @@ spacewalk_client:
     repo: https://github.com/Adaptavist/puppet-spacewalk_client
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.0.1"
+    ref_value: "0.0.2"
