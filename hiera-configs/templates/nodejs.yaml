@@ -11,3 +11,4 @@ dependencies:
   - stdlib
 
 # installs default nodejs class
+nodejs::npm_package_ensure: "%{::nodejs_npm_package_ensure}"
