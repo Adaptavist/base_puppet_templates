@@ -1,0 +1,22 @@
+---
+
+prefixes:
+    - "postgres_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresql::server::datadir: '%{::postgres_data_dir}'
+postgresql::server::postgresql_conf_path: '%{::postgres_data_dir}/postgresql.conf'
+postgresql::server::pg_hba_conf_path: '%{::postgres_data_dir}/pg_hba.conf'
+postgresql::server::pg_ident_conf_path: '%{::postgres_data_dir}/pg_ident.conf'
