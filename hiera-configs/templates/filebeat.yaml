@@ -1,0 +1,36 @@
+---
+
+prefixes:
+    - "filebeat_"
+
+classes:
+    - filebeat
+
+dependencies:
+    - filebeat
+    - stdlib
+    - concat
+
+filebeat::outputs:
+    'logstash':
+        'hosts':
+            - "%{::filebeat_server_host}:%{::filebeat_server_port}"
+        'tls':
+            certificate_authorities: 
+                - "%{::filebeat_certificate_authorities}"
+            certificate: "%{::filebeat_certificate}"
+            certificate_key: "%{::filebeat_certificate_key}"
+filebeat::logging:
+    level: "%{::filebeat_logging_level}"
+    to_files: true
+    to_syslog: false
+    files:
+        path: "%{::filebeat_logging_file_path}"
+        name: "%{::filebeat_logging_file_name}"
+        keepfiles: 7
+filebeat::prospectors:
+    "%{::filebeat_prospector_name}":
+        'paths':
+            - "%{::filebeat_prospector_path}"
+        'doc_type': "%{::filebeat_prospector_doc_type}"
+

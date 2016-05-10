@@ -3,6 +3,9 @@
 logstash_config_package_url: "false"
 logstash_config_config_file_name: 'main_logstash_config'
 logstash_config_config_file: "puppet:///files/logstash/logstash.conf"
-logstash_config_ensure: 'present' 
+logstash_config_ensure: 'present'
 logstash_config_status: 'running'
+logstash_repo_version: '2.3'
+logstash_plugin_name: 'logstash-input-beats'
+logstash_config_init_template: '/etc/puppet/files/logstash/logstash'
 
