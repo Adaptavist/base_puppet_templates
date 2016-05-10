@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "filebeat_file_"
+
+classes:
+    - filebeat
+
+dependencies:
+    - filebeat
+    - stdlib
+    - concat
+
+filebeat::prospectors:
+    "%{::filebeat_file_file_name}":
+        'paths':
+            - "%{::filebeat_file_file_path}"
+        'doc_type': "%{::filebeat_file_doc_type}"
+

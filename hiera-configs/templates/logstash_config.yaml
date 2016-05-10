@@ -1,6 +1,6 @@
 ---
 
-prefixes: 
+prefixes:
   - "logstash_config_"
 
 classes:
@@ -15,7 +15,12 @@ dependencies:
 logstash_config::package_url: "%{::logstash_config_package_url}"
 logstash_config::config_files:
     "%{::logstash_config_config_file_name}":
-        source: "%{::logstash_config_config_file}" 
-logstash_config::ensure:  "%{::logstash_config_ensure}" #'present' 
-logstash_config::status: "%{::logstash_config_status}" #'running'
+        source: "%{::logstash_config_config_file}"
+logstash_config::ensure:  "%{::logstash_config_ensure}"
+logstash_config::status: "%{::logstash_config_status}"
+logstash_config::repo_version: "%{::logstash_repo_version}"
+logstash_config::plugins:
+    "%{::logstash_plugin_name}": {}
+logstash::init_template: "%{::logstash_config_init_template}"
+
 

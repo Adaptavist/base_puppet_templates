@@ -1,0 +1,11 @@
+---
+
+filebeat_server_host:
+filebeat_server_port:
+filebeat_certificate_authorities:
+filebeat_certificate:
+filebeat_certificate_key:
+filebeat_logging_level: warning
+filebeat_logging_file_path: '/var/log/filebeat'
+filebeat_logging_file_name: 'filebeat.log'
+
