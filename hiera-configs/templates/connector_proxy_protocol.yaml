@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "application_"
+    - "connector_"
+
+required_facts:
+    - "application_instance_name"
+    - "connector_proxy_name"
+    - "connector_tomcat_port"
+
+avstapp::conf:
+  "%{::application_instance_name}":
+    connectors:
+      - protocol:    '%{::connector_tomcat_protocol}'
+
