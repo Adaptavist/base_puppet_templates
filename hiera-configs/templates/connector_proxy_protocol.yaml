@@ -6,11 +6,10 @@ prefixes:
 
 required_facts:
     - "application_instance_name"
-    - "connector_proxy_name"
-    - "connector_tomcat_port"
+    - "connector_protocol"
 
 avstapp::conf:
   "%{::application_instance_name}":
     connectors:
-      - protocol:    '%{::connector_tomcat_protocol}'
+      - protocol:    '%{::connector_protocol}'
 
