@@ -71,3 +71,5 @@ connector_tomcat_port:
 connector_tomcat_host:
     value: 'localhost'
     comment: "The host to proxy too"
+
+connector_tomcat_protocol: 'http'

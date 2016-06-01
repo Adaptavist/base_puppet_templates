@@ -1,0 +1,15 @@
+---
+
+prefixes:
+    - "application_"
+    - "connector_"
+
+required_facts:
+    - "application_instance_name"
+    - "connector_protocol"
+
+avstapp::conf:
+  "%{::application_instance_name}":
+    connectors:
+      - protocol:    '%{::connector_protocol}'
+
