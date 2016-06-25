@@ -1,0 +1,9 @@
+---
+
+apache_worker_config_startservers: 2
+apache_worker_config_maxclients: 150
+apache_worker_config_minsparethreads: 25
+apache_worker_config_maxsparethreads: 75
+apache_worker_config_threadsperchild: 25
+apache_worker_config_maxrequestsperchild: 0
+apache_worker_config_serverlimit: 25

@@ -1,0 +1,21 @@
+---
+
+prefixes:
+  - apache_worker_config_
+
+classes:
+  - apache
+
+dependencies:
+  - apache
+  - stdlib
+  - concat
+
+#set the apache global settings
+apache::mod::worker::startservers: '%{::apache_worker_config_startservers}'
+apache::mod::worker::maxclients: '%{::apache_worker_config_maxclients}'
+apache::mod::worker::minsparethreads: '%{::apache_worker_config_minsparethreads}'
+apache::mod::worker::maxsparethreads: '%{::apache_worker_config_maxsparethreads}'
+apache::mod::worker::threadsperchild: '%{::apache_worker_config_threadsperchild}'
+apache::mod::worker::maxrequestsperchild: '%{::apache_worker_config_maxrequestsperchild}'
+apache::mod::worker::serverlimit: '%{::apache_worker_config_serverlimit}'
