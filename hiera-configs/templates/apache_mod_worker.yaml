@@ -4,9 +4,10 @@ prefixes:
   - apache_worker_config_
 
 classes:
-  - apache
+  - webserver
 
 dependencies:
+  - webserver
   - apache
   - stdlib
   - concat

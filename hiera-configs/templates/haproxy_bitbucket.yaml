@@ -10,10 +10,10 @@ dependencies:
     - haproxy
     - stdlib
 
-haproxy::template: '/etc/puppet/files/haproxy/haproxy-simple-bitbucket.conf.erb'
+haproxy::template: '%{::haproxy_bitbucket_config_template}'
 haproxy::options:
     'BindAddress': '%{::haproxy_bitbucket_listen_address}'
     'BindPort': '%{::haproxy_bitbucket_listen_port}'
-    'StashSSHPort': '%{::haproxy_bitbucket_destination_port}'
-    'StashSSHAddress': '%{::haproxy_bitbucket_destination_address}'
+    'BitbucketSSHPort': '%{::haproxy_bitbucket_destination_port}'
+    'BitbucketSSHAddress': '%{::haproxy_bitbucket_destination_address}'
 

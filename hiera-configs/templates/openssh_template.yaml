@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "openssh_template_"
+
+classes:
+  - openssh
+
+dependencies:
+  - openssh
+  - puppi
+
+openssh::template: "%{::openssh_template_location}"
+openssh::options:
+    "%{::openssh_template_option_key}":
+        - '%{::openssh_template_option_value}'
