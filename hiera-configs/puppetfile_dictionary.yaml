@@ -391,7 +391,7 @@ oracle_java:
     repo: 'https://github.com/Adaptavist/puppet-oracle_java.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.7'
+    ref_value: '0.2.8'
 
 packages_repos: 
     name: 'adaptavist/packages_repos'
@@ -531,7 +531,7 @@ nagiosclient:
     repo: 'https://github.com/Adaptavist/puppet-nagiosclient.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.10'
+    ref_value: '0.1.11'
 
 nagios_config: 
     name: 'adaptavist/nagios_config'
