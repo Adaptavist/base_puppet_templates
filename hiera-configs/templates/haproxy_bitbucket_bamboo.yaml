@@ -1,0 +1,23 @@
+---
+
+prefixes:
+    - "haproxy_bitbucket_bamboo_"
+
+classes:
+    - haproxy
+
+dependencies:
+    - haproxy
+    - stdlib
+
+haproxy::template: '%{::haproxy_bitbucket_bamboo_config_template}'
+haproxy::options:
+    'BitbucketBindAddress': '%{::haproxy_bitbucket_bamboo_bit_listen_address}'
+    'BitbucketBindPort': '%{::haproxy_bitbucket_bamboo_bit_listen_port}'
+    'BitbucketSSHPort': '%{::haproxy_bitbucket_bamboo_bit_destination_port}'
+    'BitbucketSSHAddress': '%{::haproxy_bitbucket_bamboo_bit_destination_address}'
+    'BambooBindAddress': '%{::haproxy_bitbucket_bamboo_bam_listen_address}'
+    'BambooBindPort': '%{::haproxy_bitbucket_bamboo_bam_listen_port}'
+    'BambooBrokerPort': '%{::haproxy_bitbucket_bamboo_bam_destination_port}'
+    'BambooBrokerAddress': '%{::haproxy_bitbucket_bamboo_bam_destination_address}'
+

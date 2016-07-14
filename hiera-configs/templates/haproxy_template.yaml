@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - "haproxy_template_"
+
+classes:
+    - haproxy
+
+dependencies:
+    - haproxy
+    - stdlib
+
+haproxy::template: '%{::haproxy_template_filepath}'

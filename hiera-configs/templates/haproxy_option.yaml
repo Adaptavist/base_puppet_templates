@@ -1,0 +1,15 @@
+---
+
+prefixes:
+    - "haproxy_option_"
+
+classes:
+    - haproxy
+
+dependencies:
+    - haproxy
+    - stdlib
+
+haproxy::options:
+    '%{::haproxy_option_key}': '%{::haproxy_option_value}'
+
