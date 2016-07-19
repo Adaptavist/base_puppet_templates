@@ -16,7 +16,7 @@ webserver::default_vhosts:
   '%{::apache_vhost_directory_security_vhost_name}':
     directories:
       - provider: "%{::apache_vhost_directory_security_provider}"
-        path: "/"
+        path: "%{::apache_vhost_directory_security_directory_path}"
         options:
           - Indexes
           - FollowSymLinks
