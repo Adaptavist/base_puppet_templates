@@ -1,6 +1,8 @@
 ---
 
 prefixes:
+
+  - apache_vhost_match_
   - apache_vhost_directory_security_
 
 classes:
@@ -13,7 +15,7 @@ dependencies:
   - concat
 
 webserver::default_vhosts:
-  '%{::apache_vhost_directory_security_vhost_name}':
+  '%{::apache_vhost_match_vhost_name}':
     directories:
       - provider: "%{::apache_vhost_directory_security_provider}"
         path: "%{::apache_vhost_directory_security_directory_path}"
@@ -26,4 +28,3 @@ webserver::default_vhosts:
         directoryindex: "%{::apache_vhost_directory_security_directory_index}"
         require:
           - "%{::apache_vhost_directory_security_requires}"
-
