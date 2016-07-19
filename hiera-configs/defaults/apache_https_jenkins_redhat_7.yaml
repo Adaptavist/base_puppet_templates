@@ -1,0 +1,75 @@
+---
+
+apache_setup_extended_status: 'On'
+apache_setup_keepalive: 'On'
+apache_setup_timeout: 300
+apache_setup_worker_maxclients: 500
+apache_setup_worker_maxsparethreads: 100
+apache_setup_mpm:
+    value: 'worker'
+    comment: 'The Multi-Processing Module to use'
+
+vhost_https_jenkins_servername:
+    value: 
+    comment: "Servername for vhost"
+vhost_https_jenkins_serveraliases:
+    value: 
+    comment: "Server alias for vhost"
+vhost_https_jenkins_rewrite_hostname:
+    value: 
+    comment: "rewrite_cond url"
+vhost_https_jenkins_proxy_name:
+    value: 
+    comment: "rewrite_rule destination url"
+vhost_https_jenkins_port:
+    value: 443
+    comment: "The tcp port for the vhost to bind to"
+vhost_https_jenkins_log_level:
+    value: 'warn'
+    comment: 'The log level for this vhost'
+vhost_https_jenkins_docroot:
+    value: '/nonexistant'
+    comment: "The document root for this vhost"
+vhost_https_jenkins_cache_directory:
+    value: '/var/cache/httpd/mod_disk_cache/'
+    comment: 'The directory used by mod_disk_cache for this vhost'
+vhost_https_jenkins_ssl_protocol: 
+    value: 'All -SSLv2 -SSLv3'
+    comment: 'The SSL/TLS Protocols to use'
+vhost_https_jenkins_ssl_cipher:
+    value: 'HIGH:MEDIUM:!aNULL:!MD5'
+    comment: "The SSL/TLS Ciphers to use"
+
+vhost_https_jenkins_vhost_name: 
+    value: 'default-https'
+    comment: "Name of the vhost"
+vhost_https_jenkins_apache_log_prefix: 
+    value: 'adaptavist'
+    comment: "Log file prexif, location: '/var/log/httpd/<prefix>vhost-error.log'"
+vhost_https_jenkins_ssl_key:
+    value:   '/etc/puppet/files/ssl/certs/wildcard2014.key'
+    comment: "Full path to SSL certificate file"
+vhost_https_jenkins_ssl_cert:
+    value:    '/etc/puppet/files/ssl/certs/wildcard2014.crt'
+    comment: "Full path to SSL key file"
+vhost_https_jenkins_ssl_chain:
+    value:  '/etc/puppet/files/ssl/certs/wildcard_int2014.pem'
+    comment: "Full path to SSL chain file"
+
+vhost_https_jenkins_proxy_connection_timeout:
+    value:  '30'
+    comment: "Proxy connection timeout for ProxyPass"
+vhost_https_jenkins_proxy_timeout: 
+    value:  '300'
+    comment: "Proxy timeout for ProxyPass"
+vhost_https_jenkins_proxy_context_path: 
+    value: '/'
+    comment: "Context path for ProxyPass"
+connector_tomcat_port: 
+    value: '8090'
+    comment: "ProxyPass setup to localhost port"
+connector_tomcat_host:
+    value: 'localhost'
+    comment: "The host to proxy too"
+
+connector_tomcat_protocol: 'http'
