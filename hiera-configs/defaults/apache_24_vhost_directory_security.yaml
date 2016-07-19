@@ -1,0 +1,8 @@
+---
+
+apache_vhost_directory_security_vhost_name:
+apache_vhost_directory_security_provider: directory
+apache_vhost_directory_security_allow_override: "None"
+apache_vhost_directory_security_directory_index: ""
+apache_vhost_directory_security_requires:
+

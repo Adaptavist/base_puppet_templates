@@ -1,0 +1,29 @@
+---
+
+prefixes:
+  - apache_vhost_directory_security_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::default_vhosts:
+  '%{::apache_vhost_directory_security_vhost_name}':
+    directories:
+      - provider: "%{::apache_vhost_directory_security_provider}"
+        path: "/"
+        options:
+          - Indexes
+          - FollowSymLinks
+          - MultiViews
+        allow_override:
+          - "%{::apache_vhost_directory_security_allow_override}"
+        directoryindex: "%{::apache_vhost_directory_security_directory_index}"
+        require:
+          - "%{::apache_vhost_directory_security_requires}"
+
