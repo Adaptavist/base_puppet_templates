@@ -1,0 +1,68 @@
+---
+
+prefixes:
+    - "database_db_"
+    - "postgres_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+database::type: 'postgres'
+
+postgresconfig::postgres_password: "%{::postgres_postgres_password}"
+postgresconfig::listen_address: "%{::postgres_listen_address}"
+postgresconfig::listen_port: "%{::postgres_listen_port}"
+postgresconfig::install_contrib: "%{::postgres_install_contrib}"
+postgresconfig::install_devel: "%{::postgres_install_devel}"
+postgresconfig::create_auth_file: "%{::postgres_create_auth_file}"
+
+
+postgresconfig::hba_rules: 
+  001:
+    type: 'local'
+    user: 'postgres'
+    auth_method: 'ident'
+    order: '001'
+    description: 'local access as postgres user'
+  002:
+    type: 'local'
+    auth_method: 'md5'
+    order: '002'
+    description: 'local access to database with same name'
+  003:
+    type: 'host'
+    user: 'postgres'
+    address: '127.0.0.1/32'
+    auth_method: 'md5'
+    order: '003'
+    description: 'allow localhost TCP access to postgresql user'
+  004:
+    type: 'host'
+    user: 'postgres'
+    address: '0.0.0.0/0'
+    auth_method: 'reject'
+    order: '004'
+    description: 'deny access to postgresql user'
+  100:
+    type: 'host'
+    address: '127.0.0.1/32'
+    auth_method: 'md5'
+    order: '100'
+    description: 'allow access to all users'
+  101:
+    type: 'host'
+    address: '::1/128'
+    auth_method: 'md5'
+    order: '101'
+    description: 'allow access to ipv6 localhost'
+

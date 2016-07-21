@@ -1,0 +1,18 @@
+---
+
+replication_postgres_server_access_rule_type: 'host'
+replication_postgres_server_wal_level: 'hot_standby'
+replication_postgres_server_max_wal_senders: 3
+replication_postgres_server_checkpoint_segments: 8
+replication_postgres_server_wal_keep_segments: 8
+replication_postgres_server_username: 'replicator'
+replication_postgres_server_password: 'replicatorpassword'
+replication_postgres_server_database: 'replication'
+replication_postgres_server_slave_ip_address: '127.0.0.1/32' # via stunnel 
+replication_postgres_server_auth_method: 'md5'
+replication_postgres_server_order: 1
+replication_postgres_server_description: 'Access for replication client server'
+replication_postgres_server_databas: 'all'
+replication_postgres_server_archive_mode: 'on'
+replication_postgres_server_archive_command: 'rsync -a %p localhost::postgres_replication/%f' # for use with stunnel
+replication_postgres_server_login: true
