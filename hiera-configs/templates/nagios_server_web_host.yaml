@@ -1,6 +1,6 @@
 ---
 
-prefixes:
+prefixes: 
     - "nagios_server_web_host_"
 
 classes:
@@ -37,7 +37,7 @@ nagios::server::services:
         service_description:  "Web Check: - %{::nagios_server_web_host_url}"
         ensure: "%{::nagios_server_web_host_ensure}"
     "%{::nagios_server_web_host_name}_check_pages":
-        check_command: "track_error_pages!%{::nagios_server_web_host_url}"
+        check_command: "%{::nagios_server_web_host_error_page_chek}!%{::nagios_server_web_host_url}"
         use:  'generic-service'
         host_name:  "%{::nagios_server_web_host_name}"
         service_description:  "track error page check: %{::nagios_server_web_host_url}"
@@ -48,3 +48,4 @@ nagios::server::services:
         host_name:  "%{::nagios_server_web_host_name}"
         service_description:  "SSL expiration Check: %{::nagios_server_web_host_url}"
         ensure: "%{::nagios_server_web_host_ensure}"
+

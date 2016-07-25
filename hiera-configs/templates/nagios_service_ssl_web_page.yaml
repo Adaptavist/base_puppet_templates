@@ -21,7 +21,7 @@ nagios_config::services:
         notification_period: "%{::nagios_service_ssl_web_page_notification_period}"
         check_period: "%{::nagios_service_ssl_web_page_check_period}"
     "%{::nagios_service_ssl_web_page_name}_check_pages":
-        check_command: "track_error_pages!%{::nagios_service_ssl_web_page_url}"
+        check_command: "%{::track_error_pages}!%{::nagios_service_ssl_web_page_url}"
         use:  'generic-service'
         host_name:  "%{::nagios_service_ssl_web_page_hostname}"
         hostgroup_name:  "%{::nagios_service_ssl_web_page_hostgroup_name}"

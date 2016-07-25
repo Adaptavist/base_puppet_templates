@@ -1,0 +1,8 @@
+---
+
+nagios_server_custom_plugin_name:
+nagios_server_custom_plugin_gitrepo: 'false'
+nagios_server_custom_plugin_plugin_url: 'false'
+nagios_server_custom_plugin_local_path:
+nagios_server_custom_plugin_file_name:
+

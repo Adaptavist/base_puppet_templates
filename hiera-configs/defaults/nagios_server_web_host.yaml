@@ -18,3 +18,5 @@ nagios_server_web_host_hostgroups:
 nagios_server_web_host_ensure: 'present'
 nagios_server_web_host_url:
 nagios_server_web_host_custom_variables: ''
+nagios_server_web_host_error_page_chek: 'track_error_pages'
+

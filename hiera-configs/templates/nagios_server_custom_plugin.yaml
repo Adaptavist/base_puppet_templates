@@ -1,0 +1,18 @@
+---
+
+prefixes: 
+    - "nagios_server_custom_plugin_"
+
+classes:
+  - nagios::server
+
+dependencies:
+  - nagios
+
+nagios::server::custom_plugins:
+    "%{::nagios_server_custom_plugin_name}":
+        'gitrepo': "%{::nagios_server_custom_plugin_gitrepo}"
+        'plugin_url': "%{::nagios_server_custom_plugin_plugin_url}"
+        'local_path': "%{::nagios_server_custom_plugin_local_path}"
+        'file_name': "%{::nagios_server_custom_plugin_file_name}"
+
