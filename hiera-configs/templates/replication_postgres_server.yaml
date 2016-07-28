@@ -1,0 +1,53 @@
+---
+
+prefixes:
+    - "replication_postgres_server_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresconfig::config_enties:
+  "wal_level":
+    value: "%{::replication_postgres_server_wal_level}"
+  "max_wal_senders":
+    value: "%{::replication_postgres_server_max_wal_senders}"
+  "checkpoint_segments":
+    value: "%{::replication_postgres_server_checkpoint_segments}"
+  "wal_keep_segments":
+    value: "%{::replication_postgres_server_wal_keep_segments}"
+  "archive_mode":
+    value: "%{::replication_postgres_server_archive_mode}"
+  "archive_command":
+    value: "%{::replication_postgres_server_archive_command}"
+
+postgresconfig::roles:
+    "%{::replication_postgres_server_username}":
+        password: "%{::replication_postgres_server_password}"
+        createdb: "false"
+        createrole: "false"
+        login: "%{::replication_postgres_server_login}"
+        inherit: "true"
+        superuser: "false"
+        replication: "true"
+
+postgresconfig::hba_rules:
+  "replication_slave_access":
+    type:  "%{::replication_postgres_server_access_rule_type}"
+    user:  "%{::replication_postgres_server_username}"
+    address:  "%{::replication_postgres_server_slave_ip_address}"
+    auth_method:  "%{::replication_postgres_server_auth_method}"
+    order:  "%{::replication_postgres_server_order}"
+    description:  "%{::replication_postgres_server_description}"
+    auth_option: "false"
+    database: "%{::replication_postgres_server_database}"
+

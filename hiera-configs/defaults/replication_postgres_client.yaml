@@ -1,0 +1,22 @@
+---
+
+replication_postgres_client_hot_standby: 'on'
+replication_postgres_client_wal_level: 'hot_standby'
+replication_postgres_client_max_wal_senders: 3
+replication_postgres_client_checkpoint_segments: 8
+replication_postgres_client_wal_keep_segments: 8
+replication_postgres_client_archive_mode: 'off'
+replication_postgres_client_archive_command: 'rsync -a %p localhost::postgres_replication/%f'
+
+replication_postgres_client_manage_recovery_conf: 'true'
+replication_postgres_client_standby_mode: 'on'
+replication_postgres_client_server_host:
+replication_postgres_client_server_port: 
+replication_postgres_client_server_user: 
+replication_postgres_client_server_password:
+replication_postgres_client_trigger_file: '/var/lib/pgsql/data/iam.master'
+replication_postgres_client_restore_command: 'cp /postgres_replication/%f "%p"'
+replication_postgres_client_archive_cleanup_command: '/usr/bin/pg_archivecleanup /postgres_replication %r'
+replication_postgres_client_postgres_user_home: "/var/lib/pgsql" #default postgres home if not created
+
+

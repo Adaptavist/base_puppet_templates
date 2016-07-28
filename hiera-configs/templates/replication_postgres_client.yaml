@@ -1,0 +1,51 @@
+---
+
+prefixes:
+  - "replication_postgres_client_"
+
+classes:
+  - replication::database::postgres_client
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+  - replication
+
+replication::database::postgres_client::from_server: "%{::replication_postgres_client_server_host}"
+replication::database::postgres_client::from_port: "%{::replication_postgres_client_server_port}"
+replication::database::postgres_client::replication_user: "%{::replication_postgres_client_server_user}"
+replication::database::postgres_client::replication_password: "%{::replication_postgres_client_server_password}"
+replication::database::postgres_client::replication_user_home: "%{::replication_postgres_client_replication_user_home}"
+
+postgresconfig::config_enties:
+  "hot_standby":
+    value: "%{::replication_postgres_client_hot_standby}"
+  "wal_level":
+    value: "%{::replication_postgres_client_wal_level}"
+  "max_wal_senders":
+    value: "%{::replication_postgres_client_max_wal_senders}"
+  "checkpoint_segments":
+    value: "%{::replication_postgres_client_checkpoint_segments}"
+  "wal_keep_segments":
+    value: "%{::replication_postgres_client_wal_keep_segments}"
+  "archive_mode":
+    value: "%{::replication_postgres_client_archive_mode}"
+  "archive_command":
+    value: "%{::replication_postgres_client_archive_command}"
+
+
+postgresconfig::manage_recovery_conf: "%{::replication_postgres_client_manage_recovery_conf}"
+postgresconfig::recovery_params:
+  'slave_revocery_conf':
+    'standby_mode': "%{::replication_postgres_client_standby_mode}"
+    'primary_conninfo': "host=%{::replication_postgres_client_server_host} port=%{::replication_postgres_client_server_port} user=%{::replication_postgres_client_server_user} password=%{::replication_postgres_client_server_password}"
+    'trigger_file': "%{::replication_postgres_client_trigger_file}"
+    'restore_command': "%{::replication_postgres_client_restore_command}"
+    'archive_cleanup_command': "%{::replication_postgres_client_archive_cleanup_command}"
+

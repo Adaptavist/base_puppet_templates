@@ -173,7 +173,7 @@ replication:
     name: 'adaptavist/replication'
     repo: 'https://github.com/Adaptavist/puppet-replication.git'
     ref_type: 'tag'
-    ref_value: '0.3.10'
+    ref_value: '0.3.11'
     repo_type: 'git'
 
 central_logging: 
@@ -405,7 +405,7 @@ postgresconfig:
     repo: 'https://github.com/Adaptavist/puppet-postgresconfig.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.15'
+    ref_value: '0.0.16'
 
 mysqlconfig: 
     name: 'adaptavist/mysqlconfig'
