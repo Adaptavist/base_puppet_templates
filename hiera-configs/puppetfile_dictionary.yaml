@@ -685,7 +685,7 @@ artifactory:
     repo: 'https://github.com/Adaptavist/puppet-artifactory.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.8'
+    ref_value: '0.1.9'
 
 coverity:
     name: "puppet/coverity"
