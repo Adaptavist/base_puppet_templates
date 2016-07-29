@@ -24,3 +24,4 @@ artifactory_min_mem: "512m"
 artifactory_pergen_mem: "256m"
 artifactory_shutdown_port: 8012
 artifactory_version_number: "3.3.0"
+artifactory_manual_service_script: "false"

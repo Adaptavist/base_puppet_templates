@@ -20,6 +20,7 @@ dependencies:
 artifactory::instance_name: "%{::artifactory_instance_name}"
 artifactory::hosting_user: "%{::atlassian_hosting_user}"
 artifactory::hosting_group: "%{::atlassian_hosting_group}"
+artifactory::manual_service_script: "%{::artifactory_manual_service_script}"
 
 artifactory::conf:
     tarball_location_file: "%{::artifactory_file_location}"
