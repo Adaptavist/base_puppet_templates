@@ -1,0 +1,11 @@
+---
+
+nagios_service_filesystem_replication_name:
+nagios_service_filesystem_replication_file: 
+nagios_service_filesystem_replication_location:
+nagios_service_filesystem_replication_hostname:
+nagios_service_filesystem_replication_warn: '1200' # 20 mins
+nagios_service_filesystem_replication_crit: '1800' # 30 mins
+nagios_service_filesystem_replication_check_interval: '5' # 5 mins
+nagios_service_filesystem_replication_ensure: 'present'
+nagios_service_filesystem_replication_notification_interval: '0'

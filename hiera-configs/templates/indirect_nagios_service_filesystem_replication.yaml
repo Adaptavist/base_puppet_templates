@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "nagios_service_filesystem_replication_"
+
+classes:
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::services:
+    "%{::nagios_service_filesystem_replication_name}_check_filesystem_replication":
+        check_command: 'check_indirect_nrpe!$_HOSTNRPE_PROXY$!check_nrpe!$_HOSTPRIVATE_IP$ check_file_age "%{::nagios_service_filesystem_replication_file} %{::nagios_service_filesystem_replication_warn} %{::nagios_service_filesystem_replication_crit}"'
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_filesystem_replication_hostname}"
+        service_description:  "Filesystem Replicaiton Check: %{::nagios_service_filesystem_replication_location}"
+        ensure: "%{::nagios_service_filesystem_replication_ensure}"
+        notification_interval: "%{::nagios_service_filesystem_replication_notification_interval}"
+        normal_check_interval: "%{::nagios_service_filesystem_replication_check_interval}"
