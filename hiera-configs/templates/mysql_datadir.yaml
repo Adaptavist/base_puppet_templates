@@ -19,3 +19,5 @@ dependencies:
 mysqlconfig::custom_mysql_options:
   mysqld:
     'datadir': "%{::mysql_data_dir}"
+    
+mysqlconfig::datadir: "%{::mysql_data_dir}"
