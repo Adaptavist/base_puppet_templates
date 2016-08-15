@@ -32,7 +32,7 @@ avstapp::conf:
         - "%{::bitbucket_class_dependency}"  #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::bitbucket_context_path}"
     shutport: "%{::bitbucket_app_shutport}"
-    tarball_location_url: "http://www.atlassian.com/software/stash/downloads/binary/atlassian-%{::bitbucket_product_name}-%{::bitbucket_version}.tar.gz"
+    tarball_location_url: "${::bitbucket_tarball_location_url}"
     base_url: "%{::bitbucket_host_name}"
     avst_wizard: "%{::bitbucket_avst_wizard}"
     manual_service_script: "%{::bitbucket_manual_service_script}"

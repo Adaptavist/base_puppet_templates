@@ -32,7 +32,7 @@ avstapp::conf:
         - "%{::fecru_class_dependency}"  #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::fecru_context_path}"
     shutport: "%{::fecru_app_shutport}"
-    tarball_location_url: "http://www.atlassian.com/software/crucible/downloads/binary/crucible-%{::fecru_version}.zip"
+    tarball_location_url: "%{::fecru_tarball_location_url}"
     base_url: "%{::fecru_host_name}"
     avst_wizard: "%{::fecru_avst_wizard}"
     manual_service_script: "%{::fecru_manual_service_script}"

@@ -3,6 +3,9 @@
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
+bamboo_tarball_location_url:
+    value: ''
+    comment: 'If left empty, url is autodetected based on version from Atlassian'
 bamboo_database_setup_database: ''
 bamboo_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
 bamboo_database_type: 'mysql'

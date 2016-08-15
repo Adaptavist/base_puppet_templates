@@ -32,7 +32,7 @@ avstapp::conf:
         - "%{::bamboo_class_dependency}"  #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::bamboo_context_path}"
     shutport: "%{::bamboo_app_shutport}"
-    tarball_location_url: "http://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-%{::bamboo_version}.tar.gz"
+    tarball_location_url: "${::bamboo_tarball_location_url}"
     base_url: "%{::bamboo_host_name}"
     early_access: "%{::bamboo_early_access}"
     avst_wizard: "%{::bamboo_avst_wizard}"

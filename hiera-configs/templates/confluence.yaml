@@ -32,7 +32,7 @@ avstapp::conf:
         - "%{::confluence_class_dependency}"  #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::confluence_context_path}"
     shutport: "%{::confluence_app_shutport}"
-    tarball_location_url: "http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-%{::confluence_version}.tar.gz"
+    tarball_location_url: "::confluence_tarball_location_url}"
     base_url: "%{::confluence_host_name}"
     avst_wizard: "%{::confluence_avst_wizard}"
     manual_service_script: "%{::confluence_manual_service_script}"
