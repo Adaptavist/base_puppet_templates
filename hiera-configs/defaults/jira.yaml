@@ -18,10 +18,9 @@ jira_license:
 jira_early_access:
     value: "false"
     comment: "Version to be installed is early access version"
-jira_tarball_location_url_prefix:
-    value: 'http://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-'
-jira_tarball_location_url_postfix:
-    value: '.tar.gz'
+jira_tarball_location_url:
+    value: ''
+    comment: 'If left empty, url is autodetected based on version from Atlassian'
 jira_driver_location_path: 
     value: '/etc/puppet/files/bins/mysql-connector-java-5.1.22-bin.jar'
     comment: "Mysql driver location, must be accessible for user that runs the process"

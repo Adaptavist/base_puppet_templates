@@ -32,7 +32,7 @@ avstapp::conf:
     shutport: "%{::crowd_app_shutport}"
     class_dependencies:
         - "%{::crowd_class_dependency}"  #defaults to database, if db is not on the same server change this to e.g packages_repos
-    tarball_location_url: "http://www.atlassian.com/software/crowd/downloads/binary/atlassian-crowd-%{::crowd_version}.tar.gz"
+    tarball_location_url: "%{::crowd_tarball_location_url}"
     base_url: "%{::crowd_host_name}"
     avst_wizard: "%{::crowd_avst_wizard}"
     manual_service_script: "%{::crowd_manual_service_script}"

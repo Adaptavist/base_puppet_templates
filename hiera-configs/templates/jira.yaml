@@ -33,7 +33,7 @@ avstapp::conf:
         - "%{::jira_class_dependency}" #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::jira_context_path}"
     shutport: "%{::jira_app_shutport}"
-    tarball_location_url: "%{::jira_tarball_location_url_prefix}%{::jira_version}%{::jira_tarball_location_url_postfix}"
+    tarball_location_url: "%{::jira_tarball_location_url}"
     base_url: "%{::jira_host_name}"
     avst_wizard: "%{::jira_avst_wizard}"
     manual_service_script: "%{::jira_manual_service_script}"

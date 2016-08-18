@@ -2,7 +2,9 @@
 
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
-
+confluence_tarball_location_url:
+    value: ''
+    comment: 'If left empty, url is autodetected based on version from Atlassian'
 confluence_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
 confluence_database_setup_database: ''
 confluence_database_type: 'mysql'
