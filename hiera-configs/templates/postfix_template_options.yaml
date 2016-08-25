@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "postfix_template_options_option_key"
+    - "postfix_template_options_option_value"
+
+classes:
+  - postfix
+
+dependencies:
+  - postfix
+
+postfix::options:
+    "%{::postfix_template_options_option_key}":
+        - '%{::postfix_template_options_option_value}'
+

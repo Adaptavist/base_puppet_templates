@@ -1,0 +1,13 @@
+---
+
+prefixes: 
+    - "postfix_template_"
+
+classes:
+  - postfix
+
+dependencies:
+  - postfix
+
+postfix::template: "%{::postfix_template_location}"
+
