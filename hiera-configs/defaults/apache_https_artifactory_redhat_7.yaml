@@ -18,6 +18,9 @@ vhost_https_artifactory_serveraliases:
 vhost_https_artifactory_rewrite_hostname:
     value: 
     comment: "rewrite_cond url"
+vhost_https_artifactory_rewrite_prefix:
+    value: '!^'
+    comment: "The hostname rewrite prefix operator"
 vhost_https_artifactory_proxy_name:
     value: 
     comment: "rewrite_rule destination url"
@@ -65,6 +68,9 @@ vhost_https_artifactory_proxy_timeout:
 vhost_https_artifactory_proxy_context_path: 
     value: '/'
     comment: "Context path for ProxyPass"
+vhost_https_artifactory_proxy_options:
+    value: ''
+    comment: "Additional options for Proxy pass, such as nocanon etc"
 connector_tomcat_port: 
     value: '8090'
     comment: "ProxyPass setup to localhost port"
@@ -73,3 +79,4 @@ connector_tomcat_host:
     comment: "The host to proxy too"
 
 connector_tomcat_protocol: 'http'
+vhost_https_artifactory_custom_content: ''
