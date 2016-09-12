@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "newrelic_server_monitor_"
+
+classes:
+  - newrelic::server::linux
+
+dependencies:
+  - newrelic
+  - stdlib
+  - apt
+  - download_file
+
+
+newrelic::server::linux::newrelic_license_key: '%{::newrelic_server_monitor_license_key}'

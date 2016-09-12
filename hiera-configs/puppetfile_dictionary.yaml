@@ -735,3 +735,18 @@ spacewalk_client:
     repo_type: "git"
     ref_type: "tag"
     ref_value: "0.0.2"
+
+download_file:
+    name: "puppet/download_file"
+    repo: https://github.com/Adaptavist/puppet-download_file
+    repo_type: "git"
+    ref_type: 'tag'
+    ref_value: 'v2.0.0'
+
+newrelic:
+    name: "puppet/newrelic"
+    repo: https://github.com/Adaptavist/puppet-newrelic
+    repo_type: "git"
+    ref_type: 'tag'
+    ref_value: '4.1.1'
+
