@@ -35,7 +35,7 @@ avstapp::conf:
     tarball_location_url: "%{::confluence_tarball_location_url}"
     base_url: "%{::confluence_host_name}"
     avst_wizard: "%{::confluence_avst_wizard}"
-    wizard_use_tomcat_port: "%{confluence_wizard_use_tomcat_port}"
+    wizard_use_tomcat_port: "%{::confluence_wizard_use_tomcat_port}"
     manual_service_script: "%{::confluence_manual_service_script}"
     manual_upstart_script: "%{::confluence_manual_upstart_script}"
     early_access: "%{::confluence_early_access}"

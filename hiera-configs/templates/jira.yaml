@@ -36,7 +36,7 @@ avstapp::conf:
     tarball_location_url: "%{::jira_tarball_location_url}"
     base_url: "%{::jira_host_name}"
     avst_wizard: "%{::jira_avst_wizard}"
-    wizard_use_tomcat_port: "%{jira_wizard_use_tomcat_port}"
+    wizard_use_tomcat_port: "%{::jira_wizard_use_tomcat_port}"
     manual_service_script: "%{::jira_manual_service_script}"
     manual_upstart_script: "%{::jira_manual_upstart_script}"
     early_access: "%{::jira_early_access}"

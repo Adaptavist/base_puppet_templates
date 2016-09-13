@@ -35,7 +35,7 @@ avstapp::conf:
     tarball_location_url: "%{::crowd_tarball_location_url}"
     base_url: "%{::crowd_host_name}"
     avst_wizard: "%{::crowd_avst_wizard}"
-    wizard_use_tomcat_port: "%{crowd_wizard_use_tomcat_port}"
+    wizard_use_tomcat_port: "%{::crowd_wizard_use_tomcat_port}"
     manual_service_script: "%{::crowd_manual_service_script}"
     manual_upstart_script: "%{::crowd_manual_upstart_script}"
     early_access: "%{::crowd_early_access}"
