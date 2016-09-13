@@ -36,6 +36,7 @@ avstapp::conf:
     base_url: "%{::bamboo_host_name}"
     early_access: "%{::bamboo_early_access}"
     avst_wizard: "%{::bamboo_avst_wizard}"
+    wizard_use_tomcat_port: "%{bamboo_wizard_use_tomcat_port}"
     manual_service_script: "%{::bamboo_manual_service_script}"
     manual_upstart_script: "%{::bamboo_manual_upstart_script}"
     avst_wizard_properties:
