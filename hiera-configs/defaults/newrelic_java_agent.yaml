@@ -1,0 +1,14 @@
+---
+
+newrelic_java_agent_application_name:
+newrelic_java_agent_license_key:
+newrelic_java_agent_apm_zip_file_location: "false"
+newrelic_java_agent_apm_zip_download_url: "false"
+newrelic_java_agent_install_base: "/opt"
+newrelic_java_agent_chown_install_dir: "true"
+newrelic_java_agent_owner: "root"
+newrelic_java_agent_group: "root"
+newrelic_java_agent_apm_download_location: "/tmp"
+newrelic_java_agent_apm_download_user: "false"
+newrelic_java_agent_apm_download_pass: "false"
+newrelic_java_agent_run_before: "false"

@@ -1,0 +1,23 @@
+---
+
+prefixes:
+    - "newrelic_java_agent_"
+
+classes:
+  - newrelic_java_agent
+
+dependencies:
+  - stdlib
+
+newrelic_java_agent::application_name: "%{::newrelic_java_agent_application_name}"
+newrelic_java_agent::license_key: "%{::newrelic_java_agent_license_key}"
+newrelic_java_agent::apm_zip_file_location: "%{::newrelic_java_agent_apm_zip_file_location}"
+newrelic_java_agent::apm_zip_download_url: "%{::newrelic_java_agent_apm_zip_download_url}"
+newrelic_java_agent::install_base: "%{::newrelic_java_agent_install_base}"
+newrelic_java_agent::chown_install_dir: "%{::newrelic_java_agent_chown_install_dir}"
+newrelic_java_agent::owner: "%{::newrelic_java_agent_owner}"
+newrelic_java_agent::group: "%{::newrelic_java_agent_group}"
+newrelic_java_agent::apm_download_location: "%{::newrelic_java_agent_apm_download_location}"
+newrelic_java_agent::apm_download_user: "%{::newrelic_java_agent_apm_download_user}"
+newrelic_java_agent::apm_download_pass: "%{::newrelic_java_agent_apm_download_pass}"
+newrelic_java_agent::run_before: "%{::newrelic_java_agent_run_before}"
