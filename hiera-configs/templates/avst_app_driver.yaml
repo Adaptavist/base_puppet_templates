@@ -1,0 +1,24 @@
+---
+
+prefixes: 
+    - "avst_app_driver_instance_"
+    - "avst_app_driver_file_"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::conf:
+  "%{::avst_app_driver_instance_instance_name}":
+    drivers:
+      location_path:
+        - "%{::avst_app_driver_file_location_path}"
