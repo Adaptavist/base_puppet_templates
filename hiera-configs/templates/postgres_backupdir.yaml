@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "postgres_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresql::server::backupdir: '%{::postgres_backup_dir}'
