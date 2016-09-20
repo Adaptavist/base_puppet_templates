@@ -35,6 +35,7 @@ avstapp::conf:
     tarball_location_url: "%{::bitbucket_tarball_location_url}"
     base_url: "%{::bitbucket_host_name}"
     avst_wizard: "%{::bitbucket_avst_wizard}"
+    wizard_use_tomcat_port: "%{::bitbucket_wizard_use_tomcat_port}"
     manual_service_script: "%{::bitbucket_manual_service_script}"
     manual_upstart_script: "%{::bitbucket_manual_upstart_script}"
     early_access: "%{::bitbucket_early_access}"

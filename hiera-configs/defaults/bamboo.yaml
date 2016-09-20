@@ -2,7 +2,7 @@
 
 atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
-
+bamboo_wizard_use_tomcat_port: 'false'
 bamboo_tarball_location_url:
     value: ''
     comment: 'If left empty, url is autodetected based on version from Atlassian'
