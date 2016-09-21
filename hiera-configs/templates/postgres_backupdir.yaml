@@ -16,4 +16,4 @@ dependencies:
   - concat
   - apt
 
-postgresql::server::backupdir: '%{::postgres_backup_dir}'
+postgresconfig::backupdir: '%{::postgres_backup_dir}'
