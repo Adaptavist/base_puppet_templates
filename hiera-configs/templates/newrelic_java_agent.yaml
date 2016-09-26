@@ -22,3 +22,4 @@ newrelic_java_agent::apm_download_location: "%{::newrelic_java_agent_apm_downloa
 newrelic_java_agent::apm_download_user: "%{::newrelic_java_agent_apm_download_user}"
 newrelic_java_agent::apm_download_pass: "%{::newrelic_java_agent_apm_download_pass}"
 newrelic_java_agent::run_before: "%{::newrelic_java_agent_run_before}"
+newrelic_java_agent::run_after: "%{::newrelic_java_agent_run_after}"

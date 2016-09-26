@@ -755,4 +755,4 @@ newrelic_java_agent:
     repo: https://github.com/Adaptavist/puppet-newrelic_java_agent
     repo_type: "git"
     ref_type: 'tag'
-    ref_value: '0.0.1'
+    ref_value: '0.0.2'
