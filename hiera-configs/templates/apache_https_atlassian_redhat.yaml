@@ -81,6 +81,7 @@ AddOutputFilterByType DEFLATE text/plain \n
 AddOutputFilterByType DEFLATE text/html \n
 AddOutputFilterByType DEFLATE text/xml \n
 AddOutputFilterByType DEFLATE text/css \n
+AddOutputFilterByType DEFLATE text/javascript \n
 AddOutputFilterByType DEFLATE application/json \n
 AddOutputFilterByType DEFLATE application/xml \n
 AddOutputFilterByType DEFLATE application/xhtml+xml \n
