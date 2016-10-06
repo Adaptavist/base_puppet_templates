@@ -56,7 +56,7 @@ webserver::default_vhosts:
     docroot: '%{::vhost_https_atlassian_docroot}'
     log_level: '%{::vhost_https_atlassian_log_level}'
     access_log_syslog: '/var/log/httpd/%{::vhost_https_atlassian_apache_log_prefix}-vhost-access.log'
-    access_log_format: 'proxy'
+    access_log_format: '%{::vhost_https_atlassian_custom_log_name}'
     error_log_syslog: '/var/log/httpd/%{::vhost_https_atlassian_apache_log_prefix}-vhost-error.log'
     ssl: true
     ssl_protocol: '%{::vhost_https_atlassian_ssl_protocol}'
@@ -89,11 +89,7 @@ Header append Vary User-Agent env=!dont-vary \n
 BrowserMatch ^Mozilla/4 gzip-only-text/html \n
 BrowserMatch ^Mozilla/4\\.0[678] no-gzip \n
 BrowserMatch \\bMSIE !no-gzip !gzip-only-text/html \n
-LogFormat \"%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PERCENTAGE_SIGN{User-Agent}i\\\"
-%% %v:%p (%V) %A %a \\\"__PERCENTAGE_SIGN{X-Forwarded-For}i\\\"
-\\\"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\\\"
-\\\"__PERCENTAGE_SIGN{X-Forwarded-Port}i\\\"
-\\\"__PERCENTAGE_SIGN{X-AUSERNAME}o\\\" \\\"__PERCENTAGE_SIGN{X-ASESSIONID}o\\\" %I %O %D %T\" proxy \n
+LogFormat %{::vhost_https_atlassian_custom_log_format} %{::vhost_https_atlassian_custom_log_name} \n
 \n
 ProxyErrorOverride Off \n
 ProxyPreserveHost   On \n
