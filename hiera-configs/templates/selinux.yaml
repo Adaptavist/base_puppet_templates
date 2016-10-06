@@ -1,0 +1,14 @@
+---
+
+prefixes:
+  - selinux_
+
+classes:
+  - selinux
+
+dependencies:
+  - stdlib
+  - concat
+  - selinux
+
+selinux::mode: '%{::selinux_mode}'
