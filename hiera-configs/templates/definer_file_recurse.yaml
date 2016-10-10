@@ -1,0 +1,15 @@
+---
+
+prefixes:
+    - "definer_file_recurse_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  file:
+    "%{::definer_file_recurse_name}":
+      recurse: "%{::definer_file_recurse_recurse}"
