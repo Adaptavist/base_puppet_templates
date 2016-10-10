@@ -94,6 +94,8 @@ LogFormat %{::vhost_https_atlassian_custom_log_format} %{::vhost_https_atlassian
 ProxyErrorOverride Off \n
 ProxyPreserveHost   On \n
 
+%{::vhost_https_atlassian_custom_content}
+
 ## Atlassian \n
 ProxyPass          %{::vhost_https_atlassian_proxy_context_path}   %{::connector_tomcat_protocol}://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} connectiontimeout=%{::vhost_https_atlassian_proxy_connection_timeout} timeout=%{::vhost_https_atlassian_proxy_timeout} \n
 ProxyPassReverse    %{::vhost_https_atlassian_proxy_context_path}   %{::connector_tomcat_protocol}://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} \n
