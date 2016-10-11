@@ -19,4 +19,6 @@ apache_setup_timeout: 300
 apache_setup_worker_maxclients: 500
 apache_setup_worker_maxsparethreads: 100
 
+vhost_http_port: 80
+
 

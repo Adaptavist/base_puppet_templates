@@ -25,7 +25,7 @@ webserver::default_vhosts:
     servername: '%{::vhost_http_servername}'
     serveraliases:
       - '%{::vhost_http_serveraliases}'
-    port: 80
+    port: '%{::vhost_http_port}'
     docroot: '/nonexistant'
     rewrites:
       - comment: "Make everything use https"
