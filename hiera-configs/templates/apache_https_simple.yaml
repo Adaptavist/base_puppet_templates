@@ -14,6 +14,7 @@ dependencies:
 
 webserver::default_vhosts:
   '%{::vhost_https_vhost_name}':
+    priority: '%{::vhost_https_priority}'
     servername: '%{::vhost_https_servername}'
     serveraliases:
       - '%{::vhost_https_serveraliases}'

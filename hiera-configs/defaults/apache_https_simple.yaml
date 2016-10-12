@@ -34,3 +34,4 @@ vhost_https_custom_fragment:
     value: ''
     comment: "A custom fragment to be added into the vhost config"
 
+vhost_https_priority: 25

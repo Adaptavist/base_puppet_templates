@@ -18,3 +18,5 @@ vhost_http_vhost_port:
 vhost_http_custom_fragment:
     value: ''
     comment: "A custom fragment to be added into the vhost config"
+
+vhost_http_priority: 25
