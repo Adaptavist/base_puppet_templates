@@ -17,4 +17,4 @@ vhost_http_vhost_port:
     comment: "The port the vhost binds to"
 vhost_http_custom_fragment:
     value: ''
-    comment: "A custom fragment to be added into the vhost config
+    comment: "A custom fragment to be added into the vhost config"
