@@ -1,0 +1,22 @@
+---
+
+prefixes:
+  - vhost_http_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::default_vhosts:
+  '%{::vhost_http_vhost_name}':
+    servername: '%{::vhost_http_servername}'
+    serveraliases:
+      - '%{::vhost_http_serveraliases}'
+    port: '%{::vhost_http_vhost_port}'
+    docroot: '%{::vhost_http_docroot}'
+    custom_fragment:  '%{::vhost_http_custom_fragment}'

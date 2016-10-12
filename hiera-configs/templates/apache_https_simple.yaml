@@ -1,0 +1,29 @@
+---
+
+prefixes:
+  - vhost_https_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::default_vhosts:
+  '%{::vhost_https_vhost_name}':
+    servername: '%{::vhost_https_servername}'
+    serveraliases:
+      - '%{::vhost_https_serveraliases}'
+    port: '%{::vhost_https_port}'
+    docroot: '%{::vhost_https_docroot}'
+    ssl: true
+    ssl_protocol: '%{::vhost_https_ssl_protocol}'
+    ssl_cipher: '%{::vhost_https_ssl_cipher}'
+    # SSLCompression
+    ssl_cert: '%{::vhost_https_ssl_cert}'
+    ssl_key: '%{::vhost_https_ssl_key}'
+    ssl_chain: '%{::vhost_https_ssl_chain}'
+    custom_fragment:  '%{::vhost_https_custom_fragment}'

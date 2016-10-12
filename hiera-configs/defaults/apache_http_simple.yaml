@@ -1,0 +1,20 @@
+---
+
+vhost_http_serveraliases: 
+    value:
+    comment: "Server alias for vhost"
+vhost_http_servername: 
+    value:
+    comment: "Servername for vhost"
+vhost_http_vhost_name:
+    value:
+    comment: "Name of the vhost"
+vhost_http_docroot:
+    value: '/nonexistant'
+    comment: "The vhost document root"
+vhost_http_vhost_port:
+    value: '80'
+    comment: "The port the vhost binds to"
+vhost_http_custom_fragment:
+    value: ''
+    comment: "A custom fragment to be added into the vhost config
