@@ -25,3 +25,5 @@ avst_backup_hiera_delete_unmanaged_configs: 'false'
 avst_backup_hiera_runner_script_template: "/etc/puppet/modules/avst_backup/templates/job_runner.erb"
 avst_backup_hiera_runner_pause_template: "/etc/puppet/modules/avst_backup/templates/pause-backups.erb"
 avst_backup_hiera_runner_resume_template: "/etc/puppet/modules/avst_backup/templates/resume-backups.erb"
+avst_backup_package_repo: 'http://gems.adaptavist.com'
+avst_backup_package_ensure: 'latest'
