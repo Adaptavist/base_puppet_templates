@@ -30,6 +30,7 @@ mysqlconfig::custom_mysql_options:
     'innodb_log_file_size': "%{::mysql_innodb_log_file_size}"
 mysqlconfig::max_allowed_packet: "%{::mysql_max_allowed_packet}"
 mysqlconfig::init_script_timeout: "%{::mysql_init_script_timeout}"
+mysqlconfig::manage_config_file: "%{::mysql_manage_config_file}"
 
 mysql::server::root_password: "%{::mysql_root_password}"
 
