@@ -18,5 +18,5 @@ replication_postgres_client_trigger_file: '/var/lib/pgsql/data/iam.master'
 replication_postgres_client_restore_command: 'cp /postgres_replication/%f "%p"'
 replication_postgres_client_archive_cleanup_command: '/usr/bin/pg_archivecleanup /postgres_replication %r'
 replication_postgres_client_replication_user_home: "/var/lib/pgsql" #default postgres home if not created
-
-
+replication_postgres_client_lock_file_path: '/etc/puppet/files'
+replication_postgres_client_service_stop_command: "false"
