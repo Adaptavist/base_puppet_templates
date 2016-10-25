@@ -22,8 +22,8 @@ replication::database::postgres_client::from_port: "%{::replication_postgres_cli
 replication::database::postgres_client::replication_user: "%{::replication_postgres_client_server_user}"
 replication::database::postgres_client::replication_password: "%{::replication_postgres_client_server_password}"
 replication::database::postgres_client::replication_user_home: "%{::replication_postgres_client_replication_user_home}"
-replication::database::postgres_client::replication_lock_file_path: %{::replication_postgres_client_lock_file_path}"
-replication::database::postgres_client::postgres_service_stop_command: %{::replication_postgres_client_service_stop_command}"
+replication::database::postgres_client::replication_lock_file_path: "%{::replication_postgres_client_lock_file_path}"
+replication::database::postgres_client::postgres_service_stop_command: "%{::replication_postgres_client_service_stop_command}"
 
 postgresconfig::config_enties:
   "hot_standby":
