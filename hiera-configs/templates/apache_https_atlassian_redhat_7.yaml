@@ -58,6 +58,7 @@ webserver::default_vhosts:
     access_log_syslog: '/var/log/httpd/%{::vhost_https_atlassian_apache_log_prefix}-vhost-access.log'
     access_log_format: '%{::vhost_https_atlassian_custom_log_name}'
     error_log_syslog: '/var/log/httpd/%{::vhost_https_atlassian_apache_log_prefix}-vhost-error.log'
+    priority: '%{::vhost_https_atlassian_priority}'
     ssl: true
     ssl_protocol: '%{::vhost_https_atlassian_ssl_protocol}'
     ssl_cipher: '%{::vhost_https_atlassian_ssl_cipher}'
