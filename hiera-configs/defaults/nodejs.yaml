@@ -1,3 +1,3 @@
 ---
 
-nodejs_npm_package_ensure: 'absent'
+nodejs_npm_package_ensure: 'present'

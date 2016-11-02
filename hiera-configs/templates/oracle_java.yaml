@@ -15,3 +15,4 @@ dependencies:
 oracle_java::versions:
   - "%{::oracle_java_version}"
 
+oracle_java::default_ver: "%{::oracle_java_default_ver}"

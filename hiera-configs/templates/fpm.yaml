@@ -11,5 +11,6 @@ dependencies:
   - rvm
 
 fpm::ruby_versions: 
-  - "%{::fpm_version}"
+  - "%{::fpm_ruby_versions}"
 
+fpm::version: "%{::fpm_version}"

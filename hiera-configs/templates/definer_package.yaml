@@ -1,0 +1,16 @@
+---
+
+prefixes: 
+    - "definer_package_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  package:
+    "%{::definer_package_name}":
+      ensure: "%{::definer_package_ensure}"
+

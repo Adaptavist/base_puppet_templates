@@ -1,0 +1,13 @@
+---
+
+prefixes:
+  - es_curator_
+
+classes:
+  - curator
+
+dependencies:
+  - curator
+  - stdlib
+
+curator::ensure: "%{::curator_ensure}"

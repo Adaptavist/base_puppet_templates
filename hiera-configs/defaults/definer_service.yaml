@@ -1,0 +1,6 @@
+---
+
+definer_service_name:
+definer_service_ensure: 'running'
+definer_service_require:
+definer_service_enable: 'true'

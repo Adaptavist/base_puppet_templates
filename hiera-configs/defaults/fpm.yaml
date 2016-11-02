@@ -1,3 +1,4 @@
 ---
 
-fpm_version: '1.9.3'
+fpm_ruby_versions: '2.0.0'
+fpm_version: 'latest'

@@ -1,0 +1,18 @@
+---
+
+prefixes: 
+    - "definer_service_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  service:
+    "%{::definer_service_name}":
+      ensure: "%{::definer_service_ensure}"
+      require: "%{::definer_service_require}"
+      enable: "%{::definer_service_enable}"
+
