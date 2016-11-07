@@ -1,0 +1,9 @@
+---
+avst_tools_installations_package_name:
+avst_tools_installations_package_ensure: 'installed'
+avst_tools_installations_package_create_script: 'false'
+avst_tools_installations_package_script_path: '/usr/bin/avst_jvmtop.sh'
+avst_tools_installations_package_script_template_path: 'avst_tools_installations/avst_jvmtop.erb'
+avst_tools_installations_package_script_user: 'root'
+avst_tools_installations_package_script_group: 'root'
+avst_tools_installations_package_script_mask: '0755'

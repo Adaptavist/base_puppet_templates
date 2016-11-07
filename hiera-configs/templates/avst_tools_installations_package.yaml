@@ -1,0 +1,22 @@
+---
+
+prefixes:
+    - "avst_tools_installations_package_"
+
+classes:
+  - avst_tools_installations
+
+dependencies:
+  - avst_tools_installations
+  - stdlib
+
+
+avst_tools_installations::packages_to_install: 
+    "%{::avst_tools_installations_package_name}":
+          package_ensure: "%{::avst_tools_installations_package_ensure}"
+          create_script: "%{::avst_tools_installations_package_create_script}"
+          script_path: "%{::avst_tools_installations_package_script_path}"
+          script_template_path: "%{::avst_tools_installations_package_script_template_path}"
+          script_user: "%{::avst_tools_installations_package_script_user}"
+          script_group: "%{::avst_tools_installations_package_script_group}"
+          script_mask: "%{::avst_tools_installations_package_script_mask}"
