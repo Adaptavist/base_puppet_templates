@@ -1,0 +1,14 @@
+---
+
+avst_tools_installations_tarball_name:
+avst_tools_installations_tarball_download_url:
+avst_tools_installations_tarball_download_command: 'curl -O -J -L'
+avst_tools_installations_tarball_download_location: '/tmp'
+avst_tools_installations_tarball_extract_command: 'tar -zxvf'
+avst_tools_installations_tarball_extract_location: '/usr/share'
+avst_tools_installations_tarball_create_script: 'false'
+avst_tools_installations_tarball_script_path: '/usr/bin/avst_jvmtop.sh'
+avst_tools_installations_tarball_script_template_path: 'avst_tools_installations/avst_jvmtop.erb'
+avst_tools_installations_tarball_script_user: 'root'
+avst_tools_installations_tarball_script_group: 'root'
+avst_tools_installations_tarball_script_mask: '0755'

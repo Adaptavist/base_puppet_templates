@@ -1,0 +1,26 @@
+---
+
+prefixes:
+    - "avst_tools_installations_tarball_"
+
+classes:
+  - avst_tools_installations
+
+dependencies:
+  - avst_tools_installations
+  - stdlib
+
+
+avst_tools_installations::tarballs_to_install: 
+    "%{::avst_tools_installations_tarball_name}":
+          download_url: "%{::avst_tools_installations_tarball_download_url}"
+          download_command: "%{::avst_tools_installations_tarball_download_command}"
+          download_location: "%{::avst_tools_installations_tarball_download_location}"
+          extract_command: "%{::avst_tools_installations_tarball_extract_command}"
+          extract_location: "%{::avst_tools_installations_tarball_extract_location}"
+          create_script: "%{::avst_tools_installations_tarball_create_script}"
+          script_path: "%{::avst_tools_installations_tarball_script_path}"
+          script_template_path: "%{::avst_tools_installations_tarball_script_template_path}"
+          script_user: "%{::avst_tools_installations_tarball_script_user}"
+          script_group: "%{::avst_tools_installations_tarball_script_group}"
+          script_mask: "%{::avst_tools_installations_tarball_script_mask}"
