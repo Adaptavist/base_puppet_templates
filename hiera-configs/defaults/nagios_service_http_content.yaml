@@ -1,0 +1,9 @@
+---
+
+nagios_service_http_content_name:
+nagios_service_http_content_url:
+nagios_service_http_content_text:
+nagios_service_http_content_hostname:
+nagios_service_http_content_hostgroup_name: ''
+nagios_service_http_content_ensure: 'present'
+nagios_service_http_content_notification_interval: '0'
