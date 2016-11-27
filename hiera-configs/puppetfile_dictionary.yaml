@@ -4,7 +4,7 @@ avst_tools_installations:
     name: 'adaptavist/avst_tools_installations'
     repo: 'https://github.com/Adaptavist/puppet-avst_tools_installations.git'
     ref_type: "tag"
-    ref_value: '0.0.2'
+    ref_value: '0.0.3'
     repo_type: 'git'
 
 curator:
@@ -748,7 +748,7 @@ spacewalk_client:
     repo: https://github.com/Adaptavist/puppet-spacewalk_client
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.0.2"
+    ref_value: "0.0.3"
 
 download_file:
     name: "puppet/download_file"
