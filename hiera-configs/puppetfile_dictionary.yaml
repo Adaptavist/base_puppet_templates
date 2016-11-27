@@ -748,7 +748,7 @@ spacewalk_client:
     repo: https://github.com/Adaptavist/puppet-spacewalk_client
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.0.2"
+    ref_value: "0.0.3"
 
 download_file:
     name: "puppet/download_file"
