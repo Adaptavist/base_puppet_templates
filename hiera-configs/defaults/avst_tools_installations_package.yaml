@@ -1,6 +1,6 @@
 ---
-avst_tools_installations_name:
 avst_tools_installations_package_name:
+avst_tools_installations_package_package_name:
 avst_tools_installations_package_ensure: 'installed'
 avst_tools_installations_package_create_script: 'false'
 avst_tools_installations_package_script_path: '/usr/bin/avst_jvmtop.sh'
