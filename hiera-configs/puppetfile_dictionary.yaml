@@ -4,7 +4,7 @@ avst_tools_installations:
     name: 'adaptavist/avst_tools_installations'
     repo: 'https://github.com/Adaptavist/puppet-avst_tools_installations.git'
     ref_type: "tag"
-    ref_value: '0.0.3'
+    ref_value: '0.0.4'
     repo_type: 'git'
 
 curator:

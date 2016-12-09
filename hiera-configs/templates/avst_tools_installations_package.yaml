@@ -12,7 +12,8 @@ dependencies:
 
 
 avst_tools_installations::packages_to_install: 
-    "%{::avst_tools_installations_package_name}":
+    "%{::avst_tools_installations_name}":
+          package_name: "%{::avst_tools_installations_package_name}"
           package_ensure: "%{::avst_tools_installations_package_ensure}"
           create_script: "%{::avst_tools_installations_package_create_script}"
           script_path: "%{::avst_tools_installations_package_script_path}"
