@@ -1,0 +1,4 @@
+---
+
+avstapp_soft_nofile: 1024
+avstapp_hard_nofile: 8192
