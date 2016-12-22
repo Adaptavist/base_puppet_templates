@@ -447,7 +447,7 @@ avstapp:
     repo: 'https://github.com/Adaptavist/puppet-avstapp.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.29'
+    ref_value: '0.2.30'
 
 database: 
     name: 'adaptavist/database'

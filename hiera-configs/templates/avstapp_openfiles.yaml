@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "avstapp_"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::soft_nofile: "%{::avstapp_soft_nofile}" #1024
+avstapp::hard_nofile: "%{::avstapp_hard_nofile}" #8192
