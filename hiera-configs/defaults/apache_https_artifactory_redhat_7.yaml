@@ -80,3 +80,5 @@ connector_tomcat_host:
 
 connector_tomcat_protocol: 'http'
 vhost_https_artifactory_custom_content: ''
+
+vhost_https_artifactory_rewrite_rule_flags: 'L,R=302'
