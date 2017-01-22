@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "nagios_https_status_"
+
+classes:
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::services:
+    "%{::nagios_https_status_name}_check_https_status":
+        check_command: 'check_indirect_nrpe!$_HOSTNRPE_PROXY$!check_https_responce!%{::nagios_https_status_port} %{::nagios_https_status_url} %{::nagios_https_status_uri} "%{::nagios_https_status_expected}"'
+        use:  'generic-service'
+        host_name:  "%{::nagios_https_status_hostname}"
+        service_description:  "%{::nagios_https_status_description}: %{::nagios_https_status_url}%{::nagios_https_status_uri}"
+        ensure: "%{::nagios_https_status_ensure}"
+        notification_interval: "%{::nagios_https_status_notification_interval}"
+        normal_check_interval: "%{::nagios_https_status_check_interval}"

@@ -1,0 +1,13 @@
+---
+
+nagios_https_status_name:
+nagios_https_status_description: 'HTTPS Status Check'
+nagios_https_status_port: '443'
+nagios_https_status_url:
+nagios_https_status_uri: '/'
+nagios_https_status_expected: 'HTTP/1.1 200'
+nagios_https_status_hostname:
+nagios_https_status_ensure: 'present'
+nagios_https_status_notification_interval: '0'
+nagios_https_status_check_interval: '5' # 5 mins
+
