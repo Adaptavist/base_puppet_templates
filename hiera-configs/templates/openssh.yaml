@@ -11,6 +11,7 @@ dependencies:
   - puppi
 
 openssh::source:
+  - "%{::openssh_custom_sshd_config_source}"
   - puppet:///files/%{client}/%{functionality}/sshconfig/etc/ssh/sshd_config
   - puppet:///files/%{client}/default/sshconfig/etc/ssh/sshd_config
   - puppet:///files/ssh/%{::operatingsystem}-%{::operatingsystemmajrelease}/sshconfig/etc/ssh/sshd_config
