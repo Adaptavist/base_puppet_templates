@@ -419,7 +419,7 @@ postgresconfig:
     repo: 'https://github.com/Adaptavist/puppet-postgresconfig.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.19'
+    ref_value: '1.0.1'
 
 mysqlconfig: 
     name: 'adaptavist/mysqlconfig'

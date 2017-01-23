@@ -6,3 +6,5 @@ postgres_install_contrib: true
 postgres_install_devel: true
 postgres_postgres_password: 'false'
 postgres_create_auth_file: 'true'
+postgres_pgpass_user: 'postgres'
+postgres_pgpass_pass: 'false'

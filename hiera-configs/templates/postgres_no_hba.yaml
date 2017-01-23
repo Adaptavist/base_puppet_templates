@@ -20,6 +20,8 @@ dependencies:
 database::type: 'postgres'
 
 postgresconfig::postgres_password: "%{::postgres_postgres_password}"
+postgresconfig::pgpass_postgres_user: "%{::postgres_pgpass_user}"
+postgresconfig::pgpass_postgres_pass: "%{::postgres_pgpass_pass}"
 postgresconfig::listen_address: "%{::postgres_listen_address}"
 postgresconfig::listen_port: "%{::postgres_listen_port}"
 postgresconfig::install_contrib: "%{::postgres_install_contrib}"
