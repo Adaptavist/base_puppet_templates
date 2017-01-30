@@ -1,0 +1,12 @@
+---
+
+nagios_service_robots_txt_content_name:
+nagios_service_robots_txt_content_protocol: 'https'
+nagios_service_robots_txt_content_url:
+nagios_service_robots_txt_content_robots_uri: '/robots.txt'
+nagios_service_robots_txt_content_text: 'User-agent: *(.+?)Disallow: /'
+nagios_service_robots_txt_content_hostname:
+nagios_service_robots_txt_content_hostgroup_name: ''
+nagios_service_robots_txt_content_ensure: 'present'
+nagios_service_robots_txt_content_notification_interval: '0'
+nagios_service_robots_txt_content_description: 'Deny All Robots.txt Check'

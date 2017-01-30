@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "nagios_service_robots_txt_content_"
+
+classes:
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::services:
+    "%{::nagios_service_robots_txt_content_name}_robots_txt_content_check":
+        check_command: "check_http_content!%{::nagios_service_robots_txt_content_protocol}://%{::nagios_service_robots_txt_content_url}%{::nagios_service_robots_txt_content_robots_uri}!%{::nagios_service_robots_txt_content_text}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_robots_txt_content_hostname}"
+        hostgroup_name:  "%{::nagios_service_robots_txt_content_hostgroup_name}"
+        service_description:  "%{::nagios_service_robots_txt_content_description} - %{::nagios_service_robots_txt_content_url}"
+        ensure: "%{::nagios_service_robots_txt_content_ensure}"
+        notification_interval: "%{::nagios_service_robots_txt_content_notification_interval}"
