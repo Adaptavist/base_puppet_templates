@@ -54,3 +54,8 @@ vhost_https_atlassian_datacentre_node1:
 vhost_https_atlassian_datacentre_node2:
     value:
     comment: "URL of the Data Centre second node"
+
+vhost_https_atlassian_custom_content: ''
+vhost_https_atlassian_custom_log_format: '"%u %t \"%r\" %>s %b \"__PERCENTAGE_SIGN{Referer}i\" \"__PERCENTAGE_SIGN{User-Agent}i\" %% %v:%p (%V) %A %a \"__PERCENTAGE_SIGN{X-Forwarded-For}i\" \"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\" \"__PERCENTAGE_SIGN{X-Forwarded-Port}i\" \"__PERCENTAGE_SIGN{X-AUSERNAME}o\" \"__PERCENTAGE_SIGN{X-ASESSIONID}o\" %I %O %D %T"'
+vhost_https_atlassian_custom_log_name: 'proxy'
+vhost_https_atlassian_priority: 25

@@ -61,6 +61,7 @@ webserver::default_vhosts:
     access_log_syslog: '/var/log/httpd/%{::vhost_https_atlassian_apache_log_prefix}-vhost-access.log'
     access_log_format: '%{::vhost_https_atlassian_custom_log_name}'
     error_log_syslog: '/var/log/httpd/%{::vhost_https_atlassian_apache_log_prefix}-vhost-error.log'
+    priority: '%{::vhost_https_atlassian_priority}'
     ssl: true
     ssl_protocol: '%{::vhost_https_atlassian_ssl_protocol}'
     ssl_cipher: '%{::vhost_https_atlassian_ssl_cipher}'
@@ -100,7 +101,7 @@ ProxyPreserveHost   On \n
 %{::vhost_https_atlassian_custom_content}
 
 ## Atlassian \n
-ProxyPass          %{::vhost_https_atlassian_proxy_context_path}   %{::connector_tomcat_protocol}://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} connectiontimeout=%{::vhost_https_atlassian_proxy_connection_timeout} timeout=%{::vhost_https_atlassian_proxy_timeout} \n
+ProxyPass          %{::vhost_https_atlassian_proxy_context_path}   %{::connector_tomcat_protocol}://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} connectiontimeout=%{::vhost_https_atlassian_proxy_connection_timeout} timeout=%{::vhost_https_atlassian_proxy_timeout} %{::vhost_https_atlassian_proxy_options}\n
 ProxyPassReverse   %{::vhost_https_atlassian_proxy_context_path}   %{::connector_tomcat_protocol}://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_https_atlassian_proxy_context_path} \n
 ## Cache static assets \n
 # Needs htcacheclean running to keep disk usage from always growing \n
