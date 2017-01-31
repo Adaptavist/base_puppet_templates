@@ -56,8 +56,9 @@ webserver::default_vhosts:
     docroot: '%{::vhost_https_artifactory_docroot}'
     log_level: '%{::vhost_https_artifactory_log_level}'
     access_log_syslog: '/var/log/httpd/%{::vhost_https_artifactory_apache_log_prefix}-vhost-access.log'
-    access_log_format: 'proxy'
+    access_log_format: '%{::vhost_https_artifactory_custom_log_name}'
     error_log_syslog: '/var/log/httpd/%{::vhost_https_artifactory_apache_log_prefix}-vhost-error.log'
+    priority: '%{::vhost_https_artifactory_priority}'
     ssl: true
     ssl_protocol: '%{::vhost_https_artifactory_ssl_protocol}'
     ssl_cipher: '%{::vhost_https_artifactory_ssl_cipher}'
@@ -72,11 +73,7 @@ webserver::default_vhosts:
           - '___{HTTP_HOST}  !^$'
         rewrite_rule:
         - '^/(.*)          https://%{::vhost_https_artifactory_proxy_name}/$1 [%{::vhost_https_artifactory_rewrite_rule_flags}]'
-    custom_fragment:  "LogFormat \"%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PERCENTAGE_SIGN{User-Agent}i\\\"
-%% %v:%p (%V) %A %a \\\"__PERCENTAGE_SIGN{X-Forwarded-For}i\\\"
-\\\"__PERCENTAGE_SIGN{X-Forwarded-Proto}i\\\"
-\\\"__PERCENTAGE_SIGN{X-Forwarded-Port}i\\\"
-\\\"__PERCENTAGE_SIGN{X-AUSERNAME}o\\\" \\\"__PERCENTAGE_SIGN{X-ASESSIONID}o\\\" %I %O %D %T\" proxy \n
+    custom_fragment:  "LogFormat %{::vhost_https_artifactory_custom_log_format} %{::vhost_https_artifactory_custom_log_name} \n
 \n
 ProxyErrorOverride Off \n
 ProxyPreserveHost   On \n
