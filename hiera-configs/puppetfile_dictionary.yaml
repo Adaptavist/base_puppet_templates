@@ -771,3 +771,10 @@ newrelic_java_agent:
     ref_type: 'tag'
     ref_value: '0.0.2'
 
+sysctl:
+    name: 'thias/sysctl'
+    repo: 'https://github.com/Adaptavist/puppet-sysctl.git'
+    ref_type: "tag"
+    ref_value: '1.0.0'
+    repo_type: 'git'
+

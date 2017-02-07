@@ -1,0 +1,14 @@
+---
+
+prefixes:
+    - "sysctl_"
+
+classes:
+  - sysctl::base
+
+dependencies:
+  - sysctl
+
+sysctl::base::values:
+  "%{::sysctl_key}":
+    value: "%{::sysctl_value}"
