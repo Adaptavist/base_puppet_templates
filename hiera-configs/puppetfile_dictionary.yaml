@@ -1,12 +1,5 @@
 ---
 
-stdmod:
-    name: 'stdmod/stdmod'
-    repo: 'ssh://git@stash.adaptavist.com:7999/pup/puppet-stdmod.git'
-    ref_type: 'tag'
-    repo_type: 'git'
-    ref_value: 'v0.0.4'
-
 subversion_edge:
     name: 'adaptavist/subversion_edge'
     repo: 'ssh://git@stash.adaptavist.com:7999/pup/puppet-subversion_edge.git'
@@ -798,3 +791,10 @@ sysctl:
     ref_type: "tag"
     ref_value: '1.0.0'
     repo_type: 'git'
+
+stdmod:
+    name: 'stdmod/stdmod'
+    repo: 'ssh://git@stash.adaptavist.com:7999/pup/puppet-stdmod.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: 'v0.0.4'
