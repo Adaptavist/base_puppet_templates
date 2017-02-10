@@ -9,9 +9,10 @@ classes:
 dependencies:
     - haproxy
     - stdlib
+    - stdmod
 
-haproxy::template: '%{::haproxy_bitbucket_config_template}'
-haproxy::options:
+haproxy::config_file_template: '%{::haproxy_bitbucket_config_template}'
+haproxy::config_file_options_hash:
     'BindAddress': '%{::haproxy_bitbucket_listen_address}'
     'BindPort': '%{::haproxy_bitbucket_listen_port}'
     'BitbucketSSHPort': '%{::haproxy_bitbucket_destination_port}'
