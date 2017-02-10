@@ -1,10 +1,24 @@
 ---
 
+subversion_edge:
+    name: 'adaptavist/subversion_edge'
+    repo: 'ssh://git@stash.adaptavist.com:7999/pup/puppet-subversion_edge.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '0.1.11'
+
+simple_networking:
+    name: 'adaptavist/simple_networking'
+    repo: 'ssh://git@stash.adaptavist.com:7999/pup/puppet-simple_networking.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '0.1.6'
+
 avst_tools_installations:
     name: 'adaptavist/avst_tools_installations'
     repo: 'https://github.com/Adaptavist/puppet-avst_tools_installations.git'
     ref_type: "tag"
-    ref_value: '0.0.4'
+    ref_value: '1.0.0'
     repo_type: 'git'
 
 curator:
@@ -25,7 +39,7 @@ dhclient:
     name: 'adaptavist/dhclient'
     repo: 'https://github.com/Adaptavist/puppet-dhclient.git'
     ref_type: "tag"
-    ref_value: '0.1.7'
+    ref_value: '1.0.0'
     repo_type: 'git'
 
 
@@ -33,7 +47,7 @@ self_hostname:
     name: 'adaptavist/self_hostname'
     repo: 'https://github.com/Adaptavist/puppet-self_hostname.git'
     ref_type: "tag"
-    ref_value: '0.1.2'
+    ref_value: '1.0.0'
     repo_type: 'git'
 
 resolvconf:
@@ -47,29 +61,29 @@ sudo:
     name: 'example42/sudo'
     repo: 'https://github.com/Adaptavist/puppet-sudo.git'
     ref_type: "tag"
-    ref_value: '2.0.13'
+    ref_value: 'v2.0.19'
     repo_type: 'git'
 
 atlassian_sdk:
     name: 'adaptavist/atlassian_sdk'
     repo: 'https://github.com/Adaptavist/puppet-atlassian_sdk.git'
     ref_type: "tag"
-    ref_value: '0.1.9'
+    ref_value: '1.0.0'
     repo_type: 'git'
 
 xvfb:
     name: 'adaptavist/xvfb'
     repo: 'https://github.com/Adaptavist/puppet-xvfb.git'
     ref_type: "tag"
-    ref_value: '0.1.6'
     repo_type: 'git'
+    ref_value: '1.0.0'
 
 m2_settings:
     name: 'adaptavist/m2_settings'
     repo: 'https://github.com/Adaptavist/puppet-m2_settings.git'
     ref_type: "tag"
-    ref_value: '0.1.4'
     repo_type: 'git'
+    ref_value: '1.0.0'
 
 rvm:
     name: 'maestrodev/rvm'
@@ -82,8 +96,8 @@ fpm:
     name: 'adaptavist/fpm'
     repo: 'https://github.com/Adaptavist/puppet-fpm.git'
     ref_type: "tag"
-    ref_value: '0.1.10'
     repo_type: 'git'
+    ref_value: '1.0.0'
 
 selinux:
     name: 'jfryman/selinux'
@@ -96,7 +110,7 @@ docker_config:
     name: 'adaptavist/docker_config'
     repo: 'https://github.com/Adaptavist/puppet-docker_config.git'
     ref_type: "tag"
-    ref_value: '0.1.9'
+    ref_value: '1.0.0'
     repo_type: 'git'
 
 docker:
@@ -124,14 +138,14 @@ dashing_instances_config:
     name: 'adaptavist/dashing_instances_config'
     repo: 'https://github.com/Adaptavist/puppet-dashing_instances_config.git'
     ref_type: "tag"
-    ref_value: '0.1.4'
+    ref_value: '1.0.0'
     repo_type: 'git'
 
 mkhomedir: 
     name: 'adaptavist/mkhomedir'
     repo: 'https://github.com/Adaptavist/puppet-mkhomedir.git'
     ref_type: "tag"
-    ref_value: '0.1.6'
+    ref_value: '1.0.0'
     repo_type: 'git'
 
 statsd:
@@ -166,15 +180,15 @@ subversion_config:
     name: 'adaptavist/subversion_config'
     repo: 'https://github.com/Adaptavist/puppet-subversion_config.git'
     ref_type: 'tag'
-    ref_value: '0.1.6'
     repo_type: 'git'
+    ref_value: '1.0.0'
 
 monitoring_server: 
     name: 'adaptavist/monitoring_server'
     repo: 'https://github.com/Adaptavist/puppet-monitoring_server.git'
     ref_type: 'tag'
-    ref_value: '0.2.6'
     repo_type: 'git'
+    ref_value: '1.0.0'
 
 archive: 
     name: 'gini/archive'
@@ -187,29 +201,29 @@ replication:
     name: 'adaptavist/replication'
     repo: 'https://github.com/Adaptavist/puppet-replication.git'
     ref_type: 'tag'
-    ref_value: '0.3.11'
     repo_type: 'git'
+    ref_value: '1.0.0'
 
 central_logging: 
     name: 'adaptavist/central_logging'
     repo: 'https://github.com/Adaptavist/puppet-central_logging.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.3.9'
+    ref_value: '1.0.0'
 
 ldap_ssh_keys: 
     name: 'adaptavist/ldap_ssh_keys'
     repo: 'https://github.com/Adaptavist/puppet-ldap_ssh_keys.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.6'
+    ref_value: '1.0.0'
 
 logstash_forwarder_config: 
     name: 'adaptavist/logstash_forwarder_config'
     repo: 'https://github.com/Adaptavist/puppet-logstash_forwarder_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.9'
+    ref_value: '1.0.0'
 
 logstashforwarder: 
     name: 'elasticsearch/logstashforwarder'
@@ -223,7 +237,7 @@ logstash_config:
     repo: 'https://github.com/Adaptavist/puppet-logstash_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.7'
+    ref_value: '1.0.0'
 
 logrotate: 
     name: "rodjek/logrotate"
@@ -236,7 +250,7 @@ grafana:
     name: "bfraser/grafana"
     repo: 'https://github.com/Adaptavist/puppet-grafana.git'
     ref_type: 'tag'
-    ref_value: 'v2.0.2'
+    ref_value: '2.0.3'
     repo_type: 'git'
 
 logstash: 
@@ -257,8 +271,8 @@ elasticsearch_config:
     name: "adaptavist/elasticsearch_config"
     repo: 'https://github.com/Adaptavist/puppet-elasticsearch_config.git'
     ref_type: 'tag'
-    ref_value: '0.1.5'
     repo_type: 'git'
+    ref_value: '1.0.0'
 
 kibana4:
     name: "lesaux/kibana4"
@@ -272,7 +286,7 @@ kibana3:
     repo: 'https://github.com/Adaptavist/puppet-kibana3.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.6'
+    ref_value: '1.0.0'
 
 vcsrepo: 
     name: "puppetlabs/vcsrepo"
@@ -321,7 +335,7 @@ fw:
     repo: 'https://github.com/Adaptavist/puppet-fw.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.5'
+    ref_value: '1.0.1'
 
 haproxy: 
     name: "example42/haproxy"
@@ -335,42 +349,42 @@ postfix:
     repo: 'https://github.com/Adaptavist/puppet-postfix.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.0.10'
+    ref_value: 'v2.0.22'
 
 stdlib: 
     name: "puppetlabs/stdlib"
     repo: 'https://github.com/Adaptavist/puppet-stdlib.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '4.6.0'
+    ref_value: '4.14.0'
 
 apache:
     name: "puppetlabs/apache"
     repo: 'https://github.com/Adaptavist/puppet-apache.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.11.02'
+    ref_value: '1.0.0'
 
 apt: 
     name: "puppetlabs/apt"
     repo: 'https://github.com/Adaptavist/puppet-apt.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.8.0'
+    ref_value: '2.3.0'
 
 yum: 
     name: "example42/yum"
     repo: 'https://github.com/Adaptavist/puppet-yum.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.1.17'
+    ref_value: 'v2.1.28'
 
 mysql: 
     name: "puppetlabs/mysql"
     repo: 'https://github.com/Adaptavist/puppet-mysql.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.1.1'
+    ref_value: '2.1.2a'
 
 xinetd: 
     name: "puppetlabs/xinetd"
@@ -391,84 +405,84 @@ noconfigpkgs:
     repo: 'https://github.com/Adaptavist/puppet-noconfigpkgs.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.8'
+    ref_value: '1.0.0'
 
 etckeeper: 
     name: 'puppet/etckeeper'
     repo: 'https://github.com/Adaptavist/puppet-etckeeper.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.6'
+    ref_value: '1.0.0'
 
 oracle_java: 
     name: 'adaptavist/oracle_java'
     repo: 'https://github.com/Adaptavist/puppet-oracle_java.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.8'
+    ref_value: '1.0.0'
 
 packages_repos: 
     name: 'adaptavist/packages_repos'
     repo: 'https://github.com/Adaptavist/puppet-packages_repos.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.6'
+    ref_value: '1.0.0'
 
 postgresconfig: 
     name: 'adaptavist/postgresconfig'
     repo: 'https://github.com/Adaptavist/puppet-postgresconfig.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.1'
+    ref_value: '1.0.0'
 
 mysqlconfig: 
     name: 'adaptavist/mysqlconfig'
     repo: 'https://github.com/Adaptavist/puppet-mysqlconfig.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.12'
+    ref_value: '1.0.0'
 
 baseusers: 
     name: 'adaptavist/baseusers'
     repo: 'https://github.com/Adaptavist/puppet-baseusers.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.5'
+    ref_value: '1.0.0'
 
 basedirs: 
     name: 'adaptavist/basedirs'
     repo: 'https://github.com/Adaptavist/puppet-basedirs.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.5'
+    ref_value: '1.0.0'
 
 avstapp: 
     name: 'adaptavist/avstapp'
     repo: 'https://github.com/Adaptavist/puppet-avstapp.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.30'
+    ref_value: '1.0.0'
 
 database: 
     name: 'adaptavist/database'
     repo: 'https://github.com/Adaptavist/puppet-database.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.6'
+    ref_value: '1.0.0'
 
 webserver: 
     name: 'adaptavist/webserver'
     repo: 'https://github.com/Adaptavist/puppet-webserver.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.11'
+    ref_value: '1.0.0'
 
 limits: 
     name: "puppetlabs/limits"
     repo: 'https://github.com/Adaptavist/puppet-limits.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.3'
+    ref_value: '1.0.0'
 
 concat: 
     name: "puppetlabs/concat"
@@ -482,7 +496,7 @@ puppi:
     repo: 'https://github.com/Adaptavist/puppet-puppi.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.1.9'
+    ref_value: 'v2.1.13'
 
 monitor: 
     name: "example42/monitor"
@@ -510,28 +524,28 @@ sssd:
     repo: 'https://github.com/Adaptavist/puppet-sssd.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.3.6'
+    ref_value: '1.0.0'
 
 krb5: 
     name: 'adaptavist/krb5'
     repo: 'https://github.com/Adaptavist/puppet-krb5.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.5'
+    ref_value: '1.0.0'
 
 samba: 
     name: 'adaptavist/samba'
     repo: 'https://github.com/Adaptavist/puppet-samba.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.5'
+    ref_value: '1.0.0'
 
 active_directory_glue: 
     name: 'adaptavist/active_directory_glue'
     repo: 'https://github.com/Adaptavist/active_directory_glue.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.4'
+    ref_value: '1.0.0'
 
 nagios:
     name: 'adaptavist/nagios'
@@ -545,91 +559,91 @@ nagiosclient:
     repo: 'https://github.com/Adaptavist/puppet-nagiosclient.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.12'
+    ref_value: '1.0.0'
 
 nagios_config: 
     name: 'adaptavist/nagios_config'
     repo: 'https://github.com/Adaptavist/puppet-nagios_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.8'
+    ref_value: '1.0.0'
 
 nagios_api: 
     name: 'adaptavist/nagios_api'
     repo: 'https://github.com/Adaptavist/puppet-nagios_api.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.1'
+    ref_value: '1.0.0'
 
 stunnel_config: 
     name: 'adaptavist/stunnel_config'
     repo: 'https://github.com/Adaptavist/puppet-stunnel_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.2.12'
+    ref_value: '1.0.0'
 
 rsync_config: 
     name: 'adaptavist/rsync_config'
     repo: 'https://github.com/Adaptavist/puppet-rsync_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.7'
+    ref_value: '1.0.0'
 
 lsyncd: 
     name: 'adaptavist/lsyncd'
     repo: 'https://github.com/Adaptavist/puppet-lsyncd.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.6'
+    ref_value: '1.0.1'
 
 idmap: 
     name: 'adaptavist/idmap'
     repo: 'https://github.com/Adaptavist/puppet-idmap.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.6'
+    ref_value: '1.0.0'
 
 kmod_config: 
     name: 'adaptavist/kmod_config'
     repo: 'https://github.com/Adaptavist/puppet-kmod_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.5'
+    ref_value: '1.0.0'
 
 definer: 
     name: 'adaptavist/definer'
     repo: 'https://github.com/Adaptavist/puppet-definer.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.6'
+    ref_value: '1.0.0'
 
 avst_backup: 
     name: 'adaptavist/avst_backup'
     repo: 'https://github.com/Adaptavist/puppet-avst_backup.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.10'
+    ref_value: '1.0.0'
 
 openssh: 
     name: "example42/openssh"
     repo: 'https://github.com/Adaptavist/puppet-openssh.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.0.9'
+    ref_value: 'v2.0.11'
 
 ntp: 
     name: "puppetlabs/ntp"
     repo: 'https://github.com/Adaptavist/puppet-ntp.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '3.1.0'
+    ref_value: '6.0.0'
 
 stunnel: 
     name: "puppetlabs/stunnel"
     repo: 'https://github.com/Adaptavist/puppet-stunnel.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.2'
+    ref_value: '1.0.0'
 
 rsync: 
     name: "puppetlabs/rsync"
@@ -650,7 +664,7 @@ kmod:
     repo: 'https://github.com/Adaptavist/puppet-kmod.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.3'
+    ref_value: '2.1.1'
 
 nfs: 
     name: "ghoneycutt/nfs"
@@ -685,70 +699,70 @@ fail2ban:
     repo: 'https://github.com/Adaptavist/puppet-fail2ban.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: 'v1.3.1'
+    ref_value: 'v1.4.0'
 
 fail2ban_config:
     name: 'adaptavist/fail2ban_config'
     repo: 'https://github.com/Adaptavist/puppet-fail2ban_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.0.5'
+    ref_value: '1.0.2'
 
 artifactory:
     name: 'puppet/artifactory'
     repo: 'https://github.com/Adaptavist/puppet-artifactory.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '0.1.9'
+    ref_value: '1.0.0'
 
 coverity:
     name: "puppet/coverity"
     repo: https://github.com/Adaptavist/puppet-coverity.git
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.1.7"
+    ref_value: '1.0.0'
 
 sh_profile:
     name: "puppet/sh_profile"
     repo: https://github.com/Adaptavist/puppet-sh_profile
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.1.5"
+    ref_value: '1.0.0'
 
 squid:
     name: "puppet/squid"
     repo: https://github.com/Adaptavist/puppet-squid.git
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.1.5"
+    ref_value: '1.0.0'
 
 sshdconfig:
     name: "puppet/sshdconfig"
     repo: https://github.com/Adaptavist/puppet-sshdconfig
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.1.5"
+    ref_value: '1.0.0'
 
 swapfile:
     name: "puppet/swapfile"
     repo: https://github.com/Adaptavist/puppet-swapfile
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.1.5"
+    ref_value: '1.0.0'
 
 upstart:
     name: "puppet/upstart"
     repo: https://github.com/Adaptavist/puppet-upstart
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.1.5"
+    ref_value: '1.0.0'
 
 spacewalk_client:
     name: "puppet/spacewalk_client"
     repo: https://github.com/Adaptavist/puppet-spacewalk_client
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.0.3"
+    ref_value: "1.0.0"
 
 download_file:
     name: "puppet/download_file"
@@ -769,7 +783,7 @@ newrelic_java_agent:
     repo: https://github.com/Adaptavist/puppet-newrelic_java_agent
     repo_type: "git"
     ref_type: 'tag'
-    ref_value: '0.0.2'
+    ref_value: '1.0.0'
 
 sysctl:
     name: 'thias/sysctl'
