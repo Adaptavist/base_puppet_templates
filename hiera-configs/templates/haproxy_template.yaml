@@ -9,5 +9,6 @@ classes:
 dependencies:
     - haproxy
     - stdlib
+    - stdmod
 
-haproxy::template: '%{::haproxy_template_filepath}'
+haproxy::config_file_template: '%{::haproxy_template_filepath}'

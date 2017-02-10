@@ -9,7 +9,8 @@ classes:
 dependencies:
     - haproxy
     - stdlib
+    - stdmod
 
-haproxy::options:
+haproxy::config_file_options_hash:
     '%{::haproxy_option_key}': '%{::haproxy_option_value}'
 
