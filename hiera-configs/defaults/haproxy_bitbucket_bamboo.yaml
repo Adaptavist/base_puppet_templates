@@ -9,4 +9,6 @@ haproxy_bitbucket_bamboo_bam_listen_address:
 haproxy_bitbucket_bamboo_bam_listen_port:
 haproxy_bitbucket_bamboo_bam_destination_port: '54663'
 haproxy_bitbucket_bamboo_bam_destination_address:
+haproxy_bitbucket_bamboo_bam_haproxy_name: 'bamboo_agent_access'
+haproxy_bitbucket_bamboo_bit_haproxy_name: 'bitbucket_ssh_access'
 

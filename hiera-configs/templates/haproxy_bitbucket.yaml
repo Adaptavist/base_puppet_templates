@@ -17,4 +17,5 @@ haproxy::config_file_options_hash:
     'BindPort': '%{::haproxy_bitbucket_listen_port}'
     'BitbucketSSHPort': '%{::haproxy_bitbucket_destination_port}'
     'BitbucketSSHAddress': '%{::haproxy_bitbucket_destination_address}'
+    'HAProxyName': '%{::haproxy_bitbucket_bamboo_bit_haproxy_name}'
 
