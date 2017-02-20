@@ -784,3 +784,17 @@ stdmod:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: 'v0.0.4'
+
+java:
+    name: 'puppetlabs/java'
+    repo: 'https://github.com/Adaptavist/puppet-java.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.6.0'
+
+archive:
+    name: 'voxpupuli/archive'
+    repo: 'https://github.com/Adaptavist/puppet-archive.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: 'v1.3.0'
