@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "htcacheclean_"
+
+classes:
+  - htcacheclean
+
+dependencies:
+  - htcacheclean
+  - stdlib
+
+
+htcacheclean::cache_directory: "%{::htcacheclean_cache_directory}"
+htcacheclean::config_file: "%{::htcacheclean_config_file}"
+htcacheclean::clean_interval: "%{::htcacheclean_clean_interval}"
+htcacheclean::clean_limit: "%{::htcacheclean_clean_limit}"
+htcacheclean::additional_options: "%{::htcacheclean_additional_options}"
+htcacheclean::config_template: "%{::htcacheclean_config_template}"
