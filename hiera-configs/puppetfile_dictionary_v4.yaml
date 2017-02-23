@@ -805,4 +805,10 @@ java:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.6.0'
+htcacheclean:
+    name: "puppet-htcacheclean"
+    repo: "https://github.com/Adaptavist/puppet-htcacheclean.git"
+    repo_type: "git"
+    ref_type: "tag"
+    ref_value: "0.0.1"
 
