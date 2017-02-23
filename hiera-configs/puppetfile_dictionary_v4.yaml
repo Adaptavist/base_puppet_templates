@@ -384,7 +384,7 @@ mysql:
     repo: 'https://github.com/Adaptavist/puppet-mysql.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.1.2a'
+    ref_value: '2.1.2b'
 
 xinetd: 
     name: "puppetlabs/xinetd"
