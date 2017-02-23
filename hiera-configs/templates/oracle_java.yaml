@@ -9,6 +9,8 @@ classes:
 dependencies:
   - apt
   - yum
+  - archive
+  - java
   - oracle_java
   - stdlib
 

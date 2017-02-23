@@ -2,4 +2,4 @@
 
 mkhomedir_home_basedir: '/nethome'
 mkhomedir_home_basedir_link_target: '/home'
-
+mkhomedir_authconfig_before_class: 'sssd'

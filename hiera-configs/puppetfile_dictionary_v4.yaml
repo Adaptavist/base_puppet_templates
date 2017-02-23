@@ -18,7 +18,7 @@ avst_tools_installations:
     name: 'adaptavist/avst_tools_installations'
     repo: 'https://github.com/Adaptavist/puppet-avst_tools_installations.git'
     ref_type: "tag"
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
     repo_type: 'git'
 
 curator:
@@ -145,7 +145,7 @@ mkhomedir:
     name: 'adaptavist/mkhomedir'
     repo: 'https://github.com/Adaptavist/puppet-mkhomedir.git'
     ref_type: "tag"
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
     repo_type: 'git'
 
 statsd:
@@ -190,12 +190,12 @@ monitoring_server:
     repo_type: 'git'
     ref_value: '1.0.0'
 
-archive: 
-    name: 'gini/archive'
+archive:
+    name: 'voxpupuli/archive'
     repo: 'https://github.com/Adaptavist/puppet-archive.git'
-    ref_type: "branch"
-    ref_value: "gini-archive-0.2.0"
+    ref_type: 'tag'
     repo_type: 'git'
+    ref_value: 'v1.3.0'
 
 replication: 
     name: 'adaptavist/replication'
@@ -384,7 +384,7 @@ mysql:
     repo: 'https://github.com/Adaptavist/puppet-mysql.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.1.2a'
+    ref_value: '2.1.2b'
 
 xinetd: 
     name: "puppetlabs/xinetd"
@@ -419,7 +419,7 @@ oracle_java:
     repo: 'https://github.com/Adaptavist/puppet-oracle_java.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 packages_repos: 
     name: 'adaptavist/packages_repos'
@@ -799,6 +799,12 @@ stdmod:
     repo_type: 'git'
     ref_value: 'v0.0.4'
 
+java:
+    name: 'puppetlabs/java'
+    repo: 'https://github.com/Adaptavist/puppet-java.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.6.0'
 htcacheclean:
     name: "puppet-htcacheclean"
     repo: "https://github.com/Adaptavist/puppet-htcacheclean.git"

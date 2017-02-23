@@ -11,4 +11,4 @@ dependencies:
 
 mkhomedir::home_basedir: "%{::mkhomedir_home_basedir}" #'/nethome'
 mkhomedir::home_basedir_link_target: "%{::mkhomedir_home_basedir_link_target}" #'/home'
-
+mkhomedir::authconfig_before_class: "%{::mkhomedir_authconfig_before_class}"

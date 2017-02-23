@@ -176,12 +176,12 @@ monitoring_server:
     ref_value: '0.2.6'
     repo_type: 'git'
 
-archive: 
-    name: 'gini/archive'
+archive:
+    name: 'voxpupuli/archive'
     repo: 'https://github.com/Adaptavist/puppet-archive.git'
-    ref_type: "branch"
-    ref_value: "gini-archive-0.2.0"
+    ref_type: 'tag'
     repo_type: 'git'
+    ref_value: 'v1.3.0'
 
 replication: 
     name: 'adaptavist/replication'
@@ -784,6 +784,20 @@ stdmod:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: 'v0.0.4'
+
+java:
+    name: 'puppetlabs/java'
+    repo: 'https://github.com/Adaptavist/puppet-java.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.6.0'
+
+archive:
+    name: 'voxpupuli/archive'
+    repo: 'https://github.com/Adaptavist/puppet-archive.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: 'v1.3.0'
 
 htcacheclean:
     name: "puppet-htcacheclean"
