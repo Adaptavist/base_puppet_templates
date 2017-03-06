@@ -9,5 +9,5 @@ rhel_java_specific_version_6_version_minor: '06'
 rhel_java_specific_version_7_update_version: '80'
 rhel_java_specific_version_7_version_minor: '15'
 
-rhel_java_specific_version_8_update_version: '92'
-rhel_java_specific_version_8_version_minor: '14'
+rhel_java_specific_version_8_update_version: '112'
+rhel_java_specific_version_8_version_minor: '15'
