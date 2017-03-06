@@ -2,3 +2,12 @@
 
 oracle_java_version: 8
 oracle_java_default_ver: 8
+
+rhel_java_specific_version_6_update_version: '45'
+rhel_java_specific_version_6_version_minor: '06'
+
+rhel_java_specific_version_7_update_version: '80'
+rhel_java_specific_version_7_version_minor: '15'
+
+rhel_java_specific_version_8_update_version: '112'
+rhel_java_specific_version_8_version_minor: '15'
