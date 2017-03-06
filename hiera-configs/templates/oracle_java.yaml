@@ -2,6 +2,7 @@
 
 prefixes: 
     - "oracle_java_"
+    - "oracle_java_specific_version_"
 
 classes:
   - oracle_java
@@ -18,3 +19,14 @@ oracle_java::versions:
   - "%{::oracle_java_version}"
 
 oracle_java::default_ver: "%{::oracle_java_default_ver}"
+
+oracle_java::version_details:
+   '6':
+       update_version: "%{::rhel_java_specific_version_6_update_version}"
+       version_minor: "%{::rhel_java_specific_version_6_version_minor}"
+   '7':
+       update_version: "%{::rhel_java_specific_version_7_update_version}"
+       version_minor: "%{::rhel_java_specific_version_7_version_minor}"
+   '8':
+       update_version: "%{::rhel_java_specific_version_8_update_version}"
+       version_minor: "%{::rhel_java_specific_version_8_version_minor}"
