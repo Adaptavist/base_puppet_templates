@@ -2,7 +2,7 @@
 
 prefixes: 
     - "oracle_java_"
-    - "oracle_java_specific_version_"
+    - "rhel_java_specific_version_"
 
 classes:
   - oracle_java
