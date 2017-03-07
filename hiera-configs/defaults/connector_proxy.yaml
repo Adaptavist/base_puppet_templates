@@ -15,3 +15,9 @@ connector_schema:
 connector_proxy_port: 
     value: '443'
     comment: "Proxy listen port"
+connector_compression:
+    value: ''
+    comment: 'Flag to disabel/enable content compression, values are "on" or "off" (both this and connector_compression_mimetypes need to have a value for it to be used)'
+connector_compression_mimetypes: 
+    value: 'text/html,text/xml,text/plain,text/css,application/json,application/javascript'
+    comment: 'mime types which can have compression applied to them'

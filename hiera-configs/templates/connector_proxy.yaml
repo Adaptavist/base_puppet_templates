@@ -16,4 +16,6 @@ avstapp::conf:
         http_port:   "%{::connector_tomcat_port}"
         proxy_name:  "%{::connector_proxy_name}"
         proxy_port:  "%{::connector_proxy_port}"
+        connector_compression: "%{::connector_compression}" # on or off
+        connector_compression_mimetypes: "%{::connector_compression_mimetypes}"
 
