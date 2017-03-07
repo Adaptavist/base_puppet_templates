@@ -79,3 +79,4 @@ vhost_https_jenkins_custom_log_format: '"%u %t \"%r\" %>s %b \"__PERCENTAGE_SIGN
 vhost_https_jenkins_custom_log_name: 'proxy'
 vhost_https_jenkins_priority: '25'
 vhost_https_jenkins_proxy_options: 'nocanon'
+vhost_https_jenkins_output_filter_sequence: 'DEFLATE'
