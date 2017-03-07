@@ -49,3 +49,4 @@ connector_tomcat_host:
     comment: "The host to proxy too"
 
 connector_tomcat_protocol: 'http'
+vhost_http_atlassian_output_filter_sequence: 'DEFLATE'

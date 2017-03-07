@@ -74,17 +74,17 @@ webserver::default_vhosts:
         - '^/(.*)          https://%{::vhost_https_atlassian_proxy_name}/$1 [L,R=302]'
     custom_fragment:  "AddType text/css .css \n
 AddType text/javascript .js \n
-AddOutputFilterByType DEFLATE text/plain \n
-AddOutputFilterByType DEFLATE text/html \n
-AddOutputFilterByType DEFLATE text/xml \n
-AddOutputFilterByType DEFLATE text/css \n
-AddOutputFilterByType DEFLATE text/javascript \n
-AddOutputFilterByType DEFLATE application/json \n
-AddOutputFilterByType DEFLATE application/xml \n
-AddOutputFilterByType DEFLATE application/xhtml+xml \n
-AddOutputFilterByType DEFLATE application/rss+xml \n
-AddOutputFilterByType DEFLATE application/javascript \n
-AddOutputFilterByType DEFLATE application/x-javascript \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} text/plain \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} text/html \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} text/xml \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} text/css \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} text/javascript \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} application/json \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} application/xml \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} application/xhtml+xml \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} application/rss+xml \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} application/javascript \n
+AddOutputFilterByType %{::vhost_https_atlassian_output_filter_sequence} application/x-javascript \n
 Header append Vary User-Agent env=!dont-vary \n
 BrowserMatch ^Mozilla/4 gzip-only-text/html \n
 BrowserMatch ^Mozilla/4\\.0[678] no-gzip \n

@@ -78,3 +78,4 @@ vhost_https_atlassian_custom_log_format: '"%u %t \"%r\" %>s %b \"__PERCENTAGE_SI
 vhost_https_atlassian_custom_log_name: 'proxy'
 vhost_https_atlassian_priority: 25
 vhost_https_atlassian_proxy_options: ''
+vhost_https_atlassian_output_filter_sequence: 'DEFLATE'
