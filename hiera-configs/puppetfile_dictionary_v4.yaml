@@ -706,7 +706,7 @@ fail2ban_config:
     repo: 'https://github.com/Adaptavist/puppet-fail2ban_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.2'
+    ref_value: '1.0.3'
 
 artifactory:
     name: 'puppet/artifactory'
