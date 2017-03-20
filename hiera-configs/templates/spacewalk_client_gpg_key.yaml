@@ -1,0 +1,17 @@
+---
+
+prefixes:
+    - "spacewalk_client_gpg_key_"
+
+classes:
+  - spacewalk_client
+
+dependencies:
+  - spacewalk_client
+  - stdlib
+
+
+spacewalk_client::yum_gpg_keys: 
+  "%{::spacewalk_client_gpg_key_name}":
+    key_name: "%{::spacewalk_client_gpg_key_name}"
+    key_source: "%{::spacewalk_client_gpg_key_source}"
