@@ -804,4 +804,4 @@ htcacheclean:
     repo: "https://github.com/Adaptavist/puppet-htcacheclean.git"
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.0.1"
+    ref_value: "0.0.2"
