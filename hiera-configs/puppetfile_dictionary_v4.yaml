@@ -762,7 +762,7 @@ spacewalk_client:
     repo: https://github.com/Adaptavist/puppet-spacewalk_client
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "1.0.0"
+    ref_value: "1.0.1"
 
 download_file:
     name: "puppet/download_file"
@@ -810,5 +810,5 @@ htcacheclean:
     repo: "https://github.com/Adaptavist/puppet-htcacheclean.git"
     repo_type: "git"
     ref_type: "tag"
-    ref_value: "0.0.1"
+    ref_value: "0.0.2"
 
