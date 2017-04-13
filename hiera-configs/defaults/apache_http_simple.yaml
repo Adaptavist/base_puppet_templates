@@ -20,3 +20,6 @@ vhost_http_custom_fragment:
     comment: "A custom fragment to be added into the vhost config"
 
 vhost_http_priority: 25
+
+vhost_http_override: 'None' 
+

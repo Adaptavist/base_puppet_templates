@@ -20,6 +20,8 @@ webserver::default_vhosts:
       - '%{::vhost_https_serveraliases}'
     port: '%{::vhost_https_port}'
     docroot: '%{::vhost_https_docroot}'
+    override: 
+      - '%{::vhost_https_override}'
     ssl: true
     ssl_protocol: '%{::vhost_https_ssl_protocol}'
     ssl_cipher: '%{::vhost_https_ssl_cipher}'

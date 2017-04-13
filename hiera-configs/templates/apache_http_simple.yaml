@@ -20,4 +20,6 @@ webserver::default_vhosts:
       - '%{::vhost_http_serveraliases}'
     port: '%{::vhost_http_vhost_port}'
     docroot: '%{::vhost_http_docroot}'
+    override: 
+      - '%{::vhost_http_override}'
     custom_fragment:  '%{::vhost_http_custom_fragment}'
