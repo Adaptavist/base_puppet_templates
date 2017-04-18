@@ -8,6 +8,7 @@ jira_database_setup_database: ''
 jira_database_driver_class: 'com.mysql.jdbc.Driver'
 jira_database_type: 'mysql'
 jira_database_port: '3306'
+jira_database_schema_name: 'public'
 jira_database_url: 'localhost'
 jira_class_dependency: 'database'
 jira_host_name:

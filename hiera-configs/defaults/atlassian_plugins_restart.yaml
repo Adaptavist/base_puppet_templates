@@ -1,0 +1,2 @@
+---
+atlassian_plugins_restart_restart_instance_command: 'service jira restart'

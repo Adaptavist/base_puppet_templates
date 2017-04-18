@@ -1,0 +1,13 @@
+---
+
+prefixes:
+  - "atlassian_plugins_restart_"
+
+classes:
+  - atlassian_plugins
+  - stdlib
+dependencies:
+  - atlassian_plugins
+  - stdlib
+
+atlassian_plugins::restart_instance_command: "%{::atlassian_plugins_restart_restart_instance_command}"
