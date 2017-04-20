@@ -1,0 +1,17 @@
+---
+
+prefixes:
+  - "atlassian_plugin_command_"
+  - "atlassian_plugin_"
+
+classes:
+  - atlassian_plugins
+  - stdlib
+dependencies:
+  - atlassian_plugins
+  - stdlib
+
+atlassian_plugins::atlassian_plugins:
+    "%{::atlassian_plugin_name}":
+        custom_commands:
+            - "%{::atlassian_plugin_command_custom_command}"

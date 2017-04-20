@@ -1,0 +1,22 @@
+---
+
+prefixes:
+  - "atlassian_upm_plugin_"
+
+classes:
+  - atlassian_plugins
+  - stdlib
+dependencies:
+  - atlassian_plugins
+  - stdlib
+
+atlassian_plugins::upm_plugins:
+    "%{::atlassian_upm_plugin_name}":
+        plugin_key: "%{::atlassian_upm_plugin_plugin_key}"
+        instance_admin_user: "%{::atlassian_upm_plugin_instance_admin_user}"
+        instance_admin_pass: "%{::atlassian_upm_plugin_instance_admin_pass}"
+        application_url: "%{::atlassian_upm_plugin_application_url}"
+        marketplace_user: "%{::atlassian_upm_plugin_marketplace_user}"
+        marketplace_pass: "%{::atlassian_upm_plugin_marketplace_pass}"
+        plugin_version: "%{::atlassian_upm_plugin_plugin_version}"
+        license: "%{::atlassian_upm_plugin_license}"

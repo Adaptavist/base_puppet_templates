@@ -50,6 +50,7 @@ avstapp::conf:
       database_user: "%{::jira_database_user}"
       database_pass: "%{::jira_database_pass}"
       database_name: "%{::jira_database_name}"
+      database_schema_name: "%{::jira_database_schema_name}"
       mail_server_user: "admin"
       mail_server_pass: "admin"
       instance_name: "%{::jira_app_instance_name}"

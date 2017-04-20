@@ -1,0 +1,13 @@
+---
+
+prefixes:
+  - "atlassian_plugins_"
+
+classes:
+  - atlassian_plugins
+  - stdlib
+dependencies:
+  - atlassian_plugins
+  - stdlib
+
+atlassian_plugins::require_class: "%{::atlassian_plugins_require_class}"

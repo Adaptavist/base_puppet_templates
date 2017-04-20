@@ -1,0 +1,22 @@
+---
+
+prefixes:
+  - "atlassian_plugin_"
+
+classes:
+  - atlassian_plugins
+  - stdlib
+dependencies:
+  - atlassian_plugins
+  - stdlib
+
+atlassian_plugins::atlassian_plugins:
+    "%{::atlassian_plugin_name}":
+        download_url: "%{::atlassian_plugin_download_url}"
+        download_user: "%{::atlassian_plugin_download_user}"
+        download_pass: "%{::atlassian_plugin_download_pass}"
+        download_folder: "%{::atlassian_plugin_download_folder}"
+        user: "%{::atlassian_plugin_user}"
+        group: "%{::atlassian_plugin_group}"
+        custom_commands:
+            - "%{::atlassian_plugin_custom_command}"

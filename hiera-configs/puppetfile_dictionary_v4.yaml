@@ -805,6 +805,7 @@ java:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.6.0'
+
 htcacheclean:
     name: "puppet-htcacheclean"
     repo: "https://github.com/Adaptavist/puppet-htcacheclean.git"
@@ -812,3 +813,9 @@ htcacheclean:
     ref_type: "tag"
     ref_value: "0.0.2"
 
+atlassian_plugins:
+    name: 'adaptavist/atlassian_plugins'
+    repo: 'https://github.com/Adaptavist/puppet-atlassian_plugins.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.0'
