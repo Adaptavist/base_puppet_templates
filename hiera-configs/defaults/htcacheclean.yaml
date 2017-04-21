@@ -2,7 +2,7 @@
 
 htcacheclean_cache_directory:
 htcacheclean_config_file: '/etc/sysconfig/htcacheclean'
-htcacheclean_clean_interval: '15'
+htcacheclean_clean_interval: '120'
 htcacheclean_clean_limit: '1024M'
 htcacheclean_additional_options: '-n'
 htcacheclean_config_template: 'htcacheclean/htcacheclean.erb'
