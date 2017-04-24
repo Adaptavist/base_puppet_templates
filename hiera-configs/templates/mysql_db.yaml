@@ -1,0 +1,28 @@
+---
+
+prefixes:
+    - "database_db_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+database::type: 'mysql'
+
+database::conf:
+  "%{::database_db_database_name}":
+    host:     "%{::database_db_host}"
+    collate:  "%{::database_db_collate}"
+    charset:  "%{::database_db_charset}"
+    user:     "%{::database_db_database_user}"
+    password: "%{::database_db_database_pass}"
+    name:     "%{::database_db_database_name}"

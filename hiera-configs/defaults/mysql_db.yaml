@@ -1,0 +1,14 @@
+---
+
+database_db_database_name:
+    value:
+    comment: "Database name to be created"
+database_db_database_user: 
+    value: 'hosting'
+    comment: "Database username to have access to the database"
+database_db_database_pass: 
+    value: 
+    comment: "Database user password"
+database_db_host: 'localhost'
+database_db_collate:  'utf8_bin'
+database_db_charset:  'utf8'
