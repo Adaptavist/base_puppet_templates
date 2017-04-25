@@ -36,5 +36,6 @@ avst_backup::hiera::delete_unmanaged_configs: "%{::avst_backup_hiera_delete_unma
 avst_backup::hiera::runner_script_template: "%{::avst_backup_hiera_runner_script_template}"
 avst_backup::hiera::runner_pause_template: "%{::avst_backup_hiera_runner_pause_template}"
 avst_backup::hiera::runner_resume_template: "%{::avst_backup_hiera_runner_resume_template}"
+avst_backup::hiera::config_dir: "%{::avst_backup_hiera_config_dir}"
 avst_backup::package::package_source_repo: "%{::avst_backup_package_repo}"
 avst_backup::package::package_ensure: "%{::avst_backup_package_ensure}"
