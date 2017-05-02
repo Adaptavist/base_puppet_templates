@@ -1,0 +1,20 @@
+---
+
+prefixes:
+  - subversion_repo_
+
+classes:
+  - subversion_config
+
+dependencies:
+  - subversion_config
+  - subversion
+  - stdlib
+  - concat
+
+subversion_config::create_repos:
+  '%{::subversion_repo_name}':
+    path: '%{::subversion_repo_path}'
+    owner: '%{::subversion_repo_owner}'
+    group: '%{::subversion_repo_group}'
+    mode: '%{::subversion_repo_mode}'
