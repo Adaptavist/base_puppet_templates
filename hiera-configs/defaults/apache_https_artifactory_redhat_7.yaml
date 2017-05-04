@@ -40,7 +40,7 @@ vhost_https_artifactory_ssl_protocol:
     value: 'All -SSLv2 -SSLv3'
     comment: 'The SSL/TLS Protocols to use'
 vhost_https_artifactory_ssl_cipher:
-    value: 'HIGH:MEDIUM:!aNULL:!MD5'
+    value: 'HIGH:MEDIUM:!aNULL:!MD5:!3DES'
     comment: "The SSL/TLS Ciphers to use"
 
 vhost_https_artifactory_vhost_name: 
