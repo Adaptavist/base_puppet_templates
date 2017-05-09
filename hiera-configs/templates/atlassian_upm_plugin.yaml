@@ -19,4 +19,5 @@ atlassian_plugins::upm_plugins:
         marketplace_user: "%{::atlassian_upm_plugin_marketplace_user}"
         marketplace_pass: "%{::atlassian_upm_plugin_marketplace_pass}"
         plugin_version: "%{::atlassian_upm_plugin_plugin_version}"
+        application_version: "%{::atlassian_upm_plugin_application_version}"
         license: "%{::atlassian_upm_plugin_license}"
