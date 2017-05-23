@@ -419,7 +419,7 @@ oracle_java:
     repo: 'https://github.com/Adaptavist/puppet-oracle_java.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.2'
+    ref_value: '1.0.0'
 
 packages_repos: 
     name: 'adaptavist/packages_repos'
