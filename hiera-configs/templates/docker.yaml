@@ -12,4 +12,4 @@ dependencies:
   - apt
   - stdlib
 
-docker::compose:install_path: '/usr/bin'
+docker::compose::install_path: '/usr/bin'
