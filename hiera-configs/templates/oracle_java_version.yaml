@@ -1,0 +1,18 @@
+---
+
+prefixes: 
+    - "oracle_java_"
+
+classes:
+  - oracle_java
+
+dependencies:
+  - apt
+  - yum
+  - archive
+  - java
+  - oracle_java
+  - stdlib
+
+oracle_java::versions:
+  - "%{::oracle_java_additional_version}"
