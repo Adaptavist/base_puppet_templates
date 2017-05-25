@@ -117,7 +117,7 @@ docker:
     name: 'garethr/docker'
     repo: 'https://github.com/Adaptavist/puppet-docker.git'
     ref_type: "tag"
-    ref_value: 'v5.3.0
+    ref_value: 'v5.3.0'
     repo_type: 'git'
 
 wget:
