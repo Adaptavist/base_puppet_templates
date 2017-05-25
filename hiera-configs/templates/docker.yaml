@@ -5,8 +5,11 @@ prefixes:
 
 classes:
   - docker
+  - docker::compose
 
 dependencies:
   - docker
   - apt
   - stdlib
+
+docker::compose:install_path: '/usr/bin'
