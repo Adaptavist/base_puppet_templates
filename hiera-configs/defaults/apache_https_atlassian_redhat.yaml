@@ -34,7 +34,7 @@ vhost_https_atlassian_ssl_protocol:
     value: 'All -SSLv2 -SSLv3'
     comment: 'The SSL/TLS Protocols to use'
 vhost_https_atlassian_ssl_cipher:
-    value: 'HIGH:MEDIUM:!aNULL:!MD5:!3DES:!RC4'
+    value: 'HIGH:MEDIUM:!aNULL:!MD5:!3DES:!RC4:!IDEA-CBC-SHA'
     comment: "The SSL/TLS Ciphers to use"
 
 vhost_https_atlassian_vhost_name: 
