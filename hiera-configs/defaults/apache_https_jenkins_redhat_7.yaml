@@ -37,7 +37,7 @@ vhost_https_jenkins_ssl_protocol:
     value: 'All -SSLv2 -SSLv3'
     comment: 'The SSL/TLS Protocols to use'
 vhost_https_jenkins_ssl_cipher:
-    value: 'HIGH:MEDIUM:!aNULL:!MD5:!3DES'
+    value: 'HIGH:MEDIUM:!aNULL:!MD5:!3DES:!RC4'
     comment: "The SSL/TLS Ciphers to use"
 
 vhost_https_jenkins_vhost_name: 
