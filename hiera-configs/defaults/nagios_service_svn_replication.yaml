@@ -1,0 +1,16 @@
+---
+
+nagios_service_svn_replication_name:
+nagios_service_svn_replication_hostname:
+nagios_service_svn_replication_hostgroup_name: ''
+nagios_service_svn_replication_ensure: 'present'
+nagios_service_svn_replication_notification_interval: '0'
+nagios_service_svn_replication_master_url:
+nagios_service_svn_replication_master_user:
+nagios_service_svn_replication_master_pass:
+nagios_service_svn_replication_mirror_url:
+nagios_service_svn_replication_mirror_user:
+nagios_service_svn_replication_mirror_pass:
+nagios_service_svn_replication_warn: '5'
+nagios_service_svn_replication_error: '10'
+

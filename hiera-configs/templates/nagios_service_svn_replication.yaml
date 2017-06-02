@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "nagios_service_svn_replication_"
+
+classes:
+  - nagios_config
+
+dependencies:
+  - nagios
+
+nagios_config::services:
+    "%{::nagios_service_svn_replication_name}_svn_replication_check":
+        check_command: "check_nrpe!check_svn_replication!%{::nagios_service_svn_replication_master_url} %{::nagios_service_svn_replication_master_user} %{::nagios_service_svn_replication_master_pass} %{::nagios_service_svn_replication_mirror_url} %{::nagios_service_svn_replication_mirror_user} %{::nagios_service_svn_replication_mirror_pass} %{::nagios_service_svn_replication_warn} %{::nagios_service_svn_replication_error}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_svn_replication_hostname}"
+        hostgroup_name:  "%{::nagios_service_svn_replication_hostgroup_name}"
+        service_description:  "SVN replication Check"
+        ensure: "%{::nagios_service_svn_replication_ensure}"
+        notification_interval: "%{::nagios_service_svn_replication_notification_interval}"
