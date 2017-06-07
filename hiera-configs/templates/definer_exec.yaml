@@ -1,0 +1,17 @@
+---
+
+prefixes: 
+    - "definer_exec_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  exec:
+    "%{::definer_exec_name}":
+      command: "%{::definer_exec_command}"
+      cwd: "%{::definer_exec_cwd}"
+      require: "%{::definer_exec_require}"
