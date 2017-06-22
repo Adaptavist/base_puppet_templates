@@ -1,0 +1,17 @@
+---
+
+prefixes: 
+    - "install_package_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  package:
+    "%{::install_package_name}":
+      ensure: "%{::install_gem_ensure}"
+      provider: "%{::install_gem_provider}"
+      before: "%{::install_gem_before}"

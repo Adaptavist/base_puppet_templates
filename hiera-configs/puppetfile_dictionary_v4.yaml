@@ -113,6 +113,13 @@ docker_config:
     ref_value: '1.0.0'
     repo_type: 'git'
 
+aws:
+    name: 'puppetlabs/aws'
+    repo: 'https://github.com/Adaptavist/puppet-aws.git'
+    ref_type: "tag"
+    ref_value: '2.0.0'
+    repo_type: 'git'
+
 docker:
     name: 'garethr/docker'
     repo: 'https://github.com/Adaptavist/puppet-docker.git'
