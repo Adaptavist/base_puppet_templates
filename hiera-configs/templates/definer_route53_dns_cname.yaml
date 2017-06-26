@@ -1,0 +1,21 @@
+---
+
+prefixes: 
+    - "definer_route53_dns_cname_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+  - aws
+
+definer::defs:
+  route53_cname_record:
+    "%{::definer_route53_dns_cname_name}":
+      ensure: "%{::definer_route53_dns_cname_ensure}"
+      zone: "%{::definer_route53_dns_cname_zone}"
+      ttl: "%{::definer_route53_dns_cname_ttl}"
+      values: "%{::definer_route53_dns_cname_value}"
+      require: "%{::definer_route53_dns_cname_require}"
+      before: "%{::definer_route53_dns_cname_before}"

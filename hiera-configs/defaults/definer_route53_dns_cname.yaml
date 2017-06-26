@@ -1,0 +1,8 @@
+---
+
+definer_route53_dns_cname_name:
+definer_route53_dns_cname_zone:
+definer_route53_dns_cname_ttl: '300'
+definer_route53_dns_cname_value:
+definer_route53_dns_cname_require:
+definer_route53_dns_cname_before:
