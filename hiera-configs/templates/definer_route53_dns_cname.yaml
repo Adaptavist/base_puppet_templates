@@ -16,6 +16,6 @@ definer::defs:
       ensure: "%{::definer_route53_dns_cname_ensure}"
       zone: "%{::definer_route53_dns_cname_zone}"
       ttl: "%{::definer_route53_dns_cname_ttl}"
-      values: "%{::definer_route53_dns_cname_zone}"
+      values: "%{::definer_route53_dns_cname_value}"
       require: "%{::definer_route53_dns_cname_require}"
       before: "%{::definer_route53_dns_cname_before}"
