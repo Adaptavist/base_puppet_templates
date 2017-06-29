@@ -1,0 +1,14 @@
+---
+
+prefixes: 
+    - "dovecot_source_"
+
+classes:
+  - dovecot
+
+dependencies:
+  - dovecot
+
+dovecot::source_dir: "%{::dovecot_source_dir}"
+dovecot::source_dir_purge: "%{::dovecot_source_dir_purge}"
+

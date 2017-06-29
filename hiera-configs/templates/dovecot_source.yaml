@@ -1,0 +1,13 @@
+---
+
+prefixes: 
+    - "dovecot_source_"
+
+classes:
+  - dovecot
+
+dependencies:
+  - dovecot
+
+dovecot::source: "%{::dovecot_source_file}"
+
