@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "dovecot_template_options_option_key"
+    - "dovecot_template_options_option_value"
+
+classes:
+  - dovecot
+
+dependencies:
+  - dovecot
+
+dovecot::options:
+    "%{::dovecot_template_options_option_key}":
+        - '%{::dovecot_template_options_option_value}'
+

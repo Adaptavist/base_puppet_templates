@@ -1,0 +1,13 @@
+---
+
+prefixes: 
+    - "dovecot_template_"
+
+classes:
+  - dovecot
+
+dependencies:
+  - dovecot
+
+dovecot::template: "%{::dovecot_template_location}"
+
