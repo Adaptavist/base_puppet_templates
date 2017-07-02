@@ -1,0 +1,22 @@
+---
+
+prefixes:
+    - "postgres_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresql::globals::version: '%{::postgres_version}'
+postgresql::globals::manage_package_repo: '%{::postgres_manage_package_repo}'
+postgresconfig::contrib_package: '%{::postgres_contrib_package}'
+postgresconfig::devel_package: '%{::postgres_devel_package}'
