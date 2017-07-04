@@ -587,7 +587,7 @@ stunnel_config:
     repo: 'https://github.com/Adaptavist/puppet-stunnel_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 rsync_config: 
     name: 'adaptavist/rsync_config'
