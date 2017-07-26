@@ -811,7 +811,7 @@ java:
     repo: 'https://github.com/Adaptavist/puppet-java.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.6.0'
+    ref_value: '2.1.0a'
 
 htcacheclean:
     name: "puppet-htcacheclean"
