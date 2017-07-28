@@ -1,0 +1,21 @@
+---
+
+prefixes:
+    - "mysql_config_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+mysqlconfig::custom_mysql_options:
+  mysqld:
+    '%{::mysql_config_key}': '%{::mysql_config_value}'
