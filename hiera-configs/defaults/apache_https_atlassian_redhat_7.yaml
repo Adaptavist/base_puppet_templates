@@ -47,13 +47,13 @@ vhost_https_atlassian_apache_log_prefix:
     value: 'adaptavist'
     comment: "Log file prexif, location: '/var/log/httpd/<prefix>vhost-error.log'"
 vhost_https_atlassian_ssl_key:
-    value:   '/etc/puppet/files/ssl/certs/wildcard2014.key'
+    value:   '/etc/puppet/files/ssl/certs/wildcard2016.key'
     comment: "Full path to SSL certificate file"
 vhost_https_atlassian_ssl_cert:
-    value:    '/etc/puppet/files/ssl/certs/wildcard2014.crt'
+    value:    '/etc/puppet/files/ssl/certs/wildcard2016.crt'
     comment: "Full path to SSL key file"
 vhost_https_atlassian_ssl_chain:
-    value:  '/etc/puppet/files/ssl/certs/wildcard_int2014.pem'
+    value:  '/etc/puppet/files/ssl/certs/wildcard_int2016.pem'
     comment: "Full path to SSL chain file"
 
 vhost_https_atlassian_proxy_connection_timeout:
