@@ -1,7 +1,7 @@
 ---
 
 prefixes:
-    - "newrelic_infrastructure_monitor_"
+  - "newrelic_infrastructure_monitor_"
 
 classes:
   - newrelic_infra::agent
