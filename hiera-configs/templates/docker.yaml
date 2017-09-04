@@ -13,3 +13,4 @@ dependencies:
   - stdlib
 
 docker::compose::install_path: '/usr/bin'
+docker::compose::version: '%{::docker_compose_version}'
