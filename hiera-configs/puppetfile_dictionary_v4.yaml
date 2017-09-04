@@ -601,7 +601,7 @@ lsyncd:
     repo: 'https://github.com/Adaptavist/puppet-lsyncd.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.2'
+    ref_value: '1.0.1'
 
 idmap: 
     name: 'adaptavist/idmap'
