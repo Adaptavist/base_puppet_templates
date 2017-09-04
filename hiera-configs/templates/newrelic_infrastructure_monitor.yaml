@@ -1,0 +1,18 @@
+---
+
+prefixes:
+    - "newrelic_infrastructure_monitor_"
+
+classes:
+  - newrelic_infra::agent
+
+dependencies:
+  - newrelic_infra
+  - stdlib
+  - apt
+  - download_file
+
+
+newrelic_infra::agent::license_key: '%{::newrelic_infrastructure_monitor_license_key}'
+newrelic_infra::agent::ensure: '%{::newrelic_infrastructure_monitor_ensure}'
+newrelic_infra::agent::package_repo_ensure: '%{::newrelic_infrastructure_monitor_package_repo_ensure}'
