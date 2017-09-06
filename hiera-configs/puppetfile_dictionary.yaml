@@ -805,3 +805,9 @@ htcacheclean:
     repo_type: "git"
     ref_type: "tag"
     ref_value: "0.0.2"
+
+infrastructure-agent-puppet:
+    name: "newrelic/infrastructure-agent-puppet"
+    repo: "https://github.com/Adaptavist/infrastructure-agent-puppet.git"
+    ref_type: "tag"
+    ref_value: "0.0.3"

@@ -1,0 +1,5 @@
+---
+
+newrelic_infrastructure_monitor_license_key:
+newrelic_infrastructure_monitor_ensure: 'latest'
+newrelic_infrastructure_monitor_package_repo_ensure: 'present'
