@@ -17,7 +17,10 @@ crowd_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'
 crowd_class_dependency: 'database'
 crowd_host_name:
     value: ""
-    comment: "Provide url to crowd e.g crowd.example.com (if apache in front), used if avst_wizard enabled "
+    comment: "Provide localhost url to crowd e.g crowd.example.com (if apache in front), used if avst_wizard enabled "
+crowd_external_host_name:
+    value: ""
+    comment: "Provide external url to crowd e.g crowd.example.com (if apache in front), used if avst_wizard enabled "
 crowd_license: 
     value: ""
     comment: "Must be a valid crowd license, used if avst_wizard enabled"
