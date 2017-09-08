@@ -74,7 +74,7 @@ avstapp::conf:
         - "%{::crowd_driver_location_path}"
     custom:
       CROWD_SERVER_URL: '%{::crowd_host_name}'
-      CROWD_APP_LOGIN_URL: '%{::crowd_host_name}'
+      CROWD_APP_LOGIN_URL: '%{::crowd_external_host_name}'
     java_flags:
       JVM_MINIMUM_MEMORY: "%{::crowd_jvm_minimum_memory}" #'512m'
       JVM_MAXIMUM_MEMORY: "%{::crowd_jvm_maximum_memory}" #'1024m'
