@@ -1,0 +1,12 @@
+---
+
+libreswan_config_purge_configdir: 'false'
+libreswan_config_dumpdir: "/var/run/pluto/"
+libreswan_config_nat_traversal: "no"
+libreswan_config_oe: "off"
+libreswan_config_protostack: "netkey"
+libreswan_config_force_keepalive: "yes"
+libreswan_config_keep_alive: "60"
+libreswan_config_listen: 
+libreswan_config_plutostderrlog: 
+libreswan_config_virtual_private: 

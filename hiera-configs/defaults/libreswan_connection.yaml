@@ -1,0 +1,27 @@
+---
+
+libreswan_connection_name:
+libreswan_connection_left:
+libreswan_connection_leftsourceip:
+libreswan_connection_leftsubnet_value: 
+libreswan_connection_right:
+libreswan_connection_rightsubnet_value: 
+libreswan_connection_rightsourceip:
+libreswan_connection_ensure: 'present'
+libreswan_connection_authby: 'secret'
+libreswan_connection_pfs: 'yes'
+libreswan_connection_auto: 'start'
+libreswan_connection_keyingtries: '%forever'
+libreswan_connection_keylife: '1h'
+libreswan_connection_ike: 'aes256-sha1-modp1024'
+libreswan_connection_esp: 'aes256-sha1;modp1536'
+libreswan_connection_ikelifetime: '86400s'
+libreswan_connection_type: 'tunnel'
+libreswan_connection_leftsubnet_key: 'leftsubnet'
+libreswan_connection_leftnexthop: '%defaultroute'
+libreswan_connection_aggrmode: 'no'
+libreswan_connection_rightsubnet_key: 'rightsubnet'
+libreswan_connection_rightnexthop: '%defaultroute'
+libreswan_connection_dpddelay: '10'
+libreswan_connection_dpdtimeout: '3600'
+libreswan_connection_dpdaction: 'restart'

@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "libreswan_connection_entry_parent_"
+    - "libreswan_connection_entry_item_"
+
+classes:
+  - libreswan_config
+
+dependencies:
+  - libreswan_config
+  - libreswan
+  - stdlib
+  - concat
+
+libreswan_config::connections:
+  "%{::libreswan_connection_entry_parent_name}":
+    options:
+      "%{::libreswan_connection_entry_item_key}": "%{::libreswan_connection_entry_item_value}"

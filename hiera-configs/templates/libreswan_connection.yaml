@@ -1,0 +1,40 @@
+---
+
+prefixes:
+    - "libreswan_connection_"
+
+classes:
+  - libreswan_config
+
+dependencies:
+  - libreswan_config
+  - libreswan
+  - stdlib
+  - concat
+
+libreswan_config::connections:
+  "%{::libreswan_connection_name}":
+    ensure: "%{::libreswan_connection_ensure}"
+    options:
+      authby: "%{::libreswan_connection_authby}"
+      pfs: "%{::libreswan_connection_pfs}"
+      auto: "%{::libreswan_connection_auto}"
+      keyingtries: "%{::libreswan_connection_keyingtries}"
+      keylife: "%{::libreswan_connection_keylife}" 
+      ike: "%{::libreswan_connection_ike}"
+      esp: "%{::libreswan_connection_esp}"
+      ikelifetime: "%{::libreswan_connection_ikelifetime}"
+      type: "%{::libreswan_connection_type}" 
+      left: "%{::libreswan_connection_left}"
+      "%{::libreswan_connection_leftsubnet_key}": "%{::libreswan_connection_leftsubnet_value}"
+      leftnexthop: "%{::libreswan_connection_leftnexthop}"
+      leftsourceip: "%{::libreswan_connection_leftsourceip}"
+      aggrmode: "%{::libreswan_connection_aggrmode}"
+      right: "%{::libreswan_connection_right}"
+      "%{::libreswan_connection_rightsubnet_key}": "%{::libreswan_connection_rightsubnet_value}"
+      rightnexthop: "%{::libreswan_connection_rightnexthop}"
+      rightsourceip: "%{::libreswan_connection_rightsourceip}"
+      dpddelay: "%{::libreswan_connection_dpddelay}"
+      dpdtimeout: "%{::libreswan_connection_dpdtimeout}"
+      dpdaction: "%{::libreswan_connection_dpdaction}"
+

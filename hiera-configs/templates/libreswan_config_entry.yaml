@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "libreswan_config_entry_"
+
+classes:
+  - libreswan_config
+
+dependencies:
+  - libreswan_config
+  - libreswan
+  - stdlib
+  - concat
+
+libreswan_config::ipsec_config:
+  "%{::libreswan_config_entry_key}": "%{::libreswan_config_entry_value}"
