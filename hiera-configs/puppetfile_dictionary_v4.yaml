@@ -839,3 +839,15 @@ infrastructure-agent-puppet:
     repo: "https://github.com/Adaptavist/infrastructure-agent-puppet.git"
     ref_type: "tag"
     ref_value: "0.0.3"
+
+libreswan:
+    name: 'spacedog/puppet-libreswan'
+    repo: 'https://github.com/Adaptavist/puppet-libreswan.git'
+    ref_type: "tag"
+    ref_value: "0.2.2"
+
+libreswan_config:
+    name: 'adaptavist/puppet-libreswan_config'
+    repo: 'https://github.com/Adaptavist/puppet-libreswan_config.git'
+    ref_type: "tag"
+    ref_value: "0.0.1"
