@@ -810,4 +810,5 @@ infrastructure-agent-puppet:
     name: "newrelic/infrastructure-agent-puppet"
     repo: "https://github.com/Adaptavist/infrastructure-agent-puppet.git"
     ref_type: "tag"
+    repo_type: 'git'
     ref_value: "0.0.3"
