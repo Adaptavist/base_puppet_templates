@@ -1,0 +1,7 @@
+---
+
+swap_swapon: 'true'
+swap_path: '/mnt/swap.2048m'
+swap_size: '2048'
+swap_perm_mount: 'true'
+swap_mount_options: 'defaults'
