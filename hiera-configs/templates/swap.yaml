@@ -1,0 +1,17 @@
+---
+
+prefixes: 
+  - "swap_"
+
+classes:
+  - swapfile
+
+dependencies:
+  - swapfile
+  - stdlib
+
+swapfile::swapon: '%{::swap_swapon}'
+swapfile::swapfile_path: '%{::swap_path}'
+swapfile::swapfile_size: '%{::swap_size}'
+swapfile::perm_mount: '%{::swap_perm_mount}'
+swapfile::mount_options: '%{::swap_mount_options}'
