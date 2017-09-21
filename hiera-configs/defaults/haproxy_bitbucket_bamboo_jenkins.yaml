@@ -1,0 +1,19 @@
+---
+
+haproxy_bitbucket_bamboo_config_template: '/etc/puppet/files/haproxy/haproxy-simple-bitbucket-bamboo-jenkins.conf.erb'
+haproxy_bitbucket_bamboo_bit_listen_address:
+haproxy_bitbucket_bamboo_bit_listen_port:
+haproxy_bitbucket_bamboo_bit_destination_port: '7999'
+haproxy_bitbucket_bamboo_bit_destination_address: 'localhost'
+haproxy_bitbucket_bamboo_bam_listen_address:
+haproxy_bitbucket_bamboo_bam_listen_port:
+haproxy_bitbucket_bamboo_bam_destination_port: '54663'
+haproxy_bitbucket_bamboo_bam_destination_address:
+haproxy_bitbucket_bamboo_bam_haproxy_name: 'bamboo_agent_access'
+haproxy_bitbucket_bamboo_bit_haproxy_name: 'bitbucket_ssh_access'
+
+haproxy_bitbucket_bamboo_jenkins_jen_haproxy_name: 'jenkins_jnlp_access'
+haproxy_bitbucket_bamboo_jenkins_jen_listen_port:
+haproxy_bitbucket_bamboo_jenkins_jen_listen_address:
+haproxy_bitbucket_bamboo_jenkins_jen_destination_address:
+haproxy_bitbucket_bamboo_jenkins_jen_destination_port: '49817'

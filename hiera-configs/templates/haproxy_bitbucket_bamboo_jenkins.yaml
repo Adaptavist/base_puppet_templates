@@ -1,0 +1,30 @@
+---
+
+prefixes:
+    - "haproxy_bitbucket_bamboo_jenkins_"
+
+classes:
+    - haproxy
+
+dependencies:
+    - haproxy
+    - stdlib
+    - stdmod
+
+haproxy::config_file_template: '%{::haproxy_bitbucket_bamboo_jenkins_config_template}'
+haproxy::config_file_options_hash:
+    'BitbucketBindAddress': '%{::haproxy_bitbucket_bamboo_jenkins_bit_listen_address}'
+    'BitbucketBindPort': '%{::haproxy_bitbucket_bamboo_jenkins_bit_listen_port}'
+    'BitbucketSSHPort': '%{::haproxy_bitbucket_bamboo_jenkins_bit_destination_port}'
+    'BitbucketSSHAddress': '%{::haproxy_bitbucket_bamboo_jenkins_bit_destination_address}'
+    'BitbucketHAProxyName': '%{::haproxy_bitbucket_bamboo_jenkins_bit_haproxy_name}'
+    'BambooBindAddress': '%{::haproxy_bitbucket_bamboo_jenkins_bam_listen_address}'
+    'BambooBindPort': '%{::haproxy_bitbucket_bamboo_jenkins_bam_listen_port}'
+    'BambooBrokerPort': '%{::haproxy_bitbucket_bamboo_jenkins_bam_destination_port}'
+    'BambooBrokerAddress': '%{::haproxy_bitbucket_bamboo_jenkins_bam_destination_address}'
+    'BambooHAProxyName': '%{::haproxy_bitbucket_bamboo_jenkins_bam_haproxy_name}'
+    'JenkinsBindAddress': '%{::haproxy_bitbucket_bamboo_jenkins_jen_listen_address}'
+    'JenkinsBindPort': '%{::haproxy_bitbucket_bamboo_jenkins_jen_listen_port}'
+    'JenkinsHAProxyName': '%{::haproxy_bitbucket_bamboo_jenkins_jen_haproxy_name}'
+    'JenkinsJNLPAddress': '%{::haproxy_bitbucket_bamboo_jenkins_jen_destination_address}'
+    'JenkinsJNLPPort': '%{::haproxy_bitbucket_bamboo_jenkins_jen_destination_port}'
