@@ -1,0 +1,23 @@
+---
+
+prefixes: 
+    - "avstapp_custom_"
+    - "avstapp_parent_"
+
+classes:
+  - avstapp
+
+dependencies:
+  - apt
+  - avstapp
+  - limits
+  - oracle_java
+  - packages_repos
+  - puppi
+  - stdlib
+  - yum
+
+avstapp::conf:
+  "%{::avstapp_parent_instance_name}":
+    custom:
+      '%{::avstapp_custom_key}': '%{::avstapp_custom_value}'
