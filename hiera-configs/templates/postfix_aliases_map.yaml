@@ -1,0 +1,18 @@
+---
+
+prefixes:
+    - "postfix_aliases_map_"
+
+classes:
+  - postfix::aliases
+
+dependencies:
+  - postfix
+
+postfix::aliases::maps: 
+    "%{::postfix_aliases_map_key}":
+        "%{::postfix_aliases_map_value}"
+
+# hack to stop params lookup picking up other values
+postfix::aliases::source: ''
+postfix::aliases::template: ''
