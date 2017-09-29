@@ -61,6 +61,8 @@ avstapp::conf:
       CROWD_APP_NAME: '%{::fecru_crowd_appname}'
       CROWD_APP_PASSWORD: '%{::fecru_crowd_app_password}'
       CROWD_SSO_ENABLE: '%{::fecru_crowd_sso_enabled}'
+    fecru_copy_from_old_install: '%{::fecru_copy_from_old_install}'
+    fecru_copy_old_install_list: '%{::fecru_copy_old_install_list}'
     java_flags:
         JVM_MINIMUM_MEMORY: "%{::fecru_jvm_minimum_memory}" #'512m'
         JVM_MAXIMUM_MEMORY: "%{::fecru_jvm_maximum_memory}" #'1024m'
