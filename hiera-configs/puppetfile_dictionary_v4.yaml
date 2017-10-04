@@ -39,7 +39,7 @@ dhclient:
     name: 'adaptavist/dhclient'
     repo: 'https://github.com/Adaptavist/puppet-dhclient.git'
     ref_type: "tag"
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
     repo_type: 'git'
 
 
