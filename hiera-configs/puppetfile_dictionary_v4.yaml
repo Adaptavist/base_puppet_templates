@@ -559,7 +559,7 @@ nagios:
     repo: 'https://github.com/Adaptavist/puppet-nagios.git'
     ref_type: 'branch'
     repo_type: 'git'
-    ref_value: 'feature/ubuntu_support'
+    ref_value: '1.0.6a'
 
 nagiosclient: 
     name: 'adaptavist/nagiosclient'
@@ -573,7 +573,7 @@ nagios_config:
     repo: 'https://github.com/Adaptavist/puppet-nagios_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 nagios_api: 
     name: 'adaptavist/nagios_api'
