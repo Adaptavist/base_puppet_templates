@@ -1,0 +1,13 @@
+---
+
+prefixes:
+  - firewall_config_"
+
+classes:
+  - fw
+
+dependencies:
+  - fw
+  - firewall
+
+fw::create_rules_after_package:  "%{::firewall_config_create_rules_after_package}"
