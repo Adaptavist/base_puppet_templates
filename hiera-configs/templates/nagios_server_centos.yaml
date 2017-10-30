@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "nagios_server_"
+
+classes:
+  - nagios::server
+  - nagios_config
+
+dependencies:
+  - nagios
+
+
+nagios::server::php: false
+nagios::server::apache_httpd: false
+nagios::params::pid_file: "%{::nagios_server_pid_file}"
