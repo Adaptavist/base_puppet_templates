@@ -3,6 +3,7 @@
 apache_vhost_http_php_cgi_vhost_name:
 apache_vhost_http_php_cgi_servername:
 apache_vhost_http_php_cgi_port:
+apache_vhost_http_php_cgi_priority: '25'
 apache_vhost_http_php_cgi_docroot:
 apache_vhost_http_php_cgi_alias_base_stylesheets:
 apache_vhost_http_php_cgi_alias_path_base_stylesheets:

@@ -36,6 +36,7 @@ webserver::default_vhosts:
     servername: "%{::apache_vhost_http_php_cgi_servername}"
     docroot: "%{::apache_vhost_http_php_cgi_docroot}"
     port: "%{::apache_vhost_http_php_cgi_port}"
+    priority: '%{::apache_vhost_http_php_cgi_priority}'
     serveraliases:
       - '%{::apache_vhost_http_php_cgi_serveraliases}'
     docroot_owner: "%{::apache_vhost_http_php_cgi_docroot_owner}"
