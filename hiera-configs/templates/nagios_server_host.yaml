@@ -12,7 +12,7 @@ dependencies:
 
 nagios_config::hosts:
     "%{::nagios_server_host_name}":
-        alias: "%{::nagios_server_host_alias}"
+        host_alias: "%{::nagios_server_host_alias}"
         address: "%{::nagios_server_host_address}" #            192.168.1.254
         check_command: "%{::nagios_server_host_check_command}" #          check-host-alive
         contact_groups: "%{::nagios_server_host_contact_groups}" #         router-admins
