@@ -825,7 +825,7 @@ atlassian_plugins:
     repo: 'https://github.com/Adaptavist/puppet-atlassian_plugins.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.1'
+    ref_value: '1.0.2'
 
 dovecot:
     name: 'example42/dovecot'
