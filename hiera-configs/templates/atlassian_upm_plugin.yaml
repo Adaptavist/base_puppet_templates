@@ -21,3 +21,4 @@ atlassian_plugins::upm_plugins:
         plugin_version: "%{::atlassian_upm_plugin_plugin_version}"
         application_version: "%{::atlassian_upm_plugin_application_version}"
         license: "%{::atlassian_upm_plugin_license}"
+        application: "%{::atlassian_upm_plugin_application}"
