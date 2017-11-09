@@ -1,0 +1,8 @@
+---
+
+definer_repo_name:
+definer_repo_ensure: "latest"
+definer_repo_provider: "git"
+definer_repo_source:
+definer_repo_revision: "master"
+

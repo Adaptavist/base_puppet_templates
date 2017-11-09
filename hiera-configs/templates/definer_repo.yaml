@@ -1,0 +1,18 @@
+---
+
+prefixes: 
+    - "definer_repo_"
+
+classes:
+  - definer
+
+dependencies:
+  - vcsrepo
+
+definer::defs:
+  vcsrepo:
+    "%{::definer_repo_name}":
+      ensure: "%{::definer_repo_ensure}"
+      provider: "%{::definer_repo_provider}"
+      source: "%{::definer_repo_source}"
+      revision: "%{::definer_repo_revision}"
