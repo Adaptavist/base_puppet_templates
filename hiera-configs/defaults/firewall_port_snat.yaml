@@ -3,7 +3,6 @@
 firewall_port_snat_description:
 firewall_port_snat_chain: 'POSTROUTING'
 firewall_port_snat_proto:
-firewall_port_snat_dport:
 firewall_port_snat_todest:
 firewall_port_snat_table:
 firewall_port_snat_jump: 'SNAT'
