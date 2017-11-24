@@ -1,0 +1,22 @@
+---
+
+prefixes:
+  - firewall_port_snat_
+
+classes:
+  - fw
+
+dependencies:
+  - fw
+  - firewall
+  - stdlib
+
+fw::rules: &fw_rules
+  "%{::firewall_port_snat_description}":
+      chain: "%{::firewall_port_snat_chain}"
+      proto: "%{::firewall_port_snat_proto}"
+      dport:
+         - "%{::firewall_port_snat_dport}"
+      todest: "%{::firewall_port_snat_todest}"
+      table: "%{::firewall_port_snat_table}"
+      jump: "%{::firewall_port_snat_jump}"
