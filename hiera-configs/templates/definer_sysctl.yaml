@@ -1,0 +1,15 @@
+---
+
+prefixes:
+  - "definer_sysctl_"
+
+classes:
+  - definer
+
+dependencies:
+  - sysctl
+
+definer::defs:
+    sysctl:
+        "%{::definer_sysctl_key}":
+            value: "%{::definer_sysctl_value}"
