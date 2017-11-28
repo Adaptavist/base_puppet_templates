@@ -1,0 +1,21 @@
+---
+
+prefixes:
+  - firewall_port_masquerade_
+
+classes:
+  - fw
+
+dependencies:
+  - fw
+  - firewall
+  - stdlib
+
+fw::rules: &fw_rules
+  "%{::firewall_port_masquerade_description}":
+      chain: "%{::firewall_port_masquerade_chain}"
+      proto: "%{::firewall_port_masquerade_proto}"
+      dport:
+         - "%{::firewall_port_masquerade_dport}"
+      table: "%{::firewall_port_masquerade_table}"
+      jump: "%{::firewall_port_masquerade_jump}"

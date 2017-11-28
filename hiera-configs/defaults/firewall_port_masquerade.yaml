@@ -1,0 +1,8 @@
+---
+
+firewall_port_masquerade_description:
+firewall_port_masquerade_chain: 'POSTROUTING'
+firewall_port_masquerade_proto:
+firewall_port_masquerade_dport:
+firewall_port_masquerade_table:
+firewall_port_masquerade_jump: 'MASQUERADE'
