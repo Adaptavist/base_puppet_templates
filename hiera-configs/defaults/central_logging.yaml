@@ -1,0 +1,7 @@
+---
+
+rotate_logs_keep: 45
+rsyslog_yum_repo: false
+rotate_compress: false
+logging_sources: 
+rsyslog_spool_dir:  

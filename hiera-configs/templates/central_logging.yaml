@@ -1,0 +1,20 @@
+---
+
+prefixes:
+  - central_logging_
+
+classes:
+  - central_logging
+
+dependencies:
+  - stdlib
+
+
+
+central_logging::server:
+	rotate_logs_keep: "%{::central_logging_server_rotate_logs_keep}"
+	rotate_compress: "%{::central_logging_server_rotate_logs_compress}"
+	rsyslog_yum_repo: "%{::central_logging_use_rsyslog_repo}"
+	logging_sources: "%{::central_logging_logging_sources}"
+	rsyslog_spool_dir:  "%{::central_logging_rsyslog_spool_dir}"
+
