@@ -370,7 +370,7 @@ apache:
     repo: 'https://github.com/Adaptavist/puppet-apache.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 apt: 
     name: "puppetlabs/apt"
@@ -391,7 +391,7 @@ mysql:
     repo: 'https://github.com/Adaptavist/puppet-mysql.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '2.1.2b'
+    ref_value: '3.7.0a'
 
 xinetd: 
     name: "puppetlabs/xinetd"
@@ -447,7 +447,7 @@ mysqlconfig:
     repo: 'https://github.com/Adaptavist/puppet-mysqlconfig.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.2'
+    ref_value: '1.0.3'
 
 baseusers: 
     name: 'adaptavist/baseusers'
