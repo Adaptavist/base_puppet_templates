@@ -4,6 +4,7 @@ atlassian_hosting_user: 'hosting'
 atlassian_hosting_group: 'hosting'
 
 jira_wizard_use_tomcat_port: 'false'
+jira_application_type: 'jira'
 jira_database_setup_database: ''
 jira_database_driver_class: 'com.mysql.jdbc.Driver'
 jira_database_type: 'mysql'
