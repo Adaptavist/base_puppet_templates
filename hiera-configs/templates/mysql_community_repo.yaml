@@ -1,0 +1,19 @@
+---
+
+prefixes:
+    - "mysql_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+mysqlconfig::install_community_repo: "%{::mysql_install_community_repo}"
