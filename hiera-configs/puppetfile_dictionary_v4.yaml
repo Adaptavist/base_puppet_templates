@@ -482,7 +482,7 @@ webserver:
     repo: 'https://github.com/Adaptavist/puppet-webserver.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 limits: 
     name: "puppetlabs/limits"
