@@ -2,3 +2,5 @@
 
 apache_config_vhost_dir:
 apache_config_purge_configs: 'true'
+apache_config_manage_user: 'true'
+apache_config_manage_group: 'true'
