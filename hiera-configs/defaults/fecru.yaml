@@ -8,6 +8,8 @@ fecru_tarball_location_url:
     comment: 'If left empty, url is autodetected based on version from Atlassian'
 fecru_database_port: '3306'
 fecru_database_type: 'mysql'
+fecru_work_dir: "/tmp/avstapp_resources"
+fecru_drivers_dir: ""
 fecru_database_driver_class: 'com.mysql.jdbc.Driver'
 fecru_database_url: 'jdbc:mysql://localhost/fecru?autoReconnect=true&amp;characterEncoding=utf8&amp;useUnicode=true'
 fecru_database_hibernate_dialect: 'org.hibernate.dialect.MySQL5InnoDBDialect'

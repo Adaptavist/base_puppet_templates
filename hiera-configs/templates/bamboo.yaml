@@ -39,6 +39,8 @@ avstapp::conf:
     wizard_use_tomcat_port: "%{::bamboo_wizard_use_tomcat_port}"
     manual_service_script: "%{::bamboo_manual_service_script}"
     manual_upstart_script: "%{::bamboo_manual_upstart_script}"
+    work_dir: "%{::bamboo_work_dir}"
+    drivers_dir: "%{::bamboo_drivers_dir}"
     avst_wizard_properties:
       license: "%{::bamboo_license}"
       admin_user: "%{::bamboo_admin_user}"

@@ -11,7 +11,8 @@ bitbucket_database_driver_class: 'com.mysql.jdbc.Driver'
 bitbucket_database_type: 'mysql'
 bitbucket_database_port: '3306'
 bitbucket_class_dependency: 'database'
-
+bitbucket_work_dir: "/tmp/avstapp_resources"
+bitbucket_drivers_dir: ""
 bitbucket_host_name:
     value: ""
     comment: "Provide url to bitbucket e.g https://bitbucket.example.com (if apache in front), used if avst_wizard enabled "

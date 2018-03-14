@@ -40,6 +40,8 @@ avstapp::conf:
     manual_service_script: "%{::jira_manual_service_script}"
     manual_upstart_script: "%{::jira_manual_upstart_script}"
     early_access: "%{::jira_early_access}"
+    work_dir: "%{::jira_work_dir}"
+    drivers_dir: "%{::jira_drivers_dir}"
     avst_wizard_properties:
       license: "%{::jira_license}"
       admin_user: "%{::jira_admin_user}"
