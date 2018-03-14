@@ -12,6 +12,8 @@ jira_database_port: '3306'
 jira_database_schema_name: 'public'
 jira_database_url: 'localhost'
 jira_class_dependency: 'database'
+jira_work_dir: "/tmp/avstapp_resources"
+jira_drivers_dir: ""
 jira_host_name:
     value: ""
     comment: "Provide url to jira e.g https://jira.example.com (if apache in front), used if avst_wizard enabled "
