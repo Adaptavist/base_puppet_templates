@@ -1,0 +1,17 @@
+---
+
+prefixes:
+  - tripwire_
+
+classes:
+  - tripwire
+
+dependencies:
+  - tripwire
+  - stdlib
+  - concat
+
+tripwire::local_passphrase: '%{::tripwire_local_passphrase}'
+tripwire::site_passphrase: '%{::tripwire_site_passphrase}'
+tripwire::tripwire_email: '%{::tripwire_tripwire_email}'
+tripwire::tripwire_policy_file: '%{::tripwire_tripwire_policy_file}'

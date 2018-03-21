@@ -854,3 +854,10 @@ libreswan_config:
     ref_type: "tag"
     repo_type: 'git'
     ref_value: "0.0.1"
+
+tripwire:
+    name: 'adaptavist/tripwire'
+    repo: 'https://github.com/Adaptavist/puppet-tripwire.git'
+    ref_type: "tag"
+    repo_type: 'git'
+    ref_value: "0.0.1"
