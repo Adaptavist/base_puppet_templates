@@ -1,0 +1,7 @@
+---
+
+vpn_snat_description:
+vpn_snat_chain:
+vpn_snat_jump:
+vpn_snat_source:
+vpn_snat_table:
