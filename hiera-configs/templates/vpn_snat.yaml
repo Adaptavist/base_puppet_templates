@@ -18,3 +18,4 @@ fw::rules: &fw_rules
       jump: "%{::vpn_snat_jump}"
       source: "%{::vpn_snat_source}"
       table: "%{::vpn_snat_table}"
+      proto: "%{::vpn_snat_proto}"

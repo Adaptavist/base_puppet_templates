@@ -5,3 +5,4 @@ vpn_snat_chain:
 vpn_snat_jump:
 vpn_snat_source:
 vpn_snat_table:
+vpn_snat_proto:
