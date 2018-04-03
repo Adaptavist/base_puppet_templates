@@ -1,8 +1,20 @@
 ---
 
 vpn_snat_description:
+  value:
+  description: 'Commment to provide for iptables'
 vpn_snat_chain:
+  value:
+  description: 'lists of rules which are followed in order'
 vpn_snat_jump:
+  value:
+  description: 'if these conditions are matched, jump to the following user-defined chain and continue processing there'
 vpn_snat_source:
+  value:
+  description: 'Originating IP of traffic after translation'
 vpn_snat_table:
+  value:
+  description: 'In most common use cases you will only use two of these: filter and nat'
 vpn_snat_proto:
+  value:
+  description: 'Can be tcp, udp or all'
