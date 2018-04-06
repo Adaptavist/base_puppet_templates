@@ -11,3 +11,5 @@ dependencies:
   - firewall
 
 fw::create_rules_after_package:  "%{::firewall_config_create_rules_after_package}"
+fw::run_before_rules: "%{::firewall_config_run_before}"
+fw::run_after_package: "%{::firewall_config_run_after}"
