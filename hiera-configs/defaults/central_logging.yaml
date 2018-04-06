@@ -1,0 +1,11 @@
+---
+
+central_logging_server_rotate_logs: 'true'
+central_logging_server_logstash: 'false'
+central_logging_server_rotate_logs_keep: '45'
+central_logging_server_rotate_logs_period: 'daily'
+central_logging_server_rotate_compress: 'false'
+central_logging_server_rsyslog_spool_dir: '/var/spool/rsyslog'
+central_logging_use_rsyslog_repo: 'false'
+
+central_logging_central_syslog_port: 
