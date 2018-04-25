@@ -39,6 +39,8 @@ avstapp::conf:
     manual_service_script: "%{::fecru_manual_service_script}"
     manual_upstart_script: "%{::fecru_manual_upstart_script}"
     early_access: "%{::fecru_early_access}"
+    work_dir: "%{::fecru_work_dir}"
+    drivers_dir: "%{::fecru_drivers_dir}"
     avst_wizard_properties:
       license: "%{::fecru_license}"
       admin_pass: "%{::fecru_admin_pass}"

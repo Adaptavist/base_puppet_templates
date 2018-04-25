@@ -28,7 +28,7 @@ avstapp::conf:
   "%{::jira_instance_name}":
     is_mirror: "%{::jira_is_mirror}" # false
     version: "%{::jira_version}" # '5.2.5'
-    application_type: jira
+    application_type: "%{::jira_application_type}"
     class_dependencies:
         - "%{::jira_class_dependency}" #defaults to database, if db is not on the same server change this to e.g packages_repos
     context_path: "%{::jira_context_path}"
@@ -40,6 +40,8 @@ avstapp::conf:
     manual_service_script: "%{::jira_manual_service_script}"
     manual_upstart_script: "%{::jira_manual_upstart_script}"
     early_access: "%{::jira_early_access}"
+    work_dir: "%{::jira_work_dir}"
+    drivers_dir: "%{::jira_drivers_dir}"
     avst_wizard_properties:
       license: "%{::jira_license}"
       admin_user: "%{::jira_admin_user}"

@@ -4,6 +4,7 @@ apache_vhost_http_cors_vhost_name:
 apache_vhost_http_cors_servername:
 apache_vhost_http_cors_docroot:
 apache_vhost_http_cors_port:
+apache_vhost_http_cors_priority: '25'
 apache_vhost_http_cors_docroot_owner:
 apache_vhost_http_cors_docroot_group:
 apache_vhost_http_cors_path: "/"

@@ -30,6 +30,7 @@ webserver::default_vhosts:
       - '%{::apache_vhost_http_cors_serveraliases}'
     docroot: "%{::apache_vhost_http_cors_docroot}"
     port: "%{::apache_vhost_http_cors_port}"
+    priority: '%{::apache_vhost_http_cors_priority}'
     docroot_owner: "%{::apache_vhost_http_cors_docroot_owner}"
     docroot_group: "%{::apache_vhost_http_cors_docroot_group}"
     directories:

@@ -18,4 +18,6 @@ baseusers_user_comment:
 baseusers_user_password:
     value:
     comment: "User's password"
-
+baseusers_user_shell:
+    value: '/bin/bash'
+    comment: "User's Shell"

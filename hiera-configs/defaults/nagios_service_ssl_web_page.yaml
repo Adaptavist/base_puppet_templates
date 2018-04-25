@@ -3,6 +3,7 @@
 nagios_service_ssl_web_page_name:
 nagios_service_ssl_web_page_url:
 nagios_service_ssl_web_page_uri: '/'
+nagios_service_ssl_web_page_arguments: ''
 nagios_service_ssl_web_page_hostname:
 nagios_service_ssl_web_page_hostgroup_name: ''
 nagios_service_ssl_web_page_ensure: 'present'

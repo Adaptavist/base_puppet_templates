@@ -1,0 +1,21 @@
+---
+
+prefixes:
+  - vpn_snat_
+
+classes:
+  - fw
+
+dependencies:
+  - fw
+  - firewall
+  - stdlib
+
+fw::rules: &fw_rules
+  "%{::vpn_snat_description}":
+      chain: "%{::vpn_snat_chain}"
+      tosource: "%{::ipaddress_eth0}"
+      jump: "%{::vpn_snat_jump}"
+      source: "%{::vpn_snat_source}"
+      table: "%{::vpn_snat_table}"
+      proto: "%{::vpn_snat_proto}"

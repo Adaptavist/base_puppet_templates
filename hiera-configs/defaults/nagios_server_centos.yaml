@@ -1,0 +1,3 @@
+---
+
+nagios_server_pid_file: '/var/run/nagios/nagios.pid'

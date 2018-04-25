@@ -1,0 +1,14 @@
+---
+
+prefixes: 
+    - "baseusers_"
+
+classes:
+  - baseusers
+
+dependencies:
+  - baseusers
+
+baseusers::users:
+  "%{::baseusers_user_name}":
+    managehome: "%{::baseusers_user_managehome}"

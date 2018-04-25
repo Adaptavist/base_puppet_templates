@@ -14,3 +14,5 @@ dependencies:
 
 apache::vhost_dir: "%{::apache_config_vhost_dir}"
 webserver::apache::purge_configs: "%{::apache_config_purge_configs}"
+webserver::apache::manage_user: "%{::apache_config_manage_user}"
+webserver::apache::manage_group: "%{::apache_config_manage_group}"

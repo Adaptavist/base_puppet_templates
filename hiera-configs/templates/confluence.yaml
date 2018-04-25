@@ -39,6 +39,8 @@ avstapp::conf:
     manual_service_script: "%{::confluence_manual_service_script}"
     manual_upstart_script: "%{::confluence_manual_upstart_script}"
     early_access: "%{::confluence_early_access}"
+    work_dir: "%{::confluence_work_dir}"
+    drivers_dir: "%{::confluence_drivers_dir}"
     avst_wizard_properties:
       license: "%{::confluence_license}"
       admin_user: "%{::confluence_admin_user}"

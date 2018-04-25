@@ -39,6 +39,8 @@ avstapp::conf:
     manual_service_script: "%{::crowd_manual_service_script}"
     manual_upstart_script: "%{::crowd_manual_upstart_script}"
     early_access: "%{::crowd_early_access}"
+    work_dir: "%{::crowd_work_dir}"
+    drivers_dir: "%{::crowd_drivers_dir}"
     avst_wizard_properties:
       license: "%{::crowd_license}"
       admin_user: "%{::crowd_admin_user}"

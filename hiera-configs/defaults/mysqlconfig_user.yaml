@@ -6,4 +6,7 @@ mysqlconfig_user_ensure:
     value: 'present'
 mysqlconfig_user_password_hash:
     value:
+mysqlconfig_user_tls_options:
+    value: 'NONE'
+
 

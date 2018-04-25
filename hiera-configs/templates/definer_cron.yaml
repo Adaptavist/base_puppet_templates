@@ -1,0 +1,21 @@
+---
+
+prefixes: 
+    - "definer_cron_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  cron:
+    '%{::definer_cron_name}':
+      ensure: '%{::definer_cron_ensure}'
+      command: '%{::definer_cron_command}'
+      user: '%{::definer_cron_user}'
+      month: '%{::definer_cron_month}'
+      monthday: '%{::definer_cron_monthday}'
+      hour: '%{::definer_cron_hour}'
+      minute: '%{::definer_cron_minute}'

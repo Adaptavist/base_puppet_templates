@@ -1,0 +1,5 @@
+---
+
+firewall_config_create_rules_after_package:
+firewall_config_run_before: "Package['iptables-services']"
+firewall_config_run_after: "Class['Fw::Pre']"

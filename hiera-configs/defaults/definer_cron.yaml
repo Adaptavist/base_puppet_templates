@@ -1,0 +1,10 @@
+---
+
+definer_cron_name: 
+definer_cron_ensure: 'present'
+definer_cron_command:
+definer_cron_user:
+definer_cron_month:
+definer_cron_monthday:
+definer_cron_hour:
+definer_cron_minute:

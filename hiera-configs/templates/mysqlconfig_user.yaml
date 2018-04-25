@@ -21,4 +21,7 @@ mysqlconfig::users:
     "%{::mysqlconfig_user_name}":
         ensure: "%{::mysqlconfig_user_ensure}"
         password_hash: "%{::mysqlconfig_user_password_hash}"
+        tls_options: 
+          - "%{::mysqlconfig_user_tls_options}"
+
 

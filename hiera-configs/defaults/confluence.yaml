@@ -11,6 +11,8 @@ confluence_database_setup_database: ''
 confluence_database_type: 'mysql'
 confluence_database_url: 'jdbc:mysql://localhost/confluence?sessionVariables=storage_engine%3DInnoDB'
 confluence_database_driver_class: 'com.mysql.jdbc.Driver'
+confluence_work_dir: "/tmp/avstapp_resources"
+confluence_drivers_dir: ""
 confluence_class_dependency: 'database'
 confluence_host_name:
     value: ""

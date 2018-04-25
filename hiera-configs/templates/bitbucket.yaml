@@ -39,6 +39,8 @@ avstapp::conf:
     manual_service_script: "%{::bitbucket_manual_service_script}"
     manual_upstart_script: "%{::bitbucket_manual_upstart_script}"
     early_access: "%{::bitbucket_early_access}"
+    work_dir: "%{::bitbucket_work_dir}"
+    drivers_dir: "%{::bitbucket_drivers_dir}"
     avst_wizard_properties:
       license: "%{::bitbucket_license}"
       admin_user: "%{::bitbucket_admin_user}"

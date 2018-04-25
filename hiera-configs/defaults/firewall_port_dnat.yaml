@@ -1,0 +1,9 @@
+---
+
+firewall_port_dnat_description:
+firewall_port_dnat_chain: 'PREROUTING'
+firewall_port_dnat_proto:
+firewall_port_dnat_dport:
+firewall_port_dnat_todest:
+firewall_port_dnat_table: 'nat'
+firewall_port_dnat_jump: 'DNAT'

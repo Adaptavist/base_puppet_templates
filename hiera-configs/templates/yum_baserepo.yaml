@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - yum_
+
+classes:
+    - yum
+
+dependencies:
+  - yum
+  - puppi
+
+yum::defaultrepo: "%{::yum_defaultrepo}"

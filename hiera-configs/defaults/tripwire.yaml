@@ -1,0 +1,6 @@
+---
+
+tripwire_local_passphrase: 
+tripwire_site_passphrase: 
+tripwire_tripwire_email: 'blackhole'
+tripwire_tripwire_policy_file: 'false'
