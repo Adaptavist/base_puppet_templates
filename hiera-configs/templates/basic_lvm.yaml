@@ -10,12 +10,14 @@ dependencies:
   - lvm
   - stdlib
 
+pre_stage_classes:
+  - lvm
+
 lvm::volume_groups:
   "%{::basic_lvm_vg_name}":
     createonly: "%{::basic_lvm_createonly}"
     physical_volumes:
-      "%{::basic_lvm_pv_name}":
-        unless_vg: "%{::basic_lvm_vg_name}"
+      "%{::basic_lvm_pv_name}"
     logical_volumes:
       "%{::basic_lvm_lv_name}":
         extents: "%{::basic_lvm_lv_extents}"
