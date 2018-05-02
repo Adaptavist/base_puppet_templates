@@ -1,0 +1,41 @@
+---
+
+basic_lvm_vg_name:
+    value:
+    comment: "The Name of the Volume Group To Create"
+basic_lvm_createonly:
+    value: 'true'
+    comment: "If set to true will not modify Volume Group if it already exists"
+    type: 'boolean'
+basic_lvm_pv_name:
+    value:
+    comment: "Name of the Physical Volume that will be a member of the Volume Group"
+basic_lvm_lv_name:
+    value:
+    comment: "Name of the Logical Volume to create"
+basic_lvm_lv_extents:
+    value:
+    comment: "Size of the Logical Volume in extends (can be xx%FREE i.e 100%FREE)"
+basic_lvm_lv_mountpath:
+    value:
+    comment: "Mountpath for the Logical Volume"
+basic_lvm_lv_require_mount:
+    value: 'false'
+    comment: "Flag to determine if the mountpath for the LV must be managed by puppet and that it must be required"
+    type: 'boolean'
+basic_lvm_lv_fs_type:
+    value: 'xfs'
+    comment: "Type of Filesystem to create on the Logical Volume"
+basic_lvm_lv_mount_options:
+    value: 'nofail,nobarrier,noatime,nodiratime'
+    comment: "Mount options for the Logical Volume"
+basic_lvm_lv_mkfs_options:
+    value: ''
+    comment: "mkfs options for the Logical Volume"
+    type: 'nilable'
+basic_lvm_lv_pass:
+    value: 0
+    comment: 'fstab flag to determine order of fsck (0 is never)'
+basic_lvm_lv_dump:
+    value: 0
+    comment: 'fstab flag to identify if the Logical Volumes filesystem needs to be dumped'
