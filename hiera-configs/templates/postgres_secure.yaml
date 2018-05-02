@@ -1,0 +1,222 @@
+---
+
+prefixes:
+  - "database_db_"
+  - "postgres_"
+
+classes:
+  - database
+  - definer
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+  - definer
+
+
+#create files and directories
+definer::defs:
+  file:
+    "%{::postgres_base_dir}":
+      ensure: 'directory'
+      before: 'Class[postgresconfig]'
+    "%{::postgres_base_dir}/pg_xlog":
+      ensure: 'directory'
+      owner: '26'
+      group: '26'
+      mode: '0700'
+      before: 'Class[postgresconfig]'
+    "%{::postgres_base_dir}/backups":
+      ensure: 'directory'
+      owner: '26'
+      group: '26'
+      mode: '0700'
+      before: 'Class[postgresconfig]'
+    "%{::postgres_base_dir}/backups/wal":
+      ensure: 'directory'
+      owner: '26'
+      group: '26'
+      mode: '0700'
+      before: 'Class[postgresconfig]'
+    "%{::postgres_base_dir}/backups/dumps":
+      ensure: 'directory'
+      owner: '26'
+      group: '26'
+      mode: '0700'
+      before: 'Class[postgresconfig]'
+    "%{::postgres_base_dir}/certs":
+      ensure: 'directory'
+      owner: '26'
+      group: '26'
+      mode: '0700'
+      before: 'Class[postgresconfig]'
+
+
+
+postgresconfig::hba_rules: 
+  001:
+    type: 'local'
+    user: 'postgres'
+    auth_method: 'ident'
+    order: '001'
+    description: 'local access as postgres user'
+  002:
+    type: 'local'
+    auth_method: 'md5'
+    order: '002'
+    description: 'local access to database with same name'
+  003:
+    type: 'host'
+    user: 'postgres'
+    address: '127.0.0.1/32'
+    auth_method: 'md5'
+    order: '003'
+    description: 'allow localhost TCP access to postgresql user'
+  004:
+    type: 'host'
+    user: 'postgres'
+    address: '0.0.0.0/0'
+    auth_method: 'reject'
+    order: '004'
+    description: 'deny access to postgresql user'
+  100:
+    type: 'host'
+    address: '127.0.0.1/32'
+    auth_method: 'md5'
+    order: '100'
+    description: 'allow access to all users'
+  101:
+    type: 'host'
+    address: '::1/128'
+    auth_method: 'md5'
+    order: '101'
+    description: 'allow access to ipv6 localhost'
+
+# configure postgres
+postgresql::server::datadir: '%{::postgres_datadir}'
+postgresql::server::postgresql_conf_path: '%{::postgres_datadir}/postgresql.conf'
+postgresql::server::pg_hba_conf_path: '%{::postgres_datadir}/pg_hba.conf'
+postgresql::server::pg_ident_conf_path: '%{::postgres_datadir}/pg_ident.conf'
+postgresconfig::postgres_password: "%{::postgres_dba_password}"
+postgresconfig::listen_address: "%{::postgres_listen_address}"
+postgresconfig::listen_port: "%{::postgres_listen_port}"
+postgresconfig::install_contrib: "%{::postgres_install_contrib}"
+postgresconfig::install_devel: "%{::postgres_install_devel}"
+postgresconfig::create_auth_file: "%{::postgres_create_auth_file}"
+
+postgresconfig::config_enties:
+  archive_command:
+    value: "%{::postgres_archive_command}"
+  archive_mode:
+    value: "%{::postgres_archive_mode}"
+  autovacuum:
+    value: "%{::postgres_autovacuum}"
+  autovacuum_vacuum_cost_delay:
+    value: "%{::postgres_autovacuum_vacuum_cost_delay}"
+  autovacuum_vacuum_cost_limit:
+    value: "%{::postgres_autovacuum_vacuum_cost_limit}"
+  autovacuum_freeze_max_age:
+    value: "%{::postgres_autovacuum_freeze_max_age}"
+  autovacuum_max_workers:
+    value: "%{::postgres_autovacuum_max_workers}"
+  autovacuum_naptime:
+    value: "%{::postgres_autovacuum_naptime}"
+  autovacuum_vacuum_threshold:
+    value: "%{::postgres_autovacuum_vacuum_threshold}"
+  autovacuum_analyze_threshold:
+    value: "%{::postgres_autovacuum_analyze_threshold}"
+  autovacuum_vacuum_scale_factor:
+    value: "%{::postgres_autovacuum_vacuum_scale_factor}"
+  autovacuum_analyze_scale_factor:
+    value: "%{::postgres_autovacuum_analyze_scale_factor}"
+  checkpoint_completion_target:
+    value: "%{::postgres_checkpoint_completion_target}"
+  checkpoint_segments:
+    value: "%{::postgres_checkpoint_segments}"
+  datestyle:
+    value: "%{::postgres_datestyle}"
+  effective_cache_size:
+    value: "%{::postgres_effective_cache_size}"
+  checkpoint_warning:
+    value: "%{::postgres_checkpoint_warning}"
+  maintenance_work_mem:
+    value: "%{::postgres_maintenance_work_mem}"
+  max_stack_depth:
+    value: "%{::postgres_max_stack_depth}"
+  lc_messages:
+    value: "%{::postgres_lc_messages}"
+  lc_monetary:
+    value: "%{::postgres_lc_monetary}"
+  lc_numeric:
+    value: "%{::postgres_lc_numeric}"
+  lc_time:
+    value: "%{::postgres_lc_time}"
+  log_autovacuum_min_duration:
+    value: "%{::postgres_log_autovacuum_min_duration}"
+  log_checkpoints:
+    value: "%{::postgres_log_checkpoints}"
+  log_connections:
+    value: "%{::postgres_log_connections}"
+  log_destination:
+    value: "%{::postgres_log_destination}"
+  log_disconnections:
+    value: "%{::postgres_log_disconnections}"
+  log_line_prefix:
+    value: "%{::postgres_log_line_prefix}"
+  log_min_error_statement:
+    value: "%{::postgres_log_min_error_statement}"
+  log_statement:
+    value: "%{::postgres_log_statement}"
+  log_truncate_on_rotation:
+    value: "%{::postgres_log_truncate_on_rotation}"
+  random_page_cost:
+    value: "%{::postgres_randon_page_cost}"
+  shared_buffers:
+    value: "%{::postgres_shared_buffers}"
+  ssl:
+    value: "%{::postgres_ssl_mode}"
+  ssl_ciphers:
+    value: "%{::postgres_ssl_ciphers}"
+  ssl_ca_file:
+    value: "%{::postgres_ssl_ca_file}"
+  ssl_cert_file:
+    value: "%{::postgres_ssl_cert_file}"
+  ssl_key_file:
+    value: "%{::postgres_ssl_key_file}"
+  ssl_renegotiation_limit:
+    value: "%{::postgres_ssl_renegotiation_limit}"
+  stats_temp_directory:
+    value: "%{::postgres_stats_temp_directory}"
+  track_activities:
+    value: "%{::postgres_track_activities}"
+  track_activity_query_size:
+    value: "%{::postgres_track_activity_query_size}"
+  track_counts:
+    value: "%{::postgres_track_counts}"
+  track_io_timing:
+    value: "%{::postgres_track_io_timing}"
+  track_functions:
+    value: "%{::postgres_track_functions}"
+  unix_socket_group:
+    value: "%{::postgres_unix_socket_group}"
+  unix_socket_permissions:
+    value: "%{::postgres_unix_socket_permissions}"
+  update_process_title:
+    value: "%{::postgres_update_process_title}"
+  wal_level:
+    value: "%{::postgres_wal_level}"
+  work_mem:
+    value: "%{::postgres_work_mem}"
+
+# setup database
+database::type: 'postgres'
+database::conf:
+  "%{::database_db_database_name}":
+    user:     "%{::database_db_database_user}"
+    password: "%{::database_db_database_pass}"
