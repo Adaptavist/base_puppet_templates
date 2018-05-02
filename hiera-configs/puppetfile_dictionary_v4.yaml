@@ -868,3 +868,10 @@ template_file:
     ref_type: "tag"
     repo_type: 'git'
     ref_value: "0.0.1"
+
+lvm:
+    name: "puppetlabs/lvm"
+    repo: 'https://github.com/Adaptavist/puppetlabs-lvm.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.1'

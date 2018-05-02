@@ -1,0 +1,30 @@
+---
+
+prefixes:
+    - "basic_lvm_"
+
+classes:
+    - lvm
+
+dependencies:
+  - lvm
+  - stdlib
+
+pre_stage_classes:
+  - lvm
+
+lvm::volume_groups:
+  "%{::basic_lvm_vg_name}":
+    createonly: "%{::basic_lvm_createonly}"
+    physical_volumes:
+      "%{::basic_lvm_pv_name}"
+    logical_volumes:
+      "%{::basic_lvm_lv_name}":
+        extents: "%{::basic_lvm_lv_extents}"
+        mountpath: "%{::basic_lvm_lv_mountpath}"
+        mountpath_require: "%{::basic_lvm_lv_require_mount}"
+        fs_type: "%{::basic_lvm_lv_fs_type}"
+        options: "%{::basic_lvm_lv_mount_options}"
+        mkfs_options: "%{::basic_lvm_lv_mkfs_options}"
+        pass: "%{::basic_lvm_lv_pass}"
+        dump: "%{::basic_lvm_lv_dump}"
