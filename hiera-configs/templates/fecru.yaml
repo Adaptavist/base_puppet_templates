@@ -20,6 +20,9 @@ dependencies:
   - stdlib
   - yum
 
+pre_stage_classes:
+  - packages_repos
+
 avstapp::hosting_user: "%{::atlassian_hosting_user}" #'hosting'
 avstapp::hosting_group: "%{::atlassian_hosting_group}" #'hosting'
 

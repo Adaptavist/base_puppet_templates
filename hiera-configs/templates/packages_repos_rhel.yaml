@@ -13,6 +13,9 @@ dependencies:
   - puppi
   - stdlib
 
+pre_stage_classes:
+  - packages_repos
+
 packages_repos::repos:
     RedHat:
         "%{::packages_repos_name}":

@@ -10,6 +10,9 @@ dependencies:
   - dhclient
   - stdlib
 
+pre_stage_classes:
+  - dhclient
+
 dhclient::ns_update_hook_path: "%{::dhclient_ns_update_hook_path}"
 dhclient::dhcp_update_key_template_path: "%{::dhclient_dhcp_update_key_template_path}"
 dhclient::update_key_path: "%{::dhclient_update_key_path}"

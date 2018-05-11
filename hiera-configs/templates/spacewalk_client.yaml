@@ -2,6 +2,7 @@
 
 prefixes:
     - "spacewalk_client_"
+    - "yum_"
 
 classes:
   - spacewalk_client
@@ -10,6 +11,8 @@ dependencies:
   - spacewalk_client
   - stdlib
 
+pre_stage_classes:
+  - spacewalk_client
 
 spacewalk_client::spacewalk_server_address: "%{::spacewalk_client_server_address}"
 spacewalk_client::spacewalk_server_uri: "%{::spacewalk_client_server_uri}"
@@ -24,3 +27,7 @@ spacewalk_client::allow_upload_action: "%{::spacewalk_client_allow_upload_action
 spacewalk_client::allow_mtime_upload_action: "%{::spacewalk_client_allow_mtime_upload_action}"
 spacewalk_client::allow_run_action: "%{::spacewalk_client_allow_run_action}"
 spacewalk_client::install_osad: "%{::spacewalk_client_install_osad}"
+
+yum::defaultrepo: "%{::yum_defaultrepo}"
+yum::extrarepo:
+  - "%{::yum_exrearepo}"

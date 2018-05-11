@@ -18,6 +18,8 @@ dependencies:
   - stdlib
   - yum
 
+pre_stage_classes:
+  - packages_repos
 
 coverity::instance_name: "%{::coverity_instance_name}"
 coverity::hosting_user: "%{::atlassian_hosting_user}"
