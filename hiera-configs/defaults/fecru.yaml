@@ -99,9 +99,3 @@ fecru_manual_upstart_script:
 fecru_is_mirror:
     value: "false"
     comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"
-fecru_copy_from_old_install:
-    value: "1"
-    comment: "Flag to detgermins if items (such as data, var, cache, config.xml) from old install directory are copied to new install directory upton upgrade, 1 = yes/0 = no"
-fecru_copy_old_install_list:
-    value: 'var cache config.xml data'
-    comment: 'space seperatedi list of items from old install directory that are copied to new install directory upton upgrade, only used if fecru_copy_from_old_install is set to 1'
