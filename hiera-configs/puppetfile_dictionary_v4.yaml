@@ -447,7 +447,7 @@ mysqlconfig:
     repo: 'https://github.com/Adaptavist/puppet-mysqlconfig.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.3'
+    ref_value: '1.0.5'
 
 baseusers: 
     name: 'adaptavist/baseusers'
