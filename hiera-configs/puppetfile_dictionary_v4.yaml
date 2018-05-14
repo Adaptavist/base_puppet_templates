@@ -405,7 +405,7 @@ postgresql:
     repo: 'https://github.com/Adaptavist/puppet-postgresql.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '4.6.1'
+    ref_value: '4.6.1a'
 
 noconfigpkgs: 
     name: 'adaptavist/noconfigpkgs'
