@@ -19,4 +19,5 @@ dependencies:
 replication::filesystem_replication: "true"
 replication::filesystem::server::use_upstart: "%{::replication_filesystem_server_setup_use_upstart}" #true
 replication::filesystem::server::lsync_inotify_watches: "%{::replication_filesystem_server_setup_inotify_watches}" #40000
-
+lsyncd::service_status: "%{::replication_filesystem_server_setup_service_status}"
+lsyncd::service_ensure: "%{::replication_filesystem_server_setup_service_ensure}"

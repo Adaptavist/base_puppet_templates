@@ -4,5 +4,9 @@ replication_filesystem_server_setup_use_upstart:
     value: true
 replication_filesystem_server_setup_inotify_watches:
     value: 40000
+replication_filesystem_server_setup_service_status:
+    value: 'running'
+replication_filesystem_server_setup_service_ensure:
+    value: 'true'
 
 
