@@ -1,0 +1,8 @@
+---
+
+mysql_server_package_name:
+  value: 
+  type: 'nilable'
+mysql_client_package_name:
+  value: 
+  type: 'nilable'

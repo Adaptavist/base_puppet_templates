@@ -1,0 +1,16 @@
+---
+
+prefixes:
+    - "mysql_"
+
+classes:
+    - mysqlconfig
+
+dependencies:
+  - mysqlconfig
+  - mysql
+  - stdlib
+  - concat
+
+mysql::server::package_name: "%{::mysql_server_package_name}"
+mysql::client::package_name: "%{::mysql_client_package_name}"
