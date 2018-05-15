@@ -3,6 +3,7 @@
 replication_postgres_client_hot_standby: 'on'
 replication_postgres_client_wal_level: 'hot_standby'
 replication_postgres_client_max_wal_senders: 3
+replication_postgres_client_checkpoint_segments_key: 'checkpoint_segments'
 replication_postgres_client_checkpoint_segments: 8
 replication_postgres_client_wal_keep_segments: 8
 replication_postgres_client_archive_mode: 'off'

@@ -32,7 +32,7 @@ postgresconfig::config_enties:
     value: "%{::replication_postgres_client_wal_level}"
   "max_wal_senders":
     value: "%{::replication_postgres_client_max_wal_senders}"
-  "checkpoint_segments":
+  "%{::replication_postgres_client_checkpoint_segments_key}":
     value: "%{::replication_postgres_client_checkpoint_segments}"
   "wal_keep_segments":
     value: "%{::replication_postgres_client_wal_keep_segments}"
