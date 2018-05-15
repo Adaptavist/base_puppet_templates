@@ -1,5 +1,9 @@
 ---
 
+basic_lvm_manage_pkg:
+    value: 'true'
+    comment: "instruct the lvm module if it should attempt to install the LVM packages or not"
+    type: 'boolean'
 basic_lvm_vg_name:
     value:
     comment: "The Name of the Volume Group To Create"

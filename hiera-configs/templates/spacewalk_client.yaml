@@ -30,4 +30,4 @@ spacewalk_client::install_osad: "%{::spacewalk_client_install_osad}"
 
 yum::defaultrepo: "%{::yum_defaultrepo}"
 yum::extrarepo:
-  - "%{::yum_exrearepo}"
+  - "%{::yum_extrarepo}"
