@@ -17,6 +17,9 @@ dependencies:
   - stdlib
   - yum
 
+pre_stage_classes:
+  - packages_repos
+
 avstapp::hosting_user: "%{::atlassian_hosting_user}"
 avstapp::hosting_group: "%{::atlassian_hosting_group}"
 
@@ -30,7 +33,7 @@ avstapp::conf:
     application_type: sonarqube
     context_path: "%{::sonarqube_context_path}"
     shutport: "%{::sonarqube_shutdown_port}"
-    tarball_location_url: "http://dist.sonar.codehaus.org/sonarqube-%{::sonarqube_version_number}.zip"
+    tarball_location_url: "https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-%{::sonarqube_version_number}.zip"
     drivers:
       location_path:
         - '%{::sonarqube_db_driver}'

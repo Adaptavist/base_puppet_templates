@@ -10,6 +10,9 @@ classes:
 dependencies:
   - baseusers
 
+pre_stage_classes:
+  - baseusers
+
 baseusers::users:
   "%{::baseusers_user_name}":
     name : "%{::baseusers_user_name}"

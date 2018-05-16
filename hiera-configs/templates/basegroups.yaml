@@ -9,6 +9,9 @@ classes:
 dependencies:
   - baseusers
 
+pre_stage_classes:
+  - baseusers
+
 baseusers::groups:
   "%{::basegroups_group_name}":
     name : "%{::basegroups_group_name}"

@@ -13,3 +13,6 @@ spacewalk_client_allow_upload_action: 'false'
 spacewalk_client_allow_mtime_upload_action: 'false'
 spacewalk_client_allow_run_action: 'false'
 spacewalk_client_install_osad: 'false'
+
+yum_extrarepo: ''
+yum_defaultrepo: 'false'

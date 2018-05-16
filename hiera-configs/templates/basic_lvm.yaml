@@ -13,6 +13,7 @@ dependencies:
 pre_stage_classes:
   - lvm
 
+lvm::manage_pkg: "%{::basic_lvm_manage_pkg}"
 lvm::volume_groups:
   "%{::basic_lvm_vg_name}":
     createonly: "%{::basic_lvm_createonly}"
