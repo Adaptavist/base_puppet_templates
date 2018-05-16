@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "postgres_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+postgresql::globals::locale: '%{::postgres_locale}'
+postgresql::globals::encoding: '%{::postgres_encoding}'

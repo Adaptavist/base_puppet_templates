@@ -1,0 +1,4 @@
+---
+
+postgres_locale:
+postgres_encoding: 'UTF8'
