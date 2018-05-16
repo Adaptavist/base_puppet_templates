@@ -214,6 +214,9 @@ postgresconfig::config_enties:
   work_mem:
     value: "%{::postgres_work_mem}"
 
+postgresql::globals::locale: '%{::postgres_locale}'
+postgresql::globals::encoding: '%{::postgres_encoding}'
+
 # setup database
 database::type: 'postgres'
 database::conf:

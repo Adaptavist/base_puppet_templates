@@ -162,3 +162,6 @@ postgres_wal_level:
 postgres_work_mem:
   value: '10MB'
   description: 'work mem'
+
+postgres_locale: 'C'
+postgres_encoding: 'UTF8'
