@@ -8,6 +8,7 @@ classes:
 
 dependencies:
   - postfix
+  - puppi
 
 postfix::aliases::maps: 
     "%{::postfix_aliases_map_key}":
