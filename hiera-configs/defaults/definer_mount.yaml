@@ -1,0 +1,13 @@
+---
+
+definer_mount_name:
+definer_mount_ensure: 'mounted'
+definer_mount_device:
+definer_mount_fstype:
+definer_mount_options: 'defaults'
+definer_mount_atboot:
+  value: 'true'
+  type: 'boolean'
+definer_mount_require:
+  value: '~'
+  type: 'nilable'

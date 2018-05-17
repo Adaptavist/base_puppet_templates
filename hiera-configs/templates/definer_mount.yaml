@@ -1,0 +1,20 @@
+---
+
+prefixes:
+    - "definer_mount_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  mount:
+    "%{::definer_mount_name}":
+      ensure: "%{::definer_mount_ensure}"
+      device: "%{::definer_mount_device}"
+      fstype: "%{::definer_mount_fstype}"
+      options: "%{::definer_mount_options}"
+      atboot: "%{::definer_mount_atboot}"
+      require: "%{::definer_mount_require}"
