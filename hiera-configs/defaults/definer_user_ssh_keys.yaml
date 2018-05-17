@@ -1,0 +1,10 @@
+---
+
+definer_user_ssh_keys_name:
+definer_user_ssh_keys_ensure: 'present'
+definer_user_ssh_keys_user:
+definer_user_ssh_keys_type: 'ssh-rsa'
+definer_user_ssh_keys_key:
+definer_user_ssh_keys_require:
+  value: '~'
+  type: 'nilable'

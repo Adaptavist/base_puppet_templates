@@ -1,0 +1,16 @@
+---
+
+prefixes: 
+    - "legacy_nagios_client_rhel_plugin_"
+
+classes:
+  - nagiosclient
+
+dependencies:
+  - nagiosclient
+  - stdlib
+
+nagiosclient::plugin_packages:
+  'RedHat':
+    - "%{::legacy_nagios_client_rhel_plugin_name}"
+  

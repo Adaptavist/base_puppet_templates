@@ -1,0 +1,19 @@
+---
+
+prefixes: 
+    - "definer_user_ssh_keys_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  ssh_authorized_key:
+    "%{::definer_user_ssh_keys_name}": 
+      ensure: "%{::definer_user_ssh_keys_ensure}"
+      user: "%{::definer_user_ssh_keys_user}"
+      type: "%{::definer_user_ssh_keys_type}" #ssh-rsa
+      key: "%{::definer_user_ssh_keys_key}"
+      require: "%{::definer_user_ssh_keys_require}"
