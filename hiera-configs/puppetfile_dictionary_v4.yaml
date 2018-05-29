@@ -629,7 +629,7 @@ avst_backup:
     repo: 'https://github.com/Adaptavist/puppet-avst_backup.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 openssh: 
     name: "example42/openssh"
