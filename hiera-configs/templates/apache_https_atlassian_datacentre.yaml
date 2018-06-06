@@ -61,7 +61,7 @@ webserver::default_vhosts:
     error_log_syslog: '/var/log/apache2/%{::vhost_https_atlassian_datacentre_apache_log_prefix}-vhost-error.log'
     priority: '%{::vhost_https_atlassian_priority}'
     ssl: true
-    ssl_protocol: 'All -SSLv2 -SSLv3'
+    ssl_protocol: 'All -SSLv2 -SSLv3 -TLSv1'
     # SSLCompression
     ssl_cert: '%{::vhost_https_atlassian_datacentre_ssl_cert}'
     ssl_key: '%{::vhost_https_atlassian_datacentre_ssl_key}'
