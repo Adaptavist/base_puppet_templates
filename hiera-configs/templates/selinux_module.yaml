@@ -6,6 +6,10 @@ prefixes:
 classes:
   - selinux_config
 
+pre_stage_classes:
+  - selinux
+  - selinux_config
+
 dependencies:
   - stdlib
   - selinux
