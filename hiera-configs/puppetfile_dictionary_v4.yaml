@@ -7,6 +7,13 @@ subversion_edge:
     repo_type: 'git'
     ref_value: '0.1.11'
 
+selinux_config:
+    name: 'adaptavist/selinux_config'
+    repo: 'https://github.com/Adaptavist/puppet-selinux_config.git'
+    ref_type: "tag"
+    ref_value: '1.0.0'
+    repo_type: 'git'
+
 simple_networking:
     name: 'adaptavist/simple_networking'
     repo: 'ssh://git@stash.adaptavist.com:7999/pup/puppet-simple_networking.git'

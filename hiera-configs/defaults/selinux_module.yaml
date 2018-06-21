@@ -1,0 +1,5 @@
+---
+
+selinux_module_module_name:
+selinux_module_source: 
+selinux_module_ensure: 'present'

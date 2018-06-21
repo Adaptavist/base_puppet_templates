@@ -1,0 +1,21 @@
+---
+
+prefixes:
+  - selinux_module_
+
+classes:
+  - selinux_config
+
+pre_stage_classes:
+  - selinux
+  - selinux_config
+
+dependencies:
+  - stdlib
+  - selinux
+  - selinux_config
+
+selinux_config::modules:
+    "%{::selinux_module_module_name}":
+        ensure: '%{::selinux_module_ensure}'
+        source: '%{::selinux_module_source}'
