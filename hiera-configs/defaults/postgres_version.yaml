@@ -2,7 +2,7 @@
 
 postgres_version:
 postgres_manage_package_repo:
-    value: 'false'
+    value: 'true'
     type: 'boolean'
 postgres_contrib_package: 
 postgres_devel_package:
