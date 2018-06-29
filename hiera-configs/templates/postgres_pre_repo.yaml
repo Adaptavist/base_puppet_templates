@@ -1,0 +1,19 @@
+---
+
+## This template is designed as an extension for postgres_version, it moves the postgres repo registration into
+## pre stage, it is to work around a sequence issue on UBUNTU hosts only and has not been tested with CentOS
+## it CANNOT be used on its own!
+
+prefixes:
+    - "postgres_"
+
+classes:
+    - postgresql::repo
+
+dependencies:
+  - postgresql::repo
+
+pre_stage_classes:
+  - postgresql::repo
+
+postgresql::repo::version: '%{::postgres_version}'
