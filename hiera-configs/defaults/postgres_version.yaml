@@ -1,7 +1,9 @@
 ---
 
 postgres_version:
-postgres_manage_package_repo: 'true'
+postgres_manage_package_repo:
+    value: 'false'
+    type: 'boolean'
 postgres_contrib_package: 
 postgres_devel_package:
 postgres_archive_alternatives_install: 'true'
