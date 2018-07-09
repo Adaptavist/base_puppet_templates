@@ -1,0 +1,43 @@
+---
+
+database_db_database_name:
+    value:
+    comment: "Database name to be created"
+database_db_database_user: 
+    value: 'hosting'
+    comment: "Database username to have access to the database"
+database_db_database_pass: 
+    value: 
+    comment: "Database user password"
+database_db_host: 'localhost'
+database_db_collate:  'utf8_bin'
+database_db_charset:  'utf8'
+mysql_bind_address: 127.0.0.1
+mysql_root_password: 
+mysql_max_allowed_packet: '512M'
+mysql_innodb_log_file_size: '1900M'
+mysql_init_script_timeout: '180'
+mysql_collation_server: 'utf8_bin'
+mysql_character_set_server: 'utf8'
+mysql_default_storage_engine: 'innodb'
+mysql_transaction_isolation: 'READ-COMMITTED'
+mysql_manage_config_file: 'true'
+mysql_ssl_status:  'false'
+mysql_ssl_ca: 'cacert.pem'
+mysql_ssl_cert: 'cert.crt'
+mysql_ssl_key: 'cert.key'
+mysql_local_infile: '0'
+mysql_symbolic_links: '0'
+mysql_plugin_load: 'validate_password.so'
+mysql_validate_password: 'FORCE_PLUS_PERMANENT'
+mysql_validate_password_length: '14'
+mysql_validate_password_mixed_case_count: '1'
+mysql_validate_password_number_count: '1'
+mysql_validate_password_special_char_count: '1'
+mysql_validate_password_policy: 'MEDIUM'
+mysql_sql_mode: 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION,NO_AUTO_CREATE_USER'
+mysql_log_raw: 'OFF'
+mysql_secure_users:
+    value: 'true'
+    description: 'Activate to enable remove_default_accounts'
+    type: 'boolean'
