@@ -79,6 +79,12 @@ postgresconfig::hba_rules:
     auth_method: 'reject'
     order: '004'
     description: 'deny access to postgresql user'
+  050:
+    type: 'host'
+    address: '127.0.0.1/32'
+    auth_method: 'md5'
+    order: '100'
+    description: 'allow access to all users from IPv4 Loopback' 
   100:
     type: 'host'
     address: '127.0.0.1/32'
