@@ -60,17 +60,6 @@ definer::defs:
 
 
 postgresconfig::hba_rules: 
-  001:
-    type: 'local'
-    user: 'postgres'
-    auth_method: 'ident'
-    order: '001'
-    description: 'local access as postgres user'
-  002:
-    type: 'local'
-    auth_method: 'md5'
-    order: '002'
-    description: 'local access to database with same name'
   003:
     type: 'host'
     user: 'postgres'
@@ -85,12 +74,6 @@ postgresconfig::hba_rules:
     auth_method: 'reject'
     order: '004'
     description: 'deny access to postgresql user'
-  100:
-    type: 'host'
-    address: '127.0.0.1/32'
-    auth_method: 'md5'
-    order: '100'
-    description: 'allow access to all users'
   101:
     type: 'host'
     address: '::1/128'
