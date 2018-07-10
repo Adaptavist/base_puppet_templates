@@ -1,0 +1,167 @@
+---
+
+postgres_base_dir: '/opt/postgres'
+postgres_datadir: '/opt/postgres/data'
+postgres_listen_address: '*'
+postgres_listen_port: '5432'
+postgres_dba_password:
+postgres_install_contrib: 'true'
+postgres_install_devel: 'true'
+postgres_create_auth_file: 'false'
+
+postgres_archive_command:
+  value: 'cp %p /opt/postgres/backups/wal/%f'
+  description: 'archive command'
+postgres_archive_mode:
+  value: 'on'
+  description: 'archive mode'
+postgres_autovacuum:
+  value: 'on'
+  description: 'autovacuum'
+postgres_autovacuum_vacuum_cost_delay:
+  value: '20ms'
+  description: 'autovacuum vacuum cost delay'
+postgres_autovacuum_vacuum_cost_limit:
+  value: '-1'
+  description: 'autovacuum vacuum cost limit'
+postgres_autovacuum_freeze_max_age:
+  value: '200000000'
+  description: 'autovacuum freeze max age'
+postgres_autovacuum_max_workers:
+  value: '3'
+  description: 'autovacuum max workers'
+postgres_autovacuum_naptime:
+  value: '1min'
+  description: 'autovacuum naptime'
+postgres_autovacuum_vacuum_threshold:
+  value: '50'
+  description: 'autovacuum vacuum threshold'
+postgres_autovacuum_analyze_threshold:
+  value: '50'
+  description: 'autovacuum analyze threshold'
+postgres_autovacuum_vacuum_scale_factor:
+  value: '0.2'
+  description: 'autovacuum vacuum scale factor'
+postgres_autovacuum_analyze_scale_factor:
+  value: '0.1'
+  description: 'autovacuum analyze scale factor'
+postgres_checkpoint_completion_target:
+  value: '0.9'
+  description: 'checkpoint completion target'
+postgres_checkpoint_segments:
+  value: '32'
+  description: 'checkpoint segments'
+postgres_datestyle:
+  value: 'iso, mdy'
+  description: 'datastyle'
+postgres_effective_cache_size:
+  value: '2048MB'
+  description: 'effective cache size'
+postgres_checkpoint_warning:
+  value: '30s'
+  description: 'checkpoint warning'
+postgres_maintenance_work_mem:
+ value: '512MB'
+ description: 'maintenance work mem'
+postgres_max_stack_depth:
+  value: '4MB'
+  description: 'max stack depth'
+postgres_lc_messages:
+  value: 'en_US.UTF-8'
+  description: 'lc messages'
+postgres_lc_monetary:
+  value: 'en_US.UTF-8'
+  description: 'lc monetary'
+postgres_lc_numeric:
+  value: 'en_US.UTF-8'
+  description: 'lc numeric'
+postgres_lc_time:
+  value: 'en_US.UTF-8'
+  description: 'lc time'
+postgres_log_autovacuum_min_duration:
+  value: '-1'
+  description: 'log autovacuum min duration'
+postgres_log_checkpoints:
+  value: 'on'
+  description: 'log checkpoints'
+postgres_log_connections:
+  value: 'on'
+  description: 'log_connections causes each attempted connection to the server to be logged'
+postgres_log_destination:
+  value: 'stderr,syslog'
+  description: 'log_destination sets the methods for logging server messages. This includes stderr, csvlog and syslog. Syslog should be included as a logging destination'
+postgres_log_disconnections:
+  value: 'on'
+  description: 'log_disconnections outputs a line in the server log similar to log_connections but at session termination, and includes the duration of the session'
+postgres_log_line_prefix:
+  value: '%t:%r:%u@%d:[%p]: '
+  description: 'log line prefix'
+postgres_log_min_error_statement:
+  value: 'error'
+  description: 'log min error statement'
+postgres_log_statement:
+  value: 'ddl'
+  description: 'log_statement controls which SQL statements are logged'
+postgres_log_truncate_on_rotation:
+  value: 'off'
+  description: 'log_file_mode sets whether PostgreSQL will truncate (overwrite), rather than append to, any existing log file of the same name.'
+postgres_randon_page_cost:
+  value: '3.0'
+  description: 'random page cost'
+postgres_shared_buffers:
+  value: '2048MB'
+  description: 'shared buffers'
+postgres_ssl_mode:
+  value: 'off'
+  description: 'ssl configured mode'
+postgres_ssl_cert_file:
+  value: '../certs/server.crt'
+  description: 'ssl cert file'
+postgres_ssl_ca_file:
+  value: '../certs/cacert.pem'
+  description: 'chain cert file for cert'
+postgres_ssl_ciphers:
+  value: 'ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH'
+  description: 'ssl_ciphers specifies a list of SSL ciphers that are allowed to be used on secure connections.'
+postgres_ssl_key_file:
+  value: '../certs/cert.key'
+  description: 'private key file for cert'
+postgres_ssl_renegotiation_limit:
+  value: '524288'
+  description: 'ssl_renegotiation_limit specifies how much data can flow over an SSL-encrypted connection before renegotiation of the session keys will take place.'
+postgres_stats_temp_directory:
+  value: 'pg_stat_tmp'
+  description: 'stats temp directory'
+postgres_track_activities:
+  value: 'on'
+  description: 'track activities'
+postgres_track_activity_query_size:
+  value: '1024'
+  description: 'track activity query size'
+postgres_track_counts:
+  value: 'on'
+  description: 'track counts'
+postgres_track_io_timing:
+  value: 'off'
+  description: 'track io timing'
+postgres_track_functions:
+  value: 'none'
+  description: 'track functions'
+postgres_unix_socket_group:
+  value: 'postgres'
+  description: 'unix_socket_group sets the owning group of the Unix-domain socket'
+postgres_unix_socket_permissions:
+  value: '0770'
+  description: 'unix_socket_permissions sets the access permissions of the Unix-domain socket'
+postgres_update_process_title:
+  value: 'on'
+  description: 'update process title'
+postgres_wal_level:
+  value: 'archive'
+  description: 'wal_level determines how much information is written to the WAL'
+postgres_work_mem:
+  value: '10MB'
+  description: 'work mem'
+
+postgres_locale: 'C'
+postgres_encoding: 'UTF8'
