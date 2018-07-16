@@ -60,12 +60,6 @@ definer::defs:
 
 
 postgresconfig::hba_rules: 
-  001:
-    type: 'local'
-    user: 'postgres'
-    auth_method: 'ident'
-    order: '001'
-    description: 'local access as postgres user'
   002:
     type: 'local'
     auth_method: 'md5'
