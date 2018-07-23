@@ -874,7 +874,7 @@ template_file:
     repo: 'https://github.com/Adaptavist/puppet-template_file.git'
     ref_type: "tag"
     repo_type: 'git'
-    ref_value: "0.0.1"
+    ref_value: "0.0.2"
 
 lvm:
     name: "puppetlabs/lvm"
