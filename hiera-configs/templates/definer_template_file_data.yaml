@@ -1,0 +1,18 @@
+---
+
+prefixes:
+  - template_file_
+  - template_data_
+
+classes:
+  - template_file
+
+dependencies:
+  - template_file
+  - stdlib
+
+template_file::files:
+  '%{::template_file_name}':
+    data: 
+      '%{::template_data_key}': '%{::template_data_value}'
+
