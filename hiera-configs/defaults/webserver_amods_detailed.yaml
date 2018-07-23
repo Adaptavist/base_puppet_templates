@@ -1,0 +1,13 @@
+---
+
+webserver_amods_module:
+webserver_amods_path:
+  value: '~'
+  type: 'nilable'
+webserver_amods_id:
+  value: '~'
+  type: 'nilable'
+webserver_amods_package:
+  value: '~'
+  type: 'nilable'
+webserver_amods_package_ensure: 'present'

@@ -1,0 +1,23 @@
+---
+
+prefixes:
+  - webserver_amods_
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+definer::defs:
+  apache::mod:
+    "%{::webserver_amods_module}":
+      name: "%{::webserver_amods_module}"
+      path: "%{::webserver_amods_path}"
+      id: "%{::webserver_amods_id}"
+      package: "%{::webserver_amods_package}"
+      package_ensure: "%{::webserver_amods_package_ensure}"
