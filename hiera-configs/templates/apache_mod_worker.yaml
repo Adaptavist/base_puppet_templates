@@ -13,6 +13,7 @@ dependencies:
   - concat
 
 #set the apache global settings
+apache::mpm_module: 'worker'
 apache::mod::worker::startservers: '%{::apache_worker_config_startservers}'
 apache::mod::worker::maxclients: '%{::apache_worker_config_maxclients}'
 apache::mod::worker::minsparethreads: '%{::apache_worker_config_minsparethreads}'
