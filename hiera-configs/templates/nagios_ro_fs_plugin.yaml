@@ -1,0 +1,12 @@
+---
+
+prefixes: 
+    - "nagios_client_ro_fs_"
+
+classes:
+  - nagios::client
+
+dependencies:
+  - nagios
+
+nagiosclient::readonly_filesystem_plugin::nagios_perl_package: '%{::nagios_client_ro_fs_perl_package}'
