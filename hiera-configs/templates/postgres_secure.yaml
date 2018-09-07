@@ -76,7 +76,7 @@ postgresconfig::hba_rules:
     type: 'host'
     user: 'postgres'
     address: '0.0.0.0/0'
-    auth_method: '%{::postgres_hba_host_postgres_auth_method}'
+    auth_method: '%{::postgres_hba_host_dba_auth_method}'
     order: '004'
     description: 'deny access to postgresql user'
   100:
