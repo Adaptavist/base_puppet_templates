@@ -62,7 +62,7 @@ definer::defs:
 postgresconfig::hba_rules: 
   002:
     type: 'local'
-    auth_method: 'md5'
+    auth_method: '%{::postgres_hba_local_auth_method}'
     order: '002'
     description: 'local access to database with same name'
   003:
@@ -70,6 +70,7 @@ postgresconfig::hba_rules:
     user: 'postgres'
     address: '127.0.0.1/32'
     auth_method: 'md5'
+    auth_method: '%{::postgres_hba_host_auth_method}'
     order: '003'
     description: 'allow localhost TCP access to postgresql user'
   004:
@@ -77,24 +78,19 @@ postgresconfig::hba_rules:
     user: 'postgres'
     address: '0.0.0.0/0'
     auth_method: 'reject'
+    auth_method: '%{::postgres_hba_host_postgres_auth_method}'
     order: '004'
     description: 'deny access to postgresql user'
-  050:
-    type: 'host'
-    address: '127.0.0.1/32'
-    auth_method: 'md5'
-    order: '100'
-    description: 'allow access to all users from IPv4 Loopback' 
   100:
     type: 'host'
     address: '127.0.0.1/32'
-    auth_method: 'md5'
+    auth_method: '%{::postgres_hba_localv4host_auth_method}'
     order: '100'
     description: 'allow access to all users'
   101:
     type: 'host'
     address: '::1/128'
-    auth_method: 'md5'
+    auth_method: '%{::postgres_hba_localv6host_auth_method}'
     order: '101'
     description: 'allow access to ipv6 localhost'
 
