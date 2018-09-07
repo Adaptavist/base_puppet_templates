@@ -11,7 +11,7 @@ postgres_create_auth_file: 'false'
 
 postgres_hba_local_auth_method: 'ident'
 postgres_hba_host_auth_method: 'md5'
-postgres_hba_host_postgres_auth_method: 'reject'
+postgres_hba_host_dba_auth_method: 'reject'
 postgres_hba_localv4host_auth_method: 'md5'
 postgres_hba_localv6host_auth_method: 'md5'
 
