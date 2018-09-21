@@ -1,0 +1,41 @@
+---
+
+pam_password_auth_lock:
+    value: 'auth [default=die] pam_faillock.so authfail auditdeny=5  unlock_time=900'
+    comment: "Lockout for failed password attempts"
+
+pam_password_auth_unix:
+    value: 'auth [success=1 default=bad] pam_unix.so'
+    comment: "Lockout for failed password attempts"
+
+pam_password_auth_required:
+    value: 'auth required pam_faillock.so preauth audit silentdeny=5  unlock_time=900'
+    comment: "Lockout for failed password attempts"
+
+pam_password_auth_sufficient:
+    value: 'auth sufficient pam_faillock.so authsucc audit deny=5unlock_time=900'
+    comment: "Lockout for failed password attempts"
+
+pam_password_auth_reuse:
+    value: 'password sufficient pam_unix.so use_authtok md5 shadow remember=13'
+    comment: "Ensure password reuse is limited"
+
+pam_system_auth_lock:
+    value: 'auth [default=die] pam_faillock.so authfail audit deny=5unlock_time=900'
+    comment: "System Lockout for failed password attempts"
+
+pam_system_auth_unix:
+    value:  'auth [success=1 default=bad] pam_unix.so'
+    comment: "System Lockout for failed password attempts"
+
+pam_system_auth_required:
+    value: 'auth required pam_faillock.so preauth audit silent deny=5unlock_time=900'
+    comment: "System Lockout for failed password attempts"
+
+pam_system_auth_sufficient:
+    value: 'auth sufficient pam_faillock.so authsucc audit deny=5unlock_time=900'
+    comment: "System Lockout for failed password attempts"
+
+pam_system_auth_reuse:
+    value: 'password sufficient pam_unix.so use_authtok md5 shadow remember=13'
+    comment: "Ensure password reuse is limited"

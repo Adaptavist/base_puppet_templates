@@ -1,0 +1,24 @@
+---
+
+prefixes:
+    - pam_
+
+classes:
+    - pam
+
+dependencies:
+  - puppet-module-pam
+
+puppet-module-pam::pam_password_auth_lines:
+    'password_auth_lock': "%{::pam_password_auth_lock}"
+    'password_auth_unix': "%{::pam_password_auth_unix}"
+    'password_auth_required': "%{::pam_password_auth_required}"
+    'password_auth_sufficient': "%{::pam_password_auth_sufficient}"
+    'password_auth_reuse': "%{::pam_password_auth_reuse}"
+
+puppet-module-pam::system_auth_ac_auth_lines:
+    'system_auth_lock': "%{::pam_system_auth_lock}"
+    'system_auth_unix': "%{::pam_system_auth_unix}"
+    'system_auth_required': "%{::pam_system_auth_required}"
+    'system_auth_sufficient': "%{::pam_system_auth_sufficient}"
+    'system_auth_reuse': "%{::pam_system_auth_reuse}"

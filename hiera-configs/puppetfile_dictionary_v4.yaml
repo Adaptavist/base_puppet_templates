@@ -882,3 +882,10 @@ lvm:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.0.1'
+
+puppet-module-pam:
+    name: "ghoneycutt/puppet-module-pam"
+    repo: 'https://github.com/ghoneycutt/puppet-module-pam.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '2.33.0'
