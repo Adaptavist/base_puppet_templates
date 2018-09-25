@@ -1,0 +1,18 @@
+---
+
+prefixes:
+    - "spacewalk_client_repo_"
+    - "yum_"
+
+classes:
+  - spacewalk_client
+
+dependencies:
+  - spacewalk_client
+  - stdlib
+
+pre_stage_classes:
+  - spacewalk_client
+
+spacewalk_client::spacewalk_repository: "%{::spacewalk_client_repo_address}"
+spacewalk_client::spacewalk_repository_package: "%{::spacewalk_client_repo_package}"
