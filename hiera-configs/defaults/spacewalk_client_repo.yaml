@@ -1,4 +1,5 @@
 ---
 
 spacewalk_client_repo_address:
-spacewalk_client_repo_package: 
+spacewalk_client_repo_gpg: 
+spacewalk_client_repo_name: 'spacewalk-client'
