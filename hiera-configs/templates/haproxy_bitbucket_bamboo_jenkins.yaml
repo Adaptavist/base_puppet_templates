@@ -9,10 +9,9 @@ classes:
 dependencies:
     - haproxy
     - stdlib
-    - stdmod
 
-haproxy::config_file_template: '%{::haproxy_bitbucket_bamboo_jenkins_config_template}'
-haproxy::config_file_options_hash:
+haproxy::template: '%{::haproxy_bitbucket_bamboo_jenkins_config_template}'
+haproxy::options:
     'BitbucketBindAddress': '%{::haproxy_bitbucket_bamboo_jenkins_bit_listen_address}'
     'BitbucketBindPort': '%{::haproxy_bitbucket_bamboo_jenkins_bit_listen_port}'
     'BitbucketSSHPort': '%{::haproxy_bitbucket_bamboo_jenkins_bit_destination_port}'
