@@ -11,7 +11,7 @@ dependencies:
 
 nagios_config::services:
     "%{::nagios_service_ssl_web_page_name}_web_check":
-        check_command: "check_http_custom!--port=443 --ssl --sni --onredirect=follow --hostname=%{::nagios_service_ssl_web_page_url} -u %{::nagios_service_ssl_web_page_uri}%{::nagios_service_ssl_web_page_arguments}"
+        check_command: "check_http_custom!--port=443 --ssl --sni --onredirect=follow --hostname=%{::nagios_service_ssl_web_page_url} -u %{::nagios_service_ssl_web_page_uri}%{::nagios_service_ssl_web_page_arguments} %{::nagios_service_ssl_web_page_additional_command_arguments}"
         use:  'generic-service'
         host_name:  "%{::nagios_service_ssl_web_page_hostname}"
         hostgroup_name:  "%{::nagios_service_ssl_web_page_hostgroup_name}"
