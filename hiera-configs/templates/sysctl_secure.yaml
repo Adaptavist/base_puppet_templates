@@ -1,0 +1,107 @@
+---
+
+prefixes:
+    - "sysctl_"
+
+classes:
+  - sysctl::base
+
+dependencies:
+  - sysctl
+
+sysctl::base::values:
+  "%{::sysctl_key}":
+    value: "%{::sysctl_value}"
+
+  "%{::fnet_ipv4_conf_all_send_redirects_sysctl_key}":
+    value: "%{::fnet_ipv4_conf_all_send_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_default_send_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_send_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_all_accept_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_accept_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_all_log_martians_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_log_martians_sysctl_value}"
+  "%{::net_ipv4_conf_default_log_martians_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_log_martians_sysctl_value}"
+  "%{::net_ipv4_route_flush_sysctl_key}":
+    value: "%{::net_ipv4_route_flush_sysctl_value}"
+  "%{::net_ipv4_conf_all_accept_ra_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_accept_ra_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_ra_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_ra_sysctl_value}"
+  "%{::net_ipv4_conf_all_accept_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_accept_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_redirects_sysctl_value}"
+  "%{::net_ipv6.route.flush_sysctl_key}":
+    value: "%{::net_ipv6.route.flush_sysctl_value}"
+  "%{::net_ipv4_conf_all_disable_ipv6_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_disable_ipv6_sysctl_value}"
+  "%{::net_ipv4.icmp_echo_ignore_broadcasts_sysctl_key}":
+    value: "%{::net_ipv4.icmp_echo_ignore_broadcasts_sysctl_value}"
+  "%{::net_ipv4.icmp_ignore_bogus_error_responses_sysctl_key}":
+    value: "%{::net_ipv4.icmp_ignore_bogus_error_responses_sysctl_value}"
+  "%{::net_ipv4.tcp_syncookies_sysctl_key}":
+    value: "%{::net_ipv4.tcp_syncookies_sysctl_value}"
+  "%{::net_ipv4_conf_all_log_martians_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_log_martians_sysctl_value}"
+  "%{::net_ipv4_conf_default_log_martians_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_log_martians_sysctl_value}"
+  "%{::net_ipv4_conf_all_accept_source_route_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_accept_source_route_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_source_route_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_source_route_sysctl_value}"
+  "%{::net_ipv4_conf_all_rp_filter_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_rp_filter_sysctl_value}"
+  "%{::net_ipv4_conf_default_rp_filter_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_rp_filter_sysctl_value}"
+  "%{::net_ipv4_conf_all_accept_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_accept_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_all_secure_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_secure_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_default_secure_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_secure_redirects_sysctl_value}"
+  "%{::net_ipv4.ip_forward_sysctl_key}":
+    value: "%{::net_ipv4.ip_forward_sysctl_value}"
+  "%{::net_ipv4_conf_all_send_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_all_send_redirects_sysctl_value}"
+  "%{::net_ipv4_conf_default_send_redirects_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_send_redirects_sysctl_value}"
+  "%{::kernel_exec-shield_sysctl_key}":
+    value: "%{::kernel_exec-shield_sysctl_value}"
+  "%{::kernel_randomize_va_space_sysctl_key}":
+    value: "%{::kernel_randomize_va_space_sysctl_value}"
+  "%{::net_ipv4_conf_default_router_solicitations_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_router_solicitations_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_ra_rtr_pref_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_ra_rtr_pref_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_ra_pinfo_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_ra_pinfo_sysctl_value}"
+  "%{::net_ipv4_conf_default_accept_ra_defrtr_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_accept_ra_defrtr_sysctl_value}"
+  "%{::net_ipv4_conf_default_autoconf_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_autoconf_sysctl_value}"
+  "%{::net_ipv4_conf_default_dad_transmits_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_dad_transmits_sysctl_value}"
+  "%{::net_ipv4_conf_default_max_addresses_sysctl_key}":
+    value: "%{::net_ipv4_conf_default_max_addresses_sysctl_value}"
+  "%{::fs_file-max_sysctl_key}":
+    value: "%{::fs_file-max_sysctl_value}"
+  "%{::fs_suid_dumpable_sysctl_key}":
+    value: "%{::fs_suid_dumpable_sysctl_value}"
+  "%{::kernel.pid_max_sysctl_key}":
+    value: "%{::kernel.pid_max_sysctl_value}"
+  "%{::net_ipv4.ip_local_port_range_sysctl_key}":
+    value: "%{::net_ipv4.ip_local_port_range_sysctl_value}"
+  "%{::net_core.rmem_max_sysctl_key}":
+    value: "%{::net_core.rmem_max_sysctl_value}"
+  "%{::net_ipv4.tcp_rmem_sysctl_key}":
+    value: "%{::net_ipv4.tcp_rmem_sysctl_value}"
+  "%{::net_core.netdev_max_backlog_sysctl_key}":
+    value: "%{::net_core.netdev_max_backlog_sysctl_value}"
+  "%{::net_ipv4.tcp_window_scaling_sysctl_key}":
+    value: "%{::net_ipv4.tcp_window_scaling_sysctl_value}"
