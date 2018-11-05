@@ -40,6 +40,7 @@ webserver::default_vhosts:
   '%{::apache_vhost_http_vhost_name}':
     ssl: true
     ssl_protocol: 'All -SSLv2 -SSLv3 -TLSv1'
+    ssl_cipher: '%{::apache_vhost_https_ssl_cipher}'
     # SSLCompression
     ssl_cert: '%{::apache_vhost_https_ssl_cert}'
     ssl_key: '%{::apache_vhost_https_ssl_key}'
