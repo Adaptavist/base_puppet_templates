@@ -882,3 +882,10 @@ lvm:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.0.1'
+
+adopt_openjdk:
+    name: "adaptavist/adopt_openjdk"
+    repo: 'https://github.com/Adaptavist/puppet-adopt_openjdk.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.0'
