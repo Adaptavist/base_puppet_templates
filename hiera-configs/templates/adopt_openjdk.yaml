@@ -12,3 +12,17 @@ dependencies:
 adopt_openjdk::versions:
   - "%{::adopt_openjdk_version}"
 adopt_openjdk::default_ver: "%{::adopt_openjdk_default_ver}"
+
+adopt_openjdk::version_details:
+   '9':
+       version_feature: "%{::adopt_openjdk_version_9_version_feature}"
+       version_update: "%{::adopt_openjdk_version_9_version_update}"
+       version_patch: "%{::adopt_openjdk_version_9_version_patch}"
+   '10':
+       version_feature: "%{::adopt_openjdk_version_10_version_feature}"
+       version_update: "%{::adopt_openjdk_version_10_version_update}"
+       version_patch: "%{::adopt_openjdk_version_10_version_patch}"
+   '11':
+       version_feature: "%{::adopt_openjdk_version_11_version_feature}"
+       version_update: "%{::adopt_openjdk_version_11_version_update}"
+       version_patch: "%{::adopt_openjdk_version_11_version_patch}"
