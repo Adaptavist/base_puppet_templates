@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - "adopt_openjdkversion_"
+
+classes:
+  - adopt_openjdk
+
+dependencies:
+  - stdlib
+
+adopt_openjdk::versions:
+  - "%{::adopt_openjdkversion_version}"

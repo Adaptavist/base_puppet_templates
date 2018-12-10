@@ -1,0 +1,13 @@
+---
+
+adopt_openjdk_version: 9
+adopt_openjdk_default_ver: 9
+adopt_openjdk_version_9_version_feature: 0
+adopt_openjdk_version_9_version_update: 4
+adopt_openjdk_version_9_version_patch: 11
+adopt_openjdk_version_10_version_feature: 0
+adopt_openjdk_version_10_version_update: 2
+adopt_openjdk_version_10_version_patch: 13
+adopt_openjdk_version_11_version_feature: 0
+adopt_openjdk_version_11_version_update: 1
+adopt_openjdk_version_11_version_patch: 13
