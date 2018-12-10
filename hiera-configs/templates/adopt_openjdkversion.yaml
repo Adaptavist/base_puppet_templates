@@ -8,6 +8,7 @@ classes:
 
 dependencies:
   - stdlib
+  - adopt_openjdk
 
 adopt_openjdk::versions:
   - "%{::adopt_openjdkversion_version}"
