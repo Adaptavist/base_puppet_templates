@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - "adopt_openjdklinks_"
+
+classes:
+  - adopt_openjdk
+
+dependencies:
+  - stdlib
+  - adopt_openjdk
+
+adopt_openjdk::create_link_to_path: "%{::adopt_openjdklinks_create_link_to_path}"

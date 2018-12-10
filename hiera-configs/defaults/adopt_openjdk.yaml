@@ -1,7 +1,6 @@
 ---
 
 adopt_openjdk_version: 9
-adopt_openjdk_default_ver: 9
 adopt_openjdk_version_9_version_feature: 0
 adopt_openjdk_version_9_version_update: 4
 adopt_openjdk_version_9_version_patch: 11
