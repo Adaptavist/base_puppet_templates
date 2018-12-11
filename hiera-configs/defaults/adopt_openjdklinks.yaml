@@ -1,0 +1,4 @@
+---
+adopt_openjdklinks_create_link_to_path:
+    value: '/usr/lib/jvm/jdk'
+    type: 'nilable'

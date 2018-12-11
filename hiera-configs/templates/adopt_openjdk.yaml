@@ -12,7 +12,6 @@ dependencies:
 
 adopt_openjdk::versions:
   - "%{::adopt_openjdk_version}"
-adopt_openjdk::default_ver: "%{::adopt_openjdk_default_ver}"
 
 adopt_openjdk::version_details:
    '9':
