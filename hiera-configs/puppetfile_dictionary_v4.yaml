@@ -580,7 +580,7 @@ nagios_config:
     repo: 'https://github.com/Adaptavist/puppet-nagios_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.1'
+    ref_value: '1.0.2'
 
 nagios_api: 
     name: 'adaptavist/nagios_api'
