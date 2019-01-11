@@ -131,7 +131,7 @@ postgresconfig::config_enties:
     value: "%{::postgres_autovacuum_analyze_scale_factor}"
   checkpoint_completion_target:
     value: "%{::postgres_checkpoint_completion_target}"
-  checkpoint_segments:
+  %{::postgres_checkpoint_segments_key}:
     value: "%{::postgres_checkpoint_segments}"
   datestyle:
     value: "%{::postgres_datestyle}"
