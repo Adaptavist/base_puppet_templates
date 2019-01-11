@@ -54,6 +54,9 @@ postgres_autovacuum_analyze_scale_factor:
 postgres_checkpoint_completion_target:
   value: '0.9'
   description: 'checkpoint completion target'
+postgres_checkpoint_segments_key:
+  value: 'checkpoint_segments'
+  description: 'checkpoint_segments or max_wal_size'
 postgres_checkpoint_segments:
   value: '32'
   description: 'checkpoint segments'
