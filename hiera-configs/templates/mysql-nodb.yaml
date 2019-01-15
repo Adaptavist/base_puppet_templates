@@ -1,0 +1,36 @@
+---
+
+prefixes:
+    - "database_db_"
+    - "mysql_"
+
+classes:
+    - database
+
+dependencies:
+  - database
+  - mysqlconfig
+  - postgresconfig
+  - mysql
+  - postgresql
+  - stdlib
+  - concat
+  - apt
+
+database::type: 'mysql'
+
+mysqlconfig::custom_mysql_options:
+  mysqld:
+    'max_allowed_packet': "%{::mysql_max_allowed_packet}"
+    'character-set-server': "%{::mysql_character_set_server}"
+    'collation_server': "%{::mysql_collation_server}"
+    'default-storage-engine': "%{::mysql_default_storage_engine}"
+    'transaction-isolation': "%{::mysql_transaction_isolation}"
+    'bind_address': "%{::mysql_bind_address}"
+    'innodb_log_file_size': "%{::mysql_innodb_log_file_size}"
+mysqlconfig::max_allowed_packet: "%{::mysql_max_allowed_packet}"
+mysqlconfig::init_script_timeout: "%{::mysql_init_script_timeout}"
+mysqlconfig::manage_config_file: "%{::mysql_manage_config_file}"
+
+mysql::server::root_password: "%{::mysql_root_password}"
+
