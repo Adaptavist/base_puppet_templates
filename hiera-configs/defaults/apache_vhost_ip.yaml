@@ -1,0 +1,8 @@
+---
+
+vhost_ip_vhost_name:
+vhost_ip_address:
+vhost_ip_add_listen:
+  description: 'Boolean flag to determine if this vhost IP/Port is added to listeners'
+  type: 'boolean'
+  value: 'true'

@@ -1,0 +1,18 @@
+---
+
+prefixes:
+  - vhost_ip_
+
+classes:
+  - webserver
+
+dependencies:
+  - webserver
+  - apache
+  - stdlib
+  - concat
+
+webserver::default_vhosts:
+  '%{::vhost_ip_vhost_name}':
+    ip: '%{::vhost_ip_address}'
+    add_listen: '%{::vhost_ip_add_listen}'
