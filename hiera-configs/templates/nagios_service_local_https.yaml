@@ -1,0 +1,19 @@
+---
+
+prefixes: 
+    - "nagios_service_local_https_"
+
+classes:
+  - nagios::server
+
+dependencies:
+  - nagios
+
+
+nagios::server::services:
+    "%{::nagios_service_local_https_name}":
+        check_command: "check_nrpe!check_local_http!%{::nagios_service_local_https_ip} %{::nagios_service_local_https_servername} %{::nagios_service_local_https_uri}"
+        use:  'generic-service'
+        host_name:  "%{::nagios_service_local_https_hostname}"
+        service_description:  "%{::nagios_service_local_https_description}"
+        ensure: "%{::nagios_service_local_https_ensure}"
