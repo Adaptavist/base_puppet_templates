@@ -1,0 +1,5 @@
+---
+
+basic_rhel_adoptopenjdk_gpg_key_name: 'adaptavist_signing'
+basic_rhel_adoptopenjdk_gpg_key_source: '/etc/puppet/files/gpg/adaptavist_signing.key'
+basic_rhel_adoptopenjdk_package: 'adoptopenjdk8'
