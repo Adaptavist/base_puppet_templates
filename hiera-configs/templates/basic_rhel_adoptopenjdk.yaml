@@ -1,0 +1,24 @@
+---
+
+prefixes:
+    - "basic_rhel_adoptopenjdk_"
+
+classes:
+  - spacewalk_client
+  - noconfigpkgs
+
+dependencies:
+  - spacewalk_client
+  - stdlib
+  - noconfigpkgs
+
+# register RPM signing key
+spacewalk_client::yum_gpg_keys: 
+  "%{::basic_rhel_adoptopenjdk_gpg_key_name}":
+    key_name: "%{::basic_rhel_adoptopenjdk_gpg_key_name}"
+    key_source: "%{::basic_rhel_adoptopenjdk_gpg_key_source}"
+
+#install packages
+noconfigpkgs::default_packages:
+  RedHat :
+    - "%{::basic_rhel_adoptopenjdk_package}"
