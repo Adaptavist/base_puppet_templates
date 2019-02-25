@@ -1,7 +1,6 @@
 ---
 
 nagios_service_local_https_name:
-nagios_service_local_https_cmd_prefix: 'check_nrpe!check_local_http!'
 nagios_service_local_https_ip:
 nagios_service_local_https_servername:
 nagios_service_local_https_uri:
