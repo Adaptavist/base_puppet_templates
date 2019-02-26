@@ -12,7 +12,7 @@ dependencies:
 
 nagios_config::services:
     "%{::nagios_service_local_https_name}":
-        check_command: "check_nrpe!check_local_http!%{::nagios_service_local_https_ip} %{::nagios_service_local_https_servername} %{::nagios_service_local_https_uri}"
+        check_command: 'check_indirect_nrpe!$_HOSTNRPE_PROXY$!check_nrpe!$_HOSTPRIVATE_IP$ check_local_http "%{::nagios_service_local_https_ip} %{::nagios_service_local_https_servername} %{::nagios_service_local_https_uri}"'
         use:  'generic-service'
         host_name:  "%{::nagios_service_local_https_hostname}"
         service_description:  "%{::nagios_service_local_https_description}"
