@@ -538,7 +538,7 @@ sssd:
     repo: 'https://github.com/Adaptavist/puppet-sssd.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 krb5: 
     name: 'adaptavist/krb5'
