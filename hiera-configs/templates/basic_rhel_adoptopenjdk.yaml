@@ -22,3 +22,5 @@ spacewalk_client::yum_gpg_keys:
 noconfigpkgs::default_packages:
   RedHat :
     - "%{::basic_rhel_adoptopenjdk_package}"
+    - "%{::basic_rhel_fontconfig_package}"
+    - "%{::basic_rhel_font_package}"
