@@ -87,3 +87,4 @@ avstapp::conf:
         JAVA_GC1_OPTIONS: "%{::jira_jvm_gc1_options}"
         JAVA_CUSTOM_D_OPTIONS: "%{::jira_jvm_custom_d_options}"
 
+avstapp::java_module_name: "%{::jira_java_module_name}"
