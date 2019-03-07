@@ -81,3 +81,4 @@ avstapp::conf:
         JAVA_GC1_OPTIONS: "%{::confluence_jvm_gc1_options}"
         JAVA_CUSTOM_D_OPTIONS: "%{::confluence_jvm_custom_d_options}"
 
+avstapp::java_module_name: "%{::confluence_java_module_name}"

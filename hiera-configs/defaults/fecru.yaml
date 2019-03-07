@@ -99,3 +99,6 @@ fecru_manual_upstart_script:
 fecru_is_mirror:
     value: "false"
     comment: "In case this is set, only folders and package will be created, we assume rsync will synchronize with master"
+fecru_java_module_name:
+    value: "oracle_java"
+    comment: "the name of the module used to install java"

@@ -91,3 +91,4 @@ avstapp::conf:
       JAVA_GC1_OPTIONS: "%{::crowd_jvm_gc1_options}"
       JAVA_CUSTOM_D_OPTIONS: "%{::crowd_jvm_custom_d_options}"
 
+avstapp::java_module_name: "%{::crowd_java_module_name}"

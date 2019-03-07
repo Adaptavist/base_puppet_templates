@@ -83,3 +83,4 @@ avstapp::conf:
         JAVA_GC1_OPTIONS: "%{::bamboo_jvm_gc1_options}"
         JAVA_CUSTOM_D_OPTIONS: "%{::bamboo_jvm_custom_d_options}"
 
+avstapp::java_module_name: "%{::bamboo_java_module_name}"

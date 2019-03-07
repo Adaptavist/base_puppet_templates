@@ -77,3 +77,4 @@ avstapp::conf:
         JAVA_GC1_OPTIONS: "%{::fecru_jvm_gc1_options}"
         JAVA_CUSTOM_D_OPTIONS: "%{::fecru_jvm_custom_d_options}"
 
+avstapp::java_module_name: "%{::fecru_java_module_name}"
