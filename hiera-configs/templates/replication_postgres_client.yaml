@@ -4,6 +4,7 @@ prefixes:
   - "replication_postgres_client_"
 
 classes:
+  - postgresconfig
   - replication::database::postgres_client
 
 dependencies:
