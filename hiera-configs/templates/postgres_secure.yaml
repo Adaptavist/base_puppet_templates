@@ -97,6 +97,7 @@ postgresql::server::datadir: '%{::postgres_datadir}'
 postgresql::server::postgresql_conf_path: '%{::postgres_datadir}/postgresql.conf'
 postgresql::server::pg_hba_conf_path: '%{::postgres_datadir}/pg_hba.conf'
 postgresql::server::pg_ident_conf_path: '%{::postgres_datadir}/pg_ident.conf'
+postgresql::server::recovery_conf_path: '%{::postgres_datadir}/recovery.conf'
 postgresconfig::postgres_password: "%{::postgres_dba_password}"
 postgresconfig::listen_address: "%{::postgres_listen_address}"
 postgresconfig::listen_port: "%{::postgres_listen_port}"
