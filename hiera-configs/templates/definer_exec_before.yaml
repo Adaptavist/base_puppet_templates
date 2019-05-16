@@ -1,0 +1,16 @@
+---
+
+prefixes: 
+    - "definer_exec_before_"
+
+classes:
+  - definer
+
+dependencies:
+  - definer
+
+definer::defs:
+  exec:
+    "%{::definer_exec_before_name}":
+      before: "%{::definer_exec_before_before}"
+
