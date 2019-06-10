@@ -6,7 +6,13 @@ sssd_cert_name:
 sssd_ldap_default_bind_uid:
 sssd_debug_level: '1'
 sssd_ldap_server1: 
+    type: 'nilable'
+    value: 
+    comment: 'Primary LDAP server to connect to'
 sssd_ldap_server2: 
+    type: 'nilable'
+    value: 
+    comment: 'Secondary LDAP server to connect to'
 
 sssd_authconfig_command:
     value: 'authconfig --enablesssd --enablesssdauth --enablelocauthorize  --disableldap --disableldapauth --kickstart --update'
