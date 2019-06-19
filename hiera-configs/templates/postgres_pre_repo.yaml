@@ -11,9 +11,9 @@ classes:
     - postgresql::repo
 
 dependencies:
-  - postgresql::repo
+    - postgresql
 
 pre_stage_classes:
-  - postgresql::repo
+    - postgresql::repo
 
 postgresql::repo::version: '%{::postgres_version}'
