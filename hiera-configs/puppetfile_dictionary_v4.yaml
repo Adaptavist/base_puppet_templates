@@ -230,7 +230,7 @@ ldap_ssh_keys:
     repo: 'https://github.com/Adaptavist/puppet-ldap_ssh_keys.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.1'
+    ref_value: '1.0.2'
 
 logstash_forwarder_config: 
     name: 'adaptavist/logstash_forwarder_config'
