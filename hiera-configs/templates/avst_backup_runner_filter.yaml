@@ -1,0 +1,13 @@
+---
+
+prefixes:
+    - "avst_backup_runner_"
+
+classes:
+  - avst_backup
+
+dependencies:
+  - avst_backup
+  - stdlib
+
+avst_backup::hiera::job_filter: "%{::avst_backup_runner_job_filter}"

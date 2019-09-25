@@ -1,0 +1,3 @@
+---
+
+avst_backup_runner_job_filter: 'find $CONFIG_DIR -type f \( -name \*.yaml -o -name \*.eyaml \) -a  ! -name hiera.\*yaml'
