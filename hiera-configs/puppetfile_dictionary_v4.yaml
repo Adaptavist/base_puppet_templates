@@ -128,10 +128,10 @@ aws:
     repo_type: 'git'
 
 docker:
-    name: 'garethr/docker'
-    repo: 'https://github.com/Adaptavist/puppet-docker.git'
+    name: 'puppetlabs/docker'
+    repo: 'https://github.com/Adaptavist/puppetlabs-docker.git'
     ref_type: "tag"
-    ref_value: 'v5.3.0'
+    ref_value: 'v3.9.1'
     repo_type: 'git'
 
 wget:
