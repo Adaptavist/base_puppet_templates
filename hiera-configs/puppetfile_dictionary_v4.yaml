@@ -683,9 +683,16 @@ kmod:
 nfs: 
     name: "ghoneycutt/nfs"
     repo: 'https://github.com/Adaptavist/puppet-module-nfs.git'
-    ref_type: 'branch'
+    ref_type: 'tag'
     repo_type: 'git'
-    ref_value: 'data-center'
+    ref_value: 'v2.3.0'
+
+nfs_server_exports:
+    name: "Adaptavist/nfs_server_exports"
+    repo: 'https://github.com/Adaptavist/puppet-nfs_server_exports.git'
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.0'
 
 common:
     name: "ghoneycutt/common"

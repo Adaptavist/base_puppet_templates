@@ -1,0 +1,23 @@
+---
+
+prefixes:
+  - nfs_server_export_
+
+classes:
+  - nfs_server_exports
+
+dependencies:
+  - nfs_server_exports
+  - nfs
+  - stdlib
+  - concat
+  - rpcbind
+  - common
+
+
+nfs_server_exports::manage_all_exports: '%{::nfs_server_export_manage_all_exports}'
+nfs_server_exports::refresh_exports_exec: '%{::nfs_server_export_refresh_exports_exec}'
+nfs_server_exports::exports: 
+    '%{::nfs_server_export_name}':
+        '%{::nfs_server_export_line}'
+

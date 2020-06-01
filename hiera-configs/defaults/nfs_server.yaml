@@ -1,0 +1,31 @@
+---
+
+nfs_server_nfs_package:
+    value: 'USE_DEFAULTS'
+    comment: "NFS Package to install, set to USE_DEFAULTS to allow module to decide"
+nfs_server_service:
+    value: 'USE_DEFAULTS'
+    comment: "NFS Service to start/enable, set to USE_DEFAULTS to allow module to decide"
+nfs_server_service_enable:
+    type: 'string'
+    value: 'true'
+    comment: "Flag to enable/disable NFS service, set to USE_DEFAULTS to allow module to decidem is string not boolean!"
+nfs_server_service_ensure:
+    value: 'running'
+    comment: "State of the service (running, stopped), set to USE_DEFAULTS to allow module to decide"
+nfs_server_is_server:
+    type: 'boolean'
+    value: 'true'
+    comment: "Flag to decide if this is a NFS server or not"
+nfs_server_exports_path:
+    value: '/etc/exports'
+    comment: "Path to the exports file"
+nfs_server_exports_owner:
+    value: 'root'
+    comment: "Owner of the exports file"
+nfs_server_exports_group:
+    value: 'root'
+    comment: "Group of the exports file"
+nfs_server_exports_mode:
+    value: '0644'
+    comment: "Permissions on the exports file"
