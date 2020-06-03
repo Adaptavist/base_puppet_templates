@@ -1,0 +1,18 @@
+---
+
+nfs_server_export_name:
+    value:
+    comment: "The name of the export (just a name for the puppet resource not used in the exports file)"
+
+nfs_server_export_line:
+    value:
+    comment: "The exports line to add to the file"
+
+nfs_server_export_manage_all_exports: 
+    type: 'boolean'
+    value: 'false'
+    comment: "Flag to control if the module manages all exports or not (removes them all before adding back the defined ones)"
+
+nfs_server_export_refresh_exports_exec:
+    value: 'update_nfs_exports'
+    comment: "The exec that the exports addition depends on (provided by the parent NFS class)"

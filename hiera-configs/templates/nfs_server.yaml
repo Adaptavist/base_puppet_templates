@@ -1,0 +1,26 @@
+---
+
+prefixes:
+  - nfs_server_
+
+classes:
+  - nfs
+
+dependencies:
+  - nfs
+  - stdlib
+  - concat
+  - rpcbind
+  - common
+
+##nfs::hiera_hash:
+##nfs::mounts             = undef,
+nfs::nfs_package: "%{::nfs_server_nfs_package}"
+nfs::nfs_service: "%{::nfs_server_service}"
+nfs::nfs_service_ensure: "%{::nfs_server_service_ensure}"
+nfs::nfs_service_enable: "%{::nfs_server_service_enable}"
+nfs::server: "%{::nfs_server_is_server}"
+nfs::exports_path: "%{::nfs_server_exports_path}"
+nfs::exports_owner: "%{::nfs_server_exports_owner}"
+nfs::exports_group: "%{::nfs_server_exports_group}"
+nfs::exports_mode: "%{::nfs_server_exports_mode}"
