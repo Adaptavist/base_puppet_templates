@@ -720,14 +720,14 @@ fail2ban:
     repo: 'https://github.com/Adaptavist/puppet-fail2ban.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: 'v1.4.0'
+    ref_value: 'v2.0.0'
 
 fail2ban_config:
     name: 'adaptavist/fail2ban_config'
     repo: 'https://github.com/Adaptavist/puppet-fail2ban_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.3'
+    ref_value: '1.0.4'
 
 artifactory:
     name: 'puppet/artifactory'
