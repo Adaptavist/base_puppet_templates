@@ -898,14 +898,14 @@ adopt_openjdk:
     ref_value: '1.0.1'
 
 yumrepo_core:
-    name "puppetlabs/yumrepo_core"
+    name: "puppetlabs/yumrepo_core"
     repo: "https://github.com/Adaptavist/puppetlabs-yumrepo_core"
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.0.7'
 
 augeas_core:
-    name "puppetlabs/augeas_core"
+    name: "puppetlabs/augeas_core"
     repo: "https://github.com/Adaptavist/puppetlabs-augeas_core"
     ref_type: 'tag'
     repo_type: 'git'
