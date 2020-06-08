@@ -903,3 +903,10 @@ yumrepo_core:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.0.7'
+
+augeas_core:
+    name "puppetlabs/augeas_core"
+    repo: "https://github.com/Adaptavist/puppetlabs-augeas_core"
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.5'
