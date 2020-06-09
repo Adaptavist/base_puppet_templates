@@ -769,7 +769,7 @@ swapfile:
     repo: https://github.com/Adaptavist/puppet-swapfile
     repo_type: "git"
     ref_type: "tag"
-    ref_value: '1.0.1'
+    ref_value: '1.0.2'
 
 upstart:
     name: "puppet/upstart"
@@ -910,3 +910,10 @@ augeas_core:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.0.5'
+
+mount_core:
+    name: "puppetlabs/mount_core"
+    repo: "https://github.com/Adaptavist/puppetlabs-mount_core"
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.4'

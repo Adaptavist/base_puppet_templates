@@ -9,6 +9,7 @@ classes:
 dependencies:
   - swapfile
   - stdlib
+  - mount_core
 
 swapfile::swapon: '%{::swap_swapon}'
 swapfile::swapfile_path: '%{::swap_path}'
