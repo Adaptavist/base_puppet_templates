@@ -8,6 +8,7 @@ classes:
 
 dependencies:
   - definer
+  - host_core
 
 definer::defs:
   host:

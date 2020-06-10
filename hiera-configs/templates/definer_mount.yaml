@@ -8,6 +8,7 @@ classes:
 
 dependencies:
   - definer
+  - mount_core
 
 definer::defs:
   mount:
