@@ -159,7 +159,7 @@ mkhomedir:
     name: 'adaptavist/mkhomedir'
     repo: 'https://github.com/Adaptavist/puppet-mkhomedir.git'
     ref_type: "tag"
-    ref_value: '1.0.1'
+    ref_value: '1.0.2'
     repo_type: 'git'
 
 statsd:
@@ -230,7 +230,7 @@ ldap_ssh_keys:
     repo: 'https://github.com/Adaptavist/puppet-ldap_ssh_keys.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.2'
+    ref_value: '1.0.3'
 
 logstash_forwarder_config: 
     name: 'adaptavist/logstash_forwarder_config'
@@ -538,7 +538,7 @@ sssd:
     repo: 'https://github.com/Adaptavist/puppet-sssd.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.1'
+    ref_value: '1.0.2'
 
 krb5: 
     name: 'adaptavist/krb5'
@@ -556,10 +556,10 @@ samba:
 
 active_directory_glue: 
     name: 'adaptavist/active_directory_glue'
-    repo: 'https://github.com/Adaptavist/active_directory_glue.git'
+    repo: 'https://github.com/Adaptavist/puppet-active_directory_glue.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 nagios:
     name: 'adaptavist/nagios'
@@ -881,7 +881,7 @@ template_file:
     repo: 'https://github.com/Adaptavist/puppet-template_file.git'
     ref_type: "tag"
     repo_type: 'git'
-    ref_value: "0.0.2"
+    ref_value: "0.0.3"
 
 lvm:
     name: "puppetlabs/lvm"
@@ -924,3 +924,10 @@ host_core:
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.0.3'
+
+selinux_core:
+    name: "puppetlabs/selinux_core"
+    repo: "https://github.com/Adaptavist/puppetlabs-selinux_core"
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.4'
