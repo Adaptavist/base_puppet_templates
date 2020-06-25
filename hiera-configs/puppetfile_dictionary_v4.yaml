@@ -580,7 +580,7 @@ nagios_config:
     repo: 'https://github.com/Adaptavist/puppet-nagios_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.2'
+    ref_value: '1.0.3'
 
 nagios_api: 
     name: 'adaptavist/nagios_api'
@@ -601,7 +601,7 @@ rsync_config:
     repo: 'https://github.com/Adaptavist/puppet-rsync_config.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 lsyncd: 
     name: 'adaptavist/lsyncd'
@@ -804,7 +804,7 @@ newrelic_java_agent:
     repo: https://github.com/Adaptavist/puppet-newrelic_java_agent
     repo_type: "git"
     ref_type: 'tag'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 sysctl:
     name: 'thias/sysctl'

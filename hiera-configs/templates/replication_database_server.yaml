@@ -14,6 +14,7 @@ dependencies:
   - lsyncd
   - xinetd
   - rsync_config
+  - selinux_core
   - rsync
   - stunnel
   - replication
