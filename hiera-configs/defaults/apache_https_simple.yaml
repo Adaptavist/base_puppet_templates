@@ -16,7 +16,7 @@ vhost_https_vhost_name:
     value: 'default-https'
     comment: "Name of the vhost"
 vhost_https_ssl_protocol: 
-    value: 'All -SSLv2 -SSLv3 -TLSv1'
+    value: 'All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1'
     comment: 'The SSL/TLS Protocols to use'
 vhost_https_ssl_cipher:
     value: 'HIGH:MEDIUM:!aNULL:!MD5:!3DES:!IDEA-CBC-SHA:!ECDHE-RSA-RC4-SHA:!RC4-SHA'
