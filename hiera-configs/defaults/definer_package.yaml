@@ -1,2 +1,8 @@
 definer_package_name:
 definer_package_ensure: 'latest'
+definer_package_provider:
+  type: 'nilable'
+  value: '~'
+definer_packag_source:
+  type: 'nilable'
+  value: '~'
