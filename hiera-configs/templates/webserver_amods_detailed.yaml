@@ -9,6 +9,7 @@ classes:
 dependencies:
   - definer
   - webserver
+  - selinux_core
   - apache
   - stdlib
   - concat

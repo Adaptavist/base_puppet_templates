@@ -11,6 +11,7 @@ classes:
 
 dependencies:
   - webserver
+  - selinux_core
   - apache
   - stdlib
   - concat
