@@ -9,6 +9,7 @@ classes:
 dependencies:
   - avst_backup
   - stdlib
+  - cron_core
 
 avst_backup::yaml::backup_timestamp: "%{::avst_backup_backup_timestamp}"
 avst_backup::yaml::server_name: "%{::avst_backup_server_name}"

@@ -636,7 +636,7 @@ avst_backup:
     repo: 'https://github.com/Adaptavist/puppet-avst_backup.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.1'
+    ref_value: '1.0.2'
 
 openssh: 
     name: "example42/openssh"
@@ -928,6 +928,13 @@ host_core:
 selinux_core:
     name: "puppetlabs/selinux_core"
     repo: "https://github.com/Adaptavist/puppetlabs-selinux_core"
+    ref_type: 'tag'
+    repo_type: 'git'
+    ref_value: '1.0.4'
+
+cron_core:
+    name: "puppetlabs/cron_core"
+    repo: "https://github.com/Adaptavist/puppetlabs-cron_core"
     ref_type: 'tag'
     repo_type: 'git'
     ref_value: '1.0.4'
