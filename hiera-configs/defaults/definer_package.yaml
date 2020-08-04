@@ -3,6 +3,6 @@ definer_package_ensure: 'latest'
 definer_package_provider:
   type: 'nilable'
   value: '~'
-definer_packag_source:
+definer_package_source:
   type: 'nilable'
   value: '~'

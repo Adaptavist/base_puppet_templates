@@ -14,5 +14,5 @@ definer::defs:
     "%{::definer_package_name}":
       ensure: "%{::definer_package_ensure}"
       provider: "%{::definer_package_provider}"
-      source: "%{::definer_packag_source}"
+      source: "%{::definer_package_source}"
 
