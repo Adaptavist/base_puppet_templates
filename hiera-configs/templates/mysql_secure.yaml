@@ -62,3 +62,4 @@ database::conf:
     name:     "%{::database_db_database_name}"
 
 mysqlconfig::remove_default_accounts: "%{::mysql_secure_users}"
+mysqlconfig::admin_password: "%{::mysql_admin_password}"

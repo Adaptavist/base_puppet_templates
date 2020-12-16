@@ -40,3 +40,7 @@ mysql_secure_users:
     value: 'true'
     description: 'Activate to enable remove_default_accounts'
     type: 'boolean'
+mysql_admin_password:
+    value: '~'
+    description: 'the mysql administrator password (not root but administrator)'
+    type: 'nilable'
