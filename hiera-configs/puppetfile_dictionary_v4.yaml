@@ -216,7 +216,7 @@ replication:
     repo: 'https://github.com/Adaptavist/puppet-replication.git'
     ref_type: 'tag'
     repo_type: 'git'
-    ref_value: '1.0.0'
+    ref_value: '1.0.1'
 
 central_logging: 
     name: 'adaptavist/central_logging'
