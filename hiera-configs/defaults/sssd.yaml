@@ -17,3 +17,8 @@ sssd_ldap_server2:
 sssd_authconfig_command:
     value: 'authconfig --enablesssd --enablesssdauth --enablelocauthorize  --disableldap --disableldapauth --kickstart --update'
     comment: "Authconfig commnd to run on RedHat based systems"
+
+sssd_custom_template: 
+    type: 'nilable'
+    value:
+    comment: 'Custom ERB template to use instead of the default'

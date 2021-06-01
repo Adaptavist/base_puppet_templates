@@ -18,6 +18,7 @@ sssd::ldap_search_base: "%{::sssd_ldap_search_base}"
 sssd::cert_name: "%{::sssd_cert_name}"
 sssd::ldap_default_bind_uid: "%{::sssd_ldap_default_bind_uid}"
 sssd::debug_level: "%{::sssd_debug_level}"
+sssd::custom_template: "%{::sssd_custom_template}"
 
 sssd::authconfig::auth_command: "%{::sssd_authconfig_command}"
 
