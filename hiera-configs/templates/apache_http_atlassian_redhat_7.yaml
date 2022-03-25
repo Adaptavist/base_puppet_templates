@@ -86,6 +86,8 @@ LogFormat \"%u %t \\\"%r\\\" %>s %b \\\"__PERCENTAGE_SIGN{Referer}i\\\" \\\"__PE
 ProxyErrorOverride Off \n
 ProxyPreserveHost   On \n
 
+%{::vhost_http_atlassian_custom_content}
+
 ## Atlassian \n
 ProxyPass           %{::vhost_http_atlassian_proxy_context_path}   %{::connector_tomcat_protocol}://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} connectiontimeout=%{::vhost_http_atlassian_proxy_connection_timeout} timeout=%{::vhost_http_atlassian_proxy_timeout} \n
 ProxyPassReverse    %{::vhost_http_atlassian_proxy_context_path}   %{::connector_tomcat_protocol}://%{::connector_tomcat_host}:%{::connector_tomcat_port}%{::vhost_http_atlassian_proxy_context_path} \n
